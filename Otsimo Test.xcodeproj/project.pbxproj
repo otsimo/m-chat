@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4B1E152DE300484994 /* AppDelegate.swift */; };
+		53187F4E1E152DE300484994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4D1E152DE300484994 /* ViewController.swift */; };
+		53187F511E152DE300484994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F4F1E152DE300484994 /* Main.storyboard */; };
+		53187F531E152DE300484994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53187F521E152DE300484994 /* Assets.xcassets */; };
+		53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F541E152DE300484994 /* LaunchScreen.storyboard */; };
+		531883501E15366A00484994 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5318834F1E15366A00484994 /* ResearchKit.framework */; };
+		531883521E1536C400484994 /* ResearchKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5318834F1E15366A00484994 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		531883541E15371C00484994 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883531E15371C00484994 /* ConsentDocument.swift */; };
+		531883561E1537D700484994 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883551E1537D700484994 /* ConsentTask.swift */; };
+		531883591E153C1600484994 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883581E153C1600484994 /* SurveyTask.swift */; };
+		5318835D1E15571E00484994 /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318835C1E15571E00484994 /* questions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		53187F701E15311300484994 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		531883511E1536A600484994 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				531883521E1536C400484994 /* ResearchKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		53187F481E152DE300484994 /* Otsimo Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otsimo Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53187F4B1E152DE300484994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53187F4D1E152DE300484994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53187F501E152DE300484994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53187F521E152DE300484994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53187F551E152DE300484994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53187F571E152DE300484994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5318834F1E15366A00484994 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<group>"; };
+		531883531E15371C00484994 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
+		531883551E1537D700484994 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
+		531883581E153C1600484994 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
+		5318835C1E15571E00484994 /* questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53187F451E152DE300484994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				531883501E15366A00484994 /* ResearchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53187F3F1E152DE300484994 = {
+			isa = PBXGroup;
+			children = (
+				5318834F1E15366A00484994 /* ResearchKit.framework */,
+				53187F4A1E152DE300484994 /* Otsimo Test */,
+				53187F491E152DE300484994 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53187F491E152DE300484994 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53187F481E152DE300484994 /* Otsimo Test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53187F4A1E152DE300484994 /* Otsimo Test */ = {
+			isa = PBXGroup;
+			children = (
+				53187F4B1E152DE300484994 /* AppDelegate.swift */,
+				53187F4D1E152DE300484994 /* ViewController.swift */,
+				5318835C1E15571E00484994 /* questions.swift */,
+				531883581E153C1600484994 /* SurveyTask.swift */,
+				531883531E15371C00484994 /* ConsentDocument.swift */,
+				531883551E1537D700484994 /* ConsentTask.swift */,
+				53187F4F1E152DE300484994 /* Main.storyboard */,
+				53187F521E152DE300484994 /* Assets.xcassets */,
+				53187F541E152DE300484994 /* LaunchScreen.storyboard */,
+				53187F571E152DE300484994 /* Info.plist */,
+			);
+			path = "Otsimo Test";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53187F471E152DE300484994 /* Otsimo Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53187F5A1E152DE300484994 /* Build configuration list for PBXNativeTarget "Otsimo Test" */;
+			buildPhases = (
+				53187F441E152DE300484994 /* Sources */,
+				53187F451E152DE300484994 /* Frameworks */,
+				53187F461E152DE300484994 /* Resources */,
+				53187F701E15311300484994 /* Embed Frameworks */,
+				531883511E1536A600484994 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Otsimo Test";
+			productName = "Otsimo Test";
+			productReference = 53187F481E152DE300484994 /* Otsimo Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53187F401E152DE300484994 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = mdemirci;
+				TargetAttributes = {
+					53187F471E152DE300484994 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = LUBGWANK4N;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 53187F431E152DE300484994 /* Build configuration list for PBXProject "Otsimo Test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				en_AU,
+				en_GB,
+				es,
+				es_MX,
+				fi,
+				fr,
+				fr_CA,
+				he,
+				hi,
+				hr,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nl,
+				no,
+				pl,
+				pt,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				zh_CN,
+				zh_HK,
+				zh_TW,
+				"es-MX",
+				nb,
+				"pt-PT",
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = 53187F3F1E152DE300484994;
+			productRefGroup = 53187F491E152DE300484994 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53187F471E152DE300484994 /* Otsimo Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53187F461E152DE300484994 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */,
+				53187F531E152DE300484994 /* Assets.xcassets in Resources */,
+				53187F511E152DE300484994 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53187F441E152DE300484994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53187F4E1E152DE300484994 /* ViewController.swift in Sources */,
+				5318835D1E15571E00484994 /* questions.swift in Sources */,
+				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
+				531883591E153C1600484994 /* SurveyTask.swift in Sources */,
+				531883541E15371C00484994 /* ConsentDocument.swift in Sources */,
+				53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		53187F4F1E152DE300484994 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53187F501E152DE300484994 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53187F541E152DE300484994 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53187F551E152DE300484994 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53187F581E152DE300484994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53187F591E152DE300484994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53187F5B1E152DE300484994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LUBGWANK4N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Otsimo Test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mdemirci.Otsimo-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		53187F5C1E152DE300484994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LUBGWANK4N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Otsimo Test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mdemirci.Otsimo-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53187F431E152DE300484994 /* Build configuration list for PBXProject "Otsimo Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53187F581E152DE300484994 /* Debug */,
+				53187F591E152DE300484994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53187F5A1E152DE300484994 /* Build configuration list for PBXNativeTarget "Otsimo Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53187F5B1E152DE300484994 /* Debug */,
+				53187F5C1E152DE300484994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53187F401E152DE300484994 /* Project object */;
+}
