@@ -88,14 +88,12 @@
             ]
           },
           {
-            "group": "*",
             "result": "PASS",
             "actions": [
               "MOST_OFTEN_YES"
             ]
           },
           {
-            "group": "*",
             "result": "FAIL",
             "actions": [
               "MOST_OFTEN_NO"
@@ -118,7 +116,7 @@
     },
     {
       "id": 7,
-      "text": "Looks if parent points and says “look!”"
+      "text": "Looks if parent points and says 'look!'"
     },
     {
       "id": 8,

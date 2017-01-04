@@ -9,7 +9,7 @@ import (
 
 const (
 	YesAnswer = "Yes"
-	NoAnswer = "No"
+	NoAnswer  = "No"
 )
 
 func askQuestion(text string) bool {
@@ -35,15 +35,6 @@ func getQuestion(step *mchatpb.Step, id int32) *mchatpb.Question {
 		}
 	}
 	panic(fmt.Errorf("question %d not found", id))
-}
-
-func executeAnswer(step *mchatpb.Step, answer *mchatpb.Answer) mchatpb.ResultType {
-	switch answer.Result {
-	case mchatpb.ResultType_ASK_ANOTHER:
-		return executeQuestion(step, answer.NextQuestion)
-	default:
-		return answer.Result
-	}
 }
 
 type groupResult struct {
