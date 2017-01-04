@@ -46,7 +46,7 @@ message Question{
     //ID is question number
     int32 id = 1;
     string text = 2;
-    oneof result{
+    oneof type{
         YesNoQuestion yesno = 3;
         GroupQuestion group = 4;
     }
