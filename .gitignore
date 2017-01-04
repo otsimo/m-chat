@@ -1,3 +1,7 @@
 Carthage
 Otsimo Test.xcodeproj/project.xcworkspace/xcuserdata/muhammed.xcuserdatad
 Otsimo Test.xcodeproj/xcuserdata
+/bin
+/pkg
+/.idea
+/.vscode

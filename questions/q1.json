@@ -1,0 +1,134 @@
+{
+  "id": 1,
+  "firstQuestion": 1,
+  "questions": [
+    {
+      "id": 1,
+      "text": "If you point at something across the room, does ___ look at it?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": 2
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": 3
+        }
+      }
+    },
+    {
+      "id": 2,
+      "text": "Please give me an example of how he/she will respond if you point at something",
+      "group": {
+        "questions": {
+          "4": "pass",
+          "5": "pass",
+          "6": "pass",
+          "7": "pass",
+          "8": "fail",
+          "9": "fail",
+          "10": "fail"
+        },
+        "query": [
+          {
+            "group": "pass",
+            "result": "PASS",
+            "actions": [
+              "ALL_OF_YES"
+            ]
+          },
+          {
+            "group": "fail",
+            "result": "FAIL",
+            "actions": [
+              "ALL_OF_YES"
+            ]
+          },
+          {
+            "result": "PASS",
+            "actions": [
+              "MOST_OFTEN_YES"
+            ]
+          },
+          {
+            "result": "FAIL",
+            "actions": [
+              "MOST_OFTEN_NO"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "text": "If you point at something, what does your child typically do?",
+      "group": {
+        "questions": {
+          "4": "pass",
+          "5": "pass",
+          "6": "pass",
+          "7": "pass",
+          "8": "fail",
+          "9": "fail",
+          "10": "fail"
+        },
+        "query": [
+          {
+            "group": "pass",
+            "result": "PASS",
+            "actions": [
+              "ALL_OF_YES"
+            ]
+          },
+          {
+            "group": "fail",
+            "result": "FAIL",
+            "actions": [
+              "ALL_OF_YES"
+            ]
+          },
+          {
+            "result": "PASS",
+            "actions": [
+              "MOST_OFTEN_YES"
+            ]
+          },
+          {
+            "result": "FAIL",
+            "actions": [
+              "MOST_OFTEN_NO"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "text": "Looks at object"
+    },
+    {
+      "id": 5,
+      "text": "Points to object"
+    },
+    {
+      "id": 6,
+      "text": "Looks and comments on object"
+    },
+    {
+      "id": 7,
+      "text": "Looks if parent points and says 'look!'"
+    },
+    {
+      "id": 8,
+      "text": "Ignores parent"
+    },
+    {
+      "id": 9,
+      "text": "Looks around room randomly"
+    },
+    {
+      "id": 10,
+      "text": "Looks at parent’s finger"
+    }
+  ]
+}

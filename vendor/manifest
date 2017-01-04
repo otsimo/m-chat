@@ -1,0 +1,147 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/alecaivazis/survey",
+			"repository": "https://github.com/alecaivazis/survey",
+			"revision": "471db2a09b3c5068270cbeba15255b71d72b36a3",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/buger/goterm",
+			"repository": "https://github.com/buger/goterm",
+			"revision": "cc3942e537b1ab00de92d348c40acbfa6565d20f",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/jsonpb",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/jsonpb"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/proto",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/proto"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/proto/testdata",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/proto/testdata"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/ptypes/any",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/ptypes/any"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/ptypes/duration",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/ptypes/duration"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/ptypes/struct",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/ptypes/struct"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/ptypes/timestamp",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/ptypes/timestamp"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/ptypes/wrappers",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+			"branch": "master",
+			"path": "/ptypes/wrappers"
+		},
+		{
+			"importpath": "github.com/grpc-ecosystem/grpc-gateway/runtime",
+			"repository": "https://github.com/grpc-ecosystem/grpc-gateway",
+			"revision": "199c40a060d1e55508b3b85182ce6f3895ae6302",
+			"branch": "master",
+			"path": "/runtime"
+		},
+		{
+			"importpath": "github.com/grpc-ecosystem/grpc-gateway/utilities",
+			"repository": "https://github.com/grpc-ecosystem/grpc-gateway",
+			"revision": "199c40a060d1e55508b3b85182ce6f3895ae6302",
+			"branch": "master",
+			"path": "/utilities"
+		},
+		{
+			"importpath": "github.com/pkg/term",
+			"repository": "https://github.com/pkg/term",
+			"revision": "b1f72af2d63057363398bec5873d16a98b453312",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/ttacon/chalk",
+			"repository": "https://github.com/ttacon/chalk",
+			"revision": "22c06c80ed312dcb6e1cf394f9634aa2c4676e22",
+			"branch": "master"
+		},
+		{
+			"importpath": "golang.org/x/net/context",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "69d4b8aa71caaaa75c3dfc11211d1be495abec7c",
+			"branch": "master",
+			"path": "/context"
+		},
+		{
+			"importpath": "golang.org/x/net/http2",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "69d4b8aa71caaaa75c3dfc11211d1be495abec7c",
+			"branch": "master",
+			"path": "/http2"
+		},
+		{
+			"importpath": "golang.org/x/net/idna",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "69d4b8aa71caaaa75c3dfc11211d1be495abec7c",
+			"branch": "master",
+			"path": "/idna"
+		},
+		{
+			"importpath": "golang.org/x/net/internal/timeseries",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "69d4b8aa71caaaa75c3dfc11211d1be495abec7c",
+			"branch": "master",
+			"path": "/internal/timeseries"
+		},
+		{
+			"importpath": "golang.org/x/net/lex/httplex",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "69d4b8aa71caaaa75c3dfc11211d1be495abec7c",
+			"branch": "master",
+			"path": "/lex/httplex"
+		},
+		{
+			"importpath": "golang.org/x/net/trace",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "69d4b8aa71caaaa75c3dfc11211d1be495abec7c",
+			"branch": "master",
+			"path": "/trace"
+		},
+		{
+			"importpath": "google.golang.org/grpc",
+			"repository": "https://github.com/grpc/grpc-go",
+			"revision": "c8105071640ef29fce843ed96983e864bb18eb0e",
+			"branch": "master"
+		}
+	]
+}
