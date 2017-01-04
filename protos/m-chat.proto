@@ -1,0 +1,61 @@
+syntax = "proto3";
+package otsimo.mchat;
+option go_package = "mchatpb";
+
+
+enum ResultType{
+    PASS = 0;
+    FAIL = 1;
+    ASK_ANOTHER = 2;
+}
+
+message Answer{
+    ResultType result = 1;
+    int32 next_question = 2;
+}
+
+enum QueryType{
+    MOST_OFTEN_YES = 0;
+    MOST_OFTEN_NO = 1;    
+    ALL_OF_YES = 2;    
+    ALL_OF_NO = 3;
+    ONE_OF_YES = 4;
+    ONE_OF_NO = 5;
+}
+
+message Query{
+    string group = 1;
+    ResultType result = 2;
+    int32 next_question = 3;    
+    //Actions are ORed
+    repeated QueryType actions = 4;
+}
+
+message YesNoQuestion{
+    Answer yes = 1;
+    Answer no = 2;
+}
+
+message GroupQuestion{
+    //Keys are question ids, values are the group names
+    map<int32, string> questions = 1;
+    repeated Query query = 2;    
+}
+
+message Question{
+    //ID is question number
+    int32 id = 1;
+    string text = 2;
+    oneof result{
+        YesNoQuestion yesno = 3;
+        GroupQuestion group = 4;
+    }
+}
+
+message Step{
+    //ID is step number
+    int32 id = 1;
+    int32 first_question = 2;
+    repeated Question questions = 3;
+}
+
