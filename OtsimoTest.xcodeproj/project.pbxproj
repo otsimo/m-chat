@@ -13,11 +13,15 @@
 		53187F531E152DE300484994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53187F521E152DE300484994 /* Assets.xcassets */; };
 		53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F541E152DE300484994 /* LaunchScreen.storyboard */; };
 		531883501E15366A00484994 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5318834F1E15366A00484994 /* ResearchKit.framework */; };
-		531883521E1536C400484994 /* ResearchKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5318834F1E15366A00484994 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		531883541E15371C00484994 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883531E15371C00484994 /* ConsentDocument.swift */; };
 		531883561E1537D700484994 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883551E1537D700484994 /* ConsentTask.swift */; };
-		531883591E153C1600484994 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883581E153C1600484994 /* SurveyTask.swift */; };
-		5318835D1E15571E00484994 /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318835C1E15571E00484994 /* questions.swift */; };
+		532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */; };
+		532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */; };
+		532A8B0B1E1D861200F1F6E3 /* questions in Resources */ = {isa = PBXBuildFile; fileRef = 532A8B0A1E1D861200F1F6E3 /* questions */; };
+		532A8B0F1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B0E1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift */; };
+		53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D8B1E16DC03009875B8 /* SurveyTask.swift */; };
+		53734D931E16F005009875B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53734D951E16F005009875B8 /* Localizable.strings */; };
+		53734D981E1D2688009875B8 /* SurveyTask2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D971E1D2688009875B8 /* SurveyTask2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,16 +35,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		531883511E1536A600484994 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				531883521E1536C400484994 /* ResearchKit.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -51,11 +45,18 @@
 		53187F521E152DE300484994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53187F551E152DE300484994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53187F571E152DE300484994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5318834F1E15366A00484994 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<group>"; };
+		5318834F1E15366A00484994 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = /Users/muhammed/Developer/OtsimoTest/Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<absolute>"; };
 		531883531E15371C00484994 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		531883551E1537D700484994 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
-		531883581E153C1600484994 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
-		5318835C1E15571E00484994 /* questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
+		532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = /Users/muhammed/Developer/OtsimoTest/Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = "<absolute>"; };
+		532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "m-chat.pb.swift"; sourceTree = "<group>"; };
+		532A8B091E1D847F00F1F6E3 /* m-chat.proto */ = {isa = PBXFileReference; lastKnownFileType = text; name = "m-chat.proto"; path = "protos/m-chat.proto"; sourceTree = "<group>"; };
+		532A8B0A1E1D861200F1F6E3 /* questions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = questions; sourceTree = "<group>"; };
+		532A8B0E1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SurveyTask+StepFunctions.swift"; sourceTree = "<group>"; };
+		53734D8B1E16DC03009875B8 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
+		53734D941E16F005009875B8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		53734D961E16F009009875B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		53734D971E1D2688009875B8 /* SurveyTask2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */,
 				531883501E15366A00484994 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +75,8 @@
 		53187F3F1E152DE300484994 = {
 			isa = PBXGroup;
 			children = (
-				5318834F1E15366A00484994 /* ResearchKit.framework */,
+				532A8B091E1D847F00F1F6E3 /* m-chat.proto */,
+				532A8B0A1E1D861200F1F6E3 /* questions */,
 				53187F4A1E152DE300484994 /* Otsimo Test */,
 				53187F491E152DE300484994 /* Products */,
 			);
@@ -90,16 +93,19 @@
 		53187F4A1E152DE300484994 /* Otsimo Test */ = {
 			isa = PBXGroup;
 			children = (
+				532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */,
 				53187F4B1E152DE300484994 /* AppDelegate.swift */,
 				53187F4D1E152DE300484994 /* ViewController.swift */,
-				5318835C1E15571E00484994 /* questions.swift */,
-				531883581E153C1600484994 /* SurveyTask.swift */,
+				53734D8B1E16DC03009875B8 /* SurveyTask.swift */,
+				532A8B0E1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift */,
+				53734D971E1D2688009875B8 /* SurveyTask2.swift */,
 				531883531E15371C00484994 /* ConsentDocument.swift */,
 				531883551E1537D700484994 /* ConsentTask.swift */,
 				53187F4F1E152DE300484994 /* Main.storyboard */,
 				53187F521E152DE300484994 /* Assets.xcassets */,
 				53187F541E152DE300484994 /* LaunchScreen.storyboard */,
 				53187F571E152DE300484994 /* Info.plist */,
+				53734D951E16F005009875B8 /* Localizable.strings */,
 			);
 			path = "Otsimo Test";
 			sourceTree = "<group>";
@@ -115,7 +121,7 @@
 				53187F451E152DE300484994 /* Frameworks */,
 				53187F461E152DE300484994 /* Resources */,
 				53187F701E15311300484994 /* Embed Frameworks */,
-				531883511E1536A600484994 /* CopyFiles */,
+				532A8B081E1D812800F1F6E3 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -143,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53187F431E152DE300484994 /* Build configuration list for PBXProject "Otsimo Test" */;
+			buildConfigurationList = 53187F431E152DE300484994 /* Build configuration list for PBXProject "OtsimoTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -209,13 +215,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53734D931E16F005009875B8 /* Localizable.strings in Resources */,
 				53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */,
 				53187F531E152DE300484994 /* Assets.xcassets in Resources */,
+				532A8B0B1E1D861200F1F6E3 /* questions in Resources */,
 				53187F511E152DE300484994 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		532A8B081E1D812800F1F6E3 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ResearchKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftProtobuf.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53187F441E152DE300484994 /* Sources */ = {
@@ -223,10 +250,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				53187F4E1E152DE300484994 /* ViewController.swift in Sources */,
-				5318835D1E15571E00484994 /* questions.swift in Sources */,
+				53734D981E1D2688009875B8 /* SurveyTask2.swift in Sources */,
+				532A8B0F1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift in Sources */,
+				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
 				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
-				531883591E153C1600484994 /* SurveyTask.swift in Sources */,
 				531883541E15371C00484994 /* ConsentDocument.swift in Sources */,
+				532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */,
 				53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +277,16 @@
 				53187F551E152DE300484994 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		53734D951E16F005009875B8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53734D941E16F005009875B8 /* tr */,
+				53734D961E16F009009875B8 /* Base */,
+			);
+			name = Localizable.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -387,7 +426,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53187F431E152DE300484994 /* Build configuration list for PBXProject "Otsimo Test" */ = {
+		53187F431E152DE300484994 /* Build configuration list for PBXProject "OtsimoTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53187F581E152DE300484994 /* Debug */,

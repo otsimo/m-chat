@@ -1,1 +1,2 @@
 github "ResearchKit/ResearchKit"
+github "apple/swift-protobuf" "0.9.24"
