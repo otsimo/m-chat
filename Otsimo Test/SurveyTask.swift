@@ -26,8 +26,9 @@ public class SurveyTask: NSObject, ORKTask {
 
 
     public func step(before step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
+        
         isStarted = true
-        print("step(before ")
+        Log.debug("step : before")
         if (result.results?.isEmpty)! {
             return nil
         }
@@ -44,20 +45,18 @@ public class SurveyTask: NSObject, ORKTask {
 
         return nil
     }
-    /*
-     Shows current question
- */
 
 
     public func step(after step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
-      /*  print("step::after", isStarted,"x=",x,"current",currentQuestionID,"last",lastQuestionID)
-        x += 1
-        
-        guard !(currentQuestionID == lastQuestionID || x < 2) else {
-            print("guard", isStarted,currentQuestionID,lastQuestionID)
+        Log.debug("step::after \(isStarted) x=\(x) current=\(manager.currentQuestionID) last=}(manager.lastQuestionID)")
+//        guard !(manager.currentQuestionID == manager.lastQuestionID || x < 2) else {
+//            print("guard", isStarted,manager.currentQuestionID,manager.lastQuestionID)
+//            return nil
+//        }
+        if manager.currentQuestionID == manager.lastQuestionID {
             return nil
         }
-        */
+        
         let q = manager.getQuestion(id: manager.currentQuestionID)
         let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
         step.isOptional = false

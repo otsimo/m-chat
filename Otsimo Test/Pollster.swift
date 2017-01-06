@@ -28,6 +28,7 @@ public class Pollster{
     }
     
     func getQuestion(id: String) -> Otsimo_Mchat_Question {
+        Log.debug("getQuestion id = \(id)")
         let ids = parseID(id: id)
         let stepNum = ids.0
         let qNUm = ids.1
@@ -45,6 +46,7 @@ public class Pollster{
     }
     
     func getStepAndQuestion(id: String) -> (Otsimo_Mchat_Step, Otsimo_Mchat_Question) {
+       Log.debug("getStepAndQuestion id = \(id)")
         let ids = parseID(id: id)
         let stepNum = ids.0
         let qNUm = ids.1
