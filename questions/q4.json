@@ -1,0 +1,88 @@
+{
+  "id": "4",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Does ________ like climbing on things?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "13"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": " Please give me an example of something he/she enjoys climbing on",
+      "group": {
+        "questions": {
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": ""
+        },
+        "query": [
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "text": "Pretend to drink from a toy cup?"
+    },
+    {
+      "id": "4",
+      "text": "Pretend to eat from a toy spoon or fork?"
+    },
+    {
+      "id": "5",
+      "text": "Pretend to talk on the telephone?"
+    },
+    {
+      "id": "6",
+      "text": "Pretend to feed a doll or stuffed animal with real or imaginary food?"
+    },
+    {
+      "id": "13",
+      "text": "",
+      "group": {
+        "questions": {
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": ""
+        },
+        "query": [
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    }
+  ]
+}

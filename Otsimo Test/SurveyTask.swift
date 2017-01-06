@@ -12,79 +12,64 @@ import ResearchKit
 
 
 public class SurveyTask: NSObject, ORKTask {
+
+    var isStarted: Bool = false
+    var x = 0
+
+    var manager: Pollster
     
-    //we used in SurveyTask extension
-    let YesAnswer = "Yes"
-    let NoAnswer = "No"
-    //
-
-    let introStepID = "introStep"
-    let q1StepID = "q1"
-
-    let summaryStepID = "summaryStep"
-    public var identifier: String { get { return "survey" } }
-
-    public func step(before step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
-        switch step?.identifier {
-        case .some(q1StepID):
-            return self.step(withIdentifier: introStepID)
-
-        case .some(summaryStepID):
-            return self.step(withIdentifier: q1StepID)
-
-        default:
-            return nil
-        }
+    init(_ pollster: Pollster) {
+        self.manager = pollster
     }
 
+    public var identifier: String { get { return "survey" } }
+
+
+    public func step(before step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
+        isStarted = true
+        print("step(before ")
+        if (result.results?.isEmpty)! {
+            return nil
+        }
+        if let sl = result.results, sl.count > 1 {
+            if let stepResult = sl[0] as? ORKStepResult {
+                if let srr = stepResult.results, srr.count > 0 {
+                    if let bqr = srr[0] as? ORKBooleanQuestionResult {
+                        print(bqr.booleanAnswer)
+                    }
+                }
+            }
+        }
+        let (s, q) = manager.getStepAndQuestion(id: manager.currentQuestionID)
+
+        return nil
+    }
+    /*
+     Shows current question
+ */
 
 
     public func step(after step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
-        switch step?.identifier {
-        case .none:
-            return self.step(withIdentifier: introStepID)
-        case .some(introStepID):
-            return self.step(withIdentifier: q1StepID)
-        case .some(q1StepID):
-            return self.step(withIdentifier: summaryStepID)
-        default:
+      /*  print("step::after", isStarted,"x=",x,"current",currentQuestionID,"last",lastQuestionID)
+        x += 1
+        
+        guard !(currentQuestionID == lastQuestionID || x < 2) else {
+            print("guard", isStarted,currentQuestionID,lastQuestionID)
             return nil
         }
+        */
+        let q = manager.getQuestion(id: manager.currentQuestionID)
+        let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
+        step.isOptional = false
+        return step
+
     }
 
-
-
-
-
-
     public func step(withIdentifier identifier: String) -> ORKStep? {
-
-
-
-
-        switch identifier {
-
-        case introStepID:
-            let introStep = ORKInstructionStep(identifier: introStepID)
-            introStep.title = NSLocalizedString("intro.title", comment: "1")
-            introStep.text = NSLocalizedString("intro.text", comment: "2")
-            return introStep
-
-        case q1StepID:
-            let q1Step = ORKQuestionStep(identifier: q1StepID)
-            q1Step.title = NSLocalizedString("q1.main", comment: "3")
-            q1Step.answerFormat = ORKBooleanAnswerFormat()
-            return q1Step
-
-        case summaryStepID:
-            let summaryStep = ORKCompletionStep(identifier: summaryStepID)
-            summaryStep.title = NSLocalizedString("summary.title", comment: "4")
-            summaryStep.text = NSLocalizedString("summary.title", comment: "5")
-            return summaryStep
-
-        default:
-            return nil
-        }
+        let q = manager.getQuestion(id: manager.currentQuestionID)
+        let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
+        step.isOptional = false
+        return step
     }
 
 

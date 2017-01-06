@@ -1,0 +1,68 @@
+{
+  "id": "5",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": " Does ________ make unusual finger movements near his/her eyes?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "PASS"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "Please describe these movements",
+      "group": {
+        "3": "pass",
+        "4": "pass",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail",
+        "8": "fail",
+        "9": "fail"
+      },
+      "query": [
+        {
+          "group": "pass",
+          "actions": [
+            "ONE_OF_YES"
+          ],
+          "result": "PASS"
+        },
+        {
+          "group": "fail",
+          "actions": [
+            "ALL_OF_NO"
+          ],
+          "result": "PASS"
+        },
+        {
+          "group": "fail",
+          "actions": [
+            "ALL_OF_YES"
+          ],
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "10"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "text": "Does this happen more than twice a week?",
+      "yesno": {
+        "yes": {
+          "result": "FAIL"
+        },
+        "no": {
+          "result": "PASS"
+        }
+      }
+    }
+  ]
+}
