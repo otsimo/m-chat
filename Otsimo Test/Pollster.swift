@@ -28,7 +28,7 @@ public class Pollster{
     }
     
     func getQuestion(id: String) -> Otsimo_Mchat_Question {
-        Log.debug("getQuestion id = \(id)")
+        //Log.debug("getQuestion id = \(id)")
         let ids = parseID(id: id)
         let stepNum = ids.0
         let qNUm = ids.1
@@ -46,15 +46,15 @@ public class Pollster{
     }
     
     func getStepAndQuestion(id: String) -> (Otsimo_Mchat_Step, Otsimo_Mchat_Question) {
-       Log.debug("getStepAndQuestion id = \(id)")
+       //Log.debug("getStepAndQuestion id = \(id)")
         let ids = parseID(id: id)
         let stepNum = ids.0
-        let qNUm = ids.1
+        let qNum = ids.1
         
         for s in steps {
             if s.id == stepNum {
                 for q in s.questions {
-                    if q.id == qNUm {
+                    if q.id == qNum {
                         return (s, q)
                     }
                 }
@@ -64,6 +64,38 @@ public class Pollster{
     }
     
     func handleAnswer(answer:Bool){
+        let ids = parseID(id: currentQuestionID)
+        let stepNum = ids.0
+        let qNum = ids.1
         
+        for s in steps{
+            if s.id == stepNum{
+                for q in s.questions{
+                    if q.id == qNum{
+                        if let yn = q.yesno{
+                            
+                            if answer{
+                                if yn.yes.result == Otsimo_Mchat_ResultType.askAnother{
+                                    currentQuestionID = generateID(stepID: stepNum, questionID: yn.yes.nextQuestion)
+                                }
+                            }else{
+                                if yn.no.result == Otsimo_Mchat_ResultType.askAnother{
+                                    currentQuestionID = generateID(stepID: stepNum, questionID: yn.no.nextQuestion)
+                                }
+                            }
+                            
+                            
+                        }else if let group = q.group{
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        if answer{
+            
+            
+        }
     }
 }

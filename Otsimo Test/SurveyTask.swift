@@ -29,30 +29,38 @@ public class SurveyTask: NSObject, ORKTask {
         
         isStarted = true
         Log.debug("step : before")
-        if (result.results?.isEmpty)! {
-            return nil
-        }
-        if let sl = result.results, sl.count > 1 {
+//        if (result.results?.isEmpty)! {
+//            return nil
+//        }
+        if let sl = result.results, sl.count > 0 {
+            print("1")
             if let stepResult = sl[0] as? ORKStepResult {
+                print("2")
+
                 if let srr = stepResult.results, srr.count > 0 {
+                    print("3")
+
                     if let bqr = srr[0] as? ORKBooleanQuestionResult {
-                        print(bqr.booleanAnswer)
+                        print("4")
+                        if let a = bqr.booleanAnswer{
+                            if a == 1{
+                                manager.handleAnswer(answer: true)
+                            }else if a == 0{
+                                manager.handleAnswer(answer: false)
+                            }
+                        }
+                        
                     }
                 }
             }
         }
-        let (s, q) = manager.getStepAndQuestion(id: manager.currentQuestionID)
 
         return nil
     }
 
 
     public func step(after step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
-        Log.debug("step::after \(isStarted) x=\(x) current=\(manager.currentQuestionID) last=}(manager.lastQuestionID)")
-//        guard !(manager.currentQuestionID == manager.lastQuestionID || x < 2) else {
-//            print("guard", isStarted,manager.currentQuestionID,manager.lastQuestionID)
-//            return nil
-//        }
+        Log.debug("step::after \(isStarted) x=\(x) current=\(manager.currentQuestionID) last=\(manager.lastQuestionID)")
         if manager.currentQuestionID == manager.lastQuestionID {
             return nil
         }
@@ -65,10 +73,11 @@ public class SurveyTask: NSObject, ORKTask {
     }
 
     public func step(withIdentifier identifier: String) -> ORKStep? {
+        Log.debug("step : withIdentifier")
         let q = manager.getQuestion(id: manager.currentQuestionID)
         let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
         step.isOptional = false
-        return step
+        return nil
     }
 
 
