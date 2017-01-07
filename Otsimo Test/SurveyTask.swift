@@ -76,7 +76,8 @@ public class SurveyTask: NSObject, ORKTask {
         } else {
             Log.debug("current quesiton is group question")
             //Create Group question
-            let step = ORKFormStep(identifier: manager.currentQuestionID, title: q.text, text: q.text)
+            var step = ORKFormStep(identifier: manager.currentQuestionID, title: q.text, text: q.text)
+            step.formItems = []
             step.isOptional = false
             for gq in (q.group?.questions)!{
                 print("***->",gq.key)
@@ -84,7 +85,7 @@ public class SurveyTask: NSObject, ORKTask {
                 let gquestion = manager.getQuestion(id: gqID)
                 print("**->",gquestion.text, "gqID->",gqID)
                 let stepItem = ORKFormItem(identifier: gqID, text: gquestion.text, answerFormat: ORKAnswerFormat.booleanAnswerFormat())
-                step.formItems?.append(stepItem)
+                step.formItems? = (step.formItems)! + [stepItem]
             }
             print(step.formItems)
             return step
