@@ -24,33 +24,44 @@ public class SurveyTask: NSObject, ORKTask {
 
     public var identifier: String { get { return "survey" } }
 
-
+    var f = 0
     public func step(before step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
 
         isStarted = true
-        Log.debug("step : before")
+        Log.debug("step : before : result -> \(result)")
 //        if (result.results?.isEmpty)! {
 //            return nil
 //        }
+
         if let sl = result.results, sl.count > 0 {
             print("1")
-            if let stepResult = sl[0] as? ORKStepResult {
-                print("2")
-
+            print("***************** StepResult count -> \(sl.count)")
+            if let stepResult = sl.last as? ORKStepResult {
+                print("***************** *****************  stepResult -> \(stepResult)")
                 if let srr = stepResult.results, srr.count > 0 {
                     print("3")
+                    print("srr ->", srr, " x=", x)
+                    print("Ara")
 
-                    if let bqr = srr[0] as? ORKBooleanQuestionResult {
-                        print("4")
-                        if let a = bqr.booleanAnswer {
-                            if a == 1 {
-                                manager.handleAnswer(answer: true)
-                            } else if a == 0 {
-                                manager.handleAnswer(answer: false)
+                    //if result have one answer, then it is yes no question
+                    if srr.count == 1 {
+                        if let bqr = srr[0] as? ORKBooleanQuestionResult {
+                            print("bqr ->", bqr)
+                            if let a = bqr.booleanAnswer {
+                                if a == 1 {
+                                    manager.handleAnswerForYesNo(answer: true)
+                                } else if a == 0 {
+                                    manager.handleAnswerForYesNo(answer: false)
+                                }
                             }
                         }
-
+                    } else {
+                        //Else it is a group question
+                        manager.handleAnswerForGroupQuestion(Results: stepResult)
+                        
+                        
                     }
+
                 }
             }
         }
@@ -79,12 +90,13 @@ public class SurveyTask: NSObject, ORKTask {
             var step = ORKFormStep(identifier: manager.currentQuestionID, title: q.text, text: q.text)
             step.formItems = []
             step.isOptional = false
-            for gq in (q.group?.questions)!{
-                print("***->",gq.key)
+            for gq in (q.group?.questions)! {
+                print("***->", gq.key)
                 let gqID = manager.currentStepID + ":" + String(gq.key)
                 let gquestion = manager.getQuestion(id: gqID)
-                print("**->",gquestion.text, "gqID->",gqID)
+                print("**->", gquestion.text, "gqID->", gqID)
                 let stepItem = ORKFormItem(identifier: gqID, text: gquestion.text, answerFormat: ORKAnswerFormat.booleanAnswerFormat())
+                stepItem.isOptional = false
                 step.formItems? = (step.formItems)! + [stepItem]
             }
             print(step.formItems)
@@ -104,7 +116,6 @@ public class SurveyTask: NSObject, ORKTask {
         step.isOptional = false
         return nil
     }
-
 
 
     ////

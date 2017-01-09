@@ -18,12 +18,10 @@
 		532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */; };
 		532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */; };
 		532A8B0B1E1D861200F1F6E3 /* questions in Resources */ = {isa = PBXBuildFile; fileRef = 532A8B0A1E1D861200F1F6E3 /* questions */; };
-		532A8B0F1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B0E1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift */; };
 		532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B101E20423800F1F6E3 /* Pollster.swift */; };
 		532A8B141E204B4500F1F6E3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B131E204B4500F1F6E3 /* Log.swift */; };
 		53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D8B1E16DC03009875B8 /* SurveyTask.swift */; };
 		53734D931E16F005009875B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53734D951E16F005009875B8 /* Localizable.strings */; };
-		53734D981E1D2688009875B8 /* SurveyTask2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D971E1D2688009875B8 /* SurveyTask2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,13 +52,11 @@
 		532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "m-chat.pb.swift"; sourceTree = "<group>"; };
 		532A8B091E1D847F00F1F6E3 /* m-chat.proto */ = {isa = PBXFileReference; lastKnownFileType = text; name = "m-chat.proto"; path = "protos/m-chat.proto"; sourceTree = "<group>"; };
 		532A8B0A1E1D861200F1F6E3 /* questions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = questions; sourceTree = "<group>"; };
-		532A8B0E1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SurveyTask+StepFunctions.swift"; sourceTree = "<group>"; };
 		532A8B101E20423800F1F6E3 /* Pollster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollster.swift; sourceTree = "<group>"; };
 		532A8B131E204B4500F1F6E3 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		53734D8B1E16DC03009875B8 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		53734D941E16F005009875B8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53734D961E16F009009875B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		53734D971E1D2688009875B8 /* SurveyTask2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +99,6 @@
 				532A8B151E204B5200F1F6E3 /* Consent */,
 				53187F4D1E152DE300484994 /* ViewController.swift */,
 				532A8B131E204B4500F1F6E3 /* Log.swift */,
-				532A8B0E1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift */,
-				53734D971E1D2688009875B8 /* SurveyTask2.swift */,
 				53187F4F1E152DE300484994 /* Main.storyboard */,
 				53187F521E152DE300484994 /* Assets.xcassets */,
 				53187F541E152DE300484994 /* LaunchScreen.storyboard */,
@@ -272,10 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				53187F4E1E152DE300484994 /* ViewController.swift in Sources */,
-				53734D981E1D2688009875B8 /* SurveyTask2.swift in Sources */,
 				532A8B141E204B4500F1F6E3 /* Log.swift in Sources */,
 				532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */,
-				532A8B0F1E1E657500F1F6E3 /* SurveyTask+StepFunctions.swift in Sources */,
 				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
 				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
 				531883541E15371C00484994 /* ConsentDocument.swift in Sources */,
