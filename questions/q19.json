@@ -1,0 +1,57 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "If something new happens, does _________ look at your face to see how you feel about it?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "If your child hears a strange or scary noise, will he/she look at you before responding?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "3"
+        }
+      }
+    },
+    {
+      "id": "3",
+      "text": "Does your child look at you when someone new approaches?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "4"
+        }
+      }
+    },
+    {
+      "id": "4",
+      "text": "Does your child look at you when he/she is faced with something unfamiliar or a little scary?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "FAIL",
+        }
+      }
+    }
+  ]
+}

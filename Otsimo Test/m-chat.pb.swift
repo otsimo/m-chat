@@ -102,6 +102,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
   case allOfNo // = 3
   case oneOfYes // = 4
   case oneOfNo // = 5
+  case twoOrMoreYes // = 6
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -116,6 +117,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
     case 3: self = .allOfNo
     case 4: self = .oneOfYes
     case 5: self = .oneOfNo
+    case 6: self = .twoOrMoreYes
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -128,6 +130,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
     case "allOfNo": self = .allOfNo
     case "oneOfYes": self = .oneOfYes
     case "oneOfNo": self = .oneOfNo
+    case "twoOrMoreYes": self = .twoOrMoreYes
     default: return nil
     }
   }
@@ -140,6 +143,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
     case "ALL_OF_NO": self = .allOfNo
     case "ONE_OF_YES": self = .oneOfYes
     case "ONE_OF_NO": self = .oneOfNo
+    case "TWO_OR_MORE_YES": self = .twoOrMoreYes
     default: return nil
     }
   }
@@ -152,6 +156,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
     case "ALL_OF_NO": self = .allOfNo
     case "ONE_OF_YES": self = .oneOfYes
     case "ONE_OF_NO": self = .oneOfNo
+    case "TWO_OR_MORE_YES": self = .twoOrMoreYes
     default: return nil
     }
   }
@@ -165,6 +170,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
       case .allOfNo: return 3
       case .oneOfYes: return 4
       case .oneOfNo: return 5
+      case .twoOrMoreYes: return 6
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -179,6 +185,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
       case .allOfNo: return "\"ALL_OF_NO\""
       case .oneOfYes: return "\"ONE_OF_YES\""
       case .oneOfNo: return "\"ONE_OF_NO\""
+      case .twoOrMoreYes: return "\"TWO_OR_MORE_YES\""
       case .UNRECOGNIZED(let i): return String(i)
       }
     }
@@ -195,6 +202,7 @@ public enum Otsimo_Mchat_QueryType: ProtobufEnum {
       case .allOfNo: return ".allOfNo"
       case .oneOfYes: return ".oneOfYes"
       case .oneOfNo: return ".oneOfNo"
+      case .twoOrMoreYes: return ".twoOrMoreYes"
       case .UNRECOGNIZED(let v): return ".UNRECOGNIZED(\(v))"
       }
     }

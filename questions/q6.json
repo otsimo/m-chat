@@ -1,0 +1,76 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Does ___________ point with one finger to ask for something or to get help?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "If there is something your child wants that is out of reach, such as a snack or toy that is out of reach, how does he/she get it?",
+      "group": {
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "ASK_ANOTHER",
+            "nextQuestion": "8"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "text": "Reach for the object with his/her whole hand?"
+    },
+    {
+      "id": "5",
+      "text": "Lead you to the object?"
+    },
+    {
+      "id": "6",
+      "text": "Try to get the object for him/herself?"
+    },
+    {
+      "id": "7",
+      "text": "Ask for it using words or sounds?"
+    },
+    {
+      "id": "8",
+      "text": "If you point at something across the room, does ___ look at it?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "FAIL"
+        }
+      }
+    }
+  ]
+}

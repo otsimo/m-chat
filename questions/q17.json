@@ -1,0 +1,64 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Does __________ try to get you to watch him/her?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "3"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "Please give me an example of how he/she would try to get you to watch him/her.",
+      "group": {
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "text": "Say “Look!” or “Watch me!”?"
+    },
+    {
+      "id": "5",
+      "text": "Babble or make a noise to get you to watch what he/she is doing?"
+    },
+    {
+      "id": "6",
+      "text": "Look at you to get praise or comment?"
+    },
+    {
+      "id": "7",
+      "text": "Keep looking to see if you are looking?"
+    }
+  ]
+}

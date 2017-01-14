@@ -1,0 +1,68 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": " If you turn your head to look at something, does ________ look around to see what you are looking at?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "What does he/she do when you turn to look at something?",
+      "group": {
+        "questions": {
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "MOST_OFTEN_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "group": "",
+            "actions": [
+              "MOST_OFTEN_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "text": "Look toward the thing you are looking at?"
+    },
+    {
+      "id": "4",
+      "text": "Point toward the thing you are looking at?"
+    },
+    {
+      "id": "5",
+      "text": "Look around to see what you are looking at?"
+    },
+    {
+      "id": "6",
+      "text": "Ignore you?"
+    },
+    {
+      "id": "7",
+      "text": "Look at your face?"
+    }
+  ]
+}

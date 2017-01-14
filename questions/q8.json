@@ -1,0 +1,118 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Is ____________ interested in other children?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "3"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "Is he/she interested in children who are not his/her brother or sister?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "3"
+        }
+      }
+    },
+    {
+      "id": "3",
+      "text": "When you are at the playground or supermarket, does your child usually respond to other children?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "4"
+        },
+        "no": {
+          "result": "FAIL"
+        }
+      }
+    },
+    {
+      "id": "4",
+      "text": "How does your child respond?",
+      "group": {
+        "questions": {
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "ASK_ANOTHER",
+            "nextQuestion": "12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "text": "Play with another child?"
+    },
+    {
+      "id": "6",
+      "text": "Talk to another child?"
+    },
+    {
+      "id": "7",
+      "text": "Babble or make vocal noises?"
+    },
+    {
+      "id": "8",
+      "text": "Watch another child?"
+    },
+    {
+      "id": "9",
+      "text": "Smile at another child?"
+    },
+    {
+      "id": "10",
+      "text": "Act shy at first but then smile?"
+    },
+    {
+      "id": "11",
+      "text": "Get excited about another child?"
+    },
+    {
+      "id": "12",
+      "text": "If you point at something across the room, does ___ look at it?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "FAIL"
+        }
+      }
+    }
+  ]
+}

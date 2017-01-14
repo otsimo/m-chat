@@ -1,0 +1,112 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Does ________ show you things by bringing them to you or holding them up for you to see? Not just to get help, but to share?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "3"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "Please give me an example of something he/she might bring to show you or hold up for you to see.",
+      "group": {
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "ASK_ANOTHER",
+            "nextQuestion": "9"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "text": "",
+      "group": {
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "ASK_ANOTHER",
+            "nextQuestion": "9"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "text": "A picture or toy just to show you?"
+    },
+    {
+      "id": "5",
+      "text": "A drawing he/she has done?"
+    },
+    {
+      "id": "6",
+      "text": "A flower he/she has picked?"
+    },
+    {
+      "id": "7",
+      "text": "A bug he/she has found in the grass?"
+    },
+    {
+      "id": "8",
+      "text": "A few blocks he/she has put together?"
+    },
+    {
+      "id": "9",
+      "text": "Is this sometimes just to show you, not to get help?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "FAIL"
+        }
+      }
+    }
+  ]
+}

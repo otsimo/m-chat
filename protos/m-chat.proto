@@ -21,6 +21,7 @@ enum QueryType{
     ALL_OF_NO = 3;
     ONE_OF_YES = 4;
     ONE_OF_NO = 5;
+    TWO_OR_MORE_YES = 6;
 }
 
 message Query{

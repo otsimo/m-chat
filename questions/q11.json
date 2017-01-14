@@ -1,0 +1,73 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": " When you smile at ____________, does he/she smile back at you?",
+      "yesno": {
+        "yes": {
+          "result": "PASS"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "What makes _____________ smile?",
+      "group": {
+        "questions": {
+          "4": "pass",
+          "5": "pass",
+          "6": "pass",
+          "7": "fail",
+          "8": "fail",
+          "9": "fail"
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "MOST_OFTEN_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "group": "",
+            "actions": [
+              "MOST_OFTEN_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "text": "Smile when you smile?"
+    },
+    {
+      "id": "5",
+      "text": "Smile when you enter the room?"
+    },
+    {
+      "id": "6",
+      "text": "Smile when you return from being away?"
+    },
+    {
+      "id": "7",
+      "text": "Always smile?"
+    },
+    {
+      "id": "8",
+      "text": "Smile at a favorite toy or activity?"
+    },
+    {
+      "id": "9",
+      "text": "Smile randomly or at nothing in particular?"
+    }
+  ]
+}

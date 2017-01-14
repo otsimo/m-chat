@@ -1,0 +1,141 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Does _________ look you in the eye when you are talking to him/her, playing with him/her, or changing him/her?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "3"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "Please give me an example of when he/she looks you in the eye.",
+      "group": {
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "TWO_OR_MORE_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "ASK_ANOTHER",
+            "nextQuestion": "10"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "text": "",
+      "group": {
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": ""
+        },
+        "query": [
+          {
+            "group": "",
+            "actions": [
+              "TWO_OR_MORE_YES"
+            ],
+            "result": "PASS"
+          },
+          {
+            "group": "",
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "result": "ASK_ANOTHER",
+            "nextQuestion": "10"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "result": "FAIL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "text": "When he/she needs something?"
+    },
+    {
+      "id": "5",
+      "text": "When you are playing with him/her?"
+    },
+    {
+      "id": "6",
+      "text": "During feeding?"
+    },
+    {
+      "id": "7",
+      "text": "During diaper changes?"
+    },
+    {
+      "id": "8",
+      "text": "When you are reading him/her a story?"
+    },
+    {
+      "id": "9",
+      "text": "When you are talking to him/her?"
+    },{
+      "id": "10",
+      "text": "Does your child look you in the eye every day?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "11"
+        },
+        "no": {
+          "result": "FAIL",
+        }
+      }
+    },{
+       "id": "11",
+      "text": " On a day when you are together all day, does he/she look you in the eye at least 5 times?",
+      "yesno": {
+        "yes": {
+          "result": "PASS",
+        },
+        "no": {
+          "result": "FAIL",
+        }
+      }
+    }
+  ]
+}

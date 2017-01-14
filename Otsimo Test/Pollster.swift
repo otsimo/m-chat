@@ -168,6 +168,10 @@ public class Pollster {
                 if oneOfYes(groupAnswers: answerofGroup) {
                     return query.result
                 }
+            case .twoOrMoreYes:
+                if twoOrMoreYes(groupAnswers: answerofGroup){
+                    return query.result
+                }
             default:
                 break
             }

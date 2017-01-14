@@ -1,0 +1,31 @@
+{
+  "id": "1",
+  "firstQuestion": "1",
+  "questions": [
+    {
+      "id": "1",
+      "text": "Does __________ walk?",
+      "yesno": {
+        "yes": {
+          "result": "ASK_ANOTHER",
+          "nextQuestion": "2"
+        },
+        "no": {
+          "result": "FAIL",
+        }
+      }
+    },
+    {
+      "id": "2",
+      "text": "Does he/she walk without holding on to anything?",
+      "yesno": {
+        "yes": {
+          "result": "PASS",
+        },
+        "no": {
+          "result": "FAIL",
+        }
+      }
+    }
+  ]
+}

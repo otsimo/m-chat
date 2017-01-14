@@ -57,4 +57,14 @@ func oneOfYes(groupAnswers: [GroupAnswer]) -> Bool {
     return false
 }
 
+func twoOrMoreYes(groupAnswers: [GroupAnswer]) -> Bool {
+    var yes = 0
+    for ga in groupAnswers{
+        if ga.answer{
+            yes += 1
+        }
+    }
+    
+    return yes >= 2
+}
 
