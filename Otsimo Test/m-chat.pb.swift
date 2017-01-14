@@ -453,13 +453,13 @@ public struct Otsimo_Mchat_GroupQuestion: ProtobufGeneratedMessage {
   ]}
 
   ///   Keys are question ids, values are the group names
-  public var questions: Dictionary<Int32,String> = [:]
+  public var questions: Dictionary<String,String> = [:]
 
   public var query: [Otsimo_Mchat_Query] = []
 
   public init() {}
 
-  public init(questions: Dictionary<Int32,String> = [:],
+  public init(questions: Dictionary<String,String> = [:],
     query: [Otsimo_Mchat_Query] = [])
   {
     if !questions.isEmpty {
@@ -473,7 +473,7 @@ public struct Otsimo_Mchat_GroupQuestion: ProtobufGeneratedMessage {
   public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
     let handled: Bool
     switch protoFieldNumber {
-    case 1: handled = try setter.decodeMapField(fieldType: ProtobufMap<ProtobufInt32,ProtobufString>.self, value: &questions)
+    case 1: handled = try setter.decodeMapField(fieldType: ProtobufMap<ProtobufString,ProtobufString>.self, value: &questions)
     case 2: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_Mchat_Query.self, value: &query)
     default:
       handled = false
@@ -483,7 +483,7 @@ public struct Otsimo_Mchat_GroupQuestion: ProtobufGeneratedMessage {
 
   public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
     if !questions.isEmpty {
-      try visitor.visitMapField(fieldType: ProtobufMap<ProtobufInt32,ProtobufString>.self, value: questions, protoFieldNumber: 1, protoFieldName: "questions", jsonFieldName: "questions", swiftFieldName: "questions")
+      try visitor.visitMapField(fieldType: ProtobufMap<ProtobufString,ProtobufString>.self, value: questions, protoFieldNumber: 1, protoFieldName: "questions", jsonFieldName: "questions", swiftFieldName: "questions")
     }
     if !query.isEmpty {
       try visitor.visitRepeatedMessageField(value: query, protoFieldNumber: 2, protoFieldName: "query", jsonFieldName: "query", swiftFieldName: "query")

@@ -11,7 +11,7 @@ enum ResultType{
 
 message Answer{
     ResultType result = 1;
-    int32 next_question = 2;
+    string next_question = 2;
 }
 
 enum QueryType{
@@ -26,7 +26,7 @@ enum QueryType{
 message Query{
     string group = 1;
     ResultType result = 2;
-    int32 next_question = 3;    
+    string next_question = 3;
     //Actions are ORed
     repeated QueryType actions = 4;
 }
@@ -38,7 +38,7 @@ message YesNoQuestion{
 
 message GroupQuestion{
     //Keys are question ids, values are the group names
-    map<int32, string> questions = 1;
+    map<string, string> questions = 1;
     repeated Query query = 2;    
 }
 
@@ -55,7 +55,7 @@ message Question{
 message Step{
     //ID is step number
     string id = 1;
-    int32 first_question = 2;
+    string first_question = 2;
     repeated Question questions = 3;
 }
 
