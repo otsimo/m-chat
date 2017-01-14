@@ -1,92 +1,91 @@
 {
-  "id": "5",
   "firstQuestion": "1",
+  "id": "5",
   "questions": [
     {
       "id": "1",
       "text": " Does ________ make unusual finger movements near his/her eyes?",
       "yesno": {
-        "yes": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "2"
-        },
         "no": {
           "result": "PASS"
+        },
+        "yes": {
+          "nextQuestion": "2",
+          "result": "ASK_ANOTHER"
         }
       }
     },
     {
-      "id": "2",
-      "text": "Please describe these movements",
       "group": {
         "3": "pass",
         "4": "pass",
         "5": "fail",
         "6": "fail",
         "7": "fail",
-        "8": "fail",
+        "8": "fail"
       },
+      "id": "2",
       "query": [
         {
-          "group": "pass",
           "actions": [
             "ONE_OF_YES"
           ],
+          "group": "pass",
           "result": "PASS"
         },
         {
-          "group": "fail",
           "actions": [
             "ALL_OF_NO"
           ],
+          "group": "fail",
           "result": "PASS"
         },
         {
-          "group": "fail",
           "actions": [
             "ONE_OF_YES"
           ],
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "10"
+          "group": "fail",
+          "nextQuestion": "10",
+          "result": "ASK_ANOTHER"
         }
-      ]
+      ],
+      "text": "Please describe these movements"
     },
     {
       "id": "10",
       "text": "Does this happen more than twice a week?",
       "yesno": {
-        "yes": {
-          "result": "FAIL"
-        },
         "no": {
           "result": "PASS"
+        },
+        "yes": {
+          "result": "FAIL"
         }
       }
-    }
+    },
     {
-      "id" : "3",
-      "text" : "Look at hands?"
-    }
+      "id": "3",
+      "text": "Look at hands?"
+    },
     {
-      "id" : "4",
-      "text" : "Move fingers when playing peek-a-boo?"
-    }
+      "id": "4",
+      "text": "Move fingers when playing peek-a-boo?"
+    },
     {
-      "id" : "5",
-      "text" : "Wiggle his/her fingers near his/her eyes?"
-    }
+      "id": "5",
+      "text": "Wiggle his/her fingers near his/her eyes?"
+    },
     {
-      "id" : "6",
-      "text" : "Hold his/her hands up close to his/her eyes?"
-    }
+      "id": "6",
+      "text": "Hold his/her hands up close to his/her eyes?"
+    },
     {
-      "id" : "7",
-      "text" : "Hold his/her hands off to the side of his/her eyes?"
-    }
+      "id": "7",
+      "text": "Hold his/her hands off to the side of his/her eyes?"
+    },
     {
-      "id" : "8",
-      "text" : "Flap his/her hands near his/her face?"
+      "id": "8",
+      "text": "Flap his/her hands near his/her face?"
     }
-
   ]
 }

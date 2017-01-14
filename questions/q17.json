@@ -1,48 +1,48 @@
 {
-  "id": "1",
   "firstQuestion": "1",
+  "id": "1",
   "questions": [
     {
       "id": "1",
       "text": "Does __________ try to get you to watch him/her?",
       "yesno": {
-        "yes": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "2"
-        },
         "no": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "3"
+          "nextQuestion": "3",
+          "result": "ASK_ANOTHER"
+        },
+        "yes": {
+          "nextQuestion": "2",
+          "result": "ASK_ANOTHER"
         }
       }
     },
     {
-      "id": "2",
-      "text": "Please give me an example of how he/she would try to get you to watch him/her.",
       "group": {
+        "query": [
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "group": "",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "group": "",
+            "result": "FAIL"
+          }
+        ],
         "questions": {
           "4": "",
           "5": "",
           "6": "",
-          "7": "",
-        },
-        "query": [
-          {
-            "group": "",
-            "actions": [
-              "ONE_OF_YES"
-            ],
-            "result": "PASS"
-          },
-          {
-            "group": "",
-            "actions": [
-              "ALL_OF_NO"
-            ],
-            "result": "FAIL"
-          }
-        ]
-      }
+          "7": ""
+        }
+      },
+      "id": "2",
+      "text": "Please give me an example of how he/she would try to get you to watch him/her."
     },
     {
       "id": "4",

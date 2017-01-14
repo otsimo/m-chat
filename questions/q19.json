@@ -49,7 +49,7 @@
           "result": "PASS"
         },
         "no": {
-          "result": "FAIL",
+          "result": "FAIL"
         }
       }
     }

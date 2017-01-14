@@ -1,54 +1,54 @@
 {
-  "id": "1",
   "firstQuestion": "1",
+  "id": "1",
   "questions": [
     {
       "id": "1",
       "text": "Does __________ get upset by everyday noises?",
       "yesno": {
-        "yes": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "2"
-        },
         "no": {
           "result": "PASS"
+        },
+        "yes": {
+          "nextQuestion": "2",
+          "result": "ASK_ANOTHER"
         }
       }
     },
     {
-      "id": "2",
-      "text": "Does your child have a negative reaction to the sound of...",
       "group": {
+        "query": [
+          {
+            "actions": [
+              "TWO_OR_MORE_YES"
+            ],
+            "group": "",
+            "nextQuestion": "13",
+            "result": "ASK_ANOTHER"
+          },
+          {
+            "actions": [
+              "ONE_OF_YES",
+              "ALL_OF_NO"
+            ],
+            "group": "",
+            "result": "PASS"
+          }
+        ],
         "questions": {
+          "10": "",
+          "11": "",
+          "12": "",
           "4": "",
           "5": "",
           "6": "",
           "7": "",
           "8": "",
-          "9": "",
-          "10": "",
-          "11": "",
-          "12": ""
-        },
-        "query": [
-          {
-            "group": "",
-            "actions": [
-              "TWO_OR_MORE_YES"
-            ],
-            "result": "ASK_ANOTHER",
-            "nextQuestion": "13"
-          },
-          {
-            "group": "",
-            "actions": [
-              "ONE_OF_YES",
-              "ALL_OF_NO"
-            ],
-            "result": "PASS"
-          }
-        ]
-      }
+          "9": ""
+        }
+      },
+      "id": "2",
+      "text": "Does your child have a negative reaction to the sound of..."
     },
     {
       "id": "4",
@@ -73,7 +73,8 @@
     {
       "id": "9",
       "text": "Babies squealing or screeching?"
-    }, {
+    },
+    {
       "id": "10",
       "text": "Loud music?"
     },
@@ -86,33 +87,33 @@
       "text": "Noisy places such as a supermarket or restaurant?"
     },
     {
-      "id": "13",
-      "text": "How does your child react to those noises?",
       "group": {
+        "query": [
+          {
+            "actions": [
+              "MOST_OFTEN_YES"
+            ],
+            "group": "",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "MOST_OFTEN_NO"
+            ],
+            "group": "",
+            "result": "FAIL"
+          }
+        ],
         "questions": {
           "14": "pass",
           "15": "pass",
           "16": "fail",
           "17": "fail",
-          "18": "fail",
-        },
-        "query": [
-          {
-            "group": "",
-            "actions": [
-              "MOST_OFTEN_YES"
-            ],
-            "result": "PASS"
-          },
-          {
-            "group": "",
-            "actions": [
-              "MOST_OFTEN_NO"
-            ],
-            "result": "FAIL"
-          }
-        ]
-      }
+          "18": "fail"
+        }
+      },
+      "id": "13",
+      "text": "How does your child react to those noises?"
     },
     {
       "id": "14",
@@ -120,8 +121,7 @@
     },
     {
       "id": "15",
-      "text": "Tell you that he/she does not
-like the noise?"
+      "text": "Tell you that he/she does not like the noise?"
     },
     {
       "id": "16",

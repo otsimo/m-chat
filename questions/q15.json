@@ -1,25 +1,40 @@
 {
-  "id": "1",
   "firstQuestion": "1",
+  "id": "1",
   "questions": [
     {
       "id": "1",
       "text": "Does __________ try to copy what you do?",
       "yesno": {
-        "yes": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "2"
-        },
         "no": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "3"
+          "nextQuestion": "3",
+          "result": "ASK_ANOTHER"
+        },
+        "yes": {
+          "nextQuestion": "2",
+          "result": "ASK_ANOTHER"
         }
       }
     },
     {
-      "id": "2",
-      "text": "Please give me an example of something he/she would try to copy.",
       "group": {
+        "query": [
+          {
+            "actions": [
+              "TWO_OR_MORE_YES"
+            ],
+            "group": "",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ONE_OF_YES",
+              "ALL_OF_NO"
+            ],
+            "group": "",
+            "result": "FAIL"
+          }
+        ],
         "questions": {
           "4": "",
           "5": "",
@@ -27,31 +42,30 @@
           "7": "",
           "8": "",
           "9": ""
-        },
-        "query": [
-          {
-            "group": "",
-            "actions": [
-              "TWO_OR_MORE_YES"
-            ],
-            "result": "PASS"
-          },
-          {
-            "group": "",
-            "actions": [
-              "ONE_OF_YES",
-              "ALL_OF_NO"
-
-            ],
-            "result": "FAIL",
-          }
-        ]
-      }
+        }
+      },
+      "id": "2",
+      "text": "Please give me an example of something he/she would try to copy."
     },
     {
-      "id": "3",
-      "text": "",
       "group": {
+        "query": [
+          {
+            "actions": [
+              "TWO_OR_MORE_YES"
+            ],
+            "group": "",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ONE_OF_YES",
+              "ALL_OF_NO"
+            ],
+            "group": "",
+            "result": "FAIL"
+          }
+        ],
         "questions": {
           "4": "",
           "5": "",
@@ -59,26 +73,10 @@
           "7": "",
           "8": "",
           "9": ""
-        },
-        "query": [
-          {
-            "group": "",
-            "actions": [
-              "TWO_OR_MORE_YES"
-            ],
-            "result": "PASS"
-          },
-          {
-            "group": "",
-            "actions": [
-              "ONE_OF_YES",
-              "ALL_OF_NO"
-
-            ],
-            "result": "FAIL",
-          }
-        ]
-      }
+        }
+      },
+      "id": "3",
+      "text": ""
     },
     {
       "id": "4",
