@@ -25,7 +25,6 @@
         "6": "fail",
         "7": "fail",
         "8": "fail",
-        "9": "fail"
       },
       "query": [
         {
@@ -45,7 +44,7 @@
         {
           "group": "fail",
           "actions": [
-            "ALL_OF_YES"
+            "ONE_OF_YES"
           ],
           "result": "ASK_ANOTHER",
           "nextQuestion": "10"
@@ -64,5 +63,30 @@
         }
       }
     }
+    {
+      "id" : "3",
+      "text" : "Look at hands?"
+    }
+    {
+      "id" : "4",
+      "text" : "Move fingers when playing peek-a-boo?"
+    }
+    {
+      "id" : "5",
+      "text" : "Wiggle his/her fingers near his/her eyes?"
+    }
+    {
+      "id" : "6",
+      "text" : "Hold his/her hands up close to his/her eyes?"
+    }
+    {
+      "id" : "7",
+      "text" : "Hold his/her hands off to the side of his/her eyes?"
+    }
+    {
+      "id" : "8",
+      "text" : "Flap his/her hands near his/her face?"
+    }
+
   ]
 }

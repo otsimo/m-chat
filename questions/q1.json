@@ -21,24 +21,24 @@
       "text": "Please give me an example of how he/she will respond if you point at something",
       "group": {
         "questions": {
-          "4": "pass",
-          "5": "pass",
-          "6": "pass",
-          "7": "pass",
-          "8": "fail",
-          "9": "fail",
-          "10": "fail"
+          "4": "abc",
+          "5": "abc",
+          "6": "abc",
+          "7": "abc",
+          "8": "q",
+          "9": "q",
+          "10": "q"
         },
         "query": [
           {
-            "group": "pass",
+            "group": "abc",
             "actions": [
               "ALL_OF_YES"
             ],
             "result": "PASS"
           },
           {
-            "group": "fail",
+            "group": "q",
             "actions": [
               "ALL_OF_YES"
             ],
@@ -64,17 +64,17 @@
       "text": "If you point at something, what does your child typically do?",
       "group": {
         "questions": {
-          "4": "pass",
-          "5": "pass",
-          "6": "pass",
-          "7": "pass",
+          "4": "abc",
+          "5": "abc",
+          "6": "abc",
+          "7": "abc",
           "8": "fail",
           "9": "fail",
           "10": "fail"
         },
         "query": [
           {
-            "group": "pass",
+            "group": "abc",
             "actions": [
               "ALL_OF_YES"
             ],

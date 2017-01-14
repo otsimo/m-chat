@@ -8,14 +8,6 @@
 
 import Foundation
 import ResearchKit
-func generateID(stepID: String, questionID: String) -> String {
-    return stepID + ":" + questionID
-}
-func parseID(id: String) -> (String, String) {
-    print("parseID ->", id)
-    var idArray = id.components(separatedBy: ":")
-    return (idArray[0], idArray[1])
-}
 
 
 public class Pollster {
@@ -24,79 +16,46 @@ public class Pollster {
     var lastQuestionID: String = "0"
     var steps: [Otsimo_Mchat_Step]
 
+    var passNum = 0
+    var failNum = 0
+
     init(steps: [Otsimo_Mchat_Step], firstStep: String) {
         self.steps = steps
-        currentQuestionID = generateID(stepID: firstStep, questionID: (steps.first!.id))
-        let ids = parseID(id: currentQuestionID)
-        currentStepID = ids.0
+        self.currentQuestionID = generateID(stepID: firstStep, questionID: (steps.first!.id))
+        let ids = parseID(id: self.currentQuestionID)
+        self.currentStepID = ids.0
     }
 
-    func getQuestion(id: String) -> Otsimo_Mchat_Question {
-        //Log.debug("getQuestion id = \(id)")
-        let ids = parseID(id: id)
-        let stepNum = ids.0
-        let qNUm = ids.1
-
-        for s in steps {
-            if s.id == stepNum {
-                for q in s.questions {
-                    if q.id == qNUm {
-                        return q
-                    }
-                }
-            }
-        }
-        return Otsimo_Mchat_Question()
-    }
-
-
-
-
-
-    func getStepAndQuestion(id: String) -> (Otsimo_Mchat_Step, Otsimo_Mchat_Question) {
-        //Log.debug("getStepAndQuestion id = \(id)")
-        let ids = parseID(id: id)
-        let stepNum = ids.0
-        let qNum = ids.1
-
-        for s in steps {
-            if s.id == stepNum {
-                for q in s.questions {
-                    if q.id == qNum {
-                        return (s, q)
-                    }
-                }
-            }
-        }
-        return (Otsimo_Mchat_Step(), Otsimo_Mchat_Question())
-    }
 
     func handleAnswerForYesNo(answer: Bool) {
-        let ids = parseID(id: currentQuestionID)
-        let stepNum = ids.0
-        let qNum = ids.1
 
-        for s in steps {
-            if s.id == stepNum {
-                for q in s.questions {
-                    if q.id == qNum {
-                        if let yn = q.yesno {
+        let (sNum, qNum) = getStepAndQuestion(id: currentQuestionID)
 
-                            if answer {
-                                if yn.yes.result == Otsimo_Mchat_ResultType.askAnother {
-                                    currentQuestionID = generateID(stepID: stepNum, questionID: yn.yes.nextQuestion)
-                                }
-                            } else {
-                                if yn.no.result == Otsimo_Mchat_ResultType.askAnother {
-                                    currentQuestionID = generateID(stepID: stepNum, questionID: yn.no.nextQuestion)
-                                }
-                            }
+        if let yn = qNum.yesno {
 
-
-                        } else if let group = q.group {
-                            Log.debug("This is group")
-                        }
-                    }
+            if answer {
+                switch yn.yes.result {
+                case .askAnother:
+                    currentQuestionID = generateID(stepID: sNum.id, questionID: yn.yes.nextQuestion)
+                    break
+                case .pass:
+                    break
+                case .fail:
+                    break
+                default:
+                    break
+                }
+            } else {
+                switch yn.no.result {
+                case .askAnother:
+                    currentQuestionID = generateID(stepID: sNum.id, questionID: yn.yes.nextQuestion)
+                    break
+                case .pass:
+                    break
+                case .fail:
+                    break
+                default:
+                    break
                 }
             }
         }
@@ -109,45 +68,16 @@ public class Pollster {
         let parentIDs = parseID(id: resultID)
         let parentStepNum = parentIDs.0
         let parentNum = parentIDs.1
-        var parentQuestions: [String: String] = [:]
         var querys: [Otsimo_Mchat_Query] = []
 
 
-        //Firstly we get questions parent having and query
-        for s in steps {
-            if s.id == parentStepNum {
-                for q in s.questions {
-                    if q.id == parentNum {
 
-                        if let questions = q.group?.questions {
-                            for pq in questions {
-                                let qName = String(pq.key)
-                                parentQuestions[qName] = pq.value
-                            }
-                        }
-                        if let qrys = q.group?.query {
-                            for q in qrys {
-                                querys.append(q)
-                            }
-                        }
-
-
-                    }
-                }
-            }
-        }
-
-        print("Parent Question \(parentQuestions)")
-        //Secondly we get
+        let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
+        print("Parent Question \(currentQuestionID)")
 
 
         //Then Group Result
-        var questionResults: [String: Bool] = [:]
-
-        var passExampleYesNum = 0
-        var passExampleNum = 0
-        var failExampleYesNum = 0
-        var failExampleNum = 0
+        var groupAnswers: [GroupAnswer] = []
 
         if let results = Results.results {
             for result in results {
@@ -156,112 +86,110 @@ public class Pollster {
                 let qIDs = parseID(id: qID)
                 let qNum = qIDs.1
                 let answer = bqr.booleanAnswer == 1
-                questionResults[qNum] = answer
 
+                if let groupName = cc.group!.questions[qNum] {
+                    var a = GroupAnswer(id: qNum, answer: answer, groupName: groupName)
+                    groupAnswers.append(a)
 
-                if parentQuestions[qNum] == "pass"{
-                    passExampleNum += 1
-                    if answer{
-                        passExampleYesNum += 1
-                    }
-                } else if parentQuestions[qNum] == "fail"{
-                    failExampleNum += 1
-                    if answer{
-                        failExampleYesNum += 1
-                    }
+                } else {
+                    var a = GroupAnswer(id: qNum, answer: answer, groupName: "")
+                    groupAnswers.append(a)
+
                 }
+
+
             }
         }
 
-        print("question Results ** -> \(questionResults)")
 
-        var result = Otsimo_Mchat_ResultType()
-//
-//        //and then queryActions
-//        for query in querys {
-//
-//            if query.group != "pass" {
-//                //Check Pass and Fail Examples
-//                if query.actions[0] == Otsimo_Mchat_QueryType.allOfYes {
-//                    if passExampleYesNum == passExampleNum{
-//                        result = Otsimo_Mchat_ResultType.pass
-//                    }
-//
-//                } else if query.actions[0] == Otsimo_Mchat_QueryType.allOfNo {
-//                    if passExampleYesNum == passExampleNum{
-//                        result = Otsimo_Mchat_ResultType.pass
-//                    }
-//                }
-//
-//            } else if query.group != "fail" {
-//                //Check Pass and Fail Examples
-//                if query.actions[0] == Otsimo_Mchat_QueryType.allOfYes {
-//
-//                } else if query.actions[0] == Otsimo_Mchat_QueryType.allOfNo {
-//
-//                }
-//
-//            }
-//                else if query.actions[0] == Otsimo_Mchat_QueryType.allOfYes {
-//
-//            }
-//                else if query.actions[0] == Otsimo_Mchat_QueryType.allOfNo {
-//
-//            }
-//                else if query.actions[0] == Otsimo_Mchat_QueryType.mostOftenNo {
-//
-//            }
-//                else if query.actions[0] == Otsimo_Mchat_QueryType.mostOftenYes {
-//
-//            }
-//                else if query.actions[0] == Otsimo_Mchat_QueryType.oneOfYes {
-//
-//            }
-//                else if query.actions[0] == Otsimo_Mchat_QueryType.oneOfNo {
-//
-//            }
-//
-//        }
+        if let qs = cc.group?.query {
+            for q in qs {
+                if let queryResult = runQuery(query: q, answers: groupAnswers) {
 
-    }
-
-
-    func isGroup(id: String) -> Bool {
-        let ids = parseID(id: id)
-        let stepNum = ids.0
-        let qNum = ids.1
-
-        for s in steps {
-            if s.id == stepNum {
-                for q in s.questions {
-                    if q.id == qNum {
-                        if let grp = q.group {
-                            return true
-                        }
+                    switch queryResult {
+                    case .askAnother:
+                        currentQuestionID = generateID(stepID: cstep.id, questionID: q.nextQuestion)
+                        break
+                    case .pass:
+                        passNum += 1
+                        Log.debug("pass")
+                        break
+                    case .fail:
+                        failNum += 1
+                        Log.debug("fail")
+                        break
+                    default:
+                        break
                     }
                 }
             }
+
+            let cindex = steps.index(of: cstep)!
+            if cindex + 1 >= steps.count {
+                //Completed
+            }
+            let nextStep = steps[cindex + 1]
+                currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
+        }
+    }
+
+
+
+    func runQuery(query: Otsimo_Mchat_Query, answers: [GroupAnswer]) -> Otsimo_Mchat_ResultType? {
+
+        let answerofGroup = answers.filter { (ga) -> Bool in
+
+            return query.group == "" || ga.groupName == query.group
+        }
+        for action in query.actions {
+            switch action {
+            case .allOfYes:
+                if AllOfYes(groupAnswers: answerofGroup) {
+                    return query.result
+                }
+            case .allOfNo:
+                if AllOfNo(groupAnswers: answerofGroup) {
+                    return query.result
+                }
+
+            case .mostOftenNo:
+                if MostOftenYesNo(groupAnswers: answerofGroup, checkYes: false) {
+                    return query.result
+                }
+            case .mostOftenYes:
+                if MostOftenYesNo(groupAnswers: answerofGroup, checkYes: true) {
+                    return query.result
+                }
+            case .oneOfNo:
+                if oneOfNo(groupAnswers: answerofGroup) {
+                    return query.result
+                }
+            case .oneOfYes:
+                if oneOfYes(groupAnswers: answerofGroup) {
+                    return query.result
+                }
+            default:
+                break
+            }
+        }
+        return nil
+    }
+
+    func isGroup(id: String) -> Bool {
+
+        let (sNum, qNum) = getStepAndQuestion(id: id)
+        if let grp = qNum.group {
+            return true
         }
         return false
     }
     func isYesNoQuestion(id: String) -> Bool {
-        let ids = parseID(id: id)
-        let stepNum = ids.0
-        let qNum = ids.1
 
-        for s in steps {
-            if s.id == stepNum {
-                for q in s.questions {
-                    if q.id == qNum {
-                        if let yn = q.yesno {
-                            return true
-                        }
-                    }
-                }
-            }
+        let (sNum, qNum) = getStepAndQuestion(id: id)
+        if let grp = qNum.yesno {
+            return true
         }
         return false
     }
-
 
 }

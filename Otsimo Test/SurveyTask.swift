@@ -32,7 +32,6 @@ public class SurveyTask: NSObject, ORKTask {
 //        if (result.results?.isEmpty)! {
 //            return nil
 //        }
-
         if let sl = result.results, sl.count > 0 {
             print("1")
             print("***************** StepResult count -> \(sl.count)")
@@ -78,7 +77,6 @@ public class SurveyTask: NSObject, ORKTask {
 
         let q = manager.getQuestion(id: manager.currentQuestionID)
 
-
         if manager.isYesNoQuestion(id: manager.currentQuestionID) {
             Log.debug("current quesiton is yes no question")
             let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
@@ -102,11 +100,7 @@ public class SurveyTask: NSObject, ORKTask {
             print(step.formItems)
             return step
         }
-
-
-
         return nil
-
     }
 
     public func step(withIdentifier identifier: String) -> ORKStep? {
