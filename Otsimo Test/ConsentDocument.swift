@@ -19,10 +19,7 @@ public var ConsentDocument: ORKConsentDocument {
         .dataGathering,
         .privacy,
         .dataUse,
-        .timeCommitment,
         .studySurvey,
-        .studyTasks,
-        .withdrawing
     ]
     
     let consentSections: [ORKConsentSection] = consentSectionTypes.map { contentSectionType in

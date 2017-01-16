@@ -22,9 +22,14 @@
 		532A8B141E204B4500F1F6E3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B131E204B4500F1F6E3 /* Log.swift */; };
 		53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D8B1E16DC03009875B8 /* SurveyTask.swift */; };
 		53734D931E16F005009875B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53734D951E16F005009875B8 /* Localizable.strings */; };
+		538BCD1C1E2C0FDD009F56EB /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD1B1E2C0FDD009F56EB /* ResultViewController.swift */; };
+		538BCD1E1E2C27A9009F56EB /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD1D1E2C27A9009F56EB /* ResultModel.swift */; };
+		538BCD201E2CF240009F56EB /* InfoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD1F1E2CF240009F56EB /* InfoTask.swift */; };
 		53E2BF341E2A53BD008B3017 /* GroupAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2BF331E2A53BD008B3017 /* GroupAnswer.swift */; };
 		53E2BF361E2A5AE6008B3017 /* QueryActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2BF351E2A5AE6008B3017 /* QueryActions.swift */; };
-		53E2BF381E2A60FF008B3017 /* QuestionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2BF371E2A60FF008B3017 /* QuestionFunctions.swift */; };
+		53E2BF381E2A60FF008B3017 /* Pollster+QuestionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2BF371E2A60FF008B3017 /* Pollster+QuestionFunc.swift */; };
+		53E2BF3A1E2B7492008B3017 /* ReadJSONs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2BF391E2B7492008B3017 /* ReadJSONs.swift */; };
+		53E2BF3C1E2B761A008B3017 /* ViewController+TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2BF3B1E2B761A008B3017 /* ViewController+TaskDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,9 +65,14 @@
 		53734D8B1E16DC03009875B8 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		53734D941E16F005009875B8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53734D961E16F009009875B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		538BCD1B1E2C0FDD009F56EB /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		538BCD1D1E2C27A9009F56EB /* ResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		538BCD1F1E2CF240009F56EB /* InfoTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTask.swift; sourceTree = "<group>"; };
 		53E2BF331E2A53BD008B3017 /* GroupAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAnswer.swift; sourceTree = "<group>"; };
 		53E2BF351E2A5AE6008B3017 /* QueryActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryActions.swift; sourceTree = "<group>"; };
-		53E2BF371E2A60FF008B3017 /* QuestionFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFunctions.swift; sourceTree = "<group>"; };
+		53E2BF371E2A60FF008B3017 /* Pollster+QuestionFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pollster+QuestionFunc.swift"; sourceTree = "<group>"; };
+		53E2BF391E2B7492008B3017 /* ReadJSONs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadJSONs.swift; sourceTree = "<group>"; };
+		53E2BF3B1E2B761A008B3017 /* ViewController+TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+TaskDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +113,9 @@
 				53187F4B1E152DE300484994 /* AppDelegate.swift */,
 				532A8B161E204B7000F1F6E3 /* Survey */,
 				532A8B151E204B5200F1F6E3 /* Consent */,
-				53187F4D1E152DE300484994 /* ViewController.swift */,
+				53E2BF3D1E2B7691008B3017 /* Controller */,
+				538BCD211E2CF24F009F56EB /* InfoTask */,
+				538BCD1D1E2C27A9009F56EB /* ResultModel.swift */,
 				532A8B131E204B4500F1F6E3 /* Log.swift */,
 				53187F4F1E152DE300484994 /* Main.storyboard */,
 				53187F521E152DE300484994 /* Assets.xcassets */,
@@ -126,13 +138,32 @@
 		532A8B161E204B7000F1F6E3 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				53E2BF371E2A60FF008B3017 /* QuestionFunctions.swift */,
 				53734D8B1E16DC03009875B8 /* SurveyTask.swift */,
 				532A8B101E20423800F1F6E3 /* Pollster.swift */,
+				53E2BF371E2A60FF008B3017 /* Pollster+QuestionFunc.swift */,
+				53E2BF391E2B7492008B3017 /* ReadJSONs.swift */,
 				53E2BF351E2A5AE6008B3017 /* QueryActions.swift */,
 				53E2BF331E2A53BD008B3017 /* GroupAnswer.swift */,
 			);
 			name = Survey;
+			sourceTree = "<group>";
+		};
+		538BCD211E2CF24F009F56EB /* InfoTask */ = {
+			isa = PBXGroup;
+			children = (
+				538BCD1F1E2CF240009F56EB /* InfoTask.swift */,
+			);
+			name = InfoTask;
+			sourceTree = "<group>";
+		};
+		53E2BF3D1E2B7691008B3017 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				53187F4D1E152DE300484994 /* ViewController.swift */,
+				53E2BF3B1E2B761A008B3017 /* ViewController+TaskDelegate.swift */,
+				538BCD1B1E2C0FDD009F56EB /* ResultViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,17 +305,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E2BF3C1E2B761A008B3017 /* ViewController+TaskDelegate.swift in Sources */,
 				53E2BF361E2A5AE6008B3017 /* QueryActions.swift in Sources */,
 				53187F4E1E152DE300484994 /* ViewController.swift in Sources */,
 				532A8B141E204B4500F1F6E3 /* Log.swift in Sources */,
+				53E2BF3A1E2B7492008B3017 /* ReadJSONs.swift in Sources */,
 				532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */,
 				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
 				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
+				538BCD201E2CF240009F56EB /* InfoTask.swift in Sources */,
+				538BCD1E1E2C27A9009F56EB /* ResultModel.swift in Sources */,
 				531883541E15371C00484994 /* ConsentDocument.swift in Sources */,
+				538BCD1C1E2C0FDD009F56EB /* ResultViewController.swift in Sources */,
 				532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */,
 				53E2BF341E2A53BD008B3017 /* GroupAnswer.swift in Sources */,
 				53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */,
-				53E2BF381E2A60FF008B3017 /* QuestionFunctions.swift in Sources */,
+				53E2BF381E2A60FF008B3017 /* Pollster+QuestionFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

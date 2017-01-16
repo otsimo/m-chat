@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+
+class Result {
+    var id : String
+    var answer : NSNumber
+    init(id : String , answer : NSNumber ) {
+        self.id = id
+        self.answer = answer
+    }
+}

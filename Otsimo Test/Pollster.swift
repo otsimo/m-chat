@@ -9,38 +9,43 @@
 import Foundation
 import ResearchKit
 
-
 public class Pollster {
     var currentQuestionID: String
-    var currentStepID: String
-    var lastQuestionID: String = "0"
+    var lastQuestionID: String = "0:0"
     var steps: [Otsimo_Mchat_Step]
+    var stepNum = 1
+
 
     var passNum = 0
     var failNum = 0
 
-    init(steps: [Otsimo_Mchat_Step], firstStep: String) {
+    init(firstStep: String) {
+        let steps = readSteps()
         self.steps = steps
         self.currentQuestionID = generateID(stepID: firstStep, questionID: (steps.first!.id))
-        let ids = parseID(id: self.currentQuestionID)
-        self.currentStepID = ids.0
     }
 
 
     func handleAnswerForYesNo(answer: Bool) {
 
-        let (sNum, qNum) = getStepAndQuestion(id: currentQuestionID)
+        let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
 
-        if let yn = qNum.yesno {
+        if let yn = cc.yesno {
 
             if answer {
                 switch yn.yes.result {
                 case .askAnother:
-                    currentQuestionID = generateID(stepID: sNum.id, questionID: yn.yes.nextQuestion)
-                    break
+                    currentQuestionID = generateID(stepID: cstep.id, questionID: yn.yes.nextQuestion)
+                    return
                 case .pass:
+                    passNum += 1
+                    stepNum += 1
+                    Log.debug("*pass")
                     break
                 case .fail:
+                    failNum += 1
+                    stepNum += 1
+                    Log.debug("*fail")
                     break
                 default:
                     break
@@ -48,29 +53,37 @@ public class Pollster {
             } else {
                 switch yn.no.result {
                 case .askAnother:
-                    currentQuestionID = generateID(stepID: sNum.id, questionID: yn.yes.nextQuestion)
-                    break
+                    currentQuestionID = generateID(stepID: cstep.id, questionID: yn.no.nextQuestion)
+                    return
                 case .pass:
+                    passNum += 1
+                    stepNum += 1
+                    Log.debug("*pass")
                     break
                 case .fail:
+                    failNum += 1
+                    stepNum += 1
+                    Log.debug("*fail")
                     break
                 default:
                     break
                 }
             }
         }
+        let cindex = steps.index(of: cstep)!
+        if cindex + 1 >= steps.count {
+            //Completed
+            print("Completed")
+            currentQuestionID = "sum"
+            return
+        }
+        let nextStep = steps[cindex + 1]
+        currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
+
     }
 
     func handleAnswerForGroupQuestion(Results: ORKStepResult) {
         Log.debug("handleAnswerForGroupQuestion \(Results)")
-
-        let resultID = Results.identifier
-        let parentIDs = parseID(id: resultID)
-        let parentStepNum = parentIDs.0
-        let parentNum = parentIDs.1
-        var querys: [Otsimo_Mchat_Query] = []
-
-
 
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
         print("Parent Question \(currentQuestionID)")
@@ -88,11 +101,11 @@ public class Pollster {
                 let answer = bqr.booleanAnswer == 1
 
                 if let groupName = cc.group!.questions[qNum] {
-                    var a = GroupAnswer(id: qNum, answer: answer, groupName: groupName)
+                    let a = GroupAnswer(id: qNum, answer: answer, groupName: groupName)
                     groupAnswers.append(a)
 
                 } else {
-                    var a = GroupAnswer(id: qNum, answer: answer, groupName: "")
+                    let a = GroupAnswer(id: qNum, answer: answer, groupName: "")
                     groupAnswers.append(a)
 
                 }
@@ -109,14 +122,16 @@ public class Pollster {
                     switch queryResult {
                     case .askAnother:
                         currentQuestionID = generateID(stepID: cstep.id, questionID: q.nextQuestion)
-                        break
+                        return
                     case .pass:
                         passNum += 1
-                        Log.debug("pass")
+                        stepNum += 1
+                        Log.debug("*pass")
                         break
                     case .fail:
                         failNum += 1
-                        Log.debug("fail")
+                        stepNum += 1
+                        Log.debug("*fail")
                         break
                     default:
                         break
@@ -127,13 +142,14 @@ public class Pollster {
             let cindex = steps.index(of: cstep)!
             if cindex + 1 >= steps.count {
                 //Completed
+                print("Completed")
+                currentQuestionID = "sum"
+                return
             }
             let nextStep = steps[cindex + 1]
-                currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
+            currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
         }
     }
-
-
 
     func runQuery(query: Otsimo_Mchat_Query, answers: [GroupAnswer]) -> Otsimo_Mchat_ResultType? {
 
@@ -169,7 +185,7 @@ public class Pollster {
                     return query.result
                 }
             case .twoOrMoreYes:
-                if twoOrMoreYes(groupAnswers: answerofGroup){
+                if twoOrMoreYes(groupAnswers: answerofGroup) {
                     return query.result
                 }
             default:
@@ -181,16 +197,16 @@ public class Pollster {
 
     func isGroup(id: String) -> Bool {
 
-        let (sNum, qNum) = getStepAndQuestion(id: id)
-        if let grp = qNum.group {
+        let (_, qNum) = getStepAndQuestion(id: id)
+        if qNum.group != nil {
             return true
         }
         return false
     }
     func isYesNoQuestion(id: String) -> Bool {
 
-        let (sNum, qNum) = getStepAndQuestion(id: id)
-        if let grp = qNum.yesno {
+        let (_, qNum) = getStepAndQuestion(id: id)
+        if qNum.yesno != nil {
             return true
         }
         return false
