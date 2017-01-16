@@ -1,0 +1,29 @@
+syntax = "proto3";
+package otsimo;
+option go_package = "mchatpb";
+
+message QuestionResult{
+    string id = 1;
+    bool answer = 2;
+}
+
+message Result{
+	string age = 1;
+	string relation = 2
+	DeviceInfo device = 3;
+	Int64 duration = 4;
+	repeated QuestionResult stepResults = 5;
+}
+
+message DeviceInfo{
+    string vendorId = 1;
+    string bundleIdentifier = 3;
+    string bundleVersion = 4;
+    string bundleShortVersion = 5;
+    string deviceType = 6;
+    string deviceName = 7;
+    string osName = 8;
+    string systemVersion = 9;
+    string languageCode = 10;
+    string countryCode = 11;
+}

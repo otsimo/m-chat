@@ -1,0 +1,29 @@
+syntax = "proto3";
+package mchat;
+option go_package = "mchatpb";
+
+message QuestionResult{
+    string id = 1;
+    bool answer = 2;
+}
+
+message Result{
+	string age = 1;
+	string relation = 2;
+	DeviceInfo device = 3;
+	int64 duration = 4;
+	repeated QuestionResult stepResults = 5;
+}
+
+message DeviceInfo{
+    string vendorId = 1;
+    string bundleIdentifier = 2;
+    string bundleVersion = 3;
+    string bundleShortVersion = 4;
+    string deviceType = 5;
+    string deviceName = 6;
+    string osName = 7;
+    string systemVersion = 8;
+    string languageCode = 9;
+    string countryCode = 10;
+}

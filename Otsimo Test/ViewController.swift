@@ -19,68 +19,33 @@ class ViewController: UIViewController {
 
     var isRun = 0
     var taskResult: ORKTaskResult?
+
     override func viewDidAppear(_ animated: Bool) {
         Log.debug("ViewController : viewDidAppear")
-        
+        let anlyse = Analyse()
         if isRun == 0 {
             Log.debug("isRun 0")
-             present(consentTaskVC, animated: true, completion: nil)
+            present(consentTaskVC, animated: true, completion: nil)
             isRun = 1
-        }else if isRun == 1{
+        } else if isRun == 1 {
             Log.debug("isRun 1")
-           present(infoTaskVC, animated: true, completion: nil)
+            present(infoTaskVC, animated: true, completion: nil)
             isRun = 2
-        }else if isRun == 2{
+        } else if isRun == 2 {
             Log.debug("isRun 2")
+            if let t = taskResult{
+                anlyse.AnalyseInfoResult(infoResult: t)
+            }
             present(taskViewContoller, animated: true, completion: nil)
             isRun = 3
-        }
-        
-
-//        if let tr = taskResult {
-//            print("taskResult ---->", tr)
-//            AnalyseResult(taskResult: tr)
-//        }
-
-
-       
-
-
-    }
-
-
-
-    func AnalyseResult(taskResult: ORKTaskResult) {
-        var EndResult: [Result] = []
-        if let taskResults = taskResult.results {
-            print("1")
-            for results in taskResults {
-                print("2")
-
-                let sresults = results as! ORKStepResult
-                print("3")
-
-                if let stepResult = sresults.results {
-                    print("4")
-
-                    for sr in stepResult {
-                        print("5")
-
-                        let br = sr as! ORKBooleanQuestionResult
-                        print(br)
-                        if let a = br.booleanAnswer {
-                            let r = Result(id: br.identifier, answer: a)
-                            EndResult.append(r)
-
-                        }
-                    }
-                }
+        } else if isRun == 3 {
+            if let t = taskResult{
+                anlyse.AnalyseTask(taskResult: t)
             }
         }
-        for r in EndResult {
-            print(r.id, r.answer)
-        }
     }
+
+    
 
     override func viewWillAppear(_ animated: Bool) {
         Log.debug("ViewController : viewWillAppear")
@@ -100,19 +65,19 @@ class ViewController: UIViewController {
         return taskViewController
     }()
 
-    lazy var consentTaskVC : ORKTaskViewController = {
+    lazy var consentTaskVC: ORKTaskViewController = {
         let consentTaskVC = ORKTaskViewController(task: ConsentTask, taskRun: nil)
         consentTaskVC.delegate = self
         return consentTaskVC
     }()
-    
-    lazy var infoTaskVC : ORKTaskViewController = {
+
+    lazy var infoTaskVC: ORKTaskViewController = {
         let infoTaskVC = ORKTaskViewController(task: InfoTask, taskRun: nil)
         infoTaskVC.delegate = self
         return infoTaskVC
     }()
-    
-    
+
+
     override func viewDidLoad() {
         print("*")
         super.viewDidLoad()
