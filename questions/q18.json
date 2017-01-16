@@ -1,59 +1,58 @@
 {
-  "id": "1",
   "firstQuestion": "1",
+  "id": "1",
   "questions": [
     {
       "id": "1",
       "text": "when you are dressed to go out and you tell him/her to get his/her shoes, does he/she understand?",
       "yesno": {
-        "yes": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "2"
-        },
         "no": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "3"
+          "nextQuestion": "3",
+          "result": "ASK_ANOTHER"
+        },
+        "yes": {
+          "nextQuestion": "2",
+          "result": "ASK_ANOTHER"
         }
       }
     },
     {
-      "id": "2",
-      "text": "",
       "group": {
+        "query": [
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "group": "abc",
+            "result": "FAIL"
+          },
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "group": "q",
+            "result": "PASS"
+          }
+        ],
         "questions": {
           "4": "",
           "5": "",
           "6": ""
-          
-        },
-        "query": [
-          {
-            "group": "abc",
-            "actions": [
-              "ALL_OF_NO"
-            ],
-            "result": "FAIL"
-          },
-          {
-            "group": "q",
-            "actions": [
-              "ONE_OF_YES"
-            ],
-            "result": "PASS"
-          }
-        ]
-      }
+        }
+      },
+      "id": "2",
+      "text": ""
     },
     {
       "id": "3",
       "text": "If you point at something, what does your child typically do?",
       "yesno": {
-        "yes": {
-          "result": "ASK_ANOTHER",
-          "nextQuestion": "2"
-        },
         "no": {
           "result": "FAIL"
+        },
+        "yes": {
+          "nextQuestion": "2",
+          "result": "ASK_ANOTHER"
         }
       }
     },
