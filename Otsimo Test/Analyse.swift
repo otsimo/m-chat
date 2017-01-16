@@ -15,11 +15,11 @@ class Analyse {
     var Results = Mchat_Result()
     
     
-    func AnalyseTask(taskResult: ORKTaskResult){
+    func AnalyseTask(result: ORKTaskResult){
         Log.debug("Analyse : AnalyseTask")
         
         var taskResults: [Mchat_QuestionResult] = []
-        if let tskResult = taskResult.results {
+        if let tskResult = result.results {
             print("1")
             for results in tskResult {
                 print("2")
@@ -48,7 +48,7 @@ class Analyse {
                 }
             }
         }
-        self.Results.stepResults = taskResults
+        self.Results.stepResults += taskResults
         print("ENDRESULT----->", self.Results)
     }
     func AnalyseInfoResult(infoResult: ORKTaskResult){
@@ -64,20 +64,46 @@ class Analyse {
                         print("4")
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         print("--- ",r)
-                        print(r.)
-                        //self.Results.relation = r.answer as! String
+                        
+                        if let answers = r.choiceAnswers{
+                            print(answers[0])
+                            var a = ""
+                            switch answers[0] as! Int {
+                            case 1:
+                                a = "Parent"
+                            case 2:
+                                a = "GrandParent"
+                            case 3:
+                                a = "Guardion"
+                            case 4:
+                                a = "Educator"
+                            case 5:
+                                a = "Healt care provider"
+                            case 6:
+                                a = "other"
+                            default:
+                                break
+                            }
+                            self.Results.relation = a
+                        }
                     }
                     print("5")
                     if sresults.identifier == "age" {
                         let r = stepResult[0] as! ORKNumericQuestionResult
                         print("--- ",r)
-                        self.Results.age = r.answer as! String
+                        
+                        if let answer = r.numericAnswer{
+                            print(answer)
+                            self.Results.age = String(answer.int64Value)
+                        }
+                        
+                        
                     }
                     
                 }
             }
         }
-
+        print("1 ENDRESULT----->", self.Results)
     }
 
     

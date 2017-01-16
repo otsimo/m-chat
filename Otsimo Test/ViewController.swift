@@ -33,6 +33,7 @@ class ViewController: UIViewController {
             isRun = 2
         } else if isRun == 2 {
             Log.debug("isRun 2")
+            print(taskResult)
             if let t = taskResult{
                 anlyse.AnalyseInfoResult(infoResult: t)
             }
@@ -40,8 +41,10 @@ class ViewController: UIViewController {
             isRun = 3
         } else if isRun == 3 {
             if let t = taskResult{
-                anlyse.AnalyseTask(taskResult: t)
+                anlyse.AnalyseTask(result: t)
             }
+            
+            print("LASTTT", anlyse.Results)
         }
     }
 
