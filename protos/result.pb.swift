@@ -10,10 +10,10 @@ import Foundation
 import SwiftProtobuf
 
 
-public struct Mchat_QuestionResult: ProtobufGeneratedMessage {
-  public var swiftClassName: String {return "Mchat_QuestionResult"}
+public struct Otsimo_QuestionResult: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_QuestionResult"}
   public var protoMessageName: String {return "QuestionResult"}
-  public var protoPackageName: String {return "mchat"}
+  public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
     "id": 1,
     "answer": 2,
@@ -60,17 +60,74 @@ public struct Mchat_QuestionResult: ProtobufGeneratedMessage {
     }
   }
 
-  public func _protoc_generated_isEqualTo(other: Mchat_QuestionResult) -> Bool {
+  public func _protoc_generated_isEqualTo(other: Otsimo_QuestionResult) -> Bool {
     if id != other.id {return false}
     if answer != other.answer {return false}
     return true
   }
 }
 
-public struct Mchat_Result: ProtobufGeneratedMessage {
-  public var swiftClassName: String {return "Mchat_Result"}
+public struct Otsimo_StepResult: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_StepResult"}
+  public var protoMessageName: String {return "StepResult"}
+  public var protoPackageName: String {return "otsimo"}
+  public var jsonFieldNames: [String: Int] {return [
+    "id": 2,
+    "stepResult": 1,
+  ]}
+  public var protoFieldNames: [String: Int] {return [
+    "id": 2,
+    "stepResult": 1,
+  ]}
+
+  public var id: String = ""
+
+  public var stepResult: [Otsimo_QuestionResult] = []
+
+  public init() {}
+
+  public init(id: String? = nil,
+    stepResult: [Otsimo_QuestionResult] = [])
+  {
+    if let v = id {
+      self.id = v
+    }
+    if !stepResult.isEmpty {
+      self.stepResult = stepResult
+    }
+  }
+
+  public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
+    let handled: Bool
+    switch protoFieldNumber {
+    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &id)
+    case 1: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_QuestionResult.self, value: &stepResult)
+    default:
+      handled = false
+    }
+    return handled
+  }
+
+  public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
+    if !stepResult.isEmpty {
+      try visitor.visitRepeatedMessageField(value: stepResult, protoFieldNumber: 1, protoFieldName: "stepResult", jsonFieldName: "stepResult", swiftFieldName: "stepResult")
+    }
+    if id != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: id, protoFieldNumber: 2, protoFieldName: "id", jsonFieldName: "id", swiftFieldName: "id")
+    }
+  }
+
+  public func _protoc_generated_isEqualTo(other: Otsimo_StepResult) -> Bool {
+    if id != other.id {return false}
+    if stepResult != other.stepResult {return false}
+    return true
+  }
+}
+
+public struct Otsimo_Result: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_Result"}
   public var protoMessageName: String {return "Result"}
-  public var protoPackageName: String {return "mchat"}
+  public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
     "age": 1,
     "relation": 2,
@@ -87,12 +144,12 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
   ]}
 
   private class _StorageClass {
-    typealias ProtobufExtendedMessage = Mchat_Result
+    typealias ProtobufExtendedMessage = Otsimo_Result
     var _age: String = ""
     var _relation: String = ""
-    var _device: Mchat_DeviceInfo? = nil
+    var _device: Otsimo_DeviceInfo? = nil
     var _duration: Int64 = 0
-    var _stepResults: [Mchat_QuestionResult] = []
+    var _stepResults: [Otsimo_StepResult] = []
 
     init() {}
 
@@ -101,9 +158,9 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
       switch protoFieldNumber {
       case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_age)
       case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_relation)
-      case 3: handled = try setter.decodeSingularMessageField(fieldType: Mchat_DeviceInfo.self, value: &_device)
+      case 3: handled = try setter.decodeSingularMessageField(fieldType: Otsimo_DeviceInfo.self, value: &_device)
       case 4: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &_duration)
-      case 5: handled = try setter.decodeRepeatedMessageField(fieldType: Mchat_QuestionResult.self, value: &_stepResults)
+      case 5: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
       default:
         handled = false
       }
@@ -160,8 +217,8 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
     set {_uniqueStorage()._relation = newValue}
   }
 
-  public var device: Mchat_DeviceInfo {
-    get {return _storage._device ?? Mchat_DeviceInfo()}
+  public var device: Otsimo_DeviceInfo {
+    get {return _storage._device ?? Otsimo_DeviceInfo()}
     set {_uniqueStorage()._device = newValue}
   }
 
@@ -170,7 +227,7 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
     set {_uniqueStorage()._duration = newValue}
   }
 
-  public var stepResults: [Mchat_QuestionResult] {
+  public var stepResults: [Otsimo_StepResult] {
     get {return _storage._stepResults}
     set {_uniqueStorage()._stepResults = newValue}
   }
@@ -179,9 +236,9 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
 
   public init(age: String? = nil,
     relation: String? = nil,
-    device: Mchat_DeviceInfo? = nil,
+    device: Otsimo_DeviceInfo? = nil,
     duration: Int64? = nil,
-    stepResults: [Mchat_QuestionResult] = [])
+    stepResults: [Otsimo_StepResult] = [])
   {
     let storage = _uniqueStorage()
     if let v = age {
@@ -207,7 +264,7 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
     try _storage.traverse(visitor: &visitor)
   }
 
-  public func _protoc_generated_isEqualTo(other: Mchat_Result) -> Bool {
+  public func _protoc_generated_isEqualTo(other: Otsimo_Result) -> Bool {
     return _storage === other._storage || _storage.isEqualTo(other: other._storage)
   }
 
@@ -219,33 +276,33 @@ public struct Mchat_Result: ProtobufGeneratedMessage {
   }
 }
 
-public struct Mchat_DeviceInfo: ProtobufGeneratedMessage {
-  public var swiftClassName: String {return "Mchat_DeviceInfo"}
+public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_DeviceInfo"}
   public var protoMessageName: String {return "DeviceInfo"}
-  public var protoPackageName: String {return "mchat"}
+  public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
     "vendorId": 1,
-    "bundleIdentifier": 2,
-    "bundleVersion": 3,
-    "bundleShortVersion": 4,
-    "deviceType": 5,
-    "deviceName": 6,
-    "osName": 7,
-    "systemVersion": 8,
-    "languageCode": 9,
-    "countryCode": 10,
+    "bundleIdentifier": 3,
+    "bundleVersion": 4,
+    "bundleShortVersion": 5,
+    "deviceType": 6,
+    "deviceName": 7,
+    "osName": 8,
+    "systemVersion": 9,
+    "languageCode": 10,
+    "countryCode": 11,
   ]}
   public var protoFieldNames: [String: Int] {return [
     "vendorId": 1,
-    "bundleIdentifier": 2,
-    "bundleVersion": 3,
-    "bundleShortVersion": 4,
-    "deviceType": 5,
-    "deviceName": 6,
-    "osName": 7,
-    "systemVersion": 8,
-    "languageCode": 9,
-    "countryCode": 10,
+    "bundleIdentifier": 3,
+    "bundleVersion": 4,
+    "bundleShortVersion": 5,
+    "deviceType": 6,
+    "deviceName": 7,
+    "osName": 8,
+    "systemVersion": 9,
+    "languageCode": 10,
+    "countryCode": 11,
   ]}
 
   public var vendorId: String = ""
@@ -317,15 +374,15 @@ public struct Mchat_DeviceInfo: ProtobufGeneratedMessage {
     let handled: Bool
     switch protoFieldNumber {
     case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &vendorId)
-    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &bundleIdentifier)
-    case 3: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &bundleVersion)
-    case 4: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &bundleShortVersion)
-    case 5: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &deviceType)
-    case 6: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &deviceName)
-    case 7: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &osName)
-    case 8: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &systemVersion)
-    case 9: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &languageCode)
-    case 10: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &countryCode)
+    case 3: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &bundleIdentifier)
+    case 4: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &bundleVersion)
+    case 5: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &bundleShortVersion)
+    case 6: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &deviceType)
+    case 7: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &deviceName)
+    case 8: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &osName)
+    case 9: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &systemVersion)
+    case 10: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &languageCode)
+    case 11: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &countryCode)
     default:
       handled = false
     }
@@ -337,35 +394,35 @@ public struct Mchat_DeviceInfo: ProtobufGeneratedMessage {
       try visitor.visitSingularField(fieldType: ProtobufString.self, value: vendorId, protoFieldNumber: 1, protoFieldName: "vendorId", jsonFieldName: "vendorId", swiftFieldName: "vendorId")
     }
     if bundleIdentifier != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: bundleIdentifier, protoFieldNumber: 2, protoFieldName: "bundleIdentifier", jsonFieldName: "bundleIdentifier", swiftFieldName: "bundleIdentifier")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: bundleIdentifier, protoFieldNumber: 3, protoFieldName: "bundleIdentifier", jsonFieldName: "bundleIdentifier", swiftFieldName: "bundleIdentifier")
     }
     if bundleVersion != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: bundleVersion, protoFieldNumber: 3, protoFieldName: "bundleVersion", jsonFieldName: "bundleVersion", swiftFieldName: "bundleVersion")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: bundleVersion, protoFieldNumber: 4, protoFieldName: "bundleVersion", jsonFieldName: "bundleVersion", swiftFieldName: "bundleVersion")
     }
     if bundleShortVersion != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: bundleShortVersion, protoFieldNumber: 4, protoFieldName: "bundleShortVersion", jsonFieldName: "bundleShortVersion", swiftFieldName: "bundleShortVersion")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: bundleShortVersion, protoFieldNumber: 5, protoFieldName: "bundleShortVersion", jsonFieldName: "bundleShortVersion", swiftFieldName: "bundleShortVersion")
     }
     if deviceType != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: deviceType, protoFieldNumber: 5, protoFieldName: "deviceType", jsonFieldName: "deviceType", swiftFieldName: "deviceType")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: deviceType, protoFieldNumber: 6, protoFieldName: "deviceType", jsonFieldName: "deviceType", swiftFieldName: "deviceType")
     }
     if deviceName != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: deviceName, protoFieldNumber: 6, protoFieldName: "deviceName", jsonFieldName: "deviceName", swiftFieldName: "deviceName")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: deviceName, protoFieldNumber: 7, protoFieldName: "deviceName", jsonFieldName: "deviceName", swiftFieldName: "deviceName")
     }
     if osName != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: osName, protoFieldNumber: 7, protoFieldName: "osName", jsonFieldName: "osName", swiftFieldName: "osName")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: osName, protoFieldNumber: 8, protoFieldName: "osName", jsonFieldName: "osName", swiftFieldName: "osName")
     }
     if systemVersion != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: systemVersion, protoFieldNumber: 8, protoFieldName: "systemVersion", jsonFieldName: "systemVersion", swiftFieldName: "systemVersion")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: systemVersion, protoFieldNumber: 9, protoFieldName: "systemVersion", jsonFieldName: "systemVersion", swiftFieldName: "systemVersion")
     }
     if languageCode != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: languageCode, protoFieldNumber: 9, protoFieldName: "languageCode", jsonFieldName: "languageCode", swiftFieldName: "languageCode")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: languageCode, protoFieldNumber: 10, protoFieldName: "languageCode", jsonFieldName: "languageCode", swiftFieldName: "languageCode")
     }
     if countryCode != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: countryCode, protoFieldNumber: 10, protoFieldName: "countryCode", jsonFieldName: "countryCode", swiftFieldName: "countryCode")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: countryCode, protoFieldNumber: 11, protoFieldName: "countryCode", jsonFieldName: "countryCode", swiftFieldName: "countryCode")
     }
   }
 
-  public func _protoc_generated_isEqualTo(other: Mchat_DeviceInfo) -> Bool {
+  public func _protoc_generated_isEqualTo(other: Otsimo_DeviceInfo) -> Bool {
     if vendorId != other.vendorId {return false}
     if bundleIdentifier != other.bundleIdentifier {return false}
     if bundleVersion != other.bundleVersion {return false}

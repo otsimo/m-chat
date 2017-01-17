@@ -8,65 +8,83 @@
 
 import Foundation
 import ResearchKit
+import SwiftProtobuf
 
+var AnalysedResults = Otsimo_Result()
 
 class Analyse {
-    
-    var Results = Mchat_Result()
-    
-    
-    func AnalyseTask(result: ORKTaskResult){
+
+
+    var beforeID = "0:0"
+
+    func AnalyseTask(result: ORKTaskResult) {
         Log.debug("Analyse : AnalyseTask")
-        
-        var taskResults: [Mchat_QuestionResult] = []
+
+        var taskResults: [Otsimo_StepResult] = []
         if let tskResult = result.results {
-            print("1")
             for results in tskResult {
-                print("2")
+
+                var sResult = Otsimo_StepResult()
+                var qResults: [Otsimo_QuestionResult] = []
 
                 let sresults = results as! ORKStepResult
                 if let stepResult = sresults.results {
-                    print("3")
+
 
                     for r in stepResult {
-                        print("4")
 
-                        var qResult = Mchat_QuestionResult()
+                        var qResult = Otsimo_QuestionResult()
                         let br = r as! ORKBooleanQuestionResult
                         qResult.id = br.identifier
                         if let a = br.booleanAnswer {
-                            print("5")
-
                             if a == 1 {
                                 qResult.answer = true
                             } else if a == 0 {
                                 qResult.answer = false
                             }
-                            taskResults.append(qResult)
+                            qResults.append(qResult)
                         }
+
+
+                    }
+
+                }
+
+                sResult.stepResult = qResults
+
+                if results.identifier != "SummaryStep" {
+                    let id = parseID(id: results.identifier).0
+                    let bid = parseID(id: beforeID).0
+
+                    if id == bid {
+                        print("2", "results.identifier=", results.identifier, " beforeID=", beforeID)
+                        sResult.id = id
+                        sResult.stepResult = qResults + taskResults.last!.stepResult
                     }
                 }
+                taskResults.append(sResult)
+                beforeID = results.identifier
             }
         }
-        self.Results.stepResults += taskResults
-        print("ENDRESULT----->", self.Results)
+        AnalysedResults.stepResults = taskResults
+
+        do {
+            print("ENDRESULT----->", try AnalysedResults.serializeJSON())
+        } catch let e {
+            Log.error(e as! String)
+        }
+
+
     }
-    func AnalyseInfoResult(infoResult: ORKTaskResult){
+    func AnalyseInfoResult(infoResult: ORKTaskResult) {
         Log.debug("Analyse : AnalyseInfoResult")
         if let iResults = infoResult.results {
-            print("1")
             for results in iResults {
-                print("2")
                 let sresults = results as! ORKStepResult
                 if let stepResult = sresults.results {
-                    print("3")
                     if sresults.identifier == "relation" {
-                        print("4")
                         let r = stepResult[0] as! ORKChoiceQuestionResult
-                        print("--- ",r)
-                        
-                        if let answers = r.choiceAnswers{
-                            print(answers[0])
+                        if let answers = r.choiceAnswers {
                             var a = ""
                             switch answers[0] as! Int {
                             case 1:
@@ -84,27 +102,23 @@ class Analyse {
                             default:
                                 break
                             }
-                            self.Results.relation = a
+                            AnalysedResults.relation = a
                         }
                     }
-                    print("5")
                     if sresults.identifier == "age" {
                         let r = stepResult[0] as! ORKNumericQuestionResult
-                        print("--- ",r)
-                        
-                        if let answer = r.numericAnswer{
+                        if let answer = r.numericAnswer {
                             print(answer)
-                            self.Results.age = String(answer.int64Value)
+                            AnalysedResults.age = String(answer.int64Value)
                         }
-                        
-                        
+
+
                     }
-                    
+
                 }
             }
         }
-        print("1 ENDRESULT----->", self.Results)
     }
 
-    
+
 }

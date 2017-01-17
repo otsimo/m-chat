@@ -1,5 +1,5 @@
 syntax = "proto3";
-package mchat;
+package otsimo;
 option go_package = "mchatpb";
 
 message QuestionResult{
@@ -7,23 +7,29 @@ message QuestionResult{
     bool answer = 2;
 }
 
+message StepResult{
+    string id = 2;
+	repeated QuestionResult stepResult = 1;
+}
+
+
 message Result{
 	string age = 1;
 	string relation = 2;
 	DeviceInfo device = 3;
 	int64 duration = 4;
-	repeated QuestionResult stepResults = 5;
+	repeated StepResult stepResults = 5;
 }
 
 message DeviceInfo{
     string vendorId = 1;
-    string bundleIdentifier = 2;
-    string bundleVersion = 3;
-    string bundleShortVersion = 4;
-    string deviceType = 5;
-    string deviceName = 6;
-    string osName = 7;
-    string systemVersion = 8;
-    string languageCode = 9;
-    string countryCode = 10;
+    string bundleIdentifier = 3;
+    string bundleVersion = 4;
+    string bundleShortVersion = 5;
+    string deviceType = 6;
+    string deviceName = 7;
+    string osName = 8;
+    string systemVersion = 9;
+    string languageCode = 10;
+    string countryCode = 11;
 }

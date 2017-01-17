@@ -106,6 +106,12 @@ public class SurveyTask: NSObject, ORKTask {
     }
     
     
+    public func progress(ofCurrentStep step: ORKStep, with result: ORKTaskResult) -> ORKTaskProgress {
+        
+        var progress = ORKTaskProgressMake(1, 20)
+        
+        return progress
+    }
 
     ////
 

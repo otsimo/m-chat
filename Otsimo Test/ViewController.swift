@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     var taskResult: ORKTaskResult?
 
     override func viewDidAppear(_ animated: Bool) {
+        
+        
         Log.debug("ViewController : viewDidAppear")
         let anlyse = Analyse()
         if isRun == 0 {
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
                 anlyse.AnalyseTask(result: t)
             }
             
-            print("LASTTT", anlyse.Results)
+            print("LASTTT", AnalysedResults)
         }
     }
 
@@ -55,9 +57,6 @@ class ViewController: UIViewController {
 
     }
     var pollster = Pollster(firstStep: "1")
-
-
-
 
 
     lazy var taskViewContoller: ORKTaskViewController = {
