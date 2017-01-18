@@ -19,6 +19,7 @@ message Result{
 	DeviceInfo device = 3;
 	int64 duration = 4;
 	repeated StepResult stepResults = 5;
+    int32 version = 6;
 }
 
 message DeviceInfo{

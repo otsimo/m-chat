@@ -37,16 +37,32 @@ class ViewController: UIViewController {
             Log.debug("isRun 2")
             print(taskResult)
             if let t = taskResult{
-                anlyse.AnalyseInfoResult(infoResult: t)
+                anlyse.analyseInfoResult(infoResult: t)
             }
             present(taskViewContoller, animated: true, completion: nil)
             isRun = 3
         } else if isRun == 3 {
             if let t = taskResult{
-                anlyse.AnalyseTask(result: t)
+                
+                let  analysedResult = anlyse.analyseTask(result: t)
+                print("analysedResult", analysedResult)
+                
+                //Convert analysedResult to json
+                do {
+                    let json = try analysedResult.serializeJSON()
+                    print("json-----> \(json)")
+                    
+                    //And Send Result to Server
+                    let server = Server()
+                    let response = server.sendResult(json: json)
+                    Log.debug(response)
+                    
+                } catch let e {
+                    Log.error(e as! String)
+                }
+                
+                
             }
-            
-            print("LASTTT", AnalysedResults)
         }
     }
 

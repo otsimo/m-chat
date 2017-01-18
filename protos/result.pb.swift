@@ -134,6 +134,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "device": 3,
     "duration": 4,
     "stepResults": 5,
+    "version": 6,
   ]}
   public var protoFieldNames: [String: Int] {return [
     "age": 1,
@@ -141,6 +142,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "device": 3,
     "duration": 4,
     "stepResults": 5,
+    "version": 6,
   ]}
 
   private class _StorageClass {
@@ -150,6 +152,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     var _device: Otsimo_DeviceInfo? = nil
     var _duration: Int64 = 0
     var _stepResults: [Otsimo_StepResult] = []
+    var _version: Int32 = 0
 
     init() {}
 
@@ -161,6 +164,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       case 3: handled = try setter.decodeSingularMessageField(fieldType: Otsimo_DeviceInfo.self, value: &_device)
       case 4: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &_duration)
       case 5: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
+      case 6: handled = try setter.decodeSingularField(fieldType: ProtobufInt32.self, value: &_version)
       default:
         handled = false
       }
@@ -183,6 +187,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if !_stepResults.isEmpty {
         try visitor.visitRepeatedMessageField(value: _stepResults, protoFieldNumber: 5, protoFieldName: "stepResults", jsonFieldName: "stepResults", swiftFieldName: "stepResults")
       }
+      if _version != 0 {
+        try visitor.visitSingularField(fieldType: ProtobufInt32.self, value: _version, protoFieldNumber: 6, protoFieldName: "version", jsonFieldName: "version", swiftFieldName: "version")
+      }
     }
 
     func isEqualTo(other: _StorageClass) -> Bool {
@@ -191,6 +198,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _device != other._device {return false}
       if _duration != other._duration {return false}
       if _stepResults != other._stepResults {return false}
+      if _version != other._version {return false}
       return true
     }
 
@@ -201,6 +209,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       clone._device = _device
       clone._duration = _duration
       clone._stepResults = _stepResults
+      clone._version = _version
       return clone
     }
   }
@@ -232,13 +241,19 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     set {_uniqueStorage()._stepResults = newValue}
   }
 
+  public var version: Int32 {
+    get {return _storage._version}
+    set {_uniqueStorage()._version = newValue}
+  }
+
   public init() {}
 
   public init(age: String? = nil,
     relation: String? = nil,
     device: Otsimo_DeviceInfo? = nil,
     duration: Int64? = nil,
-    stepResults: [Otsimo_StepResult] = [])
+    stepResults: [Otsimo_StepResult] = [],
+    version: Int32? = nil)
   {
     let storage = _uniqueStorage()
     if let v = age {
@@ -253,6 +268,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     }
     if !stepResults.isEmpty {
       storage._stepResults = stepResults
+    }
+    if let v = version {
+      storage._version = v
     }
   }
 

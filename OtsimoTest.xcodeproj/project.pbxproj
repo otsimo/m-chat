@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5309B1371E2F71B30096A4FC /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309B1361E2F71B30096A4FC /* Server.swift */; };
 		53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4B1E152DE300484994 /* AppDelegate.swift */; };
 		53187F4E1E152DE300484994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4D1E152DE300484994 /* ViewController.swift */; };
 		53187F511E152DE300484994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F4F1E152DE300484994 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		532A8B0B1E1D861200F1F6E3 /* questions in Resources */ = {isa = PBXBuildFile; fileRef = 532A8B0A1E1D861200F1F6E3 /* questions */; };
 		532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B101E20423800F1F6E3 /* Pollster.swift */; };
 		532A8B141E204B4500F1F6E3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B131E204B4500F1F6E3 /* Log.swift */; };
+		53358FD21E2E81F600634C80 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53358FD11E2E81F600634C80 /* DeviceInfo.swift */; };
 		534E070E1E2E39D80034F94B /* result.proto in Resources */ = {isa = PBXBuildFile; fileRef = 534E070D1E2E39D80034F94B /* result.proto */; };
 		53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D8B1E16DC03009875B8 /* SurveyTask.swift */; };
 		53734D931E16F005009875B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53734D951E16F005009875B8 /* Localizable.strings */; };
@@ -48,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5309B1361E2F71B30096A4FC /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		53187F481E152DE300484994 /* Otsimo Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otsimo Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53187F4B1E152DE300484994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53187F4D1E152DE300484994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		532A8B0A1E1D861200F1F6E3 /* questions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = questions; sourceTree = "<group>"; };
 		532A8B101E20423800F1F6E3 /* Pollster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollster.swift; sourceTree = "<group>"; };
 		532A8B131E204B4500F1F6E3 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		53358FD11E2E81F600634C80 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		534E070D1E2E39D80034F94B /* result.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = result.proto; path = protos/result.proto; sourceTree = "<group>"; };
 		53734D8B1E16DC03009875B8 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		53734D941E16F005009875B8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,7 +118,9 @@
 		53187F4A1E152DE300484994 /* Otsimo Test */ = {
 			isa = PBXGroup;
 			children = (
+				53358FD11E2E81F600634C80 /* DeviceInfo.swift */,
 				538BCD291E2D1D47009F56EB /* Analyse.swift */,
+				5309B1361E2F71B30096A4FC /* Server.swift */,
 				538BCD281E2D178B009F56EB /* protos */,
 				53187F4B1E152DE300484994 /* AppDelegate.swift */,
 				532A8B161E204B7000F1F6E3 /* Survey */,
@@ -325,8 +331,10 @@
 				53187F4E1E152DE300484994 /* ViewController.swift in Sources */,
 				532A8B141E204B4500F1F6E3 /* Log.swift in Sources */,
 				53E2BF3A1E2B7492008B3017 /* ReadJSONs.swift in Sources */,
+				5309B1371E2F71B30096A4FC /* Server.swift in Sources */,
 				532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */,
 				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
+				53358FD21E2E81F600634C80 /* DeviceInfo.swift in Sources */,
 				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
 				538BCD2A1E2D1D47009F56EB /* Analyse.swift in Sources */,
 				538BCD201E2CF240009F56EB /* InfoTask.swift in Sources */,

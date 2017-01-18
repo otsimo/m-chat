@@ -10,16 +10,29 @@ import Foundation
 import ResearchKit
 import SwiftProtobuf
 
-var AnalysedResults = Otsimo_Result()
+
+let OtsimoResultVersion : Int32 = 1
+
+class InfoResult{
+    var age = String()
+    var relation = String()
+}
 
 class Analyse {
 
-
+    var iresult = InfoResult()
+    
     var beforeID = "0:0"
 
-    func AnalyseTask(result: ORKTaskResult) {
+    func analyseTask(result: ORKTaskResult)->Otsimo_Result {
         Log.debug("Analyse : AnalyseTask")
-
+        var AnalysedResults = Otsimo_Result()
+        AnalysedResults.device = Otsimo_DeviceInfo(os:"ios")
+        AnalysedResults.version = OtsimoResultVersion
+        print("Age = ",iresult.age,"Relation = ",iresult.relation)
+        AnalysedResults.age = iresult.age
+        AnalysedResults.relation = iresult.relation
+        
         var taskResults: [Otsimo_StepResult] = []
         if let tskResult = result.results {
             for results in tskResult {
@@ -67,16 +80,11 @@ class Analyse {
             }
         }
         AnalysedResults.stepResults = taskResults
-
-        do {
-            print("ENDRESULT----->", try AnalysedResults.serializeJSON())
-        } catch let e {
-            Log.error(e as! String)
-        }
-
-
+        
+        return AnalysedResults
     }
-    func AnalyseInfoResult(infoResult: ORKTaskResult) {
+    
+    func analyseInfoResult(infoResult: ORKTaskResult) {
         Log.debug("Analyse : AnalyseInfoResult")
         if let iResults = infoResult.results {
             for results in iResults {
@@ -102,14 +110,14 @@ class Analyse {
                             default:
                                 break
                             }
-                            AnalysedResults.relation = a
+                            iresult.relation = a
                         }
                     }
                     if sresults.identifier == "age" {
                         let r = stepResult[0] as! ORKNumericQuestionResult
                         if let answer = r.numericAnswer {
                             print(answer)
-                            AnalysedResults.age = String(answer.int64Value)
+                            iresult.age = String(answer.int64Value)
                         }
 
 
