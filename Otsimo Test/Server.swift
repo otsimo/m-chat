@@ -18,8 +18,7 @@ class Server{
         
         var request = URLRequest(url: URL(string: "http://localhost:9002/addResult")!)
         request.httpMethod = "POST"
-        let postString = "id=13&name=Jack"
-        request.httpBody = postString.data(using: .utf8)
+        request.httpBody = json.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")

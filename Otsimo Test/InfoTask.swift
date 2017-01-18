@@ -24,9 +24,13 @@ func createTextChoices(choices : [String]) -> [ORKTextChoice]{
     return textChoices
 }
 
-
+//ids
+let relationStepID = "relation"
+let genderStepID = "gender"
+let ageStepID = "age"
 
 public var InfoTask: ORKOrderedTask {
+    
    
     var infosteps = [ORKStep]()
 
@@ -36,7 +40,7 @@ public var InfoTask: ORKOrderedTask {
         
         let textChoices = createTextChoices(choices: relations)
         
-        let relationStep = ORKQuestionStep(identifier: "relation", title: "What is your relationship to the child?", answer: ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices))
+        let relationStep = ORKQuestionStep(identifier: relationStepID, title: "What is your relationship to the child?", answer: ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices))
         return relationStep
     }
     infosteps.append(relationStep())
@@ -47,7 +51,7 @@ public var InfoTask: ORKOrderedTask {
         
         let textChoices = createTextChoices(choices: gender)
     
-        let genderStep = ORKQuestionStep(identifier: "gender", title: "What is gender of child? ", answer: ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices))
+        let genderStep = ORKQuestionStep(identifier: genderStepID, title: "What is gender of child? ", answer: ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices))
         return genderStep
         
     }
@@ -55,7 +59,7 @@ public var InfoTask: ORKOrderedTask {
     
     
     let ageStep = { () -> ORKQuestionStep in 
-        let ageStep =  ORKQuestionStep(identifier: "age", title: "How old are the child?", answer: ORKAnswerFormat.integerAnswerFormat(withUnit: "Years"))
+        let ageStep =  ORKQuestionStep(identifier: ageStepID, title: "How old are the child?", answer: ORKAnswerFormat.integerAnswerFormat(withUnit: "Years"))
         return ageStep
     }
     infosteps.append(ageStep())

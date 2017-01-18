@@ -17,7 +17,7 @@ class Analyse {
 
     var beforeID = "0:0"
 
-    func analyseTask(result: ORKTaskResult , iresult : Otsimo_Info) -> Otsimo_Result {
+    func Task(result: ORKTaskResult , iresult : Otsimo_Info) -> Otsimo_Result {
         Log.debug("Analyse : AnalyseTask")
         var AnalysedResults = Otsimo_Result()
         AnalysedResults.device = Otsimo_DeviceInfo(os: "ios")
@@ -77,7 +77,7 @@ class Analyse {
         return AnalysedResults
     }
 
-    func analyseInfoResult(infoResult: ORKTaskResult) -> Otsimo_Info {
+    func InfoResult(infoResult: ORKTaskResult) -> Otsimo_Info {
         
         Log.debug("Analyse : AnalyseInfoResult")
         var iresult = Otsimo_Info()
@@ -86,27 +86,23 @@ class Analyse {
             for results in iResults {
                 let sresults = results as! ORKStepResult
                 if let stepResult = sresults.results {
-                    if sresults.identifier == "relation" {
+                    if sresults.identifier == relationStepID {
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         if let answers = r.choiceAnswers {
-                            let choice = getTextChociesAnswer(identifier: "relation", index: answers[0] as! Int)
-                            print("relation ->",choice)
-
+                            let choice = getTextChociesAnswer(identifier: relationStepID, index: answers[0] as! Int)
                             iresult.relation = choice
                         }
                     }
-                    if sresults.identifier == "gender" {
+                    if sresults.identifier == genderStepID {
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         if let answers = r.choiceAnswers {
-                            let choice = getTextChociesAnswer(identifier: "gender", index: answers[0] as! Int)
-                            print("gender ->",choice)
+                            let choice = getTextChociesAnswer(identifier: genderStepID, index: answers[0] as! Int)
                             iresult.gender = choice
                         }
                     }
-                    if sresults.identifier == "age" {
+                    if sresults.identifier == ageStepID {
                         let r = stepResult[0] as! ORKNumericQuestionResult
                         if let answer = r.numericAnswer {
-                            print(answer)
                             iresult.age = String(answer.int64Value)
                         }
 
@@ -123,7 +119,7 @@ class Analyse {
 
     func getTextChociesAnswer(identifier: String, index: Int) -> String {
 
-        if identifier == "relation" {
+        if identifier == relationStepID {
             switch index {
             case 1:
                 return "Parent"
@@ -141,7 +137,7 @@ class Analyse {
                 break
             }
         }
-        if identifier == "gender" {
+        if identifier == genderStepID {
             switch index {
             case 1:
                 return "male"

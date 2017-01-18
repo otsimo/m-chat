@@ -36,14 +36,14 @@ class ViewController: UIViewController {
         } else if isRun == 2 {
             Log.debug("isRun 2")
             if let t = taskResult{
-                iResult = anlyse.analyseInfoResult(infoResult: t)
+                iResult = anlyse.InfoResult(infoResult: t)
             }
             present(taskViewContoller, animated: true, completion: nil)
             isRun = 3
         } else if isRun == 3 {
             if let t = taskResult{
                 
-                let analysedResult = anlyse.analyseTask(result: t,iresult: iResult)
+                let analysedResult = anlyse.Task(result: t,iresult: iResult)
                 print("analysedResult", analysedResult)
                 
                 //Convert analysedResult to json
