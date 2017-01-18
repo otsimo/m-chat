@@ -14,12 +14,11 @@ message StepResult{
 
 
 message Result{
-	string age = 1;
-	string relation = 2;
-	DeviceInfo device = 3;
-	int64 duration = 4;
-	repeated StepResult stepResults = 5;
-    int32 version = 6;
+	Info info = 1;
+	DeviceInfo device = 2;
+	int64 duration = 3;
+	repeated StepResult stepResults = 4;
+    int32 version = 5;
 }
 
 message DeviceInfo{
@@ -33,4 +32,11 @@ message DeviceInfo{
     string systemVersion = 9;
     string languageCode = 10;
     string countryCode = 11;
+}
+
+message Info{
+    string age = 1;
+    string gender = 2;
+    string relation = 3;
+
 }

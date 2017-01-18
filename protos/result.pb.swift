@@ -129,26 +129,23 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
   public var protoMessageName: String {return "Result"}
   public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
-    "age": 1,
-    "relation": 2,
-    "device": 3,
-    "duration": 4,
-    "stepResults": 5,
-    "version": 6,
+    "info": 1,
+    "device": 2,
+    "duration": 3,
+    "stepResults": 4,
+    "version": 5,
   ]}
   public var protoFieldNames: [String: Int] {return [
-    "age": 1,
-    "relation": 2,
-    "device": 3,
-    "duration": 4,
-    "stepResults": 5,
-    "version": 6,
+    "info": 1,
+    "device": 2,
+    "duration": 3,
+    "stepResults": 4,
+    "version": 5,
   ]}
 
   private class _StorageClass {
     typealias ProtobufExtendedMessage = Otsimo_Result
-    var _age: String = ""
-    var _relation: String = ""
+    var _info: Otsimo_Info? = nil
     var _device: Otsimo_DeviceInfo? = nil
     var _duration: Int64 = 0
     var _stepResults: [Otsimo_StepResult] = []
@@ -159,12 +156,11 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     func decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
       let handled: Bool
       switch protoFieldNumber {
-      case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_age)
-      case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_relation)
-      case 3: handled = try setter.decodeSingularMessageField(fieldType: Otsimo_DeviceInfo.self, value: &_device)
-      case 4: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &_duration)
-      case 5: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
-      case 6: handled = try setter.decodeSingularField(fieldType: ProtobufInt32.self, value: &_version)
+      case 1: handled = try setter.decodeSingularMessageField(fieldType: Otsimo_Info.self, value: &_info)
+      case 2: handled = try setter.decodeSingularMessageField(fieldType: Otsimo_DeviceInfo.self, value: &_device)
+      case 3: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &_duration)
+      case 4: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
+      case 5: handled = try setter.decodeSingularField(fieldType: ProtobufInt32.self, value: &_version)
       default:
         handled = false
       }
@@ -172,29 +168,25 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     }
 
     func traverse(visitor: inout ProtobufVisitor) throws {
-      if _age != "" {
-        try visitor.visitSingularField(fieldType: ProtobufString.self, value: _age, protoFieldNumber: 1, protoFieldName: "age", jsonFieldName: "age", swiftFieldName: "age")
-      }
-      if _relation != "" {
-        try visitor.visitSingularField(fieldType: ProtobufString.self, value: _relation, protoFieldNumber: 2, protoFieldName: "relation", jsonFieldName: "relation", swiftFieldName: "relation")
+      if let v = _info {
+        try visitor.visitSingularMessageField(value: v, protoFieldNumber: 1, protoFieldName: "info", jsonFieldName: "info", swiftFieldName: "info")
       }
       if let v = _device {
-        try visitor.visitSingularMessageField(value: v, protoFieldNumber: 3, protoFieldName: "device", jsonFieldName: "device", swiftFieldName: "device")
+        try visitor.visitSingularMessageField(value: v, protoFieldNumber: 2, protoFieldName: "device", jsonFieldName: "device", swiftFieldName: "device")
       }
       if _duration != 0 {
-        try visitor.visitSingularField(fieldType: ProtobufInt64.self, value: _duration, protoFieldNumber: 4, protoFieldName: "duration", jsonFieldName: "duration", swiftFieldName: "duration")
+        try visitor.visitSingularField(fieldType: ProtobufInt64.self, value: _duration, protoFieldNumber: 3, protoFieldName: "duration", jsonFieldName: "duration", swiftFieldName: "duration")
       }
       if !_stepResults.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _stepResults, protoFieldNumber: 5, protoFieldName: "stepResults", jsonFieldName: "stepResults", swiftFieldName: "stepResults")
+        try visitor.visitRepeatedMessageField(value: _stepResults, protoFieldNumber: 4, protoFieldName: "stepResults", jsonFieldName: "stepResults", swiftFieldName: "stepResults")
       }
       if _version != 0 {
-        try visitor.visitSingularField(fieldType: ProtobufInt32.self, value: _version, protoFieldNumber: 6, protoFieldName: "version", jsonFieldName: "version", swiftFieldName: "version")
+        try visitor.visitSingularField(fieldType: ProtobufInt32.self, value: _version, protoFieldNumber: 5, protoFieldName: "version", jsonFieldName: "version", swiftFieldName: "version")
       }
     }
 
     func isEqualTo(other: _StorageClass) -> Bool {
-      if _age != other._age {return false}
-      if _relation != other._relation {return false}
+      if _info != other._info {return false}
       if _device != other._device {return false}
       if _duration != other._duration {return false}
       if _stepResults != other._stepResults {return false}
@@ -204,8 +196,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
 
     func copy() -> _StorageClass {
       let clone = _StorageClass()
-      clone._age = _age
-      clone._relation = _relation
+      clone._info = _info
       clone._device = _device
       clone._duration = _duration
       clone._stepResults = _stepResults
@@ -216,14 +207,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
 
   private var _storage = _StorageClass()
 
-  public var age: String {
-    get {return _storage._age}
-    set {_uniqueStorage()._age = newValue}
-  }
-
-  public var relation: String {
-    get {return _storage._relation}
-    set {_uniqueStorage()._relation = newValue}
+  public var info: Otsimo_Info {
+    get {return _storage._info ?? Otsimo_Info()}
+    set {_uniqueStorage()._info = newValue}
   }
 
   public var device: Otsimo_DeviceInfo {
@@ -248,20 +234,14 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
 
   public init() {}
 
-  public init(age: String? = nil,
-    relation: String? = nil,
+  public init(info: Otsimo_Info? = nil,
     device: Otsimo_DeviceInfo? = nil,
     duration: Int64? = nil,
     stepResults: [Otsimo_StepResult] = [],
     version: Int32? = nil)
   {
     let storage = _uniqueStorage()
-    if let v = age {
-      storage._age = v
-    }
-    if let v = relation {
-      storage._relation = v
-    }
+    storage._info = info
     storage._device = device
     if let v = duration {
       storage._duration = v
@@ -451,6 +431,76 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     if systemVersion != other.systemVersion {return false}
     if languageCode != other.languageCode {return false}
     if countryCode != other.countryCode {return false}
+    return true
+  }
+}
+
+public struct Otsimo_Info: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_Info"}
+  public var protoMessageName: String {return "Info"}
+  public var protoPackageName: String {return "otsimo"}
+  public var jsonFieldNames: [String: Int] {return [
+    "age": 1,
+    "gender": 2,
+    "relation": 3,
+  ]}
+  public var protoFieldNames: [String: Int] {return [
+    "age": 1,
+    "gender": 2,
+    "relation": 3,
+  ]}
+
+  public var age: String = ""
+
+  public var gender: String = ""
+
+  public var relation: String = ""
+
+  public init() {}
+
+  public init(age: String? = nil,
+    gender: String? = nil,
+    relation: String? = nil)
+  {
+    if let v = age {
+      self.age = v
+    }
+    if let v = gender {
+      self.gender = v
+    }
+    if let v = relation {
+      self.relation = v
+    }
+  }
+
+  public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
+    let handled: Bool
+    switch protoFieldNumber {
+    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &age)
+    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &gender)
+    case 3: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &relation)
+    default:
+      handled = false
+    }
+    return handled
+  }
+
+  public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
+    if age != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: age, protoFieldNumber: 1, protoFieldName: "age", jsonFieldName: "age", swiftFieldName: "age")
+    }
+    if gender != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: gender, protoFieldNumber: 2, protoFieldName: "gender", jsonFieldName: "gender", swiftFieldName: "gender")
+    }
+    if relation != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: relation, protoFieldNumber: 3, protoFieldName: "relation", jsonFieldName: "relation", swiftFieldName: "relation")
+    }
+  }
+
+  public func _protoc_generated_isEqualTo(other: Otsimo_Info) -> Bool {
+    if age != other.age {return false}
+    if gender != other.gender {return false}
+    if relation != other.relation {return false}
     return true
   }
 }

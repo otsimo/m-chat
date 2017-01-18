@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     var isRun = 0
     var taskResult: ORKTaskResult?
-
+    var iResult = Otsimo_Info()
     override func viewDidAppear(_ animated: Bool) {
         
         
@@ -35,16 +35,15 @@ class ViewController: UIViewController {
             isRun = 2
         } else if isRun == 2 {
             Log.debug("isRun 2")
-            print(taskResult)
             if let t = taskResult{
-                anlyse.analyseInfoResult(infoResult: t)
+                iResult = anlyse.analyseInfoResult(infoResult: t)
             }
             present(taskViewContoller, animated: true, completion: nil)
             isRun = 3
         } else if isRun == 3 {
             if let t = taskResult{
                 
-                let  analysedResult = anlyse.analyseTask(result: t)
+                let analysedResult = anlyse.analyseTask(result: t,iresult: iResult)
                 print("analysedResult", analysedResult)
                 
                 //Convert analysedResult to json
@@ -79,7 +78,7 @@ class ViewController: UIViewController {
         var pollster = Pollster(firstStep: "1")
         let taskViewController = ORKTaskViewController(task: SurveyTask(pollster), taskRun: nil)
         taskViewController.delegate = self
-        taskViewController.outputDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as! String, isDirectory: true) as URL
+        taskViewController.outputDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] , isDirectory: true) as URL
         return taskViewController
     }()
 

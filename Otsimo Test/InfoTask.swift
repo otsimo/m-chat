@@ -10,6 +10,21 @@ import Foundation
 import ResearchKit
 
 
+func createTextChoices(choices : [String]) -> [ORKTextChoice]{
+    var textChoices : [ORKTextChoice] = []
+    
+    var i = 1
+    for c in choices{
+        print(i)
+        let t = ORKTextChoice(text: c, value: i as NSCoding & NSCopying & NSObjectProtocol)
+        textChoices.append(t)
+        i += 1
+    }
+    
+    return textChoices
+}
+
+
 
 public var InfoTask: ORKOrderedTask {
    
@@ -17,25 +32,30 @@ public var InfoTask: ORKOrderedTask {
 
     let relationStep = { () -> ORKQuestionStep in 
         
-        var relations = ["Parent","GrandParent","Guardion","Educator","Healt care provider","other"]
+        let relations = ["Parent","GrandParent","Guardion","Educator","Healt care provider","other"]
         
-        var textChoices : [ORKTextChoice] = []
+        let textChoices = createTextChoices(choices: relations)
         
-        var i = 1
-        for r in relations{
-            print(i)
-            let t = ORKTextChoice(text: r, value: i as NSCoding & NSCopying & NSObjectProtocol)
-            textChoices.append(t)
-            i += 1
-        }
-        
-        let relationStep = ORKQuestionStep(identifier: "relation", title: "What is your relationship to the child?", answer: ORKAnswerFormat.choiceAnswerFormat(with: ORKChoiceAnswerStyle.singleChoice, textChoices: textChoices))
+        let relationStep = ORKQuestionStep(identifier: "relation", title: "What is your relationship to the child?", answer: ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices))
         return relationStep
     }
     infosteps.append(relationStep())
     
+    let genderStep = { () -> ORKQuestionStep in
+        
+        let gender = ["male","female"]
+        
+        let textChoices = createTextChoices(choices: gender)
+    
+        let genderStep = ORKQuestionStep(identifier: "gender", title: "What is gender of child? ", answer: ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices))
+        return genderStep
+        
+    }
+    infosteps.append(genderStep())
+    
+    
     let ageStep = { () -> ORKQuestionStep in 
-        let ageStep =  ORKQuestionStep(identifier: "age", title: "How old are your child?", answer: ORKAnswerFormat.integerAnswerFormat(withUnit: "Years"))
+        let ageStep =  ORKQuestionStep(identifier: "age", title: "How old are the child?", answer: ORKAnswerFormat.integerAnswerFormat(withUnit: "Years"))
         return ageStep
     }
     infosteps.append(ageStep())

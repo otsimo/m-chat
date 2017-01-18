@@ -11,28 +11,21 @@ import ResearchKit
 import SwiftProtobuf
 
 
-let OtsimoResultVersion : Int32 = 1
-
-class InfoResult{
-    var age = String()
-    var relation = String()
-}
+let OtsimoResultVersion: Int32 = 1
 
 class Analyse {
 
-    var iresult = InfoResult()
-    
     var beforeID = "0:0"
 
-    func analyseTask(result: ORKTaskResult)->Otsimo_Result {
+    func analyseTask(result: ORKTaskResult , iresult : Otsimo_Info) -> Otsimo_Result {
         Log.debug("Analyse : AnalyseTask")
         var AnalysedResults = Otsimo_Result()
-        AnalysedResults.device = Otsimo_DeviceInfo(os:"ios")
+        AnalysedResults.device = Otsimo_DeviceInfo(os: "ios")
         AnalysedResults.version = OtsimoResultVersion
-        print("Age = ",iresult.age,"Relation = ",iresult.relation)
-        AnalysedResults.age = iresult.age
-        AnalysedResults.relation = iresult.relation
-        
+        print("iresult = ", iresult)
+
+        AnalysedResults.info = iresult
+
         var taskResults: [Otsimo_StepResult] = []
         if let tskResult = result.results {
             for results in tskResult {
@@ -80,12 +73,15 @@ class Analyse {
             }
         }
         AnalysedResults.stepResults = taskResults
-        
+
         return AnalysedResults
     }
-    
-    func analyseInfoResult(infoResult: ORKTaskResult) {
+
+    func analyseInfoResult(infoResult: ORKTaskResult) -> Otsimo_Info {
+        
         Log.debug("Analyse : AnalyseInfoResult")
+        var iresult = Otsimo_Info()
+
         if let iResults = infoResult.results {
             for results in iResults {
                 let sresults = results as! ORKStepResult
@@ -93,24 +89,18 @@ class Analyse {
                     if sresults.identifier == "relation" {
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         if let answers = r.choiceAnswers {
-                            var a = ""
-                            switch answers[0] as! Int {
-                            case 1:
-                                a = "Parent"
-                            case 2:
-                                a = "GrandParent"
-                            case 3:
-                                a = "Guardion"
-                            case 4:
-                                a = "Educator"
-                            case 5:
-                                a = "Healt care provider"
-                            case 6:
-                                a = "other"
-                            default:
-                                break
-                            }
-                            iresult.relation = a
+                            let choice = getTextChociesAnswer(identifier: "relation", index: answers[0] as! Int)
+                            print("relation ->",choice)
+
+                            iresult.relation = choice
+                        }
+                    }
+                    if sresults.identifier == "gender" {
+                        let r = stepResult[0] as! ORKChoiceQuestionResult
+                        if let answers = r.choiceAnswers {
+                            let choice = getTextChociesAnswer(identifier: "gender", index: answers[0] as! Int)
+                            print("gender ->",choice)
+                            iresult.gender = choice
                         }
                     }
                     if sresults.identifier == "age" {
@@ -126,7 +116,42 @@ class Analyse {
                 }
             }
         }
+        print("******************iresult->",iresult)
+        
+        return iresult
     }
 
+    func getTextChociesAnswer(identifier: String, index: Int) -> String {
+
+        if identifier == "relation" {
+            switch index {
+            case 1:
+                return "Parent"
+            case 2:
+                return "GrandParent"
+            case 3:
+                return "Guardion"
+            case 4:
+                return "Educator"
+            case 5:
+                return "Healt care provider"
+            case 6:
+                return "other"
+            default:
+                break
+            }
+        }
+        if identifier == "gender" {
+            switch index {
+            case 1:
+                return "male"
+            case 2:
+                return "femaile"
+            default:
+                break
+            }
+        }
+        return ""
+    }
 
 }
