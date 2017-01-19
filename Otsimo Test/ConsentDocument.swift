@@ -11,7 +11,7 @@ import ResearchKit
 public var ConsentDocument: ORKConsentDocument {
     
     let consentDocument = ORKConsentDocument()
-    consentDocument.title = NSLocalizedString("consent.title", comment: "")
+    consentDocument.title = NSLocalizedString("Consent.title", comment: "")
     
     //consent sections
     let consentSectionTypes: [ORKConsentSectionType] = [

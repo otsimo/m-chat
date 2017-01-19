@@ -64,8 +64,8 @@ public class SurveyTask: NSObject, ORKTask {
         }
         if manager.currentQuestionID == "sum" {
             let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
-            summaryStep.title = "Thank you."
-            summaryStep.text = "We appreciate your time."
+            summaryStep.title = NSLocalizedString("summaryStep.title", comment: "")
+            summaryStep.text = NSLocalizedString("We appreciate your time.", comment: "")
             return summaryStep
         }
         Log.debug("let q = manager.getQuestion(id: manager.currentQuestionID)")
@@ -107,8 +107,15 @@ public class SurveyTask: NSObject, ORKTask {
     
     
     public func progress(ofCurrentStep step: ORKStep, with result: ORKTaskResult) -> ORKTaskProgress {
-        
-        var progress = ORKTaskProgressMake(1, 20)
+
+        var progress = ORKTaskProgress()
+        print(manager.currentQuestionID)
+        if manager.currentQuestionID != "sum"{
+            let stepNum = parseID(id: manager.currentQuestionID).0
+            if let num = UInt(stepNum){
+                progress = ORKTaskProgressMake(num-1, 20)
+            }
+        }
         
         return progress
     }
