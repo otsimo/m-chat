@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5309B1371E2F71B30096A4FC /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309B1361E2F71B30096A4FC /* Server.swift */; };
+		5309B13B1E30C4490096A4FC /* Analyse+Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309B13A1E30C4490096A4FC /* Analyse+Subject.swift */; };
 		53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4B1E152DE300484994 /* AppDelegate.swift */; };
 		53187F4E1E152DE300484994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4D1E152DE300484994 /* ViewController.swift */; };
 		53187F511E152DE300484994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F4F1E152DE300484994 /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		5309B1361E2F71B30096A4FC /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		5309B1381E30B6680096A4FC /* Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subject.playground; sourceTree = "<group>"; };
+		5309B13A1E30C4490096A4FC /* Analyse+Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analyse+Subject.swift"; sourceTree = "<group>"; };
 		53187F481E152DE300484994 /* Otsimo Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otsimo Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53187F4B1E152DE300484994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53187F4D1E152DE300484994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +99,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5309B1391E30C4160096A4FC /* ResearchKit Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				532A8B161E204B7000F1F6E3 /* Survey */,
+				532A8B151E204B5200F1F6E3 /* Consent */,
+				538BCD211E2CF24F009F56EB /* InfoTask */,
+			);
+			name = "ResearchKit Tasks";
+			sourceTree = "<group>";
+		};
+		5309B13C1E30C5780096A4FC /* Analyse */ = {
+			isa = PBXGroup;
+			children = (
+				538BCD291E2D1D47009F56EB /* Analyse.swift */,
+				5309B13A1E30C4490096A4FC /* Analyse+Subject.swift */,
+			);
+			name = Analyse;
+			sourceTree = "<group>";
+		};
 		53187F3F1E152DE300484994 = {
 			isa = PBXGroup;
 			children = (
@@ -119,14 +141,13 @@
 			isa = PBXGroup;
 			children = (
 				53358FD11E2E81F600634C80 /* DeviceInfo.swift */,
-				538BCD291E2D1D47009F56EB /* Analyse.swift */,
+				5309B13C1E30C5780096A4FC /* Analyse */,
+				5309B1381E30B6680096A4FC /* Subject.playground */,
 				5309B1361E2F71B30096A4FC /* Server.swift */,
 				538BCD281E2D178B009F56EB /* protos */,
 				53187F4B1E152DE300484994 /* AppDelegate.swift */,
-				532A8B161E204B7000F1F6E3 /* Survey */,
-				532A8B151E204B5200F1F6E3 /* Consent */,
+				5309B1391E30C4160096A4FC /* ResearchKit Tasks */,
 				53E2BF3D1E2B7691008B3017 /* Controller */,
-				538BCD211E2CF24F009F56EB /* InfoTask */,
 				532A8B131E204B4500F1F6E3 /* Log.swift */,
 				53187F4F1E152DE300484994 /* Main.storyboard */,
 				53187F521E152DE300484994 /* Assets.xcassets */,
@@ -334,6 +355,7 @@
 				5309B1371E2F71B30096A4FC /* Server.swift in Sources */,
 				532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */,
 				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
+				5309B13B1E30C4490096A4FC /* Analyse+Subject.swift in Sources */,
 				53358FD21E2E81F600634C80 /* DeviceInfo.swift in Sources */,
 				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
 				538BCD2A1E2D1D47009F56EB /* Analyse.swift in Sources */,

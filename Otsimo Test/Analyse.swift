@@ -63,7 +63,6 @@ class Analyse {
                     let bid = parseID(id: beforeID).0
 
                     if id == bid {
-                        print("2", "results.identifier=", results.identifier, " beforeID=", beforeID)
                         sResult.id = id
                         sResult.stepResult = qResults + taskResults.last!.stepResult
                     }
@@ -89,15 +88,16 @@ class Analyse {
                     if sresults.identifier == relationStepID {
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         if let answers = r.choiceAnswers {
-                            let choice = getTextChociesAnswer(identifier: relationStepID, index: answers[0] as! Int)
-                            iresult.relation = choice
+                            
+                            let choice = getTextChociesAnswerForRelation(index: answers[0] as! Int)
+                            iresult.relation = NSLocalizedString(String(describing: choice), comment: "")
                         }
                     }
                     if sresults.identifier == genderStepID {
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         if let answers = r.choiceAnswers {
-                            let choice = getTextChociesAnswer(identifier: genderStepID, index: answers[0] as! Int)
-                            iresult.gender = choice
+                            let choice = getTextChociesAnswerForGender(index: answers[0] as! Int)
+                            iresult.gender = NSLocalizedString(String(describing: choice), comment: "")
                         }
                     }
                     if sresults.identifier == ageStepID {
@@ -116,38 +116,39 @@ class Analyse {
         
         return iresult
     }
+    
+   
+    
 
-    func getTextChociesAnswer(identifier: String, index: Int) -> String {
+    func getTextChociesAnswerForRelation(index: Int) -> Relation {
 
-        if identifier == relationStepID {
             switch index {
             case 1:
-                return "Parent"
+                return .parent
             case 2:
-                return "GrandParent"
+                return .grandParent
             case 3:
-                return "Guardion"
+                return .guardion
             case 4:
-                return "Educator"
+                return .educator
             case 5:
-                return "Healt care provider"
+                return .healtCareProvider
             case 6:
-                return "other"
+                return .other
             default:
-                break
+                return Relation.other
             }
+    }
+    
+    func getTextChociesAnswerForGender(index: Int) -> Gender{
+        switch index {
+        case 1:
+            return .male
+        case 2:
+            return .female
+        default:
+            return .other
         }
-        if identifier == genderStepID {
-            switch index {
-            case 1:
-                return "male"
-            case 2:
-                return "femaile"
-            default:
-                break
-            }
-        }
-        return ""
     }
 
 }

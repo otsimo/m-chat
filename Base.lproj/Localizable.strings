@@ -164,3 +164,29 @@ q9.6 = "A flower he/she has picked?";
 q9.7 = "A bug he/she has found in the grass?";
 q9.8 = "A few blocks he/she has put together?";
 q9.9 = "Is this sometimes just to show you, not to get help?";
+
+InfoTask.relations.Parent = "Parent1";
+InfoTask.relations.GrandParent = "GrandParent";
+InfoTask.relations.Guardion = "Guardion";
+InfoTask.relations.Educator = "Educator";
+InfoTask.relations.HealtCareProvider = "Healt Care Provider";
+InfoTask.relations.other = "Other";
+InfoTask.relationStepText = "What is your relationship to the child?";
+
+
+InfoTask.gender.Male = "Male";
+InfoTask.gender.Female = "Other";
+InfoTask.genderStepText = "What is gender of child?";
+
+
+InfoTask.ageStepText = "How old are the child?";
+InfoTask.unit = "years";
+
+
+
+
+
+
+
+
+
