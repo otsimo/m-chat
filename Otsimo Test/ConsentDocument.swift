@@ -11,7 +11,7 @@ import ResearchKit
 public var ConsentDocument: ORKConsentDocument {
     
     let consentDocument = ORKConsentDocument()
-    consentDocument.title = "Example Consent"
+    consentDocument.title = NSLocalizedString("consent.title", comment: "")
     
     //consent sections
     let consentSectionTypes: [ORKConsentSectionType] = [
@@ -24,8 +24,34 @@ public var ConsentDocument: ORKConsentDocument {
     
     let consentSections: [ORKConsentSection] = consentSectionTypes.map { contentSectionType in
         let consentSection = ORKConsentSection(type: contentSectionType)
-        consentSection.summary = "If you wish to complete this study..."
-        consentSection.content = "In this study you will be asked five (wait, no, three!) questions. You will also have your voice recorded for ten seconds."
+        var sum = ""
+        var content = ""
+        switch contentSectionType{
+        case .overview:
+             sum = NSLocalizedString("Consent.overview.sum", comment: "")
+             content = NSLocalizedString("Consent.overview.content", comment: "")
+            break
+        case .dataGathering:
+            sum = NSLocalizedString("Consent.dataGathering.sum", comment: "")
+            content = NSLocalizedString("Consent.dataGathering.content", comment: "")
+            break
+        case .privacy:
+            sum = NSLocalizedString("Consent.privacy.sum", comment: "")
+            content = NSLocalizedString("Consent.privacy.content", comment: "")
+            break
+        case .dataUse:
+            sum = NSLocalizedString("Consent.dataUse.sum", comment: "")
+            content = NSLocalizedString("Consent.dataUse.content", comment: "")
+            break
+        case .studySurvey:
+            sum = NSLocalizedString("Consent.studySurvey.sum", comment: "")
+            content = NSLocalizedString("Consent.studySurvey.content", comment: "")
+            break
+        default:
+            break
+        }
+        consentSection.summary = sum
+        consentSection.content = content
         return consentSection
     }
     consentDocument.sections = consentSections
