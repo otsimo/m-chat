@@ -31,9 +31,8 @@ extension ViewController: ORKTaskViewControllerDelegate {
         switch reason {
             
         case .completed:
-            Log.debug("completed")
+            Log.debug("task completed")
              taskResult = taskViewController.result
-            print(taskResult)
         case .failed:
             Log.debug("failed")
         case .discarded:

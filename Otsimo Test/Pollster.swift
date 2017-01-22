@@ -14,7 +14,7 @@ var failNum = 0
 
 public class Pollster {
     var currentQuestionID: String
-    var lastQuestionID: String = "0:0"
+    var lastQuestionID: String = "afterSum"
     var steps: [Otsimo_Mchat_Step]
     var stepNum = 1
 
@@ -29,7 +29,11 @@ public class Pollster {
 
 
     func handleAnswerForYesNo(answer: Bool) {
-
+        print("handleAnswerForYesNo")
+        
+       
+        
+        
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
 
         if let yn = cc.yesno {
@@ -42,7 +46,7 @@ public class Pollster {
                 case .pass:
                     passNum += 1
                     stepNum += 1
-                    Log.debug("*pass passNum = \(passNum)")
+                    Log.debug("\(currentQuestionID) *pass passNum = \(passNum)")
                     break
                 case .fail:
                     failNum += 1
@@ -75,10 +79,16 @@ public class Pollster {
                 }
             }
         }
+        
+        if currentQuestionID == "sum" || currentQuestionID == lastQuestionID{
+            currentQuestionID = lastQuestionID
+            print("-")
+            return
+        }
         let cindex = steps.index(of: cstep)!
         if cindex + 1 >= steps.count {
             //Completed
-            print("Completed")
+            print("cindex Completed")
             currentQuestionID = "sum"
             return
         }
@@ -88,7 +98,10 @@ public class Pollster {
     }
 
     func handleAnswerForGroupQuestion(Results: ORKStepResult) {
-        Log.debug("handleAnswerForGroupQuestion \(Results)")
+        //Log.debug("handleAnswerForGroupQuestion \(Results)")
+        print("handleAnswerForGroupQuestion")
+        
+        
 
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
         print("Parent Question \(currentQuestionID)")
@@ -131,7 +144,7 @@ public class Pollster {
                     case .pass:
                         passNum += 1
                         stepNum += 1
-                        Log.debug("*pass of Group passNum = \(passNum)")
+                        Log.debug("\(currentQuestionID) *pass of Group passNum = \(passNum)")
                         break
                     case .fail:
                         failNum += 1
@@ -144,17 +157,26 @@ public class Pollster {
                     }
                 }
             }
-
-            let cindex = steps.index(of: cstep)!
-            if cindex + 1 >= steps.count {
-                //Completed
-                print("Completed")
-                currentQuestionID = "sum"
-                return
-            }
-            let nextStep = steps[cindex + 1]
-            currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
+            
         }
+        
+        if currentQuestionID == "sum" || currentQuestionID == lastQuestionID{
+            currentQuestionID = lastQuestionID
+            print("-")
+            return
+        }
+        
+        let cindex = steps.index(of: cstep)!
+        if cindex + 1 >= steps.count {
+            //Completed
+            print("cindex Completed")
+            currentQuestionID = "sum"
+            return
+        }
+        let nextStep = steps[cindex + 1]
+        currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
+        
+        
     }
 
     func runQuery(query: Otsimo_Mchat_Query, answers: [GroupAnswer]) -> Otsimo_Mchat_ResultType? {

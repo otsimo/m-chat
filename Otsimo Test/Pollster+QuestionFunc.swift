@@ -58,5 +58,10 @@ extension Pollster{
         return (Otsimo_Mchat_Step(), Otsimo_Mchat_Question())
     }
     
+//    func getBeforeStepAndQuestion(id : String) -> (Otsimo_Mchat_Step,Otsimo_Mchat_Question){
+//        let c = getStepAndQuestion(id : id)
+//        
+//    }
+    
 
 }

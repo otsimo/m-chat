@@ -12,12 +12,14 @@
         },
         "query": [
           {
+            "group":"",
             "actions": [
               "ALL_OF_NO"
             ],
             "result": "PASS"
           },
           {
+            "group":"",
             "actions": [
               "ONE_OF_YES"
             ],
