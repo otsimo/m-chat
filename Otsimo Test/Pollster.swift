@@ -9,8 +9,7 @@
 import Foundation
 import ResearchKit
 
-var passNum = 0
-var failNum = 0
+
 
 public class Pollster {
     var currentQuestionID: String
@@ -18,7 +17,8 @@ public class Pollster {
     var steps: [Otsimo_Mchat_Step]
     var stepNum = 1
 
-
+    var passNum = 0
+    var failNum = 0
     
 
     init(firstStep: String) {
@@ -30,9 +30,6 @@ public class Pollster {
 
     func handleAnswerForYesNo(answer: Bool) {
         print("handleAnswerForYesNo")
-        
-       
-        
         
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
 
@@ -161,30 +158,7 @@ public class Pollster {
                     }
                 }
             }
-            
         }
-        
-        
-        
-    }
-    
-    func nextStep(with cstep : Otsimo_Mchat_Step){
-        if currentQuestionID == "sum" || currentQuestionID == lastQuestionID{
-            currentQuestionID = lastQuestionID
-            print("-")
-            return
-        }
-        
-        let cindex = steps.index(of: cstep)!
-        if cindex + 1 >= steps.count {
-            //Completed
-            print("cindex Completed")
-            currentQuestionID = "sum"
-            return
-        }
-        let nextStep = steps[cindex + 1]
-        currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
-
     }
 
     func runQuery(query: Otsimo_Mchat_Query, answers: [GroupAnswer]) -> Otsimo_Mchat_ResultType? {

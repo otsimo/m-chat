@@ -29,14 +29,6 @@ public class SurveyTask: NSObject, ORKTask {
         if manager.currentQuestionID == "sum" {
             manager.currentQuestionID = manager.lastQuestionID
         }
-
-//        if manager.currentQuestionID == manager.lastQuestionID || manager.currentQuestionID == "sum"{
-//            manager.currentQuestionID = manager.lastQuestionID
-//            return nil
-//        }
-
-        print("passNum=", passNum, " FailNum=", failNum)
-
         return nil
     }
 
@@ -68,7 +60,8 @@ public class SurveyTask: NSObject, ORKTask {
         } else if manager.isGroup(id: manager.currentQuestionID) {
             //Log.debug("current quesiton = \(manager.currentQuestionID) is group question")
             //Create Group question
-            let step = ORKFormStep(identifier: manager.currentQuestionID, title: q.text, text: q.text)
+            let title = NSLocalizedString(getLocalizedID(id: manager.currentQuestionID), comment: "")
+            let step = ORKFormStep(identifier: manager.currentQuestionID, title: title, text: "")
             step.formItems = []
             step.isOptional = false
             for gq in (q.group?.questions)! {
@@ -76,10 +69,9 @@ public class SurveyTask: NSObject, ORKTask {
                 let s = parseID(id: manager.currentQuestionID).0
 
                 let gqID = s + ":" + String(gq.key)
-                let gquestion = manager.getQuestion(id: gqID)
-                let stepItem = ORKFormItem(identifier: gqID, text: gquestion.text, answerFormat: ORKAnswerFormat.booleanAnswerFormat())
+                let text = NSLocalizedString(getLocalizedID(id: gqID), comment: "")
+                let stepItem = ORKFormItem(identifier: gqID, text: text, answerFormat: ORKAnswerFormat.booleanAnswerFormat())
                 stepItem.isOptional = false
-
                 step.formItems? = (step.formItems)! + [stepItem]
             }
 
@@ -124,7 +116,7 @@ public class SurveyTask: NSObject, ORKTask {
                             if let bqr = srr[0] as? ORKBooleanQuestionResult {
                                 if let a = bqr.booleanAnswer {
                                     if a == 1 {
-                                        print("Current Question id", manager.currentQuestionID, "and handleAnswerForYesNo")
+                                        //print("Current Question id", manager.currentQuestionID, "and handleAnswerForYesNo")
                                         manager.handleAnswerForYesNo(answer: true)
                                     } else if a == 0 {
                                         manager.handleAnswerForYesNo(answer: false)
@@ -133,7 +125,7 @@ public class SurveyTask: NSObject, ORKTask {
                             }
                         } else {
                             //Else it is a group question
-                            print("Current Question id", manager.currentQuestionID, "and handleAnswerForGroupQuestion", " **********\n*********and Step Result",stepResult)
+                            //print("Current Question id", manager.currentQuestionID, "and handleAnswerForGroupQuestion", " **********\n*********and Step Result",stepResult)
                             manager.handleAnswerForGroupQuestion(Results: stepResult)
                         }
                     }
@@ -142,11 +134,7 @@ public class SurveyTask: NSObject, ORKTask {
             }
         }
         
-        print("SurveryTask :  handle : passNum",passNum,"  failNum =",failNum)
+        print("SurveryTask :  handle : passNum",manager.passNum,"  failNum =",manager.failNum)
 
     }
-
-    ////
-
-
 }
