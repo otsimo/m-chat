@@ -58,10 +58,25 @@ extension Pollster{
         return (Otsimo_Mchat_Step(), Otsimo_Mchat_Question())
     }
     
-//    func getBeforeStepAndQuestion(id : String) -> (Otsimo_Mchat_Step,Otsimo_Mchat_Question){
-//        let c = getStepAndQuestion(id : id)
-//        
-//    }
+    func getBeforeQuestionID(currentID : String) -> String{
+        let ids = parseID(id: currentID)
+        let stepNum = ids.0
+        let qNum = ids.1
+        
+        var beforeQuestionID = "0:0"
+        for s in steps {
+            if s.id == stepNum {
+                for q in s.questions {
+                    if q.id == qNum {
+                        return beforeQuestionID
+                    }
+                    beforeQuestionID = generateID(stepID: s.id, questionID: q.id)
+                }
+            }
+        }
+        
+        return beforeQuestionID
+    }
     
 
 }

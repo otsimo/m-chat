@@ -114,7 +114,7 @@ public class SurveyTask: NSObject, ORKTask {
 
     func handle(with result: ORKTaskResult) {
         print("Current",manager.currentQuestionID)
-        print("RESULT ->>>>>>>", result)
+        //print("RESULT ->>>>>>>", result)
         if let sl = result.results, sl.count > 0 {
             if let stepResult = sl.last as? ORKStepResult {
                 if stepResult.identifier == manager.currentQuestionID {
@@ -133,7 +133,7 @@ public class SurveyTask: NSObject, ORKTask {
                             }
                         } else {
                             //Else it is a group question
-                            print("Current Question id", manager.currentQuestionID, "and handleAnswerForGroupQuestion")
+                            print("Current Question id", manager.currentQuestionID, "and handleAnswerForGroupQuestion", " **********\n*********and Step Result",stepResult)
                             manager.handleAnswerForGroupQuestion(Results: stepResult)
                         }
                     }
@@ -141,6 +141,8 @@ public class SurveyTask: NSObject, ORKTask {
                 }
             }
         }
+        
+        print("SurveryTask :  handle : passNum",passNum,"  failNum =",failNum)
 
     }
 

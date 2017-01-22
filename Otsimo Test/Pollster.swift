@@ -116,19 +116,21 @@ public class Pollster {
                 let qID = bqr.identifier
                 let qIDs = parseID(id: qID)
                 let qNum = qIDs.1
-                let answer = bqr.booleanAnswer == 1
-
-                if let groupName = cc.group!.questions[qNum] {
-                    let a = GroupAnswer(id: qNum, answer: answer, groupName: groupName)
-                    groupAnswers.append(a)
-
-                } else {
-                    let a = GroupAnswer(id: qNum, answer: answer, groupName: "")
-                    groupAnswers.append(a)
-
+                
+                if let boolenAnswer = bqr.booleanAnswer{
+                    let answer = boolenAnswer == 1
+                    if let groupName = cc.group!.questions[qNum] {
+                        let a = GroupAnswer(id: qNum, answer: answer, groupName: groupName)
+                        groupAnswers.append(a)
+                        
+                    } else {
+                        let a = GroupAnswer(id: qNum, answer: answer, groupName: "")
+                        groupAnswers.append(a)
+                        
+                    }
+                }else{
+                    return
                 }
-
-
             }
         }
 
@@ -144,13 +146,15 @@ public class Pollster {
                     case .pass:
                         passNum += 1
                         stepNum += 1
-                        Log.debug("\(currentQuestionID) *pass of Group passNum = \(passNum)")
-                        break
+                        Log.debug("current id = \(currentQuestionID) *pass of Group passNum = \(passNum)")
+                        nextStep(with: cstep)
+                        return
                     case .fail:
                         failNum += 1
                         stepNum += 1
-                        Log.debug("*fail")
-                        break
+                        Log.debug("current id = \(currentQuestionID) *fail of Group failNum = \(failNum)")
+                        nextStep(with: cstep)
+                        return
                     default:
                         Log.debug("default of Group")
                         break
@@ -160,6 +164,11 @@ public class Pollster {
             
         }
         
+        
+        
+    }
+    
+    func nextStep(with cstep : Otsimo_Mchat_Step){
         if currentQuestionID == "sum" || currentQuestionID == lastQuestionID{
             currentQuestionID = lastQuestionID
             print("-")
@@ -175,8 +184,7 @@ public class Pollster {
         }
         let nextStep = steps[cindex + 1]
         currentQuestionID = generateID(stepID: nextStep.id, questionID: nextStep.firstQuestion)
-        
-        
+
     }
 
     func runQuery(query: Otsimo_Mchat_Query, answers: [GroupAnswer]) -> Otsimo_Mchat_ResultType? {
