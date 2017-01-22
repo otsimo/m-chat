@@ -9,6 +9,9 @@
 import Foundation
 import ResearchKit
 
+var passNum = 0
+var failNum = 0
+
 public class Pollster {
     var currentQuestionID: String
     var lastQuestionID: String = "0:0"
@@ -16,8 +19,7 @@ public class Pollster {
     var stepNum = 1
 
 
-    var passNum = 0
-    var failNum = 0
+    
 
     init(firstStep: String) {
         let steps = readSteps()
@@ -40,7 +42,7 @@ public class Pollster {
                 case .pass:
                     passNum += 1
                     stepNum += 1
-                    Log.debug("*pass")
+                    Log.debug("*pass passNum = \(passNum)")
                     break
                 case .fail:
                     failNum += 1
@@ -48,6 +50,7 @@ public class Pollster {
                     Log.debug("*fail")
                     break
                 default:
+                    Log.debug("defult")
                     break
                 }
             } else {
@@ -66,6 +69,8 @@ public class Pollster {
                     Log.debug("*fail")
                     break
                 default:
+                    Log.debug("defult")
+
                     break
                 }
             }
@@ -126,7 +131,7 @@ public class Pollster {
                     case .pass:
                         passNum += 1
                         stepNum += 1
-                        Log.debug("*pass")
+                        Log.debug("*pass of Group passNum = \(passNum)")
                         break
                     case .fail:
                         failNum += 1
@@ -134,6 +139,7 @@ public class Pollster {
                         Log.debug("*fail")
                         break
                     default:
+                        Log.debug("default of Group")
                         break
                     }
                 }

@@ -92,6 +92,7 @@ public class SurveyTask: NSObject, ORKTask {
 
                 step.formItems? = (step.formItems)! + [stepItem]
             }
+            
             return step
         }
         return nil

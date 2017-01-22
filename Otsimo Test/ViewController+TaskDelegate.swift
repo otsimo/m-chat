@@ -50,8 +50,8 @@ extension ViewController: ORKTaskViewControllerDelegate {
          view controller.
          */
         taskResultFinishedCompletionHandler?(taskViewController.result)
-        print("passNum-> ",pollster.passNum)
-        print("failNum->",pollster.failNum)
+        print("passNum-> ",passNum)
+        print("failNum->",failNum)
         taskViewController.dismiss(animated: true, completion: nil)
         consentTaskVC.dismiss(animated: true, completion: nil)
         infoTaskVC.dismiss(animated: true, completion: nil)
