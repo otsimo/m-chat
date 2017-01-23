@@ -17,6 +17,8 @@ class ViewController: UIViewController {
 
     var taskResultFinishedCompletionHandler: ((ORKResult) -> Void)?
 
+    @IBOutlet weak var label_passNum: UILabel!
+    @IBOutlet weak var label_failNum: UILabel!
     var isRun = 0
     var taskResult: ORKTaskResult?
     var iResult = Otsimo_Info()
@@ -62,6 +64,8 @@ class ViewController: UIViewController {
                 }
                 
                 
+                label_passNum.text = "PASS NUM = " + String(pollster.passNum)
+                label_failNum.text = "FAİL NUM = " + String(pollster.failNum)
             }
         }
     }
@@ -76,8 +80,7 @@ class ViewController: UIViewController {
 
 
     lazy var taskViewContoller: ORKTaskViewController = {
-        var pollster = Pollster(firstStep: "1")
-        let taskViewController = ORKTaskViewController(task: SurveyTask(pollster), taskRun: nil)
+        let taskViewController = ORKTaskViewController(task: SurveyTask(self.pollster), taskRun: nil)
         taskViewController.delegate = self
         taskViewController.outputDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] , isDirectory: true) as URL
         return taskViewController
