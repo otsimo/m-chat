@@ -4,7 +4,7 @@ option go_package = "mchatpb";
 
 message QuestionResult{
     string id = 1;
-    bool answer = 2;
+    string answer = 2;
 }
 
 message StepResult{

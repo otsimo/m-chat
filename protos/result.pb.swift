@@ -25,12 +25,12 @@ public struct Otsimo_QuestionResult: ProtobufGeneratedMessage {
 
   public var id: String = ""
 
-  public var answer: Bool = false
+  public var answer: String = ""
 
   public init() {}
 
   public init(id: String? = nil,
-    answer: Bool? = nil)
+    answer: String? = nil)
   {
     if let v = id {
       self.id = v
@@ -44,7 +44,7 @@ public struct Otsimo_QuestionResult: ProtobufGeneratedMessage {
     let handled: Bool
     switch protoFieldNumber {
     case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &id)
-    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufBool.self, value: &answer)
+    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &answer)
     default:
       handled = false
     }
@@ -55,8 +55,8 @@ public struct Otsimo_QuestionResult: ProtobufGeneratedMessage {
     if id != "" {
       try visitor.visitSingularField(fieldType: ProtobufString.self, value: id, protoFieldNumber: 1, protoFieldName: "id", jsonFieldName: "id", swiftFieldName: "id")
     }
-    if answer != false {
-      try visitor.visitSingularField(fieldType: ProtobufBool.self, value: answer, protoFieldNumber: 2, protoFieldName: "answer", jsonFieldName: "answer", swiftFieldName: "answer")
+    if answer != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: answer, protoFieldNumber: 2, protoFieldName: "answer", jsonFieldName: "answer", swiftFieldName: "answer")
     }
   }
 

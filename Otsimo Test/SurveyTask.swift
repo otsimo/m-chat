@@ -37,13 +37,14 @@ public class SurveyTask: NSObject, ORKTask {
         //Log.debug("step::after current=\(manager.currentQuestionID) last=\(manager.lastQuestionID)")
         print("step :: after")
 
+        
         if manager.currentQuestionID == manager.lastQuestionID {
             return nil
         }
 
         handle(with: result)
 
-
+        
 
         if manager.currentQuestionID == "sum" {
             let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
@@ -53,12 +54,12 @@ public class SurveyTask: NSObject, ORKTask {
         }
         let q = manager.getQuestion(id: manager.currentQuestionID)
         if manager.isYesNoQuestion(id: manager.currentQuestionID) {
-            //Log.debug("current quesiton = \(manager.currentQuestionID) is yes no question")
-            let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
+            //Log.debug("current quesiton = \(currentQuestionID) is yes no question")
+            let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: .booleanAnswerFormat())
             step.isOptional = false
             return step
         } else if manager.isGroup(id: manager.currentQuestionID) {
-            //Log.debug("current quesiton = \(manager.currentQuestionID) is group question")
+            //Log.debug("current quesiton = \(currentQuestionID) is group question")
             //Create Group question
             let title = NSLocalizedString(getLocalizedID(id: manager.currentQuestionID), comment: "")
             let step = ORKFormStep(identifier: manager.currentQuestionID, title: title, text: "")
@@ -70,11 +71,13 @@ public class SurveyTask: NSObject, ORKTask {
 
                 let gqID = s + ":" + String(gq.key)
                 let text = NSLocalizedString(getLocalizedID(id: gqID), comment: "")
-                let stepItem = ORKFormItem(identifier: gqID, text: text, answerFormat: ORKAnswerFormat.booleanAnswerFormat())
+                let stepItem = ORKFormItem(identifier: gqID, text: text, answerFormat: .booleanAnswerFormat())
                 stepItem.isOptional = false
+                stepItem.accessibilityNavigationStyle = .combined
+
                 step.formItems? = (step.formItems)! + [stepItem]
             }
-
+            step.accessibilityNavigationStyle = .combined
             return step
         }
         return nil
@@ -83,7 +86,7 @@ public class SurveyTask: NSObject, ORKTask {
     public func step(withIdentifier identifier: String) -> ORKStep? {
         Log.debug("step : withIdentifier")
         let q = manager.getQuestion(id: manager.currentQuestionID)
-        let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: ORKAnswerFormat.booleanAnswerFormat())
+        let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: .booleanAnswerFormat())
         step.isOptional = false
         return nil
     }
