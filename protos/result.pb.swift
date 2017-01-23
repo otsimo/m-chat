@@ -67,41 +67,59 @@ public struct Otsimo_QuestionResult: ProtobufGeneratedMessage {
   }
 }
 
-public struct Otsimo_StepResult: ProtobufGeneratedMessage {
-  public var swiftClassName: String {return "Otsimo_StepResult"}
-  public var protoMessageName: String {return "StepResult"}
+public struct Otsimo_SubStepResult: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_SubStepResult"}
+  public var protoMessageName: String {return "SubStepResult"}
   public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
-    "id": 2,
-    "stepResult": 1,
+    "id": 1,
+    "startDate": 2,
+    "endDate": 3,
+    "stepResults": 4,
   ]}
   public var protoFieldNames: [String: Int] {return [
-    "id": 2,
-    "stepResult": 1,
+    "id": 1,
+    "startDate": 2,
+    "endDate": 3,
+    "stepResults": 4,
   ]}
 
   public var id: String = ""
 
-  public var stepResult: [Otsimo_QuestionResult] = []
+  public var startDate: Int64 = 0
+
+  public var endDate: Int64 = 0
+
+  public var stepResults: [Otsimo_QuestionResult] = []
 
   public init() {}
 
   public init(id: String? = nil,
-    stepResult: [Otsimo_QuestionResult] = [])
+    startDate: Int64? = nil,
+    endDate: Int64? = nil,
+    stepResults: [Otsimo_QuestionResult] = [])
   {
     if let v = id {
       self.id = v
     }
-    if !stepResult.isEmpty {
-      self.stepResult = stepResult
+    if let v = startDate {
+      self.startDate = v
+    }
+    if let v = endDate {
+      self.endDate = v
+    }
+    if !stepResults.isEmpty {
+      self.stepResults = stepResults
     }
   }
 
   public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
     let handled: Bool
     switch protoFieldNumber {
-    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &id)
-    case 1: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_QuestionResult.self, value: &stepResult)
+    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &id)
+    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &startDate)
+    case 3: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &endDate)
+    case 4: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_QuestionResult.self, value: &stepResults)
     default:
       handled = false
     }
@@ -109,17 +127,82 @@ public struct Otsimo_StepResult: ProtobufGeneratedMessage {
   }
 
   public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
-    if !stepResult.isEmpty {
-      try visitor.visitRepeatedMessageField(value: stepResult, protoFieldNumber: 1, protoFieldName: "stepResult", jsonFieldName: "stepResult", swiftFieldName: "stepResult")
-    }
     if id != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: id, protoFieldNumber: 2, protoFieldName: "id", jsonFieldName: "id", swiftFieldName: "id")
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: id, protoFieldNumber: 1, protoFieldName: "id", jsonFieldName: "id", swiftFieldName: "id")
+    }
+    if startDate != 0 {
+      try visitor.visitSingularField(fieldType: ProtobufInt64.self, value: startDate, protoFieldNumber: 2, protoFieldName: "startDate", jsonFieldName: "startDate", swiftFieldName: "startDate")
+    }
+    if endDate != 0 {
+      try visitor.visitSingularField(fieldType: ProtobufInt64.self, value: endDate, protoFieldNumber: 3, protoFieldName: "endDate", jsonFieldName: "endDate", swiftFieldName: "endDate")
+    }
+    if !stepResults.isEmpty {
+      try visitor.visitRepeatedMessageField(value: stepResults, protoFieldNumber: 4, protoFieldName: "stepResults", jsonFieldName: "stepResults", swiftFieldName: "stepResults")
+    }
+  }
+
+  public func _protoc_generated_isEqualTo(other: Otsimo_SubStepResult) -> Bool {
+    if id != other.id {return false}
+    if startDate != other.startDate {return false}
+    if endDate != other.endDate {return false}
+    if stepResults != other.stepResults {return false}
+    return true
+  }
+}
+
+public struct Otsimo_StepResult: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_StepResult"}
+  public var protoMessageName: String {return "StepResult"}
+  public var protoPackageName: String {return "otsimo"}
+  public var jsonFieldNames: [String: Int] {return [
+    "id": 1,
+    "subStepResults": 2,
+  ]}
+  public var protoFieldNames: [String: Int] {return [
+    "id": 1,
+    "subStepResults": 2,
+  ]}
+
+  public var id: String = ""
+
+  public var subStepResults: [Otsimo_SubStepResult] = []
+
+  public init() {}
+
+  public init(id: String? = nil,
+    subStepResults: [Otsimo_SubStepResult] = [])
+  {
+    if let v = id {
+      self.id = v
+    }
+    if !subStepResults.isEmpty {
+      self.subStepResults = subStepResults
+    }
+  }
+
+  public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
+    let handled: Bool
+    switch protoFieldNumber {
+    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &id)
+    case 2: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_SubStepResult.self, value: &subStepResults)
+    default:
+      handled = false
+    }
+    return handled
+  }
+
+  public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
+    if id != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: id, protoFieldNumber: 1, protoFieldName: "id", jsonFieldName: "id", swiftFieldName: "id")
+    }
+    if !subStepResults.isEmpty {
+      try visitor.visitRepeatedMessageField(value: subStepResults, protoFieldNumber: 2, protoFieldName: "subStepResults", jsonFieldName: "subStepResults", swiftFieldName: "subStepResults")
     }
   }
 
   public func _protoc_generated_isEqualTo(other: Otsimo_StepResult) -> Bool {
     if id != other.id {return false}
-    if stepResult != other.stepResult {return false}
+    if subStepResults != other.subStepResults {return false}
     return true
   }
 }

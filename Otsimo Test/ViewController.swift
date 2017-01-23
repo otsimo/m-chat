@@ -43,9 +43,10 @@ class ViewController: UIViewController {
         } else if isRun == 3 {
             if let t = taskResult{
                 
-                let analysedResult = anlyse.Task(result: t,iresult: iResult)
-                print("analysedResult", analysedResult)
+                let surveyResults = anlyse.Task(result: t)
+                print("surveyResult", surveyResults)
                 
+                let analysedResult = anlyse.getAnalyzedResult(iresult: iResult, sresults: surveyResults)
                 //Convert analysedResult to json
                 do {
                     let json = try analysedResult.serializeJSON()

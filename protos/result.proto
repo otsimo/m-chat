@@ -7,11 +7,17 @@ message QuestionResult{
     string answer = 2;
 }
 
-message StepResult{
-    string id = 2;
-	repeated QuestionResult stepResult = 1;
+message SubStepResult{
+    string id = 1;
+    int64 startDate = 2;
+    int64 endDate = 3;
+	repeated QuestionResult stepResults = 4;
 }
 
+message StepResult{
+    string id = 1;
+    repeated SubStepResult subStepResults = 2;
+}
 
 message Result{
 	Info info = 1;
@@ -38,5 +44,4 @@ message Info{
     string age = 1;
     string gender = 2;
     string relation = 3;
-
 }

@@ -14,48 +14,96 @@ import SwiftProtobuf
 let OtsimoResultVersion: Int32 = 1
 
 class Analyse {
+    
+    func getAnalyzedResult(iresult: Otsimo_Info , sresults : [Otsimo_StepResult]) -> Otsimo_Result{
+        var analysedResults = Otsimo_Result()
+        analysedResults.device = Otsimo_DeviceInfo(os: "ios")
+        analysedResults.version = OtsimoResultVersion
+        analysedResults.info = iresult
+        analysedResults.stepResults = sresults
+    
+        return analysedResults
+    }
+    
+    
 
-    func Task(result: ORKTaskResult, iresult: Otsimo_Info) -> Otsimo_Result {
+    func Task(result: ORKTaskResult) -> [Otsimo_StepResult] {
         Log.debug("Analyse : AnalyseTask")
         var AnalysedResults = Otsimo_Result()
-        AnalysedResults.device = Otsimo_DeviceInfo(os: "ios")
-        AnalysedResults.version = OtsimoResultVersion
-        print("iresult = ", iresult)
-
-        AnalysedResults.info = iresult
-
+        
+        
         var stepResults: [Otsimo_StepResult] = []
-        if let tskResult = result.results {
-            for results in tskResult {
+        var subStepResults: [Otsimo_SubStepResult] = []
+        if let tskResult = result.results{
+            
+            
+            
+            for results in tskResult{
                 print("id->", results.identifier, "start ->", results.startDate, "\nEnd ->", results.endDate, "\n")
-                var sResult = Otsimo_StepResult()
-                var qResults: [Otsimo_QuestionResult] = []
-
+                var subStepResult = Otsimo_SubStepResult()
+                var qResults : [Otsimo_QuestionResult] = []
                 let sresults = results as! ORKStepResult
-                if let stepResult = sresults.results {
-                    for r in stepResult {
+                
+                
+                if results.identifier == "SummaryStep"{
+                    var stepResult = Otsimo_StepResult()
+                    stepResult.subStepResults += subStepResults
+                    stepResult.id = parseID(id: (subStepResults.last?.id)!).0
+                    stepResults.append(stepResult)
+                }
+                
+                
+                if let stepresult = sresults.results{
+                    for r in stepresult{
                         var qResult = Otsimo_QuestionResult()
                         let br = r as! ORKBooleanQuestionResult
                         qResult.id = br.identifier
-                        if let a = br.booleanAnswer {
-                            print(a == 1)
-                            if a == 1 {
+                        
+                        if let a = br.booleanAnswer{
+                            if a == 1{
                                 qResult.answer = "YES"
-                            } else {
+                            }else{
                                 qResult.answer = "NO"
                             }
-                            qResults.append(qResult)
                         }
+                        qResults.append(qResult)
+                        
                     }
+                    subStepResult.stepResults = qResults
+                    subStepResult.id = sresults.identifier
+                    subStepResult.startDate = Int64(sresults.startDate.timeIntervalSince1970)
+                    subStepResult.endDate = Int64(sresults.endDate.timeIntervalSince1970)
                 }
-                sResult.stepResult = qResults
-                stepResults.append(sResult)
+                
+                if subStepResults == []{
+                    subStepResults.append(subStepResult)
+                }else if subStepResult.id != "SummaryStep"{
+                    let id = parseID(id: (subStepResults.last?.id)!).0
+                    let subStepResultID = parseID(id: subStepResult.id).0
+                    
+                    if id == subStepResultID {
+                        subStepResults.append(subStepResult)
+                    }else{
+                        var stepResult = Otsimo_StepResult()
+                        stepResult.subStepResults += subStepResults
+                        stepResult.id = id
+                        stepResults.append(stepResult)
+                        subStepResults = [subStepResult]
+                    }
+                   
+                }
+                
+                
+                
+                subStepResults.append(subStepResult)
             }
+            
+            
         }
-        AnalysedResults.stepResults = stepResults
-
-        print("AnalysedResults ->", AnalysedResults)
-        return AnalysedResults
+        
+        print("stepResults ----->> \n",stepResults)
+        
+        return stepResults
     }
 
     func InfoResult(infoResult: ORKTaskResult) -> Otsimo_Info {
