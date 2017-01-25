@@ -26,5 +26,5 @@ func readStep(i : Int)-> Otsimo_Mchat_Step{
 
 
 func readSteps()->[Otsimo_Mchat_Step]{
-    return (1...2).map(readStep)
+    return (1...20).map(readStep)
 }

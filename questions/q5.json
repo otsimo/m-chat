@@ -17,38 +17,40 @@
     },
     {
       "group": {
-        "3": "pass",
-        "4": "pass",
-        "5": "fail",
-        "6": "fail",
-        "7": "fail",
-        "8": "fail"
+        "query": [
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "group": "pass",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "group": "fail",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "group": "fail",
+            "nextQuestion": "10",
+            "result": "ASK_ANOTHER"
+          }
+        ],
+        "questions": {
+          "3": "pass",
+          "4": "pass",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail",
+          "8": "fail"
+        }
       },
       "id": "2",
-      "query": [
-        {
-          "actions": [
-            "ONE_OF_YES"
-          ],
-          "group": "pass",
-          "result": "PASS"
-        },
-        {
-          "actions": [
-            "ALL_OF_NO"
-          ],
-          "group": "fail",
-          "result": "PASS"
-        },
-        {
-          "actions": [
-            "ONE_OF_YES"
-          ],
-          "group": "fail",
-          "nextQuestion": "10",
-          "result": "ASK_ANOTHER"
-        }
-      ],
       "text": "Please describe these movements"
     },
     {

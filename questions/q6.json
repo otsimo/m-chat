@@ -62,7 +62,7 @@
     },
     {
       "id": "8",
-      "text": "If you point at something across the room, does ___ look at it?",
+      "text": "If you said “Show me”, would he/she point at it?",
       "yesno": {
         "yes": {
           "result": "PASS"

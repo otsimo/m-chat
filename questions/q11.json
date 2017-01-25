@@ -4,7 +4,7 @@
   "questions": [
     {
       "id": "1",
-      "text": " When you smile at ____________, does he/she smile back at you?",
+      "text": "When you smile at ____________, does he/she smile back at you?",
       "yesno": {
         "yes": {
           "result": "PASS"

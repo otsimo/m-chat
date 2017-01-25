@@ -45,6 +45,34 @@
       "text": "Please give me an example of how he/she would try to get you to watch him/her."
     },
     {
+      "group": {
+        "query": [
+          {
+            "actions": [
+              "ONE_OF_YES"
+            ],
+            "group": "",
+            "result": "PASS"
+          },
+          {
+            "actions": [
+              "ALL_OF_NO"
+            ],
+            "group": "",
+            "result": "FAIL"
+          }
+        ],
+        "questions": {
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": ""
+        }
+      },
+      "id": "3",
+      "text": "Please give me an example of how he/she would try to get you to watch him/her."
+    },
+    {
       "id": "4",
       "text": "Say “Look!” or “Watch me!”?"
     },
