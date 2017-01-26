@@ -112,6 +112,8 @@ class Analyse {
         var iresult = Otsimo_Info()
 
         if let iResults = infoResult.results {
+            print(iResults)
+            
             for results in iResults {
                 let sresults = results as! ORKStepResult
                 if let stepResult = sresults.results {
@@ -130,15 +132,14 @@ class Analyse {
                             iresult.gender = NSLocalizedString(String(describing: choice), comment: "")
                         }
                     }
-                    if sresults.identifier == ageStepID {
-                        let r = stepResult[0] as! ORKNumericQuestionResult
-                        if let answer = r.numericAnswer {
-                            iresult.age = String(answer.int64Value)
+                    if sresults.identifier == birthDayStepID {
+                        print(stepResult[0])
+                        let r = stepResult[0] as! ORKDateQuestionResult
+                        
+                        if let dateAnswer = r.dateAnswer{
+                            iresult.birthDay = Int64(dateAnswer.timeIntervalSince1970)
                         }
-
-
                     }
-
                 }
             }
         }

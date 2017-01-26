@@ -35,7 +35,7 @@ extension Analyse{
     }
     
     func getRelation(info : Otsimo_Info) -> String{
-        return info.age
+        return info.relation
     }
     func getGender(info : Otsimo_Info) -> String{
         return info.gender

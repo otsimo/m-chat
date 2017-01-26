@@ -27,7 +27,7 @@ func createTextChoices(choices: [String]) -> [ORKTextChoice] {
 //ids
 let relationStepID = "relation"
 let genderStepID = "gender"
-let ageStepID = "age"
+let birthDayStepID = "birthDay"
 
 public var InfoTask: ORKOrderedTask {
 
@@ -66,12 +66,14 @@ public var InfoTask: ORKOrderedTask {
     infosteps.append(genderStep())
 
 
-    let ageStep = { () -> ORKQuestionStep in
-        let ageStepText = NSLocalizedString("InfoTask.ageStepText", comment: "")
-        let ageStep = ORKQuestionStep(identifier: ageStepID, title: ageStepText, answer: ORKAnswerFormat.integerAnswerFormat(withUnit: NSLocalizedString("InfoTask.unit", comment: "")))
-        return ageStep
+    let birthDayStep = { () -> ORKQuestionStep in
+        let birthDayStepText = NSLocalizedString("InfoTask.birthDayStepText", comment: "")
+        
+        let birthDayStep = ORKQuestionStep(identifier: birthDayStepID, title: birthDayStepText, answer: ORKAnswerFormat.dateAnswerFormat())
+
+        return birthDayStep
     }
-    infosteps.append(ageStep())
+    infosteps.append(birthDayStep())
 
     return ORKOrderedTask(identifier: "InfoTask", steps: infosteps)
 

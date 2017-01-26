@@ -183,7 +183,7 @@ InfoTask.gender.Female = "Female";
 InfoTask.genderStepText = "What is gender of child?";
 
 
-InfoTask.ageStepText = "How old are the child?";
+InfoTask.birthDayStepText = "What is the birthday of child?";
 InfoTask.unit = "years";
 
 Consent.title = "";

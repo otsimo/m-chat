@@ -523,17 +523,17 @@ public struct Otsimo_Info: ProtobufGeneratedMessage {
   public var protoMessageName: String {return "Info"}
   public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
-    "age": 1,
+    "birthDay": 1,
     "gender": 2,
     "relation": 3,
   ]}
   public var protoFieldNames: [String: Int] {return [
-    "age": 1,
+    "birthDay": 1,
     "gender": 2,
     "relation": 3,
   ]}
 
-  public var age: String = ""
+  public var birthDay: Int64 = 0
 
   public var gender: String = ""
 
@@ -541,12 +541,12 @@ public struct Otsimo_Info: ProtobufGeneratedMessage {
 
   public init() {}
 
-  public init(age: String? = nil,
+  public init(birthDay: Int64? = nil,
     gender: String? = nil,
     relation: String? = nil)
   {
-    if let v = age {
-      self.age = v
+    if let v = birthDay {
+      self.birthDay = v
     }
     if let v = gender {
       self.gender = v
@@ -559,7 +559,7 @@ public struct Otsimo_Info: ProtobufGeneratedMessage {
   public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
     let handled: Bool
     switch protoFieldNumber {
-    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &age)
+    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &birthDay)
     case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &gender)
     case 3: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &relation)
     default:
@@ -569,8 +569,8 @@ public struct Otsimo_Info: ProtobufGeneratedMessage {
   }
 
   public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
-    if age != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: age, protoFieldNumber: 1, protoFieldName: "age", jsonFieldName: "age", swiftFieldName: "age")
+    if birthDay != 0 {
+      try visitor.visitSingularField(fieldType: ProtobufInt64.self, value: birthDay, protoFieldNumber: 1, protoFieldName: "birthDay", jsonFieldName: "birthDay", swiftFieldName: "birthDay")
     }
     if gender != "" {
       try visitor.visitSingularField(fieldType: ProtobufString.self, value: gender, protoFieldNumber: 2, protoFieldName: "gender", jsonFieldName: "gender", swiftFieldName: "gender")
@@ -581,7 +581,7 @@ public struct Otsimo_Info: ProtobufGeneratedMessage {
   }
 
   public func _protoc_generated_isEqualTo(other: Otsimo_Info) -> Bool {
-    if age != other.age {return false}
+    if birthDay != other.birthDay {return false}
     if gender != other.gender {return false}
     if relation != other.relation {return false}
     return true

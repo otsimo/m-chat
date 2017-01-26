@@ -41,7 +41,7 @@ message DeviceInfo{
 }
 
 message Info{
-    string age = 1;
+    int64 birthDay = 1;
     string gender = 2;
     string relation = 3;
 }
