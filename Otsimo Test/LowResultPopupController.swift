@@ -1,18 +1,21 @@
 //
-//  ResultViewController.swift
+//  LowResultPopupController.swift
 //  OtsimoTest
 //
-//  Created by demirci on 15/01/2017.
+//  Created by demirci on 27/01/2017.
 //  Copyright © 2017 mdemirci. All rights reserved.
 //
 
 import UIKit
 
-class ResultViewController: UIViewController {
-
+class LowResultPopupController: UIViewController {
+    
+    var point = 0
+    @IBOutlet weak var lbl_result: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        lbl_result.text = "M-CHAT Testinden Alınan Puan: " + String(point)
         // Do any additional setup after loading the view.
     }
 
