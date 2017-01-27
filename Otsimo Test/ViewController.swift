@@ -19,11 +19,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label_passNum: UILabel!
     @IBOutlet weak var label_failNum: UILabel!
-    var isRun = 10
+    var isRun = 0
     var taskResult: ORKTaskResult?
     var iResult = Otsimo_Info()
     override func viewDidAppear(_ animated: Bool) {
-        showResultScene(passNum: 19, failNum: 1)
         
         
         Log.debug("ViewController : viewDidAppear")
