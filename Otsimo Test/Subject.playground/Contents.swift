@@ -85,3 +85,35 @@ func getSubject(relation: Relation?, gender: Gender?) -> Sub {
 let s = getSubject(relation: Relation.parent, gender: Gender.male)
 
 
+
+let userdefautls = UserDefaults.standard
+
+let str = "asda"
+let data = str.data(using: .utf8)
+userdefautls.setValue(data, forKey: "mdd")
+
+
+if let a = userdefautls.value(forKey: "mdd") {
+    let saa = String(data: a as! Data, encoding: .utf8)
+    print(saa!)
+}
+
+/////////////
+
+let myString = "Hello World"
+
+UserDefaults.standard.set(myString, forKey: "myString")
+UserDefaults.standard.synchronize()
+
+if let myLoadedString = UserDefaults.standard.string(forKey: "myString") {
+    print(myLoadedString) // "Hello World"
+    
+}
+
+//
+
+UserDefaults.standard.setValue("asdasd", forKey: "oss")
+UserDefaults.standard.value(forKey: "oss")
+
+
+

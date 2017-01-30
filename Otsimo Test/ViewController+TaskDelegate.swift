@@ -28,6 +28,9 @@ extension ViewController: ORKTaskViewControllerDelegate {
      */
     public func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         print("didFinishWithReason \(reason)")
+        taskViewController.dismiss(animated: true, completion: nil)
+
+        
         switch reason {
             
         case .completed:
@@ -39,10 +42,40 @@ extension ViewController: ORKTaskViewControllerDelegate {
             switch taskViewController.result.identifier {
             case Tasks.consentTaskID:
                 analytics.event("completedConsent", data: [:])
+                present(infoTaskVC, animated: true, completion: nil)
+
             case Tasks.infoTaskID:
                 analytics.event("completedInfo", data: [:])
+                present(taskViewContoller, animated: true, completion: nil)
+                if let t = taskResult {
+                    iResult = anlyse.InfoResult(infoResult: t)
+                }
             case Tasks.surveyTaskID:
                 analytics.event("completedSurvey", data: [:])
+                if let t = taskResult {
+                    
+                    let surveyResults = anlyse.Task(result: t)
+                    print("surveyResult", surveyResults)
+                    
+                    let analysedResult = anlyse.getAnalyzedResult(iresult: iResult, sresults: surveyResults)
+                    //Convert analysedResult to json
+                    do {
+                        let json = try analysedResult.serializeJSON()
+                        print("json-----> \(json)")
+                        
+                        //And Send Result to Server
+                        let server = Server()
+                        let response = server.sendResult(json: json)
+                        Log.debug(response)
+                        
+                    } catch let e {
+                        Log.error(e as! String)
+                    }
+                    
+                    showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
+                    label_passNum.text = "PASS NUM = " + String(pollster.passNum)
+                    label_failNum.text = "FAİL NUM = " + String(pollster.failNum)
+                }
             default:
                 break
             }
@@ -65,8 +98,13 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     switch taskViewController.result.identifier {
                     case Tasks.consentTaskID:
                         analytics.event("discardedConsent", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        present(infoTaskVC, animated: true, completion: nil)
                     case Tasks.infoTaskID:
                         analytics.event("discardedInfo", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        present(taskViewContoller, animated: true, completion: nil)
+                        if let t = taskResult {
+                            iResult = anlyse.InfoResult(infoResult: t)
+                        }
                     case Tasks.surveyTaskID:
                         analytics.event("discardedSurvey", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
                     default:
@@ -95,6 +133,14 @@ extension ViewController: ORKTaskViewControllerDelegate {
                         analytics.event("savedInfo", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
                     case Tasks.surveyTaskID:
                         analytics.event("savedSurvey", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        
+                        let savedData = taskViewController.restorationData
+                        
+                        let userDefaults = UserDefaults.standard
+                        userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
+                        let lastQuestionID = lastStep.identifier
+                        userDefaults.set(lastQuestionID, forKey: "lastQuestionIdOfRestoration")
+                        print("*****lastQuestionID ->",lastQuestionID)
                     default:
                         break
                     }
@@ -112,7 +158,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
          */
         taskResultFinishedCompletionHandler?(taskViewController.result)
         
-        taskViewController.dismiss(animated: true, completion: nil)
         Log.debug("taskViewController dissmissed")
 
         
