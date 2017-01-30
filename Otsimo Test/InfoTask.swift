@@ -29,6 +29,7 @@ let relationStepID = "relation"
 let genderStepID = "gender"
 let birthDayStepID = "birthDay"
 
+
 public var InfoTask: ORKOrderedTask {
 
 
@@ -74,8 +75,8 @@ public var InfoTask: ORKOrderedTask {
         return birthDayStep
     }
     infosteps.append(birthDayStep())
-
-    return ORKOrderedTask(identifier: "InfoTask", steps: infosteps)
+    
+    return ORKOrderedTask(identifier: Tasks.infoTaskID, steps: infosteps)
 
 
 }

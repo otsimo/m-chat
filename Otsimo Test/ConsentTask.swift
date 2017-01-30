@@ -18,5 +18,5 @@ public var ConsentTask: ORKOrderedTask {
     steps += [visualConsentStep]
 
     
-    return ORKOrderedTask(identifier: "ConsentTask", steps: steps)
+    return ORKOrderedTask(identifier: Tasks.consentTaskID, steps: steps)
 }

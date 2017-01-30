@@ -33,12 +33,74 @@ extension ViewController: ORKTaskViewControllerDelegate {
         case .completed:
             Log.debug("task completed")
              taskResult = taskViewController.result
+            analytics.event("completed", data: [:])
+            
+            
+            switch taskViewController.result.identifier {
+            case Tasks.consentTaskID:
+                analytics.event("completedConsent", data: [:])
+            case Tasks.infoTaskID:
+                analytics.event("completedInfo", data: [:])
+            case Tasks.surveyTaskID:
+                analytics.event("completedSurvey", data: [:])
+            default:
+                break
+            }
+            
+
+
         case .failed:
             Log.debug("failed")
         case .discarded:
             Log.debug("discarded")
+            
+            
+            if let results = taskViewController.result.results{
+                if let lastStep = results.last{
+                    let discardedID = lastStep.identifier
+                    let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
+                    let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
+                    Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
+                    
+                    switch taskViewController.result.identifier {
+                    case Tasks.consentTaskID:
+                        analytics.event("discardedConsent", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                    case Tasks.infoTaskID:
+                        analytics.event("discardedInfo", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                    case Tasks.surveyTaskID:
+                        analytics.event("discardedSurvey", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                    default:
+                        break
+                    }
+                    
+                }
+            }
+            
+            
+
+            
+           
         case .saved:
             Log.debug("saved")
+            
+            if let results = taskViewController.result.results{
+                if let lastStep = results.last{
+                    let discardedID = lastStep.identifier
+                    let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
+                    let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
+                    Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
+                    
+                    switch taskViewController.result.identifier {
+                    case Tasks.infoTaskID:
+                        analytics.event("savedInfo", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                    case Tasks.surveyTaskID:
+                        analytics.event("savedSurvey", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                    default:
+                        break
+                    }
+                    
+                }
+            }
         }
         /*
          The `reason` passed to this method indicates why the task view
@@ -51,8 +113,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
         taskResultFinishedCompletionHandler?(taskViewController.result)
         
         taskViewController.dismiss(animated: true, completion: nil)
-        consentTaskVC.dismiss(animated: true, completion: nil)
-        infoTaskVC.dismiss(animated: true, completion: nil)
         Log.debug("taskViewController dissmissed")
 
         

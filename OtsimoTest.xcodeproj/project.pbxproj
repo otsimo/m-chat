@@ -23,6 +23,7 @@
 		532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B101E20423800F1F6E3 /* Pollster.swift */; };
 		532A8B141E204B4500F1F6E3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B131E204B4500F1F6E3 /* Log.swift */; };
 		53358FD21E2E81F600634C80 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53358FD11E2E81F600634C80 /* DeviceInfo.swift */; };
+		534B8A4A1E3F568500518E95 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A491E3F568500518E95 /* Tasks.swift */; };
 		534E070E1E2E39D80034F94B /* result.proto in Resources */ = {isa = PBXBuildFile; fileRef = 534E070D1E2E39D80034F94B /* result.proto */; };
 		53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D8B1E16DC03009875B8 /* SurveyTask.swift */; };
 		53734D931E16F005009875B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53734D951E16F005009875B8 /* Localizable.strings */; };
@@ -85,6 +86,7 @@
 		532A8B101E20423800F1F6E3 /* Pollster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollster.swift; sourceTree = "<group>"; };
 		532A8B131E204B4500F1F6E3 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		53358FD11E2E81F600634C80 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		534B8A491E3F568500518E95 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		534D5BEA1E35E400001AB543 /* Otsimo Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Otsimo Test-Bridging-Header.h"; sourceTree = "<group>"; };
 		534E070D1E2E39D80034F94B /* result.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = result.proto; path = protos/result.proto; sourceTree = "<group>"; };
 		53734D8B1E16DC03009875B8 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		5309B1391E30C4160096A4FC /* ResearchKit Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				534B8A491E3F568500518E95 /* Tasks.swift */,
 				532A8B161E204B7000F1F6E3 /* Survey */,
 				532A8B151E204B5200F1F6E3 /* Consent */,
 				538BCD211E2CF24F009F56EB /* InfoTask */,
@@ -461,6 +464,7 @@
 				53E2BF3A1E2B7492008B3017 /* ReadJSONs.swift in Sources */,
 				53B2BD641E3B8051001EC7E1 /* LowResultPopupController.swift in Sources */,
 				5309B1371E2F71B30096A4FC /* Server.swift in Sources */,
+				534B8A4A1E3F568500518E95 /* Tasks.swift in Sources */,
 				532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */,
 				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
 				537C9D801E3F49310054AFA0 /* GA.swift in Sources */,

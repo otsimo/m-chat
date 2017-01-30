@@ -18,7 +18,7 @@ public class SurveyTask: NSObject, ORKTask {
         self.manager = pollster
     }
 
-    public var identifier: String { get { return "survey" } }
+    public var identifier: String { get { return Tasks.surveyTaskID } }
     public func step(before step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
         //Log.debug("step : before : result -> \(result)")
 
