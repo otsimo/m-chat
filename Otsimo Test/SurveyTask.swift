@@ -122,12 +122,7 @@ public class SurveyTask: NSObject, ORKTask {
                         if srr.count == 1 {
                             if let bqr = srr[0] as? ORKBooleanQuestionResult {
                                 if let a = bqr.booleanAnswer {
-                                    if a == 1 {
-                                        //print("Current Question id", manager.currentQuestionID, "and handleAnswerForYesNo")
-                                        manager.handleAnswerForYesNo(answer: true)
-                                    } else if a == 0 {
-                                        manager.handleAnswerForYesNo(answer: false)
-                                    }
+                                    manager.handleAnswerForYesNo(answer: (a == 1))
                                 }
                             }
                         } else {

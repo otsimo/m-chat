@@ -29,7 +29,11 @@ public class Pollster {
 
 
     func handleAnswerForYesNo(answer: Bool) {
-        print("handleAnswerForYesNo")
+        print("handleAnswerForYesNo ->")
+        
+        
+
+        
         
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
 
@@ -38,6 +42,7 @@ public class Pollster {
             if answer {
                 switch yn.yes.result {
                 case .askAnother:
+                    
                     currentQuestionID = generateID(stepID: cstep.id, questionID: yn.yes.nextQuestion)
                     return
                 case .pass:
@@ -130,7 +135,8 @@ public class Pollster {
                 }
             }
         }
-
+        
+        
 
         if let qs = cc.group?.query {
             for q in qs {

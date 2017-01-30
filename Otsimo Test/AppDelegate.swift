@@ -8,6 +8,9 @@
 
 import UIKit
 
+let GAKey = "UA-66421320-5"
+var analytics : AnalyticsProtocol = AnalyticsWrapper()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         Log.setLevel(LogLevel(rawValue: 1)!)
-        
+        analytics.start("dev")
+        analytics.setUserInfo()
         return true
     }
 
