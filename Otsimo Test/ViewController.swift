@@ -29,88 +29,14 @@ class ViewController: UIViewController {
         Log.debug("ViewController : viewDidAppear")
 
             //present(consentTaskVC, animated: true, completion: nil)
-        present(taskViewContoller,animated: true,completion:nil)
-    }
-
-    func showResultScene(passNum: Int, failNum: Int) {
-
-
-        if (failNum >= 0 && failNum <= 2) {
-            print("LOW RİSK")
-
-            let resultVC = HighResultPopupController(nibName: "LowResultPopup", bundle: nil)
-            resultVC.point = passNum
-            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
-
-            // Create second button
-            let buttonSave = DefaultButton(title: "Save") {
-                print("You ok'd the default dialog")
-            }
-            buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
-            buttonSave.titleColor = UIColor.white
-
-            let buttonShare = DefaultButton(title: "Share") {
-                print("share")
-            }
-
-            buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
-            buttonShare.titleColor = UIColor.white
-
-            // Add buttons to dialog
-            popupVC.addButtons([buttonSave, buttonShare])
-            present(popupVC, animated: true, completion: nil)
-
-        } else if (failNum >= 3 && failNum <= 7) {
-            print("MEDIUM RİSK")
-            let resultVC = HighResultPopupController(nibName: "MediumResultPopup", bundle: nil)
-            resultVC.point = passNum
-            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
-
-            // Create second button
-            let buttonSave = DefaultButton(title: "Save") {
-                print("You ok'd the default dialog")
-            }
-            buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
-            buttonSave.titleColor = UIColor.white
-
-            let buttonShare = DefaultButton(title: "Share") {
-                print("share")
-            }
-
-            buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
-            buttonShare.titleColor = UIColor.white
-
-            // Add buttons to dialog
-            popupVC.addButtons([buttonSave, buttonShare])
-            present(popupVC, animated: true, completion: nil)
-        } else if (failNum >= 8 && failNum <= 20) {
-            print("HIGH RİSK")
-            let resultVC = HighResultPopupController(nibName: "HighResultPopup", bundle: nil)
-            resultVC.point = passNum
-            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
-
-            // Create second button
-            let buttonSave = DefaultButton(title: "Save") {
-                print("You ok'd the default dialog")
-            }
-            buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
-            buttonSave.titleColor = UIColor.white
-
-            let buttonShare = DefaultButton(title: "Share") {
-                print("share")
-            }
-
-            buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
-            buttonShare.titleColor = UIColor.white
-
-            // Add buttons to dialog
-            popupVC.addButtons([buttonSave, buttonShare])
-            present(popupVC, animated: true, completion: nil)
+        if isRun == 0{
+            print("isRun 0")
+            present(taskViewContoller,animated: true,completion:nil)
+            isRun = 1
         }
-
-
     }
 
+    
 
     override func viewWillAppear(_ animated: Bool) {
         Log.debug("ViewController : viewWillAppear")
@@ -125,7 +51,7 @@ class ViewController: UIViewController {
             print("restorationData")
             if let restorationStepID = UserDefaults.standard.string(forKey: "lastQuestionIdOfRestoration"){
                 print("restorationStepID ->",restorationStepID)
-                let id = String(describing: restorationStepID)
+                let id = parseID(id: String(describing: restorationStepID)).0
                 var restorationPollster = Pollster(firstStep: id)
                 let taskViewController = ORKTaskViewController(task: SurveyTask(restorationPollster), restorationData: restorationData, delegate: self)
                 return taskViewController

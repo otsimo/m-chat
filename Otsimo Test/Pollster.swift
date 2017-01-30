@@ -82,7 +82,7 @@ public class Pollster {
             }
         }
         
-        if currentQuestionID == "sum" || currentQuestionID == lastQuestionID{
+        if currentQuestionID == summaryStepID || currentQuestionID == lastQuestionID{
             currentQuestionID = lastQuestionID
             print("-")
             return

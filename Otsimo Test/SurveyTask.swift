@@ -10,7 +10,7 @@ import Foundation
 import ResearchKit
 
 
-
+let summaryStepID = "SummaryStepID"
 public class SurveyTask: NSObject, ORKTask {
 
     public var manager: Pollster
@@ -25,7 +25,7 @@ public class SurveyTask: NSObject, ORKTask {
         if manager.currentQuestionID == manager.lastQuestionID {
             return nil
         }
-        if manager.currentQuestionID == "sum" {
+        if manager.currentQuestionID == summaryStepID {
             manager.currentQuestionID = manager.lastQuestionID
         }
         return nil
@@ -33,7 +33,7 @@ public class SurveyTask: NSObject, ORKTask {
 
     var total = 0
     public func step(after step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
-        //Log.debug("step::after current=\(manager.currentQuestionID) last=\(manager.lastQuestionID)")
+        Log.debug("step::after current=\(manager.currentQuestionID) last=\(manager.lastQuestionID)")
 
         if manager.currentQuestionID == manager.lastQuestionID {
             return nil
@@ -52,41 +52,7 @@ public class SurveyTask: NSObject, ORKTask {
         return nil
     }
 
-    func getYesNoStep(with id: String) -> ORKStep {
-        let q = manager.getQuestion(id: id)
-        let step = ORKQuestionStep(identifier: manager.currentQuestionID, title: q.text, answer: .booleanAnswerFormat())
-        step.isOptional = false
-        return step
-    }
-    func getGroupStep(with id: String) -> ORKStep {
-        let q = manager.getQuestion(id: id)
-        let title = NSLocalizedString(getLocalizedID(id: id), comment: "")
-        let step = ORKFormStep(identifier: id, title: title, text: "")
-        step.formItems = []
-        step.isOptional = false
-        for gq in (q.group?.questions)! {
-
-            let s = parseID(id: id).0
-
-            let gqID = s + ":" + String(gq.key)
-            let text = NSLocalizedString(getLocalizedID(id: gqID), comment: "")
-            let stepItem = ORKFormItem(identifier: gqID, text: text, answerFormat: .booleanAnswerFormat())
-            stepItem.isOptional = false
-            stepItem.accessibilityNavigationStyle = .combined
-
-            step.formItems? = (step.formItems)! + [stepItem]
-        }
-        step.accessibilityNavigationStyle = .combined
-        return step
-
-    }
-    func getSummaryStep() -> ORKStep {
-        let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
-        summaryStep.title = NSLocalizedString("summaryStep.title", comment: "")
-        summaryStep.text = NSLocalizedString("We appreciate your time.", comment: "")
-        return summaryStep
-    }
-
+    
     public func step(withIdentifier identifier: String) -> ORKStep? {
         Log.debug("step : withIdentifier")
         let q = manager.getQuestion(id: manager.currentQuestionID)
@@ -128,14 +94,14 @@ public class SurveyTask: NSObject, ORKTask {
                         } else {
                             //Else it is a group question
                             //print("Current Question id", manager.currentQuestionID, "and handleAnswerForGroupQuestion", " **********\n*********and Step Result",stepResult)
+                            print("handle : else")
                             manager.handleAnswerForGroupQuestion(Results: stepResult)
+                            print("current in else->",manager.currentQuestionID)
                         }
                     }
                 }
             }
         }
-
-        print("SurveryTask :  handle : passNum", manager.passNum, "  failNum =", manager.failNum)
 
     }
 }

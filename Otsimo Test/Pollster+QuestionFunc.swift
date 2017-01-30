@@ -14,6 +14,7 @@ func generateID(stepID: String, questionID: String) -> String {
 }
 
 func parseID(id: String) -> (String, String) {
+    print("!!!!",id)
     var idArray = id.components(separatedBy: ":")
     return (idArray[0], idArray[1])
 }

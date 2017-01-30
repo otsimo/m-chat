@@ -39,17 +39,19 @@ class Analyse {
             
             
             for results in tskResult{
-                print("id->", results.identifier, "start ->", results.startDate, "\nEnd ->", results.endDate, "\n")
+
                 var subStepResult = Otsimo_SubStepResult()
                 var qResults : [Otsimo_QuestionResult] = []
                 let sresults = results as! ORKStepResult
                 
                 
-                if results.identifier == "SummaryStep"{
+                if results.identifier == summaryStepID{
+                    print("now sumStep")
                     var stepResult = Otsimo_StepResult()
                     stepResult.subStepResults += subStepResults
-                    stepResult.id = parseID(id: (subStepResults.last?.id)!).0
+                    stepResult.id = summaryStepID
                     stepResults.append(stepResult)
+                    continue
                 }
                 
                 
