@@ -23,6 +23,12 @@
 		532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B101E20423800F1F6E3 /* Pollster.swift */; };
 		532A8B141E204B4500F1F6E3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B131E204B4500F1F6E3 /* Log.swift */; };
 		53358FD21E2E81F600634C80 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53358FD11E2E81F600634C80 /* DeviceInfo.swift */; };
+		534A3B791E40B94E005FA5F3 /* ViewController+CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534A3B781E40B94E005FA5F3 /* ViewController+CollectionDataSource.swift */; };
+		534A3B7B1E40B96C005FA5F3 /* ViewController+CollectionDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534A3B7A1E40B96C005FA5F3 /* ViewController+CollectionDelegateFlowLayout.swift */; };
+		534A3B831E40BD14005FA5F3 /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B811E40BD14005FA5F3 /* 1.html */; };
+		534A3B841E40BD14005FA5F3 /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B821E40BD14005FA5F3 /* 2.html */; };
+		534A3B891E40C4EA005FA5F3 /* WalkThroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534A3B871E40C4EA005FA5F3 /* WalkThroughCell.swift */; };
+		534A3B8A1E40C4EA005FA5F3 /* WalkThroughCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B881E40C4EA005FA5F3 /* WalkThroughCell.xib */; };
 		534B8A4A1E3F568500518E95 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A491E3F568500518E95 /* Tasks.swift */; };
 		534B8A4C1E3F7A0D00518E95 /* ResultPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A4B1E3F7A0D00518E95 /* ResultPopup.swift */; };
 		534B8A4E1E3F7D7800518E95 /* SendEmailPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534B8A4D1E3F7D7800518E95 /* SendEmailPopup.xib */; };
@@ -89,6 +95,12 @@
 		532A8B101E20423800F1F6E3 /* Pollster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollster.swift; sourceTree = "<group>"; };
 		532A8B131E204B4500F1F6E3 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		53358FD11E2E81F600634C80 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		534A3B781E40B94E005FA5F3 /* ViewController+CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewController+CollectionDataSource.swift"; path = "../ViewController+CollectionDataSource.swift"; sourceTree = "<group>"; };
+		534A3B7A1E40B96C005FA5F3 /* ViewController+CollectionDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewController+CollectionDelegateFlowLayout.swift"; path = "../ViewController+CollectionDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		534A3B811E40BD14005FA5F3 /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 1.html; path = HTMLContent/1.html; sourceTree = SOURCE_ROOT; };
+		534A3B821E40BD14005FA5F3 /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = HTMLContent/2.html; sourceTree = SOURCE_ROOT; };
+		534A3B871E40C4EA005FA5F3 /* WalkThroughCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkThroughCell.swift; path = ../WalkThroughCell.swift; sourceTree = "<group>"; };
+		534A3B881E40C4EA005FA5F3 /* WalkThroughCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WalkThroughCell.xib; path = ../WalkThroughCell.xib; sourceTree = "<group>"; };
 		534B8A491E3F568500518E95 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		534B8A4B1E3F7A0D00518E95 /* ResultPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultPopup.swift; sourceTree = "<group>"; };
 		534B8A4D1E3F7D7800518E95 /* SendEmailPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendEmailPopup.xib; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 		53187F3F1E152DE300484994 = {
 			isa = PBXGroup;
 			children = (
+				534A3B801E40BCAF005FA5F3 /* HTMLContent */,
 				537C9D771E3F47B70054AFA0 /* ThirdParty */,
 				532A8B091E1D847F00F1F6E3 /* m-chat.proto */,
 				53B2BD551E3ACBBE001EC7E1 /* PopupDialog.framework */,
@@ -224,6 +237,35 @@
 			name = Survey;
 			sourceTree = "<group>";
 		};
+		534A3B7E1E40BB40005FA5F3 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				534A3B8B1E40C4F6005FA5F3 /* WalkThroughCell */,
+				534A3B781E40B94E005FA5F3 /* ViewController+CollectionDataSource.swift */,
+				534A3B7A1E40B96C005FA5F3 /* ViewController+CollectionDelegateFlowLayout.swift */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		534A3B801E40BCAF005FA5F3 /* HTMLContent */ = {
+			isa = PBXGroup;
+			children = (
+				534A3B811E40BD14005FA5F3 /* 1.html */,
+				534A3B821E40BD14005FA5F3 /* 2.html */,
+			);
+			name = HTMLContent;
+			path = "Otsimo Test";
+			sourceTree = "<group>";
+		};
+		534A3B8B1E40C4F6005FA5F3 /* WalkThroughCell */ = {
+			isa = PBXGroup;
+			children = (
+				534A3B871E40C4EA005FA5F3 /* WalkThroughCell.swift */,
+				534A3B881E40C4EA005FA5F3 /* WalkThroughCell.xib */,
+			);
+			name = WalkThroughCell;
+			sourceTree = "<group>";
+		};
 		537C9D771E3F47B70054AFA0 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +313,7 @@
 		53B2BD651E3B806A001EC7E1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				534A3B7E1E40BB40005FA5F3 /* CollectionView */,
 				53187F4D1E152DE300484994 /* ViewController.swift */,
 				53E2BF3B1E2B761A008B3017 /* ViewController+TaskDelegate.swift */,
 			);
@@ -430,11 +473,14 @@
 				53B2BD501E3AC232001EC7E1 /* MediumResultPopup.xib in Resources */,
 				53187F531E152DE300484994 /* Assets.xcassets in Resources */,
 				53B2BD521E3AC243001EC7E1 /* LowResultPopup.xib in Resources */,
+				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
 				534E070E1E2E39D80034F94B /* result.proto in Resources */,
 				532A8B0B1E1D861200F1F6E3 /* questions in Resources */,
 				53187F511E152DE300484994 /* Main.storyboard in Resources */,
 				53B2BD601E3B7293001EC7E1 /* HighResultPopup.xib in Resources */,
 				534B8A4E1E3F7D7800518E95 /* SendEmailPopup.xib in Resources */,
+				534A3B8A1E40C4EA005FA5F3 /* WalkThroughCell.xib in Resources */,
+				534A3B841E40BD14005FA5F3 /* 2.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537C9D821E3F4D4D0054AFA0 /* SurveyAnalytics.swift in Sources */,
+				534A3B7B1E40B96C005FA5F3 /* ViewController+CollectionDelegateFlowLayout.swift in Sources */,
 				534B8A4C1E3F7A0D00518E95 /* ResultPopup.swift in Sources */,
 				53E2BF3C1E2B761A008B3017 /* ViewController+TaskDelegate.swift in Sources */,
 				53E2BF361E2A5AE6008B3017 /* QueryActions.swift in Sources */,
@@ -476,6 +523,7 @@
 				53B2BD641E3B8051001EC7E1 /* LowResultPopupController.swift in Sources */,
 				5309B1371E2F71B30096A4FC /* Server.swift in Sources */,
 				534B8A4A1E3F568500518E95 /* Tasks.swift in Sources */,
+				534A3B891E40C4EA005FA5F3 /* WalkThroughCell.swift in Sources */,
 				532A8B111E20423800F1F6E3 /* Pollster.swift in Sources */,
 				53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */,
 				534B8A501E3F828F00518E95 /* SurveryTask extension.swift in Sources */,
@@ -491,6 +539,7 @@
 				532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */,
 				53E2BF341E2A53BD008B3017 /* GroupAnswer.swift in Sources */,
 				53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */,
+				534A3B791E40B94E005FA5F3 /* ViewController+CollectionDataSource.swift in Sources */,
 				53E2BF381E2A60FF008B3017 /* Pollster+QuestionFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

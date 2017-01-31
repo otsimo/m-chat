@@ -16,27 +16,26 @@ import PopupDialog
 class ViewController: UIViewController {
 
     var taskResultFinishedCompletionHandler: ((ORKResult) -> Void)?
+    let htmlContents = ["1", "2"]
 
-    @IBOutlet weak var label_passNum: UILabel!
-    @IBOutlet weak var label_failNum: UILabel!
-    var isRun = 0
+    @IBOutlet weak var collectionView: UICollectionView!
+    var isRun = 10
     var taskResult: ORKTaskResult?
     var iResult = Otsimo_Info()
-     let anlyse = Analyse()
+    let anlyse = Analyse()
+    
     override func viewDidAppear(_ animated: Bool) {
-
-
         Log.debug("ViewController : viewDidAppear")
 
-            //present(consentTaskVC, animated: true, completion: nil)
-        if isRun == 0{
+        //present(consentTaskVC, animated: true, completion: nil)
+        if isRun == 0 {
             print("isRun 0")
-            present(taskViewContoller,animated: true,completion:nil)
+            present(taskViewContoller, animated: true, completion: nil)
             isRun = 1
         }
     }
 
-    
+
 
     override func viewWillAppear(_ animated: Bool) {
         Log.debug("ViewController : viewWillAppear")
@@ -49,14 +48,14 @@ class ViewController: UIViewController {
 
         if let restorationData = UserDefaults.standard.data(forKey: "restorationDataForSurvey") {
             print("restorationData")
-            if let restorationStepID = UserDefaults.standard.string(forKey: "lastQuestionIdOfRestoration"){
-                print("restorationStepID ->",restorationStepID)
+            if let restorationStepID = UserDefaults.standard.string(forKey: "lastQuestionIdOfRestoration") {
+                print("restorationStepID ->", restorationStepID)
                 let id = parseID(id: String(describing: restorationStepID)).0
                 var restorationPollster = Pollster(firstStep: id)
                 let taskViewController = ORKTaskViewController(task: SurveyTask(restorationPollster), restorationData: restorationData, delegate: self)
                 return taskViewController
             }
-           
+
         }
         let taskViewController = ORKTaskViewController(task: SurveyTask(self.pollster), taskRun: nil)
         taskViewController.delegate = self
@@ -82,6 +81,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Log.debug("ViewController : viewDidLoad")
 
+        /*
+        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "walkthroughCell")
+ */
+        let nib = UINib(nibName: "WalkThroughCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "walkThroughCell")
+        collectionView.delegate = self
+        collectionView.contentSize.height = collectionView.frame.size.height
+        collectionView.contentSize.width = collectionView.frame.size.width
     }
 
     override func didReceiveMemoryWarning() {

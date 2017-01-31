@@ -73,8 +73,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     }
                     
                     showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
-                    label_passNum.text = "PASS NUM = " + String(pollster.passNum)
-                    label_failNum.text = "FAİL NUM = " + String(pollster.failNum)
+
                 }
             default:
                 break
