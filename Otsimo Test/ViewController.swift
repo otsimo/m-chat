@@ -26,15 +26,12 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         Log.debug("ViewController : viewDidAppear")
-
-        //present(consentTaskVC, animated: true, completion: nil)
-        if isRun == 0 {
-            print("isRun 0")
-            present(taskViewContoller, animated: true, completion: nil)
-            isRun = 1
-        }
     }
 
+    @IBAction func StartSurvey(_ sender: UIButton) {
+        present(taskViewContoller, animated: true, completion: nil)
+
+    }
 
 
     override func viewWillAppear(_ animated: Bool) {

@@ -174,10 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				534A3B801E40BCAF005FA5F3 /* HTMLContent */,
-				537C9D771E3F47B70054AFA0 /* ThirdParty */,
 				532A8B091E1D847F00F1F6E3 /* m-chat.proto */,
-				53B2BD551E3ACBBE001EC7E1 /* PopupDialog.framework */,
 				534E070D1E2E39D80034F94B /* result.proto */,
+				53B2BD551E3ACBBE001EC7E1 /* PopupDialog.framework */,
 				532A8B0A1E1D861200F1F6E3 /* questions */,
 				53187F4A1E152DE300484994 /* Otsimo Test */,
 				53187F491E152DE300484994 /* Products */,
@@ -264,13 +263,6 @@
 				534A3B881E40C4EA005FA5F3 /* WalkThroughCell.xib */,
 			);
 			name = WalkThroughCell;
-			sourceTree = "<group>";
-		};
-		537C9D771E3F47B70054AFA0 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ThirdParty;
 			sourceTree = "<group>";
 		};
 		537C9D7A1E3F484D0054AFA0 /* Analytics */ = {
