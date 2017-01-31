@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func StartSurvey(_ sender: UIButton) {
-        present(taskViewContoller, animated: true, completion: nil)
+        present(consentTaskVC, animated: true, completion: nil)
 
     }
 
