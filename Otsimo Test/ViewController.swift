@@ -15,6 +15,7 @@ import PopupDialog
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var pageControl: UIPageControl!
     var taskResultFinishedCompletionHandler: ((ORKResult) -> Void)?
     let htmlContents = ["1", "2"]
 
@@ -26,8 +27,10 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         Log.debug("ViewController : viewDidAppear")
+
     }
 
+    @IBOutlet weak var surveyButton: UIButton!
     @IBAction func StartSurvey(_ sender: UIButton) {
         present(consentTaskVC, animated: true, completion: nil)
 
@@ -78,6 +81,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Log.debug("ViewController : viewDidLoad")
 
+        surveyButton.layer.cornerRadius = 10
         /*
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "walkthroughCell")
  */
