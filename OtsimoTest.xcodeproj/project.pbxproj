@@ -77,7 +77,6 @@
 
 /* Begin PBXFileReference section */
 		5309B1361E2F71B30096A4FC /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		5309B1381E30B6680096A4FC /* Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subject.playground; sourceTree = "<group>"; };
 		5309B13A1E30C4490096A4FC /* Analyse+Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analyse+Subject.swift"; sourceTree = "<group>"; };
 		53187F481E152DE300484994 /* Otsimo Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otsimo Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53187F4B1E152DE300484994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,20 +197,19 @@
 		53187F4A1E152DE300484994 /* Otsimo Test */ = {
 			isa = PBXGroup;
 			children = (
-				53358FD11E2E81F600634C80 /* DeviceInfo.swift */,
-				5309B13C1E30C5780096A4FC /* AnalyseResult */,
-				5309B1381E30B6680096A4FC /* Subject.playground */,
-				5309B1361E2F71B30096A4FC /* Server.swift */,
-				538BCD281E2D178B009F56EB /* protos */,
-				53187F4B1E152DE300484994 /* AppDelegate.swift */,
-				5309B1391E30C4160096A4FC /* ResearchKit Tasks */,
-				53E2BF3D1E2B7691008B3017 /* Controller */,
-				532A8B131E204B4500F1F6E3 /* Log.swift */,
-				53B2BD681E3B80A8001EC7E1 /* View */,
 				534D5BEA1E35E400001AB543 /* Otsimo Test-Bridging-Header.h */,
-				537C9D7A1E3F484D0054AFA0 /* Analytics */,
 				53187F571E152DE300484994 /* Info.plist */,
+				53187F4B1E152DE300484994 /* AppDelegate.swift */,
+				53358FD11E2E81F600634C80 /* DeviceInfo.swift */,
+				532A8B131E204B4500F1F6E3 /* Log.swift */,
+				5309B1361E2F71B30096A4FC /* Server.swift */,
+				5309B13C1E30C5780096A4FC /* AnalyseResult */,
+				537C9D7A1E3F484D0054AFA0 /* Analytics */,
+				53E2BF3D1E2B7691008B3017 /* Controller */,
 				53734D951E16F005009875B8 /* Localizable.strings */,
+				538BCD281E2D178B009F56EB /* protos */,
+				5309B1391E30C4160096A4FC /* ResearchKit Tasks */,
+				53B2BD681E3B80A8001EC7E1 /* View */,
 			);
 			path = "Otsimo Test";
 			sourceTree = "<group>";
