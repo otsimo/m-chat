@@ -19,6 +19,7 @@ func parseID(id: String) -> (String, String) {
     return (idArray[0], idArray[1])
 }
 func getLocalizedID(id : String) -> String{
+    print("getLocalizedID")
     let ids = parseID(id: id)
     return "q" + ids.0 + "." + ids.1
 }
@@ -26,7 +27,7 @@ func getLocalizedID(id : String) -> String{
 extension Pollster{
     
     func getQuestion(id: String) -> Otsimo_Mchat_Question {
-        //Log.debug("getQuestion id = \(id)")
+        Log.debug("getQuestion id = \(id)")
         let ids = parseID(id: id)
         let sNum = ids.0
         let qNUm = ids.1
@@ -45,7 +46,7 @@ extension Pollster{
     }
     
     func getStepAndQuestion(id: String) -> (Otsimo_Mchat_Step, Otsimo_Mchat_Question) {
-        //Log.debug("getStepAndQuestion id = \(id)")
+        Log.debug("getStepAndQuestion id = \(id)")
         let ids = parseID(id: id)
         let sNum = ids.0
         let qNum = ids.1

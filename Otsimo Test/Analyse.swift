@@ -79,7 +79,7 @@ class Analyse {
                 
                 if subStepResults == []{
                     subStepResults.append(subStepResult)
-                }else if subStepResult.id != "SummaryStep"{
+                }else if subStepResult.id != "sum" || subStepResult.id != "afterSum" {
                     let id = parseID(id: (subStepResults.last?.id)!).0
                     let subStepResultID = parseID(id: subStepResult.id).0
                     

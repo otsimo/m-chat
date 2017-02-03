@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PopupDialog
 
 extension ViewController {
     func showResultScene(passNum: Int, failNum: Int) {
@@ -16,22 +15,16 @@ extension ViewController {
         // Create second button
         let buttonSave = DefaultButton(title: "Save") {
             print("You ok'd the default dialog")
-            self.showSavePopup()
         }
         buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
         buttonSave.titleColor = UIColor.white
 
         let buttonShare = DefaultButton(title: "Share") {
             print("share")
-            let shareController = UIActivityViewController(activityItems: ["aa"], applicationActivities: nil)
-            self.present(shareController, animated: true, completion: nil)
         }
 
         buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
         buttonShare.titleColor = UIColor.white
-
-
-
 
         if (failNum >= 0 && failNum <= 2) {
             print("LOW RİSK")
@@ -69,7 +62,7 @@ extension ViewController {
     }
     
     func showSavePopup(){
-        
+        /*
         
         let saveVC = HighResultPopupController(nibName: "SendEmailPopup", bundle: nil)
         
@@ -81,6 +74,7 @@ extension ViewController {
         
         popupVC.addButton(buttonSave)
         present(popupVC, animated: true, completion: nil)
+ */
     }
 
 }

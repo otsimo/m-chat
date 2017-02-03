@@ -20,7 +20,7 @@ public class SurveyTask: NSObject, ORKTask {
 
     public var identifier: String { get { return Tasks.surveyTaskID } }
     public func step(before step: ORKStep?, with result: ORKTaskResult) -> ORKStep? {
-        //Log.debug("step : before : result -> \(result)")
+        Log.debug("step::before current=\(manager.currentQuestionID) last=\(manager.lastQuestionID)")
 
         if manager.currentQuestionID == manager.lastQuestionID {
             return nil
@@ -36,12 +36,14 @@ public class SurveyTask: NSObject, ORKTask {
         Log.debug("step::after current=\(manager.currentQuestionID) last=\(manager.lastQuestionID)")
 
         if manager.currentQuestionID == manager.lastQuestionID {
+            print("manager.currentQuestionID == manager.lastQuestionID")
             return nil
         }
-
+        
         handle(with: result)
 
         if manager.currentQuestionID == "sum" {
+            manager.currentQuestionID = manager.lastQuestionID
             return getSummaryStep()
         }
         if manager.isYesNoQuestion(id: manager.currentQuestionID) {
@@ -66,7 +68,7 @@ public class SurveyTask: NSObject, ORKTask {
 
         var progress = ORKTaskProgress()
         print(manager.currentQuestionID)
-        if manager.currentQuestionID != "sum" {
+        if manager.currentQuestionID != "sum" && manager.currentQuestionID != manager.lastQuestionID {
             let stepNum = parseID(id: manager.currentQuestionID).0
             if let num = UInt(stepNum) {
                 progress = ORKTaskProgressMake(num - 1, 20)

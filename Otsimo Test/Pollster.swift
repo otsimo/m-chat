@@ -31,8 +31,11 @@ public class Pollster {
     func handleAnswerForYesNo(answer: Bool) {
         print("handleAnswerForYesNo ->")
         
-        
-
+        if currentQuestionID == summaryStepID || currentQuestionID == lastQuestionID{
+            currentQuestionID = lastQuestionID
+            print("-")
+            return
+        }
         
         
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
@@ -82,11 +85,7 @@ public class Pollster {
             }
         }
         
-        if currentQuestionID == summaryStepID || currentQuestionID == lastQuestionID{
-            currentQuestionID = lastQuestionID
-            print("-")
-            return
-        }
+        
         let cindex = steps.index(of: cstep)!
         if cindex + 1 >= steps.count {
             //Completed
@@ -101,9 +100,13 @@ public class Pollster {
 
     func handleAnswerForGroupQuestion(Results: ORKStepResult) {
         //Log.debug("handleAnswerForGroupQuestion \(Results)")
-        print("handleAnswerForGroupQuestion")
+        print("handleAnswerForGroupQuestion id =",currentQuestionID)
         
-        
+        if currentQuestionID == summaryStepID || currentQuestionID == lastQuestionID{
+            currentQuestionID = lastQuestionID
+            print("-")
+            return
+        }
 
         let (cstep, cc) = getStepAndQuestion(id: currentQuestionID)
         print("Parent Question \(currentQuestionID)")

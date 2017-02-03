@@ -17,3 +17,4 @@
 #import <TAGDataLayer.h>
 #import <TAGLogger.h>
 #import <TAGManager.h>
+#import "FXBlurView.h"
