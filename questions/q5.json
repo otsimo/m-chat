@@ -4,7 +4,7 @@
   "questions": [
     {
       "id": "1",
-      "text": " Does ________ make unusual finger movements near his/her eyes?",
+      "text": "Does ________ make unusual finger movements near his/her eyes?",
       "yesno": {
         "no": {
           "result": "PASS"
