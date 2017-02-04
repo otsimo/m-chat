@@ -14,9 +14,9 @@
 		53187F511E152DE300484994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F4F1E152DE300484994 /* Main.storyboard */; };
 		53187F531E152DE300484994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53187F521E152DE300484994 /* Assets.xcassets */; };
 		53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F541E152DE300484994 /* LaunchScreen.storyboard */; };
-		531883501E15366A00484994 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5318834F1E15366A00484994 /* ResearchKit.framework */; };
 		531883541E15371C00484994 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883531E15371C00484994 /* ConsentDocument.swift */; };
 		531883561E1537D700484994 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883551E1537D700484994 /* ConsentTask.swift */; };
+		5326EE351E45F136001F494B /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326EE341E45F136001F494B /* ResearchKit.framework */; };
 		532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */; };
 		532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */; };
 		532A8B0B1E1D861200F1F6E3 /* questions in Resources */ = {isa = PBXBuildFile; fileRef = 532A8B0A1E1D861200F1F6E3 /* questions */; };
@@ -103,10 +103,11 @@
 		53187F521E152DE300484994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53187F551E152DE300484994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53187F571E152DE300484994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5318834F1E15366A00484994 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = /Users/muhammed/Developer/OtsimoTest/Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<absolute>"; };
 		531883531E15371C00484994 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		531883551E1537D700484994 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		5326EDED1E45E55B001F494B /* ifaddrs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ifaddrs.h; sourceTree = "<group>"; };
+		5326EE2A1E45F127001F494B /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master-2/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
+		5326EE341E45F136001F494B /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = "../../../Downloads/ResearchKit-master-2/build/Debug-iphoneos/ResearchKit.framework"; sourceTree = "<group>"; };
 		532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = /Users/muhammed/Developer/OtsimoTest/Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = "<absolute>"; };
 		532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "m-chat.pb.swift"; sourceTree = "<group>"; };
 		532A8B091E1D847F00F1F6E3 /* m-chat.proto */ = {isa = PBXFileReference; lastKnownFileType = text; name = "m-chat.proto"; path = "protos/m-chat.proto"; sourceTree = "<group>"; };
@@ -180,11 +181,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5326EE351E45F136001F494B /* ResearchKit.framework in Frameworks */,
 				537C9D8A1E3F50870054AFA0 /* SystemConfiguration.framework in Frameworks */,
 				537C9D881E3F50820054AFA0 /* CoreData.framework in Frameworks */,
 				532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */,
 				537C9D861E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a in Frameworks */,
-				531883501E15366A00484994 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +215,7 @@
 		53187F3F1E152DE300484994 = {
 			isa = PBXGroup;
 			children = (
+				5326EE2A1E45F127001F494B /* ResearchKit.xcodeproj */,
 				534A3B801E40BCAF005FA5F3 /* HTMLContent */,
 				532A8B091E1D847F00F1F6E3 /* m-chat.proto */,
 				534E070D1E2E39D80034F94B /* result.proto */,
@@ -235,7 +237,7 @@
 		53187F4A1E152DE300484994 /* Otsimo Test */ = {
 			isa = PBXGroup;
 			children = (
-				53DE97481E44AEED00B78298 /* PopupDialog */,
+				5326EE251E45F00D001F494B /* ThirdParty */,
 				534D5BEA1E35E400001AB543 /* Otsimo Test-Bridging-Header.h */,
 				53187F571E152DE300484994 /* Info.plist */,
 				53187F4B1E152DE300484994 /* AppDelegate.swift */,
@@ -252,6 +254,14 @@
 				53B2BD681E3B80A8001EC7E1 /* View */,
 			);
 			path = "Otsimo Test";
+			sourceTree = "<group>";
+		};
+		5326EE251E45F00D001F494B /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				53DE97481E44AEED00B78298 /* PopupDialog */,
+			);
+			name = ThirdParty;
 			sourceTree = "<group>";
 		};
 		532A8B151E204B5200F1F6E3 /* Consent */ = {
@@ -320,6 +330,7 @@
 		537C9D841E3F4FC30054AFA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5326EE341E45F136001F494B /* ResearchKit.framework */,
 				537C9D891E3F50870054AFA0 /* SystemConfiguration.framework */,
 				537C9D871E3F50820054AFA0 /* CoreData.framework */,
 				537C9D851E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a */,
@@ -564,7 +575,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ResearchKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftProtobuf.framework",
 			);
 			name = Carthage;
