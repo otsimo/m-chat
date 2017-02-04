@@ -18,3 +18,4 @@
 #import <TAGLogger.h>
 #import <TAGManager.h>
 #import "FXBlurView.h"
+#include <ifaddrs.h>

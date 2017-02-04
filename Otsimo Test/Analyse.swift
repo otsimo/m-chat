@@ -28,9 +28,7 @@ class Analyse {
     
 
     func Task(result: ORKTaskResult) -> [Otsimo_StepResult] {
-        Log.debug("Analyse : AnalyseTask")
-        var AnalysedResults = Otsimo_Result()
-        
+        Log.debug("Analyse : AnalyseTask")        
         
         var stepResults: [Otsimo_StepResult] = []
         var subStepResults: [Otsimo_SubStepResult] = []

@@ -38,6 +38,7 @@ message DeviceInfo{
     string systemVersion = 9;
     string languageCode = 10;
     string countryCode = 11;
+    string ip = 12;
 }
 
 message Info{

@@ -23,10 +23,11 @@ class ViewController: UIViewController {
     var taskResult: ORKTaskResult?
     var iResult = Otsimo_Info()
     let anlyse = Analyse()
+    var resultJSON = ""
     
     override func viewDidAppear(_ animated: Bool) {
         Log.debug("ViewController : viewDidAppear")
-
+//showShareView()
     }
 
     @IBOutlet weak var surveyButton: UIButton!

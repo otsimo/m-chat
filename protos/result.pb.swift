@@ -372,6 +372,7 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     "systemVersion": 9,
     "languageCode": 10,
     "countryCode": 11,
+    "ip": 12,
   ]}
   public var protoFieldNames: [String: Int] {return [
     "vendorId": 1,
@@ -384,6 +385,7 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     "systemVersion": 9,
     "languageCode": 10,
     "countryCode": 11,
+    "ip": 12,
   ]}
 
   public var vendorId: String = ""
@@ -406,6 +408,8 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
 
   public var countryCode: String = ""
 
+  public var ip: String = ""
+
   public init() {}
 
   public init(vendorId: String? = nil,
@@ -417,7 +421,8 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     osName: String? = nil,
     systemVersion: String? = nil,
     languageCode: String? = nil,
-    countryCode: String? = nil)
+    countryCode: String? = nil,
+    ip: String? = nil)
   {
     if let v = vendorId {
       self.vendorId = v
@@ -449,6 +454,9 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     if let v = countryCode {
       self.countryCode = v
     }
+    if let v = ip {
+      self.ip = v
+    }
   }
 
   public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
@@ -464,6 +472,7 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     case 9: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &systemVersion)
     case 10: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &languageCode)
     case 11: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &countryCode)
+    case 12: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &ip)
     default:
       handled = false
     }
@@ -501,6 +510,9 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     if countryCode != "" {
       try visitor.visitSingularField(fieldType: ProtobufString.self, value: countryCode, protoFieldNumber: 11, protoFieldName: "countryCode", jsonFieldName: "countryCode", swiftFieldName: "countryCode")
     }
+    if ip != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: ip, protoFieldNumber: 12, protoFieldName: "ip", jsonFieldName: "ip", swiftFieldName: "ip")
+    }
   }
 
   public func _protoc_generated_isEqualTo(other: Otsimo_DeviceInfo) -> Bool {
@@ -514,6 +526,7 @@ public struct Otsimo_DeviceInfo: ProtobufGeneratedMessage {
     if systemVersion != other.systemVersion {return false}
     if languageCode != other.languageCode {return false}
     if countryCode != other.countryCode {return false}
+    if ip != other.ip {return false}
     return true
   }
 }

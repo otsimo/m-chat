@@ -30,120 +30,120 @@ extension ViewController: ORKTaskViewControllerDelegate {
         print("didFinishWithReason \(reason)")
         taskViewController.dismiss(animated: true, completion: nil)
 
-        
+
         switch reason {
-            
+
         case .completed:
             Log.debug("task completed")
-             taskResult = taskViewController.result
+            taskResult = taskViewController.result
             analytics.event("completed", data: [:])
-            
-            
+
+
             switch taskViewController.result.identifier {
-            case Tasks.consentTaskID:
-                analytics.event("completedConsent", data: [:])
+                case Tasks.consentTaskID:
+                    analytics.event("completedConsent", data: [:])
                 present(infoTaskVC, animated: true, completion: nil)
 
-            case Tasks.infoTaskID:
-                analytics.event("completedInfo", data: [:])
+                case Tasks.infoTaskID:
+                    analytics.event("completedInfo", data: [:])
                 present(taskViewContoller, animated: true, completion: nil)
                 if let t = taskResult {
                     iResult = anlyse.InfoResult(infoResult: t)
                 }
-            case Tasks.surveyTaskID:
-                analytics.event("completedSurvey", data: [:])
+                case Tasks.surveyTaskID:
+                    analytics.event("completedSurvey", data: [:])
                 if let t = taskResult {
-                    
+
                     let surveyResults = anlyse.Task(result: t)
                     print("surveyResult", surveyResults)
-                    
+
                     let analysedResult = anlyse.getAnalyzedResult(iresult: iResult, sresults: surveyResults)
                     //Convert analysedResult to json
                     do {
-                        let json = try analysedResult.serializeJSON()
-                        print("json-----> \(json)")
-                        
+                        resultJSON = try analysedResult.serializeJSON()
+                        Log.debug(resultJSON)
                         //And Send Result to Server
                         let server = Server()
-                        let response = server.sendResult(json: json)
+                        let response = server.sendResult(json: resultJSON)
                         Log.debug(response)
-                        
+
+
                     } catch let e {
                         Log.error(e as! String)
                     }
-                    
+
                     showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
 
                 }
-            default:
-                break
+                default:
+                    break
             }
-            
+
 
 
         case .failed:
             Log.debug("failed")
         case .discarded:
             Log.debug("discarded")
-            
-            
-            if let results = taskViewController.result.results{
-                if let lastStep = results.last{
+
+
+            if let results = taskViewController.result.results {
+                if let lastStep = results.last {
                     let discardedID = lastStep.identifier
                     let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
                     let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
                     Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
-                    
+
                     switch taskViewController.result.identifier {
                     case Tasks.consentTaskID:
-                        analytics.event("discardedConsent", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        analytics.event("discardedConsent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                         present(infoTaskVC, animated: true, completion: nil)
                     case Tasks.infoTaskID:
-                        analytics.event("discardedInfo", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        analytics.event("discardedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                         present(taskViewContoller, animated: true, completion: nil)
                         if let t = taskResult {
                             iResult = anlyse.InfoResult(infoResult: t)
                         }
                     case Tasks.surveyTaskID:
-                        analytics.event("discardedSurvey", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        analytics.event("discardedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                     default:
                         break
                     }
-                    
+
                 }
             }
-            
-            
 
-            
-           
+
+
+
+
         case .saved:
             Log.debug("saved")
-            
-            if let results = taskViewController.result.results{
-                if let lastStep = results.last{
+
+            if let results = taskViewController.result.results {
+                if let lastStep = results.last {
                     let discardedID = lastStep.identifier
                     let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
                     let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
                     Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
-                    
+
                     switch taskViewController.result.identifier {
                     case Tasks.infoTaskID:
-                        analytics.event("savedInfo", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
+                        analytics.event("savedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                     case Tasks.surveyTaskID:
-                        analytics.event("savedSurvey", data: ["id":discardedID,"startDate":startDate,"endDate":endDate])
-                        
+                        analytics.event("savedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+
                         let savedData = taskViewController.restorationData
-                        
+
                         let userDefaults = UserDefaults.standard
                         userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
                         let lastQuestionID = lastStep.identifier
                         userDefaults.set(lastQuestionID, forKey: "lastQuestionIdOfRestoration")
-                        print("*****lastQuestionID ->",lastQuestionID)
+                        print("*****lastQuestionID ->", lastQuestionID)
                     default:
                         break
                     }
-                    
+
                 }
             }
         }
@@ -156,10 +156,10 @@ extension ViewController: ORKTaskViewControllerDelegate {
          view controller.
          */
         taskResultFinishedCompletionHandler?(taskViewController.result)
-        
+
         Log.debug("taskViewController dissmissed")
 
-        
+
     }
     /**
      Asks the delegate if the state of the current uncompleted task should be saved.
@@ -176,7 +176,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
      
      @return `YES` if save and restore should be supported; otherwise, `NO`.
      */
-    public func taskViewControllerSupportsSaveAndRestore(_ taskViewController: ORKTaskViewController) -> Bool{
+    public func taskViewControllerSupportsSaveAndRestore(_ taskViewController: ORKTaskViewController) -> Bool {
         Log.debug("taskViewControllerSupportsSaveAndRestore")
 
         //pollster.currentQuestionID = "0:0"
@@ -184,8 +184,8 @@ extension ViewController: ORKTaskViewControllerDelegate {
         //self.taskViewContoller.dismiss(animated: true, completion: nil)
         return true
     }
-    
-    
+
+
     /**
      Asks the delegate if the cancel action should be confirmed
      
@@ -200,12 +200,12 @@ extension ViewController: ORKTaskViewControllerDelegate {
      
      @return `YES` to confirm cancel action; `NO` to immediately discard the results.
      */
-    public func taskViewControllerShouldConfirmCancel(_ taskViewController: ORKTaskViewController) -> Bool{
+    public func taskViewControllerShouldConfirmCancel(_ taskViewController: ORKTaskViewController) -> Bool {
         Log.debug("taskViewControllerShouldConfirmCancel")
         return true
     }
-    
-    
-    
-    
+
+
+
+
 }

@@ -21,6 +21,7 @@ extension ViewController {
 
         let buttonShare = DefaultButton(title: "Share") {
             print("share")
+            self.showShareView()
         }
 
         buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
@@ -75,6 +76,23 @@ extension ViewController {
         popupVC.addButton(buttonSave)
         present(popupVC, animated: true, completion: nil)
  */
+    }
+    
+    func showShareView(){
+        // text to share
+        print("resulttttt->",resultJSON)
+        let text = resultJSON
+        
+        // set up activity view controller
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook, UIActivityType.message ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
 
 }
