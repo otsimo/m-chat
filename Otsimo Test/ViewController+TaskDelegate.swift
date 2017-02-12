@@ -9,8 +9,63 @@
 import Foundation
 import ResearchKit
 
-
 extension ViewController: ORKTaskViewControllerDelegate {
+    
+    /**
+     Tells the delegate that a step view controller is about to be displayed.
+     
+     The task view controller calls this method before presenting the step
+     view controller.
+     
+     This method gives you an opportunity to modify the step view controller before presentation.
+     For example, you might want to modify the `learnMoreButtonTitle` or `continueButtonTitle`
+     properties, or modify other button state. Another possible use case is when a particular
+     step view controller requires additional setup before presentation.
+     
+     @param taskViewController  The calling `ORKTaskViewController` instance.
+     @param stepViewController  The `ORKStepViewController` that is about to be displayed.
+     */
+     public func taskViewController(_ taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController){
+        
+    }
+    
+    
+    
+    
+    
+    /**
+     Asks the delegate for a custom view controller for the specified step.
+     
+     If this method is implemented, the task view controller calls it to obtain a
+     step view controller for the step.
+     
+     In most circumstances, the task view controller
+     can determine which view controller to instantiate for a step. However, if
+     you want to provide a specific view controller instance, you can call this method to do so.
+     
+     The delegate should provide a step view controller implementation for any custom step.
+     
+     @param taskViewController  The calling `ORKTaskViewController` instance.
+     @param step                The step for which a view controller is requested.
+     
+     @return A custom view controller, or `nil` to request the default step controller for this step.
+     */
+     public func taskViewController(_ taskViewController: ORKTaskViewController, viewControllerFor step: ORKStep) -> ORKStepViewController?{
+        
+        if step.identifier == "custom"{
+            
+            let customStepVC = CustomStepController(nibName: "CustomStepController", bundle: nil)
+            customStepVC.step = step
+            return customStepVC
+        }
+        
+        return nil
+    }
+
+    
+    
+    
+    
     /**
      Tells the delegate that the task has finished.
      

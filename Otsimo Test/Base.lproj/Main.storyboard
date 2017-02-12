@@ -145,6 +145,33 @@
             </objects>
             <point key="canvasLocation" x="484" y="10.344827586206897"/>
         </scene>
+        <!--Custom Step View Controller-->
+        <scene sceneID="4nX-RD-8as">
+            <objects>
+                <viewController id="2Uf-Bp-Znd" customClass="CustomStepViewController" customModule="Otsimo_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SBc-sZ-FWZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="VvT-IE-bBU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1bX-1h-5Co">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXz-Ky-8OT">
+                                <rect key="frame" x="35" y="64" width="262" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7i-nt-ihu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5999999999999" y="63.418290854572717"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1x" width="259" height="325"/>

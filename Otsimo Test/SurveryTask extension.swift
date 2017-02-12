@@ -39,7 +39,7 @@ extension SurveyTask {
 
     }
     func getSummaryStep() -> ORKStep {
-        let summaryStep = ORKCompletionStep(identifier: summaryStepID)
+        let summaryStep = ORKCompletionStep(identifier: "custom")
         summaryStep.title = NSLocalizedString("summaryStep.title", comment: "")
         summaryStep.text = NSLocalizedString("We appreciate your time.", comment: "")
         return summaryStep

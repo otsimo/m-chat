@@ -7,29 +7,36 @@
 //
 
 import UIKit
+import ResearchKit
 
-class CustomStepController: UIViewController {
+class CustomStepController: ORKQuestionStepViewController {
+
+    override init(step: ORKStep?) {
+        super.init(step: step)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        // IntroStepView.xib will used
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        stepDidChange()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func stepDidChange() {
+
+        guard step != nil && isViewLoaded else {
+            return
+        }
+
+        // Additional setup
+
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
