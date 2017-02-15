@@ -47,8 +47,8 @@ class ViewController: UIViewController {
     }
     var pollster = Pollster(firstStep: "1")
 
-
-    lazy var taskViewContoller: ORKTaskViewController = {
+    /*
+    lazy var mChatRFVC: ORKTaskViewController = {
 
         if let restorationData = UserDefaults.standard.data(forKey: "restorationDataForSurvey") {
             print("restorationData")
@@ -67,6 +67,13 @@ class ViewController: UIViewController {
         return taskViewController
     }()
 
+ 
+    */
+    
+    lazy var mChatVC: ORKTaskViewController = {
+        let mChatVC = ORKTaskViewController(task: MChatTask, taskRun: nil)
+        return mChatVC
+    }()
     lazy var consentTaskVC: ORKTaskViewController = {
         let consentTaskVC = ORKTaskViewController(task: ConsentTask, taskRun: nil)
         consentTaskVC.delegate = self
@@ -105,7 +112,7 @@ class ViewController: UIViewController {
         super.viewWillDisappear(true)
         print("viewWillDisappear")
 
-        let savedData = taskViewContoller.restorationData
+        let savedData = mChatVC.restorationData
 
         let userDefaults = UserDefaults.standard
         userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")

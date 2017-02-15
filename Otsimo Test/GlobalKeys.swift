@@ -11,5 +11,6 @@ import Foundation
 enum Tasks {
     static let infoTaskID = "infoTaskID"
     static let consentTaskID = "consentTaskID"
-    static let surveyTaskID = "surveyTaskID"
+    static let mChatRFTaskID = "mChatRFTaskID"
+    static let mChatTaskID = "mChatTaskID"
 }
