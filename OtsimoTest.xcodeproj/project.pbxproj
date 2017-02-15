@@ -125,7 +125,6 @@
 		53187F571E152DE300484994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		531883531E15371C00484994 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		531883551E1537D700484994 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
-		5326EDED1E45E55B001F494B /* ifaddrs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ifaddrs.h; sourceTree = "<group>"; };
 		5326EE2A1E45F127001F494B /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master-2/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 		5326EE341E45F136001F494B /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = "../../../Downloads/ResearchKit-master-2/build/Debug-iphoneos/ResearchKit.framework"; sourceTree = "<group>"; };
 		532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = /Users/muhammed/Developer/OtsimoTest/Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = "<absolute>"; };
@@ -267,7 +266,6 @@
 				53187F571E152DE300484994 /* Info.plist */,
 				53187F4B1E152DE300484994 /* AppDelegate.swift */,
 				53358FD11E2E81F600634C80 /* DeviceInfo.swift */,
-				5326EDED1E45E55B001F494B /* ifaddrs.h */,
 				532A8B131E204B4500F1F6E3 /* Log.swift */,
 				5309B1361E2F71B30096A4FC /* Server.swift */,
 				5309B13C1E30C5780096A4FC /* AnalyseResult */,
