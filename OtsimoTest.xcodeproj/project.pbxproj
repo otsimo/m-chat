@@ -16,7 +16,6 @@
 		53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53187F541E152DE300484994 /* LaunchScreen.storyboard */; };
 		531883541E15371C00484994 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883531E15371C00484994 /* ConsentDocument.swift */; };
 		531883561E1537D700484994 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531883551E1537D700484994 /* ConsentTask.swift */; };
-		531AFEEB1E4A0CE400C5C0A2 /* DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531AFEEA1E4A0CE400C5C0A2 /* DViewController.swift */; };
 		5326EE351E45F136001F494B /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326EE341E45F136001F494B /* ResearchKit.framework */; };
 		532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */; };
 		532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A8B061E1D808F00F1F6E3 /* m-chat.pb.swift */; };
@@ -30,7 +29,7 @@
 		534A3B841E40BD14005FA5F3 /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B821E40BD14005FA5F3 /* 2.html */; };
 		534A3B891E40C4EA005FA5F3 /* WalkThroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534A3B871E40C4EA005FA5F3 /* WalkThroughCell.swift */; };
 		534A3B8A1E40C4EA005FA5F3 /* WalkThroughCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B881E40C4EA005FA5F3 /* WalkThroughCell.xib */; };
-		534B8A4A1E3F568500518E95 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A491E3F568500518E95 /* Tasks.swift */; };
+		534B8A4A1E3F568500518E95 /* GlobalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A491E3F568500518E95 /* GlobalKeys.swift */; };
 		534B8A4C1E3F7A0D00518E95 /* ViewController+ResultPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A4B1E3F7A0D00518E95 /* ViewController+ResultPopup.swift */; };
 		534B8A4E1E3F7D7800518E95 /* SendEmailPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534B8A4D1E3F7D7800518E95 /* SendEmailPopup.xib */; };
 		534B8A501E3F828F00518E95 /* SurveryTask extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B8A4F1E3F828F00518E95 /* SurveryTask extension.swift */; };
@@ -48,6 +47,7 @@
 		538BCD201E2CF240009F56EB /* InfoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD1F1E2CF240009F56EB /* InfoTask.swift */; };
 		538BCD271E2D14BD009F56EB /* result.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD261E2D14BD009F56EB /* result.pb.swift */; };
 		538BCD2A1E2D1D47009F56EB /* Analyse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD291E2D1D47009F56EB /* Analyse.swift */; };
+		539498211E534F22001053D4 /* mchatSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539498201E534F22001053D4 /* mchatSurvey.swift */; };
 		53B2BD501E3AC232001EC7E1 /* MediumResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53B2BD4F1E3AC232001EC7E1 /* MediumResultPopup.xib */; };
 		53B2BD521E3AC243001EC7E1 /* LowResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53B2BD511E3AC243001EC7E1 /* LowResultPopup.xib */; };
 		53B2BD541E3AC810001EC7E1 /* HighResultPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B2BD531E3AC810001EC7E1 /* HighResultPopupController.swift */; };
@@ -125,7 +125,6 @@
 		53187F571E152DE300484994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		531883531E15371C00484994 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		531883551E1537D700484994 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
-		531AFEEA1E4A0CE400C5C0A2 /* DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DViewController.swift; sourceTree = "<group>"; };
 		5326EDED1E45E55B001F494B /* ifaddrs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ifaddrs.h; sourceTree = "<group>"; };
 		5326EE2A1E45F127001F494B /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master-2/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 		5326EE341E45F136001F494B /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = "../../../Downloads/ResearchKit-master-2/build/Debug-iphoneos/ResearchKit.framework"; sourceTree = "<group>"; };
@@ -142,7 +141,7 @@
 		534A3B821E40BD14005FA5F3 /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = HTMLContent/2.html; sourceTree = SOURCE_ROOT; };
 		534A3B871E40C4EA005FA5F3 /* WalkThroughCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkThroughCell.swift; path = ../WalkThroughCell.swift; sourceTree = "<group>"; };
 		534A3B881E40C4EA005FA5F3 /* WalkThroughCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WalkThroughCell.xib; path = ../WalkThroughCell.xib; sourceTree = "<group>"; };
-		534B8A491E3F568500518E95 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		534B8A491E3F568500518E95 /* GlobalKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeys.swift; sourceTree = "<group>"; };
 		534B8A4B1E3F7A0D00518E95 /* ViewController+ResultPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ResultPopup.swift"; sourceTree = "<group>"; };
 		534B8A4D1E3F7D7800518E95 /* SendEmailPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendEmailPopup.xib; sourceTree = "<group>"; };
 		534B8A4F1E3F828F00518E95 /* SurveryTask extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SurveryTask extension.swift"; sourceTree = "<group>"; };
@@ -163,6 +162,7 @@
 		538BCD1F1E2CF240009F56EB /* InfoTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTask.swift; sourceTree = "<group>"; };
 		538BCD261E2D14BD009F56EB /* result.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = result.pb.swift; path = protos/result.pb.swift; sourceTree = SOURCE_ROOT; };
 		538BCD291E2D1D47009F56EB /* Analyse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyse.swift; sourceTree = "<group>"; };
+		539498201E534F22001053D4 /* mchatSurvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mchatSurvey.swift; sourceTree = "<group>"; };
 		53B2BD4F1E3AC232001EC7E1 /* MediumResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediumResultPopup.xib; sourceTree = "<group>"; };
 		53B2BD511E3AC243001EC7E1 /* LowResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LowResultPopup.xib; sourceTree = "<group>"; };
 		53B2BD531E3AC810001EC7E1 /* HighResultPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighResultPopupController.swift; sourceTree = "<group>"; };
@@ -218,9 +218,10 @@
 		5309B1391E30C4160096A4FC /* ResearchKit Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				5394981F1E534ED6001053D4 /* mchat */,
 				537950AD1E48879800327F2C /* Custom */,
-				534B8A491E3F568500518E95 /* Tasks.swift */,
-				532A8B161E204B7000F1F6E3 /* Survey */,
+				534B8A491E3F568500518E95 /* GlobalKeys.swift */,
+				532A8B161E204B7000F1F6E3 /* mchat-rf */,
 				532A8B151E204B5200F1F6E3 /* Consent */,
 				538BCD211E2CF24F009F56EB /* InfoTask */,
 			);
@@ -306,7 +307,7 @@
 			name = Consent;
 			sourceTree = "<group>";
 		};
-		532A8B161E204B7000F1F6E3 /* Survey */ = {
+		532A8B161E204B7000F1F6E3 /* mchat-rf */ = {
 			isa = PBXGroup;
 			children = (
 				53734D8B1E16DC03009875B8 /* SurveyTask.swift */,
@@ -317,7 +318,7 @@
 				53E2BF351E2A5AE6008B3017 /* QueryActions.swift */,
 				53E2BF331E2A53BD008B3017 /* GroupAnswer.swift */,
 			);
-			name = Survey;
+			name = "mchat-rf";
 			sourceTree = "<group>";
 		};
 		534A3B7E1E40BB40005FA5F3 /* CollectionView */ = {
@@ -396,12 +397,19 @@
 			name = protos;
 			sourceTree = "<group>";
 		};
+		5394981F1E534ED6001053D4 /* mchat */ = {
+			isa = PBXGroup;
+			children = (
+				539498201E534F22001053D4 /* mchatSurvey.swift */,
+			);
+			name = mchat;
+			sourceTree = "<group>";
+		};
 		53B2BD651E3B806A001EC7E1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				534A3B7E1E40BB40005FA5F3 /* CollectionView */,
 				53187F4D1E152DE300484994 /* ViewController.swift */,
-				531AFEEA1E4A0CE400C5C0A2 /* DViewController.swift */,
 				53E2BF3B1E2B761A008B3017 /* ViewController+TaskDelegate.swift */,
 				534B8A4B1E3F7A0D00518E95 /* ViewController+ResultPopup.swift */,
 			);
@@ -678,7 +686,7 @@
 				53E2BF3A1E2B7492008B3017 /* ReadJSONs.swift in Sources */,
 				53B2BD641E3B8051001EC7E1 /* LowResultPopupController.swift in Sources */,
 				5309B1371E2F71B30096A4FC /* Server.swift in Sources */,
-				534B8A4A1E3F568500518E95 /* Tasks.swift in Sources */,
+				534B8A4A1E3F568500518E95 /* GlobalKeys.swift in Sources */,
 				53DE97651E44AEFB00B78298 /* PopupDialogOverlayView.swift in Sources */,
 				534A3B891E40C4EA005FA5F3 /* WalkThroughCell.swift in Sources */,
 				53DE97601E44AEFB00B78298 /* PopupDialogButton.swift in Sources */,
@@ -705,11 +713,11 @@
 				531883541E15371C00484994 /* ConsentDocument.swift in Sources */,
 				532A8B071E1D808F00F1F6E3 /* m-chat.pb.swift in Sources */,
 				53E2BF341E2A53BD008B3017 /* GroupAnswer.swift in Sources */,
+				539498211E534F22001053D4 /* mchatSurvey.swift in Sources */,
 				53DE976C1E44AEFB00B78298 /* UIView+Animations.swift in Sources */,
 				53DE97611E44AEFB00B78298 /* PopupDialogContainerView.swift in Sources */,
 				53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */,
 				534A3B791E40B94E005FA5F3 /* ViewController+CollectionDataSource.swift in Sources */,
-				531AFEEB1E4A0CE400C5C0A2 /* DViewController.swift in Sources */,
 				53DE975E1E44AEFB00B78298 /* PopupDialog.swift in Sources */,
 				53DE97661E44AEFB00B78298 /* PresentationController.swift in Sources */,
 				53E2BF381E2A60FF008B3017 /* Pollster+QuestionFunc.swift in Sources */,

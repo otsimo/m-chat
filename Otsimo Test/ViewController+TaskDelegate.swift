@@ -10,7 +10,7 @@ import Foundation
 import ResearchKit
 
 extension ViewController: ORKTaskViewControllerDelegate {
-    
+
     /**
      Tells the delegate that a step view controller is about to be displayed.
      
@@ -25,14 +25,14 @@ extension ViewController: ORKTaskViewControllerDelegate {
      @param taskViewController  The calling `ORKTaskViewController` instance.
      @param stepViewController  The `ORKStepViewController` that is about to be displayed.
      */
-     public func taskViewController(_ taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController){
-        
+    public func taskViewController(_ taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     /**
      Asks the delegate for a custom view controller for the specified step.
      
@@ -50,22 +50,22 @@ extension ViewController: ORKTaskViewControllerDelegate {
      
      @return A custom view controller, or `nil` to request the default step controller for this step.
      */
-     public func taskViewController(_ taskViewController: ORKTaskViewController, viewControllerFor step: ORKStep) -> ORKStepViewController?{
-        
-        if step.identifier == "custom"{
-            
+    public func taskViewController(_ taskViewController: ORKTaskViewController, viewControllerFor step: ORKStep) -> ORKStepViewController? {
+
+        if step.identifier == "custom" {
+
             let customStepVC = CustomStepController(nibName: "CustomStepController", bundle: nil)
             customStepVC.step = step
             return customStepVC
         }
-        
+
         return nil
     }
 
-    
-    
-    
-    
+
+
+
+
     /**
      Tells the delegate that the task has finished.
      
@@ -90,118 +90,19 @@ extension ViewController: ORKTaskViewControllerDelegate {
 
         case .completed:
             Log.debug("task completed")
-            taskResult = taskViewController.result
-            analytics.event("completed", data: [:])
-
-
-            switch taskViewController.result.identifier {
-                case Tasks.consentTaskID:
-                    analytics.event("completedConsent", data: [:])
-                present(infoTaskVC, animated: true, completion: nil)
-
-                case Tasks.infoTaskID:
-                    analytics.event("completedInfo", data: [:])
-                present(taskViewContoller, animated: true, completion: nil)
-                if let t = taskResult {
-                    iResult = anlyse.InfoResult(infoResult: t)
-                }
-                case Tasks.surveyTaskID:
-                    analytics.event("completedSurvey", data: [:])
-                if let t = taskResult {
-
-                    let surveyResults = anlyse.Task(result: t)
-                    print("surveyResult", surveyResults)
-
-                    let analysedResult = anlyse.getAnalyzedResult(iresult: iResult, sresults: surveyResults)
-                    //Convert analysedResult to json
-                    do {
-                        resultJSON = try analysedResult.serializeJSON()
-                        Log.debug(resultJSON)
-                        //And Send Result to Server
-                        let server = Server()
-                        let response = server.sendResult(json: resultJSON)
-                        Log.debug(response)
-
-
-                    } catch let e {
-                        Log.error(e as! String)
-                    }
-
-                    showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
-
-                }
-                default:
-                    break
-            }
-
-
+            taskViewCompleted(taskViewController: taskViewController)
 
         case .failed:
             Log.debug("failed")
         case .discarded:
             Log.debug("discarded")
 
-
-            if let results = taskViewController.result.results {
-                if let lastStep = results.last {
-                    let discardedID = lastStep.identifier
-                    let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
-                    let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
-                    Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
-
-                    switch taskViewController.result.identifier {
-                    case Tasks.consentTaskID:
-                        analytics.event("discardedConsent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                        present(infoTaskVC, animated: true, completion: nil)
-                    case Tasks.infoTaskID:
-                        analytics.event("discardedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                        present(taskViewContoller, animated: true, completion: nil)
-                        if let t = taskResult {
-                            iResult = anlyse.InfoResult(infoResult: t)
-                        }
-                    case Tasks.surveyTaskID:
-                        analytics.event("discardedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                    default:
-                        break
-                    }
-
-                }
-            }
-
-
-
-
+            taskViewDiscarded(taskViewController: taskViewController)
 
         case .saved:
             Log.debug("saved")
 
-            if let results = taskViewController.result.results {
-                if let lastStep = results.last {
-                    let discardedID = lastStep.identifier
-                    let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
-                    let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
-                    Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
-
-                    switch taskViewController.result.identifier {
-                    case Tasks.infoTaskID:
-                        analytics.event("savedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                    case Tasks.surveyTaskID:
-                        analytics.event("savedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-
-                        let savedData = taskViewController.restorationData
-
-                        let userDefaults = UserDefaults.standard
-                        userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
-                        let lastQuestionID = lastStep.identifier
-                        userDefaults.set(lastQuestionID, forKey: "lastQuestionIdOfRestoration")
-                        print("*****lastQuestionID ->", lastQuestionID)
-                    default:
-                        break
-                    }
-
-                }
-            }
-        }
+                   }
         /*
          The `reason` passed to this method indicates why the task view
          controller finished: Did the user cancel, save, or actually complete
@@ -216,6 +117,114 @@ extension ViewController: ORKTaskViewControllerDelegate {
 
 
     }
+
+    //If didFinishWith reason is completed, then
+    func taskViewCompleted(taskViewController: ORKTaskViewController) {
+        taskResult = taskViewController.result
+        analytics.event("completed", data: [:])
+
+
+        switch taskViewController.result.identifier {
+        case Tasks.consentTaskID:
+            analytics.event("completedConsent", data: [:])
+            present(infoTaskVC, animated: true, completion: nil)
+
+        case Tasks.infoTaskID:
+            analytics.event("completedInfo", data: [:])
+            present(mChatVC, animated: true, completion: nil)
+            if let t = taskResult {
+                iResult = anlyse.InfoResult(infoResult: t)
+            }
+        case Tasks.mChatRFTaskID:
+            analytics.event("completedSurvey", data: [:])
+            if let t = taskResult {
+
+                let surveyResults = anlyse.Task(result: t)
+                print("surveyResult", surveyResults)
+
+                let analysedResult = anlyse.getAnalyzedResult(iresult: iResult, sresults: surveyResults)
+                //Convert analysedResult to json
+                do {
+                    resultJSON = try analysedResult.serializeJSON()
+                    Log.debug(resultJSON)
+                    //And Send Result to Server
+                    let server = Server()
+                    let response = server.sendResult(json: resultJSON)
+                    Log.debug(response)
+
+                } catch let e {
+                    Log.error(e as! String)
+                }
+
+                showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
+
+            }
+        default:
+            break
+        }
+
+    }
+    
+    func taskViewDiscarded(taskViewController : ORKTaskViewController){
+        if let results = taskViewController.result.results {
+            if let lastStep = results.last {
+                let discardedID = lastStep.identifier
+                let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
+                let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
+                Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
+                
+                switch taskViewController.result.identifier {
+                case Tasks.consentTaskID:
+                    analytics.event("discardedConsent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    present(infoTaskVC, animated: true, completion: nil)
+                case Tasks.infoTaskID:
+                    analytics.event("discardedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    present(mChatVC, animated: true, completion: nil)
+                    if let t = taskResult {
+                        iResult = anlyse.InfoResult(infoResult: t)
+                    }
+                case Tasks.mChatRFTaskID:
+                    analytics.event("discardedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                default:
+                    break
+                }
+                
+            }
+        }
+    }
+    
+    func taskViewSaved(taskViewController: ORKTaskViewController){
+        if let results = taskViewController.result.results {
+            if let lastStep = results.last {
+                let discardedID = lastStep.identifier
+                let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
+                let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
+                Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
+                
+                switch taskViewController.result.identifier {
+                case Tasks.infoTaskID:
+                    analytics.event("savedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                case Tasks.mChatRFTaskID:
+                    analytics.event("savedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    
+                    let savedData = taskViewController.restorationData
+                    
+                    let userDefaults = UserDefaults.standard
+                    userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
+                    let lastQuestionID = lastStep.identifier
+                    userDefaults.set(lastQuestionID, forKey: "lastQuestionIdOfRestoration")
+                    print("*****lastQuestionID ->", lastQuestionID)
+                case Tasks.mChatTaskID: break
+                default:
+                    break
+                }
+                
+            }
+        }
+
+    }
+
+
     /**
      Asks the delegate if the state of the current uncompleted task should be saved.
      
