@@ -114,6 +114,13 @@
 			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
 			remoteInfo = ResearchKitTests;
 		};
+		7414D5F21E5EEEC100550D17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74E9B60B1E5EEAC900634F8E /* React.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83CBBA2D1A601D0E00E9B192;
+			remoteInfo = React;
+		};
 		74E9B6161E5EEAC900634F8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 74E9B60B1E5EEAC900634F8E /* React.xcodeproj */;
@@ -749,6 +756,7 @@
 		74E9B60A1E5EEAA100634F8E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				74E9B60B1E5EEAC900634F8E /* React.xcodeproj */,
 				74E9B6601E5EEB3100634F8E /* RCTActionSheet.xcodeproj */,
 				74E9B6661E5EEB4900634F8E /* RCTAnimation.xcodeproj */,
 				74E9B6931E5EEBA800634F8E /* RCTGeolocation.xcodeproj */,
@@ -759,7 +767,6 @@
 				74E9B6261E5EEB0600634F8E /* RCTText.xcodeproj */,
 				74E9B62F1E5EEB0E00634F8E /* RCTVibration.xcodeproj */,
 				74E9B6351E5EEB1200634F8E /* RCTWebSocket.xcodeproj */,
-				74E9B60B1E5EEAC900634F8E /* React.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -900,6 +907,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7414D5F31E5EEEC100550D17 /* PBXTargetDependency */,
 			);
 			name = ReactNativeDev;
 			productName = ReactNativeDev;
@@ -1373,6 +1381,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7414D5F31E5EEEC100550D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = React;
+			targetProxy = 7414D5F21E5EEEC100550D17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		53187F4F1E152DE300484994 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1650,6 +1666,7 @@
 				74E9B5FD1E5EEA4200634F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
