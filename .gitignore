@@ -6,4 +6,5 @@ Otsimo Test.xcodeproj/xcuserdata
 /.idea
 /.vscode
 node_modules
-/ios/build
+build
+.gradle
