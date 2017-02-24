@@ -5,6 +5,9 @@
   Created by demirci on 30/12/2016.
   Copyright © 2016 mdemirci. All rights reserved.
 */
+buttonYes = "Yes"
+buttonNo = "No"
+
 
 q1.1 = "If you point at something across the room, does ___ look at it?";
 q1.2 = "Please give me an example of how he/she will respond if you point at something";

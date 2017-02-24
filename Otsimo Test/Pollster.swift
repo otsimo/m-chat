@@ -9,8 +9,6 @@
 import Foundation
 import ResearchKit
 
-
-
 public class Pollster {
     var currentQuestionID: String
     var lastQuestionID: String = "afterSum"

@@ -73,8 +73,7 @@ public class SurveyTask: NSObject, ORKTask {
             if let num = UInt(stepNum) {
                 progress = ORKTaskProgressMake(num - 1, 20)
             }
-        }
-
+        } 
         return progress
     }
 
