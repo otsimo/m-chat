@@ -36,7 +36,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var surveyButton: UIButton!
     @IBAction func StartSurvey(_ sender: UIButton) {
-        present(consentTaskVC, animated: true, completion: nil)
+        present(mChatRFVC, animated: true, completion: nil)
 
     }
 
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
     var pollster = Pollster(firstStep: "1")
 
-    /*
+    
     lazy var mChatRFVC: ORKTaskViewController = {
 
         if let restorationData = UserDefaults.standard.data(forKey: "restorationDataForSurvey") {
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     }()
 
  
-    */
+    
     
     lazy var mChatVC: ORKTaskViewController = {
         let mChatVC = ORKTaskViewController(task: MChatTask, taskRun: nil)
