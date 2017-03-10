@@ -16,6 +16,7 @@ class Server{
         
         var responseFromServer = "No Result"
         
+        //https://mchatrest.otsimo.xyz
         var request = URLRequest(url: URL(string: "http://localhost:9002/addResult")!)
         request.httpMethod = "POST"
         request.httpBody = json.data(using: .utf8)

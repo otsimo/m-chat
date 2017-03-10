@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>mchatreact.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>53187F471E152DE300484994</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53FFFAE61E72C4E4000BEC96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
