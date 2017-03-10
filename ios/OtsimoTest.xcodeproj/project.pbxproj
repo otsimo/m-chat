@@ -17,6 +17,7 @@
 		537C9D861E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9D851E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a */; };
 		537C9D881E3F50820054AFA0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9D871E3F50820054AFA0 /* CoreData.framework */; };
 		537C9D8A1E3F50870054AFA0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9D891E3F50870054AFA0 /* SystemConfiguration.framework */; };
+		53BD22961E7336AB00C255B3 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD22951E7336AB00C255B3 /* ColorManager.swift */; };
 		53FFF9FE1E72B421000BEC96 /* CustomStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FB1E72B421000BEC96 /* CustomStep.swift */; };
 		53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */; };
 		53FFFA001E72B421000BEC96 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */; };
@@ -136,6 +137,7 @@
 		537C9D851E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = third_party/GoogleAnalyticsServicesiOS_3.16/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		537C9D871E3F50820054AFA0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		537C9D891E3F50870054AFA0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		53BD22951E7336AB00C255B3 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorManager.swift; path = ../ColorManager.swift; sourceTree = "<group>"; };
 		53FFF9FB1E72B421000BEC96 /* CustomStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomStep.swift; path = CustomSteps/CustomStep.swift; sourceTree = "<group>"; };
 		53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomStepVC.xib; path = CustomSteps/CustomStepVC.xib; sourceTree = "<group>"; };
 		53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomViewController.swift; path = CustomSteps/CustomViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		53187F4A1E152DE300484994 /* Otsimo Test */ = {
 			isa = PBXGroup;
 			children = (
+				53BD22951E7336AB00C255B3 /* ColorManager.swift */,
 				53FFF9F41E72ACBA000BEC96 /* CustomSteps */,
 				5326EE251E45F00D001F494B /* ThirdParty */,
 				534D5BEA1E35E400001AB543 /* Otsimo Test-Bridging-Header.h */,
@@ -754,6 +757,7 @@
 				53FFFA2D1E72B8E7000BEC96 /* ViewController+ResultPopup.swift in Sources */,
 				53FFFA141E72B898000BEC96 /* ConsentTask.swift in Sources */,
 				53FFFA931E72BB02000BEC96 /* TransitionAnimator.swift in Sources */,
+				53BD22961E7336AB00C255B3 /* ColorManager.swift in Sources */,
 				53FFFA941E72BB02000BEC96 /* UIImageView+Calculations.swift in Sources */,
 				53FFFA221E72B89F000BEC96 /* SurveyTask.swift in Sources */,
 				53FFFA461E72B934000BEC96 /* HighResultPopupController.swift in Sources */,
@@ -1032,6 +1036,7 @@
 				53FFFAFD1E72C4E4000BEC96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

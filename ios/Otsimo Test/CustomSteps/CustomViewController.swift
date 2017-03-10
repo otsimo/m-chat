@@ -12,15 +12,23 @@ import ResearchKit
 
 class CustomViewController: ORKStepViewController {
     
-    @IBOutlet var no_btn: UIButton!
-    @IBOutlet var yes_btn: UIButton!
+    @IBOutlet weak var no_btn: UIButton!
+    @IBOutlet weak var yes_btn: UIButton!
+    @IBOutlet var nextButton: UIButton!
     var savedResult: ORKStepResult?
+    let colorManager = ColorManager()
+    
     
     override var result: ORKStepResult?{
         if let sr=savedResult{
             return sr
         }
         return super.result
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
     }
     
     var answer: String?
@@ -53,13 +61,23 @@ class CustomViewController: ORKStepViewController {
         let n = ORKBooleanQuestionResult(identifier: step!.identifier)
         n.booleanAnswer = 1
         savedResult = ORKStepResult(stepIdentifier: step!.identifier, results: [n])
+        //Then change Yes Button Style
+       yes_btn.setTitleColor(colorManager.selectedButtonColor, for: .normal)
         
+        no_btn.setTitleColor(colorManager.normalButtonColor, for: .normal)
+        nextButton.alpha = 1.0
+        nextButton.isSelected = true
     }
     
     @IBAction func NoTapped(_ sender: UIButton) {
         let n = ORKBooleanQuestionResult(identifier: step!.identifier)
         n.booleanAnswer = 0
         savedResult = ORKStepResult(stepIdentifier: step!.identifier, results: [n])
+        
+        no_btn.setTitleColor(colorManager.selectedButtonColor, for: .normal)
+        yes_btn.setTitleColor(colorManager.normalButtonColor, for: .normal)
+        nextButton.alpha = 1.0
+        nextButton.isSelected = true
     }
     
     override func goForward() {
@@ -69,5 +87,7 @@ class CustomViewController: ORKStepViewController {
     @IBAction func NextTapped(_ sender: Any) {
         self.goForward()
     }
+    
 }
+
 

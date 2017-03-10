@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomViewController" customModule="Otsimo_Test" customModuleProvider="target">
             <connections>
+                <outlet property="nextButton" destination="On1-rw-Z7P" id="5hQ-2y-4R3"/>
                 <outlet property="no_btn" destination="neg-8W-jX7" id="YTA-h1-Bm9"/>
                 <outlet property="questionText" destination="299-U9-zrd" id="Op9-1t-hCb"/>
                 <outlet property="view" destination="2d5-hQ-pQd" id="ulY-aw-8os"/>
@@ -22,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsu-79-UeM">
-                    <rect key="frame" x="0.0" y="20" width="375" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-VS-eAV">
-                            <rect key="frame" x="0.0" y="173.5" width="375" height="221"/>
+                            <rect key="frame" x="0.0" y="187.5" width="375" height="221"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you point at something across the room, does ___ look at it?across the room, does ___ look " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="299-U9-zrd" userLabel="title">
                                     <rect key="frame" x="8" y="0.0" width="359" height="94"/>
@@ -53,18 +54,18 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <state key="normal" title="No">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="NoTapped:" destination="-1" eventType="touchUpInside" id="Zfq-ry-KeN"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-Ah-S9N">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-Ah-S9N">
                                             <rect key="frame" x="0.0" y="18" width="187" height="92"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <state key="normal" title="YES">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="YesTapped:" destination="-1" eventType="touchUpInside" id="JXG-NO-i39"/>
@@ -91,7 +92,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="gBG-VS-eAV" secondAttribute="trailing" id="FDe-kw-O2b"/>
                         <constraint firstItem="gBG-VS-eAV" firstAttribute="centerY" secondItem="fsu-79-UeM" secondAttribute="centerY" id="SID-AZ-cIP"/>
@@ -99,13 +100,14 @@
                         <constraint firstItem="gBG-VS-eAV" firstAttribute="leading" secondItem="fsu-79-UeM" secondAttribute="leading" id="ldm-JD-0KC"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-rw-Z7P">
+                <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-rw-Z7P">
                     <rect key="frame" x="0.0" y="596" width="375" height="71"/>
                     <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="71" id="Vxh-hZ-XGu"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="tintColor" red="0.0" green="0.62352941179999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Next">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -118,9 +120,9 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="On1-rw-Z7P" secondAttribute="bottom" id="29i-Py-eY5"/>
                 <constraint firstItem="On1-rw-Z7P" firstAttribute="leading" secondItem="2d5-hQ-pQd" secondAttribute="leading" id="A3m-ls-JY7"/>
-                <constraint firstAttribute="bottom" secondItem="fsu-79-UeM" secondAttribute="bottom" constant="79" id="CMa-e3-itp"/>
-                <constraint firstItem="fsu-79-UeM" firstAttribute="top" secondItem="2d5-hQ-pQd" secondAttribute="top" constant="20" id="Ese-1t-DM9"/>
+                <constraint firstItem="fsu-79-UeM" firstAttribute="top" secondItem="2d5-hQ-pQd" secondAttribute="top" id="Ese-1t-DM9"/>
                 <constraint firstAttribute="trailing" secondItem="On1-rw-Z7P" secondAttribute="trailing" id="Pb0-bQ-eyd"/>
+                <constraint firstAttribute="bottom" secondItem="fsu-79-UeM" secondAttribute="bottom" constant="71" id="Tg1-Nf-t5g"/>
                 <constraint firstAttribute="trailing" secondItem="fsu-79-UeM" secondAttribute="trailing" id="ceF-vM-m30"/>
                 <constraint firstItem="fsu-79-UeM" firstAttribute="leading" secondItem="2d5-hQ-pQd" secondAttribute="leading" id="o3f-Di-hqO"/>
             </constraints>
