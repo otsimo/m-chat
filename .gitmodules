@@ -1,0 +1,3 @@
+[submodule "ios/Otsimo Test/third_party/ResearchKit"]
+	path = ios/Otsimo Test/third_party/ResearchKit
+	url = https://github.com/ResearchKit/ResearchKit.git
