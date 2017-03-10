@@ -36,8 +36,6 @@
 		534E070E1E2E39D80034F94B /* result.proto in Resources */ = {isa = PBXBuildFile; fileRef = 534E070D1E2E39D80034F94B /* result.proto */; };
 		53734D8C1E16DC03009875B8 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53734D8B1E16DC03009875B8 /* SurveyTask.swift */; };
 		53734D931E16F005009875B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53734D951E16F005009875B8 /* Localizable.strings */; };
-		537950B81E48A97700327F2C /* CustomStepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537950B61E48A97700327F2C /* CustomStepController.swift */; };
-		537950B91E48A97700327F2C /* CustomStepController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 537950B71E48A97700327F2C /* CustomStepController.xib */; };
 		537C9D7F1E3F49310054AFA0 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D7D1E3F49310054AFA0 /* Analytics.swift */; };
 		537C9D801E3F49310054AFA0 /* GA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D7E1E3F49310054AFA0 /* GA.swift */; };
 		537C9D821E3F4D4D0054AFA0 /* SurveyAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D811E3F4D4D0054AFA0 /* SurveyAnalytics.swift */; };
@@ -48,9 +46,6 @@
 		538BCD271E2D14BD009F56EB /* result.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD261E2D14BD009F56EB /* result.pb.swift */; };
 		538BCD2A1E2D1D47009F56EB /* Analyse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BCD291E2D1D47009F56EB /* Analyse.swift */; };
 		539498211E534F22001053D4 /* mchatSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539498201E534F22001053D4 /* mchatSurvey.swift */; };
-		5394A1281E6F519B0059D0FE /* CustomStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394A1271E6F519B0059D0FE /* CustomStepView.swift */; };
-		5394A1301E6F543E0059D0FE /* CustomQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394A12E1E6F543E0059D0FE /* CustomQuestionController.swift */; };
-		5394A1311E6F543E0059D0FE /* CustomQuestionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5394A12F1E6F543E0059D0FE /* CustomQuestionController.xib */; };
 		53B2BD501E3AC232001EC7E1 /* MediumResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53B2BD4F1E3AC232001EC7E1 /* MediumResultPopup.xib */; };
 		53B2BD521E3AC243001EC7E1 /* LowResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53B2BD511E3AC243001EC7E1 /* LowResultPopup.xib */; };
 		53B2BD541E3AC810001EC7E1 /* HighResultPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B2BD531E3AC810001EC7E1 /* HighResultPopupController.swift */; };
@@ -151,8 +146,6 @@
 		53734D8B1E16DC03009875B8 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		53734D941E16F005009875B8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53734D961E16F009009875B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		537950B61E48A97700327F2C /* CustomStepController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStepController.swift; sourceTree = "<group>"; };
-		537950B71E48A97700327F2C /* CustomStepController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomStepController.xib; sourceTree = "<group>"; };
 		537C9D7D1E3F49310054AFA0 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Analytics.swift; path = Analytics/Analytics.swift; sourceTree = "<group>"; };
 		537C9D7E1E3F49310054AFA0 /* GA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GA.swift; path = Analytics/GA.swift; sourceTree = "<group>"; };
 		537C9D811E3F4D4D0054AFA0 /* SurveyAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyAnalytics.swift; sourceTree = "<group>"; };
@@ -165,9 +158,6 @@
 		538BCD291E2D1D47009F56EB /* Analyse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyse.swift; sourceTree = "<group>"; };
 		539498201E534F22001053D4 /* mchatSurvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mchatSurvey.swift; sourceTree = "<group>"; };
 		5394A0F91E6F19FA0059D0FE /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
-		5394A1271E6F519B0059D0FE /* CustomStepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStepView.swift; sourceTree = "<group>"; };
-		5394A12E1E6F543E0059D0FE /* CustomQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomQuestionController.swift; sourceTree = "<group>"; };
-		5394A12F1E6F543E0059D0FE /* CustomQuestionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomQuestionController.xib; sourceTree = "<group>"; };
 		53B2BD4F1E3AC232001EC7E1 /* MediumResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediumResultPopup.xib; sourceTree = "<group>"; };
 		53B2BD511E3AC243001EC7E1 /* LowResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LowResultPopup.xib; sourceTree = "<group>"; };
 		53B2BD531E3AC810001EC7E1 /* HighResultPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighResultPopupController.swift; sourceTree = "<group>"; };
@@ -224,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				5394981F1E534ED6001053D4 /* mchat */,
-				537950AD1E48879800327F2C /* Custom */,
 				534B8A491E3F568500518E95 /* GlobalKeys.swift */,
 				532A8B161E204B7000F1F6E3 /* mchat-rf */,
 				532A8B151E204B5200F1F6E3 /* Consent */,
@@ -346,14 +335,6 @@
 			name = WalkThroughCell;
 			sourceTree = "<group>";
 		};
-		537950AD1E48879800327F2C /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				537950B61E48A97700327F2C /* CustomStepController.swift */,
-			);
-			name = Custom;
-			sourceTree = "<group>";
-		};
 		537C9D7A1E3F484D0054AFA0 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,16 +390,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5394A1321E6F54440059D0FE /* CustomQuestion */ = {
-			isa = PBXGroup;
-			children = (
-				5394A12E1E6F543E0059D0FE /* CustomQuestionController.swift */,
-				5394A12F1E6F543E0059D0FE /* CustomQuestionController.xib */,
-			);
-			name = CustomQuestion;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		53B2BD651E3B806A001EC7E1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,9 +425,6 @@
 		53B2BD681E3B80A8001EC7E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5394A1321E6F54440059D0FE /* CustomQuestion */,
-				537950B71E48A97700327F2C /* CustomStepController.xib */,
-				5394A1271E6F519B0059D0FE /* CustomStepView.swift */,
 				53B2BD671E3B808D001EC7E1 /* ResultPopupViews */,
 				53187F4F1E152DE300484994 /* Main.storyboard */,
 				53187F521E152DE300484994 /* Assets.xcassets */,
@@ -643,14 +611,12 @@
 				53734D931E16F005009875B8 /* Localizable.strings in Resources */,
 				53187F561E152DE300484994 /* LaunchScreen.storyboard in Resources */,
 				53B2BD501E3AC232001EC7E1 /* MediumResultPopup.xib in Resources */,
-				5394A1311E6F543E0059D0FE /* CustomQuestionController.xib in Resources */,
 				53187F531E152DE300484994 /* Assets.xcassets in Resources */,
 				53B2BD521E3AC243001EC7E1 /* LowResultPopup.xib in Resources */,
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
 				534E070E1E2E39D80034F94B /* result.proto in Resources */,
 				532A8B0B1E1D861200F1F6E3 /* questions in Resources */,
 				53187F511E152DE300484994 /* Main.storyboard in Resources */,
-				537950B91E48A97700327F2C /* CustomStepController.xib in Resources */,
 				53B2BD601E3B7293001EC7E1 /* HighResultPopup.xib in Resources */,
 				534B8A4E1E3F7D7800518E95 /* SendEmailPopup.xib in Resources */,
 				534A3B8A1E40C4EA005FA5F3 /* WalkThroughCell.xib in Resources */,
@@ -699,10 +665,8 @@
 				53DE975F1E44AEFB00B78298 /* PopupDialog+Keyboard.swift in Sources */,
 				53DE97731E44AFFB00B78298 /* TZSpacerView.swift in Sources */,
 				532A8B141E204B4500F1F6E3 /* Log.swift in Sources */,
-				537950B81E48A97700327F2C /* CustomStepController.swift in Sources */,
 				53E2BF3A1E2B7492008B3017 /* ReadJSONs.swift in Sources */,
 				53B2BD641E3B8051001EC7E1 /* LowResultPopupController.swift in Sources */,
-				5394A1281E6F519B0059D0FE /* CustomStepView.swift in Sources */,
 				5309B1371E2F71B30096A4FC /* Server.swift in Sources */,
 				534B8A4A1E3F568500518E95 /* GlobalKeys.swift in Sources */,
 				53DE97651E44AEFB00B78298 /* PopupDialogOverlayView.swift in Sources */,
@@ -719,7 +683,6 @@
 				537C9D801E3F49310054AFA0 /* GA.swift in Sources */,
 				53DE97751E44AFFB00B78298 /* TZStackViewAlignment.swift in Sources */,
 				5309B13B1E30C4490096A4FC /* Analyse+Subject.swift in Sources */,
-				5394A1301E6F543E0059D0FE /* CustomQuestionController.swift in Sources */,
 				53358FD21E2E81F600634C80 /* DeviceInfo.swift in Sources */,
 				537C9D7F1E3F49310054AFA0 /* Analytics.swift in Sources */,
 				531883561E1537D700484994 /* ConsentTask.swift in Sources */,
