@@ -21,6 +21,7 @@
         "flowtype"
     ],
     "rules": {
+        "no-restricted-syntax": "warn",
         "prefer-template": "off",
         "no-console": "off",
         "no-underscore-dangle": 0,
