@@ -18,7 +18,8 @@ public var MChatTask: ORKOrderedTask {
         let id = "q" + String(i)
         let key = id + ".1"
         let title = NSLocalizedString(key, comment: "")
-        let step = ORKQuestionStep(identifier: id, title: title, answer: ORKAnswerFormat.booleanAnswerFormat())
+        let answerFormat = ORKScaleAnswerFormat.booleanAnswerFormat()
+        let step = ORKQuestionStep(identifier: id, title: title, answer: answerFormat)
         mChatsteps.append(step)
     }
     

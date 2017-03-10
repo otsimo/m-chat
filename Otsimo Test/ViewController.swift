@@ -28,15 +28,15 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         Log.debug("ViewController : viewDidAppear")
 //showShareView()
-        //let customStepVC = DViewController(nibName: "CustomStepController", bundle: nil)
+        let customStepVC = CustomStepController(nibName: "CustomStepController", bundle: nil)
         
         
-        //present(customStepVC, animated: true, completion: nil)
+        present(customStepVC, animated: true, completion: nil)
     }
 
     @IBOutlet weak var surveyButton: UIButton!
     @IBAction func StartSurvey(_ sender: UIButton) {
-        present(mChatRFVC, animated: true, completion: nil)
+        //present(mChatRFVC, animated: true, completion: nil)
 
     }
 
