@@ -1,0 +1,206 @@
+/* 
+  Localizable.strings
+  Otsimo Test
+
+  Created by demirci on 30/12/2016.
+  Copyright © 2016 mdemirci. All rights reserved.
+*/
+
+q1.1 = "If you point at something across the room, does ___ look at it?";
+q1.2 = "Please give me an example of how he/she will respond if you point at something";
+q1.3 = "If you point at something, what does your child typically do?";
+q1.4 = "Looks at object";
+q1.5 = "Points to object";
+q1.6 = "Looks and comments on object";
+q1.7 = "Looks if parent points and says 'look!'";
+q1.8 = "Ignores parent";
+q1.9 = "Looks around room randomly";
+q1.10 = "Looks at parent's finger";
+q10.1 = " Does ___________ respond when you call his/her name?";
+q10.2 = "Please give me an example of how he/she responds when you call his/her name.";
+q10.3 = "If he/she is not involved in something fun or interesting, what does he/she do when you call his/her name?";
+q10.4 = "Look up?";
+q10.5 = "Talk or babble?";
+q10.6 = "Stop what he/she is doing?";
+q10.7 = "Make no response?";
+q10.8 = "Seem to hear but ignores parent?";
+q10.9 = "Respond only if parent is right in front of the child’s face?";
+q10.10 = "Respond only if touched?";
+q11.1 = " When you smile at ____________, does he/she smile back at you?";
+q11.2 = "What makes _____________ smile?";
+q11.4 = "Smile when you smile?";
+q11.5 = "Smile when you enter the room?";
+q11.6 = "Smile when you return from being away?";
+q11.7 = "Always smile?";
+q11.8 = "Smile at a favorite toy or activity?";
+q11.9 = "Smile randomly or at nothing in particular?";
+q12.1 = "Does __________ get upset by everyday noises?";
+q12.2 = "Does your child have a negative reaction to the sound of...";
+q12.4 = "A washing machine?";
+q12.5 = "Babies crying?";
+q12.6 = "Vacuum cleaner?";
+q12.7 = "Hairdryer?";
+q12.8 = "Traffic?";
+q12.9 = "Babies squealing or screeching?";
+q12.10 = "Loud music?";
+q12.11 = "Telephone/ doorbell ringing?";
+q12.12 = "Noisy places such as a supermarket or restaurant?";
+q12.13 = "How does your child react to those noises?";
+q12.14 = "Calmly cover his/her ears?";
+q12.15 = "Tell you that he/she does not like the noise?";
+q12.16 = "Scream?";
+q12.17 = "Cry?";
+q12.18 = "Cover his/her ears while upset?";
+q13.1 = "Does __________ walk?";
+q13.2 = "Does he/she walk without holding on to anything?";
+q14.1 = "Does _________ look you in the eye when you are talking to him/her, playing with him/her, or changing him/her?";
+q14.2 = "Please give me an example of when he/she looks you in the eye.";
+q14.4 = "When he/she needs something?";
+q14.5 = "When you are playing with him/her?";
+q14.6 = "During feeding?";
+q14.7 = "During diaper changes?";
+q14.8 = "When you are reading him/her a story?";
+q14.9 = "When you are talking to him/her?";
+q14.10 = "Does your child look you in the eye every day?";
+q14.11 = " On a day when you are together all day, does he/she look you in the eye at least 5 times?";
+q15.1 = "Does __________ try to copy what you do?";
+q15.2 = "Please give me an example of something he/she would try to copy.";
+q15.4 = "Stick out your tongue?";
+q15.5 = "Make a funny sound?";
+q15.6 = "Wave good bye?";
+q15.7 = "Clap your hands?";
+q15.8 = "Put your fingers to your lips to signal “Shhh”?";
+q15.9 = "Blow a kiss?";
+q16.1 = " If you turn your head to look at something, does ________ look around to see what you are looking at?";
+q16.2 = "What does he/she do when you turn to look at something?";
+q16.3 = "Look toward the thing you are looking at?";
+q16.4 = "Point toward the thing you are looking at?";
+q16.5 = "Look around to see what you are looking at?";
+q16.6 = "Ignore you?";
+q16.7 = "Look at your face?";
+q17.1 = "Does __________ try to get you to watch him/her?";
+q17.2 = "Please give me an example of how he/she would try to get you to watch him/her.";
+q17.4 = "Say “Look!” or “Watch me!”?";
+q17.5 = "Babble or make a noise to get you to watch what he/she is doing?";
+q17.6 = "Look at you to get praise or comment?";
+q17.7 = "Keep looking to see if you are looking?";
+q18.1 = "when you are dressed to go out and you tell him/her to get his/her shoes, does he/she understand?";
+q18.3 = "If you point at something, what does your child typically do?";
+q18.4 = "If you say, “Show me your shoe” without pointing, making gestures, or giving hints (when you are not going out or getting dressed), does your child show you his/her shoe?";
+q18.5 = "If you say, “Bring me the blanket” or ask for another object without pointing, making gestures, or giving hints, does your child bring it to you?";
+q18.6 = "If you say, “Put the book on the chair” without pointing, making gestures, or giving any other hints , does your child put the book on the chair?";
+q19.1 = "If something new happens, does _________ look at your face to see how you feel about it?";
+q19.2 = "If your child hears a strange or scary noise, will he/she look at you before responding?";
+q19.3 = "Does your child look at you when someone new approaches?";
+q19.4 = "Does your child look at you when he/she is faced with something unfamiliar or a little scary?";
+q2.1 = "2. You reported that you have wondered if you child is deaf. What led you to wonder that?";
+q2.2 = "Often ignore sounds?";
+q2.3 = "Often ignore people?";
+q20.1 = "Does ___________ like movement activities?";
+q20.2 = "Does he/she enjoy being bounced or swung?";
+q20.3 = "When you swing or bounce him/her, how does he/she react?";
+q20.4 = "Laugh or smile?";
+q20.5 = "Talk or babble?";
+q20.6 = "Request more by holding out his/her arms?";
+q3.1 = "If you point at something across the room, does ___ look at it?";
+q3.2 = "Please give me an example of how he/she will respond if you point at something";
+q3.3 = "Pretend to drink from a toy cup?";
+q3.4 = "Pretend to eat from a toy spoon or fork?";
+q3.5 = "Pretend to talk on the telephone?";
+q3.6 = "Pretend to feed a doll or stuffed animal with real or imaginary food?";
+q3.7 = "Push a car as if it is going along a pretend road?";
+q3.8 = "Pretend to be a robot, an airplane, a ballerina, or any other favorite character?";
+q3.9 = "Put a toy pot on a pretend stove?";
+q3.10 = "Stir imaginary food?";
+q3.11 = "Put an action figure or doll into a car or truck as if it is the driver or passenger?";
+q3.12 = "Pretend to vacuum the rug, sweep the floor, or the mow lawn?";
+q4.1 = "Does ________ like climbing on things?";
+q4.2 = " Please give me an example of something he/she enjoys climbing on";
+q4.3 = "Pretend to drink from a toy cup?";
+q4.4 = "Pretend to eat from a toy spoon or fork?";
+q4.5 = "Pretend to talk on the telephone?";
+q4.6 = "Pretend to feed a doll or stuffed animal with real or imaginary food?";
+q5.1 = " Does ________ make unusual finger movements near his/her eyes?";
+q5.2 = "Please describe these movements";
+q5.10 = "Does this happen more than twice a week?";
+q5.3 = "Look at hands?";
+q5.4 = "Move fingers when playing peek-a-boo?";
+q5.5 = "Wiggle his/her fingers near his/her eyes?";
+q5.6 = "Hold his/her hands up close to his/her eyes?";
+q5.7 = "Hold his/her hands off to the side of his/her eyes?";
+q5.8 = "Flap his/her hands near his/her face?";
+q6.1 = "Does ___________ point with one finger to ask for something or to get help?";
+q6.2 = "If there is something your child wants that is out of reach, such as a snack or toy that is out of reach, how does he/she get it?";
+q6.4 = "Reach for the object with his/her whole hand?";
+q6.5 = "Lead you to the object?";
+q6.6 = "Try to get the object for him/herself?";
+q6.7 = "Ask for it using words or sounds?";
+q6.8 = "If you point at something across the room, does ___ look at it?";
+q7.1 = "If the interviewer just asked #6, begin here: We just talked about pointing to ask for something, ASK ALL  Does ______________ point with one finger just to show you something interesting?";
+q7.2 = "Please give me an example something he/she might point at to show you.";
+q7.4 = "An airplane in the sky?";
+q7.5 = "A truck on the road?";
+q7.6 = "A bug on the ground?";
+q7.7 = "An animal in the yard?";
+q7.8 = "How does your child draw your attention to it? Would he/she point with one finger?";
+q7.9 = "Is this to show their interest, not to get help?";
+q8.1 = "Is ____________ interested in other children?";
+q8.2 = "Is he/she interested in children who are not his/her brother or sister?";
+q8.3 = "When you are at the playground or supermarket, does your child usually respond to other children?";
+q8.4 = "How does your child respond?";
+q8.5 = "Play with another child?";
+q8.6 = "Talk to another child?";
+q8.7 = "Babble or make vocal noises?";
+q8.8 = "Watch another child?";
+q8.9 = "Smile at another child?";
+q8.10 = "Act shy at first but then smile?";
+q8.11 = "Get excited about another child?";
+q8.12 = "If you point at something across the room, does ___ look at it?";
+q9.1 = "Does ________ show you things by bringing them to you or holding them up for you to see? Not just to get help, but to share?";
+q9.2 = "Please give me an example of something he/she might bring to show you or hold up for you to see.";
+q9.4 = "A picture or toy just to show you?";
+q9.5 = "A drawing he/she has done?";
+q9.6 = "A flower he/she has picked?";
+q9.7 = "A bug he/she has found in the grass?";
+q9.8 = "A few blocks he/she has put together?";
+q9.9 = "Is this sometimes just to show you, not to get help?";
+summaryStep.title = "Thank you.";
+summaryStep.text = "We appreciate your time.";
+
+
+
+InfoTask.relations.Parent = "Parent";
+InfoTask.relations.GrandParent = "GrandParent";
+InfoTask.relations.Guardion = "Guardion";
+InfoTask.relations.Educator = "Educator";
+InfoTask.relations.HealtCareProvider = "Healt Care Provider";
+InfoTask.relations.other = "Other";
+InfoTask.relationStepText = "What is your relationship to the child?";
+
+
+InfoTask.gender.Male = "Male";
+InfoTask.gender.Female = "Female";
+InfoTask.genderStepText = "What is gender of child?";
+
+
+InfoTask.birthDayStepText = "What is the birthday of child?";
+InfoTask.unit = "years";
+
+Consent.title = "";
+Consent.overview.sum = "";
+Consent.overview.content = "";
+Consent.dataGathering.sum = "";
+Consent.dataGathering.content = "";
+Consent.privacy.sum = "";
+Consent.privacy.content = "";
+Consent.dataUse.sum = "";
+Consent.dataUse.content = "";
+Consent.studySurvey.sum = "";
+Consent.studySurvey.content = "";
+
+
+
+
+
+
+

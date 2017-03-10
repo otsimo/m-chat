@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomViewController" customModule="Otsimo_Test" customModuleProvider="target">
+            <connections>
+                <outlet property="no_btn" destination="neg-8W-jX7" id="YTA-h1-Bm9"/>
+                <outlet property="questionText" destination="299-U9-zrd" id="Op9-1t-hCb"/>
+                <outlet property="view" destination="2d5-hQ-pQd" id="ulY-aw-8os"/>
+                <outlet property="yes_btn" destination="Bvh-Ah-S9N" id="snA-Kn-2oS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2d5-hQ-pQd">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsu-79-UeM">
+                    <rect key="frame" x="0.0" y="20" width="375" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-VS-eAV">
+                            <rect key="frame" x="0.0" y="173.5" width="375" height="221"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you point at something across the room, does ___ look at it?across the room, does ___ look " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="299-U9-zrd" userLabel="title">
+                                    <rect key="frame" x="8" y="0.0" width="359" height="94"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="94" id="cgE-gp-iAj"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvY-Av-oaV">
+                                    <rect key="frame" x="0.0" y="102" width="375" height="115"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBF-0k-ewv">
+                                            <rect key="frame" x="188" y="30" width="1" height="62"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neg-8W-jX7">
+                                            <rect key="frame" x="187" y="18" width="187" height="92"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <state key="normal" title="No">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="NoTapped:" destination="-1" eventType="touchUpInside" id="Zfq-ry-KeN"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-Ah-S9N">
+                                            <rect key="frame" x="0.0" y="18" width="187" height="92"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <state key="normal" title="YES">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="YesTapped:" destination="-1" eventType="touchUpInside" id="JXG-NO-i39"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="115" id="Az6-Sc-evj"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="gvY-Av-oaV" secondAttribute="trailing" id="C3P-E2-FR0"/>
+                                <constraint firstItem="gvY-Av-oaV" firstAttribute="centerX" secondItem="gBG-VS-eAV" secondAttribute="centerX" id="Zg8-9m-L0D"/>
+                                <constraint firstItem="gvY-Av-oaV" firstAttribute="leading" secondItem="gBG-VS-eAV" secondAttribute="leading" id="fOE-6u-2TX"/>
+                                <constraint firstItem="299-U9-zrd" firstAttribute="top" secondItem="gBG-VS-eAV" secondAttribute="top" id="ffD-8P-oOL"/>
+                                <constraint firstAttribute="trailing" secondItem="299-U9-zrd" secondAttribute="trailing" constant="8" id="gYd-Bg-iI6"/>
+                                <constraint firstAttribute="height" constant="221" id="iFV-nn-IgS"/>
+                                <constraint firstItem="299-U9-zrd" firstAttribute="centerX" secondItem="gBG-VS-eAV" secondAttribute="centerX" id="jht-Yp-FeJ"/>
+                                <constraint firstItem="gvY-Av-oaV" firstAttribute="top" secondItem="gBG-VS-eAV" secondAttribute="top" constant="102" id="jrQ-f5-AEt"/>
+                                <constraint firstItem="299-U9-zrd" firstAttribute="leading" secondItem="gBG-VS-eAV" secondAttribute="leading" constant="8" id="rep-mq-uP4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="gBG-VS-eAV" secondAttribute="trailing" id="FDe-kw-O2b"/>
+                        <constraint firstItem="gBG-VS-eAV" firstAttribute="centerY" secondItem="fsu-79-UeM" secondAttribute="centerY" id="SID-AZ-cIP"/>
+                        <constraint firstItem="gBG-VS-eAV" firstAttribute="centerX" secondItem="fsu-79-UeM" secondAttribute="centerX" id="b2E-0s-nUi"/>
+                        <constraint firstItem="gBG-VS-eAV" firstAttribute="leading" secondItem="fsu-79-UeM" secondAttribute="leading" id="ldm-JD-0KC"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-rw-Z7P">
+                    <rect key="frame" x="0.0" y="596" width="375" height="71"/>
+                    <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="Vxh-hZ-XGu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="NextTapped:" destination="-1" eventType="touchUpInside" id="o1f-t8-yR4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="On1-rw-Z7P" secondAttribute="bottom" id="29i-Py-eY5"/>
+                <constraint firstItem="On1-rw-Z7P" firstAttribute="leading" secondItem="2d5-hQ-pQd" secondAttribute="leading" id="A3m-ls-JY7"/>
+                <constraint firstAttribute="bottom" secondItem="fsu-79-UeM" secondAttribute="bottom" constant="79" id="CMa-e3-itp"/>
+                <constraint firstItem="fsu-79-UeM" firstAttribute="top" secondItem="2d5-hQ-pQd" secondAttribute="top" constant="20" id="Ese-1t-DM9"/>
+                <constraint firstAttribute="trailing" secondItem="On1-rw-Z7P" secondAttribute="trailing" id="Pb0-bQ-eyd"/>
+                <constraint firstAttribute="trailing" secondItem="fsu-79-UeM" secondAttribute="trailing" id="ceF-vM-m30"/>
+                <constraint firstItem="fsu-79-UeM" firstAttribute="leading" secondItem="2d5-hQ-pQd" secondAttribute="leading" id="o3f-Di-hqO"/>
+            </constraints>
+            <point key="canvasLocation" x="43.5" y="139.5"/>
+        </view>
+    </objects>
+</document>
