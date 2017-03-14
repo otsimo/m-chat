@@ -233,8 +233,8 @@ export class Question extends Component {
       </View>
     );
   }
+  
   render() {
-    
     this.state.question = this.props.delegate.getQuestionType();
     console.log('questiontype', this.state.question);
     console.log('id', this.props.delegate.getStepId());

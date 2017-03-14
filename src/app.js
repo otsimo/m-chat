@@ -13,6 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Question } from './question.js';
 import { Logic } from './logic';
 import { modalDispatcher } from './events';
+import { ModalButton } from './modalButtons';
 
 import q1 from '../questions/q1.json';
 import q2 from '../questions/q2.json';
@@ -82,7 +83,8 @@ export class MChat extends Component {
   }
 
   changeTitle() {
-    this.props.navigation.setParams({start: true, id: this.props.navigation.state.params.logic.getStepId() });
+
+    this.props.navigation.setParams({ start: true, id: this.props.navigation.state.params.logic.getStepId() });
 
   }
 
@@ -95,16 +97,18 @@ export class MChat extends Component {
     if (!this.state.viewOne) {
       return (
         <View>
-          <Modal ref="modal"
+          <Modal
+            ref="modal"
             transparent
             visible={this.state.modalVisible}
             onRequestClose={() => this._setModalVisible(false)}
-            animationType={'fade'}
+            onRequestHide={this.onModalClick}
+            animationType={'slide'}
           >
             <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
               <View
                 style={{
-                  flex: 1,
+                  flex: 2,
                   flexDirection: 'row',
                   justifyContent: 'flex-end',
                   alignItems: 'flex-start',
@@ -113,13 +117,14 @@ export class MChat extends Component {
               >
                 <View
                   style={{
-                    width: 100,
-                    height: 200,
+                    width: 150,
+                    height: 250,
                     backgroundColor: 'rgb(247,247,247)',
                   }}
                 >
-                  <Button title="Save&Quit" onPress={() => this.saveAndQuit()} />
-                  <Button title="Quit" onPress={() => BackAndroid.exitApp()} />
+                  <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
+                  <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
+
                 </View>
               </View>
             </TouchableWithoutFeedback>
@@ -138,7 +143,7 @@ export class MChat extends Component {
           visible={this.state.modalVisible}
           onRequestClose={() => this._setModalVisible(false)}
           onRequestHide={this.onModalClick}
-          animationType={'fade'}
+          animationType={'slide'}
         >
           <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
             <View
@@ -152,13 +157,14 @@ export class MChat extends Component {
             >
               <View
                 style={{
-                  width: 100,
-                  height: 200,
+                  width: 150,
+                  height: 250,
                   backgroundColor: 'rgb(247,247,247)',
                 }}
               >
-                <Button title="Save&Quit" onPress={() => this.saveAndQuit()} />
-                <Button title="Quit" onPress={() => BackAndroid.exitApp()} />
+                <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
+                <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
+
               </View>
             </View>
           </TouchableWithoutFeedback>
