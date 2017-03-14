@@ -30,8 +30,7 @@ class HomeScreen extends React.Component {
 
   loadSurvey() {
     this.logic.loadState();
-    resetTo(this, 'app', { logic: this.logic, id: this.logic.getStepId() });
-    
+    resetTo(this, 'app', { logic: this.logic, id: '', start: false });
   }
   render() {
     const { navigate } = this.props.navigation;

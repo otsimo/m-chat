@@ -433,12 +433,12 @@ export class Logic {
       const keys= '';
       if (value !== null) {
         // We have data!!
-        keys= JSON.parse(value);
+        keys = JSON.parse(value);
         this.stepIndex = keys.STEPINDEX;
         this.noOfQuestions = keys.NOOFQUESTIONS;
         this.passes = keys.PASSES;
         this.fails = keys.FAILS;
-
+        console.log('stepindex', keys.STEPINDEX);
         this.stepId = this.steps[this.stepIndex].id;
         this.questionID = this.steps[this.stepIndex].firstQuestion;
         this.noOfQuestions = 0;

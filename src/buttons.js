@@ -24,7 +24,7 @@ export class Buttons extends Component {
       <View
         style={{
           flexDirection: 'row',
-          margin: 10,
+          margin: 0,
           justifyContent: 'center',
           alignItems: 'center',
         }}

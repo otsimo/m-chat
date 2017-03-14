@@ -19,7 +19,6 @@ export class Question extends Component {
     this.screenWidth = Dimensions.get('window').width / 20;
     this.screenHeight = Dimensions.get('window').height;
     this.state = { question: this.props.delegate.getQuestionType(), showNext: false };
-    
   }
 
   /**
@@ -58,7 +57,9 @@ export class Question extends Component {
     return (
       <View
         style={{
+          height: Dimensions.get('window').height,
           marginTop: -60,
+          backgroundColor: '#f7f7f7',
         }}
       >
         <View
@@ -73,10 +74,11 @@ export class Question extends Component {
         />
         <View
           style={{
-            marginTop: 80,
-            backgroundColor: 'rgb(255,255,255)',
+            marginTop: Dimensions.get('window').height / 4,
+            backgroundColor: 'white',
             justifyContent: 'center',
             alignItems: 'center',
+            padding: 8, //40px oran 2
           }}
         >
           <Text
@@ -85,6 +87,7 @@ export class Question extends Component {
               marginTop: 0,
               width: 300,
               textAlign: 'center',
+              //fontFamily: 'sans-serif',
             }}
           >
             {this.props.delegate.currentQuestion}
@@ -95,6 +98,8 @@ export class Question extends Component {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: 'rgb(255,255,255)',
+              marginTop: 12, // 60px oran 3
+              marginBottom: 8,
             }}
           >
             <CustomizedButton isSelected={this.state.selectedOne === 'yes'} buttonName="Yes" onClick={() => this.selectButton('yes')} />
@@ -108,7 +113,6 @@ export class Question extends Component {
   }
 
   renderGroup() {
-    
     const keys = Object.keys((this.props.delegate.currentStep.questions.filter(
       q => q.id === this.props.delegate.questionID)[0]).group.questions);
 
@@ -117,6 +121,7 @@ export class Question extends Component {
       <View
         style={{
           marginTop: -60,
+          backgroundColor: '#f7f7f7',
         }}
       >
         <View
@@ -134,7 +139,8 @@ export class Question extends Component {
         </View>
         <ScrollView
           style={{
-            backgroundColor: 'rgb(247,247,247)',
+            height: Dimensions.get('window').height - 65,
+            backgroundColor: '#f7f7f7',
           }}
         >
           <View
@@ -143,6 +149,7 @@ export class Question extends Component {
               justifyContent: 'space-between',
               alignItems: 'center',
               backgroundColor: 'rgb(255,255,255)',
+              padding: 8,
             }}
           >
             <Text
@@ -159,8 +166,8 @@ export class Question extends Component {
           {keys.map(v => (
             <View
               key={v} style={{
-                padding: 10,
-                margin: 5,
+                padding: 8,
+                margin: 8,
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 backgroundColor: 'rgb(255,255,255)',
@@ -179,7 +186,7 @@ export class Question extends Component {
               <View
                 style={{
                   flexDirection: 'column',
-                  margin: 0,
+                  margin: 4,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
@@ -194,7 +201,9 @@ export class Question extends Component {
           ),
           )
           }
-          <NextButton enabled={this.state.showNext} onClick={() => this.executeNextStep()} />
+          <View style={{ marginTop: -8 }}>
+            <NextButton enabled={this.state.showNext} onClick={() => this.executeNextStep()} />
+          </View>
         </ScrollView>
       </View>
     );
@@ -225,6 +234,7 @@ export class Question extends Component {
     );
   }
   render() {
+    
     this.state.question = this.props.delegate.getQuestionType();
     console.log('questiontype', this.state.question);
     console.log('id', this.props.delegate.getStepId());

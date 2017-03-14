@@ -22,7 +22,7 @@ import q4 from '../questions/q4.json';
 export class MChat extends Component {
 
   static navigationOptions = {
-    title: (navigation, childRouter) => 'Step ' + navigation.state.params.logic.getStepId() + ' of 20',
+    title: (navigation, childRouter) => navigation.state.params.start ? 'Step ' + navigation.state.params.id + ' of 20' : '',
 
     header: ({ state, setParams }) => ({
       // Render a button on the right side of the header
@@ -73,9 +73,7 @@ export class MChat extends Component {
     BackAndroid.removeEventListener('hardwareBackPress', this.onModalClick);
   }
 
-  changeTitle(nTitle) {
-    this.navigationOptions.title = nTitle;
-  }
+
   _setModalVisible(cmd) {
     this.setState({
       modalVisible: cmd,
@@ -84,7 +82,8 @@ export class MChat extends Component {
   }
 
   changeTitle() {
-    this.props.navigation.setParams({logic: this.props.navigation.state.params.logic });
+    this.props.navigation.setParams({start: true, id: this.props.navigation.state.params.logic.getStepId() });
+
   }
 
   saveAndQuit() {

@@ -27,7 +27,7 @@ export class CustomizedButton extends Component {
             alignItems: 'center',
           }}
         >
-          <Text style={{ color: this.props.isSelected ? 'rgb( 165, 90,239)' : 'black', fontSize: 26 }} >{this.props.buttonName}</Text>
+          <Text style={{ color: this.props.isSelected ? '#9c48ed' : '#343434', fontSize: 26, fontWeight: this.props.isSelected ? 'bold' : 'normal' }} >{this.props.buttonName}</Text>
         
         </View>
       </TouchableOpacity>

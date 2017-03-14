@@ -17,7 +17,7 @@ export class NextButton extends Component {
             marginBottom: 15,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: this.props.enabled ? 'rgb(0,169,250)' : 'rgb(231,231,231)',
+            backgroundColor: this.props.enabled ? '#00a9fa' : '#e7e7e7',
           }}
         >
           <Text style={{ color: 'white' }}>NEXT</Text>
