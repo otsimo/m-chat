@@ -8,6 +8,7 @@ import {
 import { Buttons } from './buttons.js';
 import { NextButton } from './nextButton.js';
 import { CustomizedButton } from './customizedButton.js';
+import { Result } from './result.js';
 
 export class Question extends Component {
   static propTypes = {
@@ -210,17 +211,14 @@ export class Question extends Component {
   }
 
   renderResultScreen() {
+    let dim = Dimensions.get('window');
+    let w = dim.width;
+    let h = dim.height;
     return (
-      <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgb(4,165,250)' }}>
-        <Text>
-          RESULTS
-         </Text>
-        <Text>
-          PASS: {this.props.delegate.getPasses()}
-        </Text>
-        <Text>
-          FAIL: {this.props.delegate.getFails()}
-        </Text>
+
+
+      <View style={{ marginTop: -60, width: w, height: h, backgroundColor: 'rgb(255,255,255)' }}>
+        <Result/>
       </View>
     );
   }

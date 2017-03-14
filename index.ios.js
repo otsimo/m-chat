@@ -10,7 +10,7 @@ import { MChat } from './src/app';
 import { Gender } from './src/gender.js';
 import { resetTo } from './src/util';
 import { Logic } from './src/logic';
-import q1 from './questions/q1.json';
+import q1 from './questions/q2.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
 import q4 from './questions/q4.json';
@@ -25,7 +25,7 @@ class HomeScreen extends React.Component {
     title: 'Home',
   };
   componentWillMount() {
-    this.logic = new Logic([q1, q2, q3]);
+    this.logic = new Logic([q1]);
   }
 
   loadSurvey() {

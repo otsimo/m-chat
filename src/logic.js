@@ -86,7 +86,7 @@ export class Logic {
    */
   goToNextStep() {
     this.stepIndex += 1;
-    if (this.stepIndex < 3) {
+    if (this.stepIndex < 1) {
       this.stepId = this.steps[this.stepIndex].id;
       this.questionID = this.steps[this.stepIndex].firstQuestion;
       this.yesAnswers = 0;
