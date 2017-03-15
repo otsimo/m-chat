@@ -32,7 +32,7 @@ extension ViewController {
 
             let resultVC = HighResultPopupController(nibName: "LowResultPopup", bundle: nil)
             resultVC.point = passNum
-            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
+            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
 
             // Add buttons to dialog
@@ -43,7 +43,7 @@ extension ViewController {
             print("MEDIUM RİSK")
             let resultVC = HighResultPopupController(nibName: "MediumResultPopup", bundle: nil)
             resultVC.point = passNum
-            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
+            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
             // Add buttons to dialog
             popupVC.addButtons([buttonSave, buttonShare])
@@ -52,7 +52,7 @@ extension ViewController {
             print("HIGH RİSK")
             let resultVC = HighResultPopupController(nibName: "HighResultPopup", bundle: nil)
             resultVC.point = passNum
-            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
+            let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
             // Add buttons to dialog
             popupVC.addButtons([buttonSave, buttonShare])

@@ -10,109 +10,102 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LowResultPopupController" customModule="Otsimo_Test" customModuleProvider="target">
             <connections>
-                <outlet property="lbl_result" destination="FfT-TR-Mhu" id="I2c-s7-3oT"/>
+                <outlet property="lbl_result" destination="AB4-nW-7a8" id="fI1-hi-qvG"/>
                 <outlet property="view" destination="Npw-ij-DWz" id="z20-Oj-xMo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Npw-ij-DWz">
-            <rect key="frame" x="0.0" y="0.0" width="290" height="550"/>
+            <rect key="frame" x="0.0" y="0.0" width="252" height="417"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-kY-Ihq">
-                    <rect key="frame" x="0.0" y="0.0" width="290" height="550"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4C4-h4-jo8">
+                    <rect key="frame" x="0.0" y="0.0" width="252" height="417"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Düşük Düzey           Otizm Şüphesi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-kc-wJ0">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="97"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Düşük Düzey           Otizm Şüphesi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKO-ld-VAk">
+                            <rect key="frame" x="0.0" y="0.0" width="252" height="97"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="97" id="otd-CL-plc"/>
+                                <constraint firstAttribute="height" constant="97" id="TWN-YH-TgX"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                             <color key="textColor" red="0.30196078430000001" green="0.65490196079999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccX-2V-b9k">
-                            <rect key="frame" x="2.5" y="105" width="285" height="76"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loQ-f7-Wri">
+                            <rect key="frame" x="8" y="99" width="236" height="76"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="285" id="6L8-q8-AsN"/>
-                                <constraint firstAttribute="height" constant="76" id="YIx-HG-0ZX"/>
+                                <constraint firstAttribute="height" constant="76" id="USG-aU-tYv"/>
                             </constraints>
-                            <string key="text">İlave bir test yapılmasınaBu test ileihtiyaç yoktur</string>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <string key="text">İlave bir test yapılmasına
+Bu test ile
+ihtiyaç yoktur</string>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-CHAT Testinden Alınan Puan:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfT-TR-Mhu">
-                            <rect key="frame" x="-1.5" y="189" width="293" height="78"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-CHAT Testinden Alınan Puan:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AB4-nW-7a8">
+                            <rect key="frame" x="-8.5" y="181" width="269" height="63"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="78" id="0Bm-cU-m33"/>
-                                <constraint firstAttribute="width" constant="293" id="1am-TE-w2W"/>
+                                <constraint firstAttribute="height" constant="63" id="HG2-Ql-l3v"/>
+                                <constraint firstAttribute="width" constant="269" id="PwX-RN-k3d"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjA-8e-oDW">
-                            <rect key="frame" x="8.5" y="293" width="274" height="249"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="249" id="47c-YR-sq2"/>
-                                <constraint firstAttribute="width" constant="274" id="Puh-Y3-c4f"/>
-                            </constraints>
-                            <string key="text">Ancak M-CHAT çocuğa 24 aylıktan önceuygulanmış ise çocuğun gelişiminintakip edilip 24 aylıkken bu testinDaha fazla bilgi içintekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bME-0T-UGw">
-                            <rect key="frame" x="124.5" y="265" width="42" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="42" id="O0y-nu-6f2"/>
-                                <constraint firstAttribute="height" constant="21" id="Oj8-l9-Buz"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAh-5o-VA4">
-                            <rect key="frame" x="77.5" y="294" width="136" height="1"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIM-nM-ohV">
+                            <rect key="frame" x="58" y="250" width="136" height="1"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="136" id="fOA-4x-pzj"/>
-                                <constraint firstAttribute="height" constant="1" id="zwb-dr-OQO"/>
+                                <constraint firstAttribute="height" constant="1" id="dXR-QI-Ymh"/>
+                                <constraint firstAttribute="width" constant="136" id="yoU-CX-Am6"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lqf-vA-n45">
+                            <rect key="frame" x="8" y="250" width="236" height="158"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="158" id="MjB-Uf-gJn"/>
+                            </constraints>
+                            <string key="text">Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin Daha fazla bilgi için tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="oAh-5o-VA4" firstAttribute="centerX" secondItem="BaT-kY-Ihq" secondAttribute="centerX" id="1go-VP-YGP"/>
-                        <constraint firstItem="FfT-TR-Mhu" firstAttribute="centerX" secondItem="BaT-kY-Ihq" secondAttribute="centerX" id="20n-ER-K6d"/>
-                        <constraint firstAttribute="height" constant="550" id="5EA-y5-sNj"/>
-                        <constraint firstItem="oAh-5o-VA4" firstAttribute="top" secondItem="bME-0T-UGw" secondAttribute="bottom" constant="8" id="6Yc-pL-bnF"/>
-                        <constraint firstItem="JeV-kc-wJ0" firstAttribute="leading" secondItem="BaT-kY-Ihq" secondAttribute="leading" id="8pd-gY-DAA"/>
-                        <constraint firstAttribute="trailing" secondItem="JeV-kc-wJ0" secondAttribute="trailing" id="IHE-Lb-6rS"/>
-                        <constraint firstItem="bME-0T-UGw" firstAttribute="top" secondItem="ccX-2V-b9k" secondAttribute="bottom" constant="84" id="R7q-bf-qgd"/>
-                        <constraint firstItem="FfT-TR-Mhu" firstAttribute="top" secondItem="ccX-2V-b9k" secondAttribute="bottom" constant="8" id="Xm1-xX-yYj"/>
-                        <constraint firstItem="SjA-8e-oDW" firstAttribute="top" secondItem="bME-0T-UGw" secondAttribute="bottom" constant="7" id="asB-G9-wFF"/>
-                        <constraint firstItem="ccX-2V-b9k" firstAttribute="centerX" secondItem="BaT-kY-Ihq" secondAttribute="centerX" id="k4e-7Q-xpT"/>
-                        <constraint firstItem="bME-0T-UGw" firstAttribute="centerX" secondItem="BaT-kY-Ihq" secondAttribute="centerX" id="krI-Qg-abV"/>
-                        <constraint firstItem="ccX-2V-b9k" firstAttribute="top" secondItem="JeV-kc-wJ0" secondAttribute="bottom" constant="8" id="lak-fy-m4j"/>
-                        <constraint firstItem="JeV-kc-wJ0" firstAttribute="top" secondItem="BaT-kY-Ihq" secondAttribute="top" id="sAA-XV-dVv"/>
-                        <constraint firstItem="SjA-8e-oDW" firstAttribute="centerX" secondItem="BaT-kY-Ihq" secondAttribute="centerX" id="uTo-Df-2Cy"/>
+                        <constraint firstItem="wIM-nM-ohV" firstAttribute="top" secondItem="AB4-nW-7a8" secondAttribute="bottom" constant="6" id="4Tv-r4-nf7"/>
+                        <constraint firstAttribute="width" constant="252" id="FlA-8p-zUK"/>
+                        <constraint firstItem="lqf-vA-n45" firstAttribute="top" secondItem="AB4-nW-7a8" secondAttribute="bottom" constant="6" id="Gb5-mp-iin"/>
+                        <constraint firstAttribute="trailing" secondItem="nKO-ld-VAk" secondAttribute="trailing" id="TmB-LN-udF"/>
+                        <constraint firstItem="wIM-nM-ohV" firstAttribute="centerX" secondItem="4C4-h4-jo8" secondAttribute="centerX" id="U77-iI-uII"/>
+                        <constraint firstItem="AB4-nW-7a8" firstAttribute="centerX" secondItem="4C4-h4-jo8" secondAttribute="centerX" id="XWs-54-h3L"/>
+                        <constraint firstItem="nKO-ld-VAk" firstAttribute="top" secondItem="4C4-h4-jo8" secondAttribute="top" id="ZiY-Ok-g0w"/>
+                        <constraint firstAttribute="height" constant="417" id="bh2-Vh-rHi"/>
+                        <constraint firstAttribute="trailing" secondItem="lqf-vA-n45" secondAttribute="trailing" constant="8" id="cBg-Uj-JGj"/>
+                        <constraint firstItem="loQ-f7-Wri" firstAttribute="leading" secondItem="4C4-h4-jo8" secondAttribute="leading" constant="8" id="cgD-R8-sey"/>
+                        <constraint firstAttribute="trailing" secondItem="loQ-f7-Wri" secondAttribute="trailing" constant="8" id="dIq-zR-mnd"/>
+                        <constraint firstItem="AB4-nW-7a8" firstAttribute="top" secondItem="loQ-f7-Wri" secondAttribute="bottom" constant="6" id="g9n-hx-D53"/>
+                        <constraint firstItem="nKO-ld-VAk" firstAttribute="centerX" secondItem="4C4-h4-jo8" secondAttribute="centerX" id="kyH-ew-wE8"/>
+                        <constraint firstItem="nKO-ld-VAk" firstAttribute="leading" secondItem="4C4-h4-jo8" secondAttribute="leading" id="oEv-G0-Rkd"/>
+                        <constraint firstItem="lqf-vA-n45" firstAttribute="leading" secondItem="4C4-h4-jo8" secondAttribute="leading" constant="8" id="wwk-xP-TnP"/>
+                        <constraint firstItem="loQ-f7-Wri" firstAttribute="centerX" secondItem="4C4-h4-jo8" secondAttribute="centerX" id="xyi-dn-BeU"/>
+                        <constraint firstItem="loQ-f7-Wri" firstAttribute="top" secondItem="nKO-ld-VAk" secondAttribute="bottom" constant="2" id="ywI-Np-ojE"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.30196078430000001" green="0.65490196079999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="BaT-kY-Ihq" firstAttribute="leading" secondItem="Npw-ij-DWz" secondAttribute="leading" id="4Gx-BK-qy5"/>
-                <constraint firstAttribute="bottom" secondItem="BaT-kY-Ihq" secondAttribute="bottom" id="Sae-Fz-0Iq"/>
-                <constraint firstItem="BaT-kY-Ihq" firstAttribute="top" secondItem="Npw-ij-DWz" secondAttribute="top" id="hqg-7F-Onq"/>
-                <constraint firstAttribute="trailing" secondItem="BaT-kY-Ihq" secondAttribute="trailing" id="z1U-bO-ZIv"/>
+                <constraint firstItem="4C4-h4-jo8" firstAttribute="top" secondItem="Npw-ij-DWz" secondAttribute="top" id="SWp-NZ-ArL"/>
+                <constraint firstAttribute="bottom" secondItem="4C4-h4-jo8" secondAttribute="bottom" id="Uhm-ea-DkD"/>
+                <constraint firstAttribute="trailing" secondItem="4C4-h4-jo8" secondAttribute="trailing" id="pjq-WL-gm6"/>
+                <constraint firstItem="4C4-h4-jo8" firstAttribute="leading" secondItem="Npw-ij-DWz" secondAttribute="leading" id="uO7-D6-ici"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="263" y="402"/>
+            <point key="canvasLocation" x="248" y="337.5"/>
         </view>
     </objects>
 </document>

@@ -11,7 +11,7 @@ import UIKit
 class LowResultPopupController: UIViewController {
     
     var point = 0
-    @IBOutlet weak var lbl_result: UILabel!
+    @IBOutlet var lbl_result: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

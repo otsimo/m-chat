@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         Log.debug("ViewController : viewDidAppear")
 //showShareView()
-
+showResultScene(passNum: 20, failNum: 1)
     }
 
     @IBOutlet weak var surveyButton: UIButton!
@@ -70,6 +70,7 @@ class ViewController: UIViewController {
     
     lazy var mChatVC: ORKTaskViewController = {
         let mChatVC = ORKTaskViewController(task: MChatTask, taskRun: nil)
+        mChatVC.delegate = self
         return mChatVC
     }()
     lazy var consentTaskVC: ORKTaskViewController = {

@@ -107,8 +107,12 @@ extension ViewController: ORKTaskViewControllerDelegate {
             if let t = taskResult {
                 iResult = anlyse.InfoResult(infoResult: t)
             }
+        case Tasks.mChatTaskID:
+            analytics.event("completed-mChat", data: [:])
+            print("mChat Task Result:",taskResult)
+            showResultScene(passNum: 20, failNum: 1)
         case Tasks.mChatRFTaskID:
-            analytics.event("completedSurvey", data: [:])
+            analytics.event("completed-mChatRF", data: [:])
             if let t = taskResult {
 
                 let surveyResults = anlyse.Task(result: t)
