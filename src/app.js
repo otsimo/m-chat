@@ -74,7 +74,6 @@ export class MChat extends Component {
     BackAndroid.removeEventListener('hardwareBackPress', this.onModalClick);
   }
 
-
   _setModalVisible(cmd) {
     this.setState({
       modalVisible: cmd,
@@ -83,9 +82,7 @@ export class MChat extends Component {
   }
 
   changeTitle() {
-
     this.props.navigation.setParams({ start: true, id: this.props.navigation.state.params.logic.getStepId() });
-
   }
 
   saveAndQuit() {
@@ -98,37 +95,49 @@ export class MChat extends Component {
       return (
         <View>
           <Modal
-            ref="modal"
-            transparent
-            visible={this.state.modalVisible}
-            onRequestClose={() => this._setModalVisible(false)}
-            onRequestHide={this.onModalClick}
-            animationType={'slide'}
-          >
-            <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
+          ref="modal"
+          transparent
+          visible={this.state.modalVisible}
+          onRequestClose={() => this._setModalVisible(false)}
+          onRequestHide={this.onModalClick}
+          animationType={'fade'}
+        >
+          <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-start',
+                marginTop: 2,
+              }}
+            >
+            <View
+                style={{
+                  borderRadius: 10,
+                  marginRight: -150,
+                  width: 154,
+                  height: 104,
+                  backgroundColor: '#000000',
+                  opacity: 0.05,
+                }}
+              />
               <View
                 style={{
-                  flex: 1,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-end',
-                  alignItems: 'flex-start',
-                  marginTop: 2,
+                  width: 150,
+                  height: 100,
+                  backgroundColor: 'white',
                 }}
               >
-                <View
-                  style={{
-                    width: 150,
-                    height: 250,
-                    backgroundColor: 'rgb(247,247,247)',
-                  }}
-                >
-                  <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
-                  <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
+                <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
+                <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
 
-                </View>
               </View>
-            </TouchableWithoutFeedback>
-          </Modal>
+              
+
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
           <View style={{ marginTop: 60 }}>
             <Question onUpdate={() => this.changeTitle()} delegate={this.props.navigation.state.params.logic} />
           </View>
@@ -143,29 +152,41 @@ export class MChat extends Component {
           visible={this.state.modalVisible}
           onRequestClose={() => this._setModalVisible(false)}
           onRequestHide={this.onModalClick}
-          animationType={'slide'}
+          animationType={'fade'}
         >
           <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
             <View
               style={{
-                flex: 2,
+                flex: 1,
                 flexDirection: 'row',
                 justifyContent: 'flex-end',
                 alignItems: 'flex-start',
                 marginTop: 2,
               }}
             >
+            <View
+                style={{
+                  borderRadius: 10,
+                  marginRight: -150,
+                  width: 154,
+                  height: 104,
+                  backgroundColor: '#000000',
+                  opacity: 0.05,
+                }}
+              />
               <View
                 style={{
                   width: 150,
-                  height: 250,
-                  backgroundColor: 'rgb(247,247,247)',
+                  height: 100,
+                  backgroundColor: 'white',
                 }}
               >
                 <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
                 <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
 
               </View>
+              
+
             </View>
           </TouchableWithoutFeedback>
         </Modal>

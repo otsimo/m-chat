@@ -11,7 +11,7 @@ import {
 export class Result extends Component {
   renderHigh() {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius:10 }}>
+      <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
           <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>Yüksek Düzey</Text>
           <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
@@ -30,7 +30,7 @@ export class Result extends Component {
             <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>Alınan Puan: {this.props.score}</Text>
           </View>
 
-          
+
           <View style={{ backgroundColor: 'white', height: 1, width: 200 }}>
 
           </View>
@@ -69,14 +69,13 @@ export class Result extends Component {
   }
   renderLow() {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius:10 }}>
+      <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
           <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
           <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>Yoktur</Text>
         </View>
         <View
           style={{
-
             flexDirection: 'column',
             alignItems: 'center',
             backgroundColor: 'rgb(96,184,71)',
@@ -90,7 +89,6 @@ export class Result extends Component {
           </View>
 
           <View style={{ backgroundColor: 'white', height: 1, width: 200 }}>
-
           </View>
           <View style={{ marginTop: 20, alignItems: 'center' }}>
             <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 15, fontWeight: 'bold' }}>
@@ -131,7 +129,7 @@ export class Result extends Component {
 
   renderMedium() {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius:10 }}>
+      <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
           <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>Orta Düzey</Text>
           <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
