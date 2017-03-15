@@ -28,16 +28,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-VS-eAV">
                             <rect key="frame" x="0.0" y="187.5" width="375" height="221"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you point at something across the room, does ___ look at it?across the room, does ___ look " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="299-U9-zrd" userLabel="title">
-                                    <rect key="frame" x="8" y="0.0" width="359" height="94"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="94" id="cgE-gp-iAj"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvY-Av-oaV">
                                     <rect key="frame" x="0.0" y="102" width="375" height="115"/>
                                     <subviews>
@@ -77,13 +67,23 @@
                                         <constraint firstAttribute="height" constant="115" id="Az6-Sc-evj"/>
                                     </constraints>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you point at something across the room, does ___ look at it?across the room, does ___ look " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="299-U9-zrd" userLabel="title">
+                                    <rect key="frame" x="8" y="8" width="359" height="94"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="94" id="cgE-gp-iAj"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="299-U9-zrd" firstAttribute="top" secondItem="gBG-VS-eAV" secondAttribute="top" constant="8" id="AGQ-PL-XVW"/>
                                 <constraint firstAttribute="trailing" secondItem="gvY-Av-oaV" secondAttribute="trailing" id="C3P-E2-FR0"/>
                                 <constraint firstItem="gvY-Av-oaV" firstAttribute="centerX" secondItem="gBG-VS-eAV" secondAttribute="centerX" id="Zg8-9m-L0D"/>
                                 <constraint firstItem="gvY-Av-oaV" firstAttribute="leading" secondItem="gBG-VS-eAV" secondAttribute="leading" id="fOE-6u-2TX"/>
-                                <constraint firstItem="299-U9-zrd" firstAttribute="top" secondItem="gBG-VS-eAV" secondAttribute="top" id="ffD-8P-oOL"/>
                                 <constraint firstAttribute="trailing" secondItem="299-U9-zrd" secondAttribute="trailing" constant="8" id="gYd-Bg-iI6"/>
                                 <constraint firstAttribute="height" constant="221" id="iFV-nn-IgS"/>
                                 <constraint firstItem="299-U9-zrd" firstAttribute="centerX" secondItem="gBG-VS-eAV" secondAttribute="centerX" id="jht-Yp-FeJ"/>
