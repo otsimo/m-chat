@@ -108,7 +108,7 @@ export class MChat extends Component {
             <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
               <View
                 style={{
-                  flex: 2,
+                  flex: 1,
                   flexDirection: 'row',
                   justifyContent: 'flex-end',
                   alignItems: 'flex-start',

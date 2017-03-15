@@ -9,6 +9,7 @@ import { Buttons } from './buttons.js';
 import { NextButton } from './nextButton.js';
 import { CustomizedButton } from './customizedButton.js';
 import { Result } from './result.js';
+import { SurveyDone } from './surveyDone.js';
 
 export class Question extends Component {
   static propTypes = {
@@ -214,11 +215,21 @@ export class Question extends Component {
     let dim = Dimensions.get('window');
     let w = dim.width;
     let h = dim.height;
+
+    //const passes = this.props.delegate.getPasses();
+    const fails = this.props.delegate.getFails();
+    let resultType = '';
+    if (fails < 3) {
+      resultType = 'low';
+    } else if (fails < 8) {
+      resultType = 'medium';
+    } else {
+      resultType = 'high';
+    }
+
     return (
-
-
       <View style={{ marginTop: -60, width: w, height: h, backgroundColor: 'rgb(255,255,255)' }}>
-        <Result/>
+        <SurveyDone type={resultType} score={fails} />
       </View>
     );
   }
@@ -231,7 +242,7 @@ export class Question extends Component {
       </View>
     );
   }
-  
+
   render() {
     this.state.question = this.props.delegate.getQuestionType();
     console.log('questiontype', this.state.question);

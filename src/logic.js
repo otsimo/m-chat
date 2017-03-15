@@ -85,8 +85,8 @@ export class Logic {
    * @memberOf Logic
    */
   goToNextStep() {
-    this.stepIndex += 1;
     if (this.stepIndex < 1) {
+      this.stepIndex += 1;
       this.stepId = this.steps[this.stepIndex].id;
       this.questionID = this.steps[this.stepIndex].firstQuestion;
       this.yesAnswers = 0;
@@ -427,10 +427,10 @@ export class Logic {
 
   async loadState() {
     // Load last state from disk
-    
+
     try {
       const value = await AsyncStorage.getItem(this.saveDataKey);
-      const keys= '';
+      const keys = '';
       if (value !== null) {
         // We have data!!
         keys = JSON.parse(value);
@@ -445,8 +445,8 @@ export class Logic {
         this.answers = {};
         this.yesAnswers = 0;
         this.noAnswers = 0;
-        
-      
+
+
         this.isSurveyDone = false;
         this.showNext = false;
         this.keys = '';
