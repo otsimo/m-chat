@@ -100,7 +100,7 @@
                         <constraint firstItem="gBG-VS-eAV" firstAttribute="leading" secondItem="fsu-79-UeM" secondAttribute="leading" id="ldm-JD-0KC"/>
                     </constraints>
                 </view>
-                <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-rw-Z7P">
+                <button opaque="NO" alpha="0.25" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-rw-Z7P">
                     <rect key="frame" x="0.0" y="596" width="375" height="71"/>
                     <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

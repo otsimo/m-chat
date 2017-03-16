@@ -67,6 +67,7 @@ class CustomViewController: ORKStepViewController {
         no_btn.setTitleColor(colorManager.normalButtonColor, for: .normal)
         nextButton.alpha = 1.0
         nextButton.isSelected = true
+        nextButton.isEnabled = true
     }
     
     @IBAction func NoTapped(_ sender: UIButton) {
@@ -78,6 +79,7 @@ class CustomViewController: ORKStepViewController {
         yes_btn.setTitleColor(colorManager.normalButtonColor, for: .normal)
         nextButton.alpha = 1.0
         nextButton.isSelected = true
+        nextButton.isEnabled = true
     }
     
     override func goForward() {
