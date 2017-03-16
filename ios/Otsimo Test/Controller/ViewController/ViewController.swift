@@ -14,6 +14,7 @@ import SwiftProtobuf
 
 class ViewController: UIViewController {
 
+    @IBOutlet var startButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     var taskResultFinishedCompletionHandler: ((ORKResult) -> Void)?
     let htmlContents = ["1", "2"]
@@ -29,6 +30,8 @@ class ViewController: UIViewController {
         Log.debug("ViewController : viewDidAppear")
 //showShareView()
 showResultScene(passNum: 20, failNum: 1)
+        startButton.layer.cornerRadius = 5
+        startButton.layer.borderWidth = 1
     }
 
     @IBOutlet weak var surveyButton: UIButton!
