@@ -21,7 +21,7 @@ class Analyse {
         analysedResults.version = OtsimoResultVersion
         analysedResults.info = iresult
         analysedResults.stepResults = sresults
-    
+        analysedResults.surveyType = Otsimo_SurveyType.mchatrf
         return analysedResults
     }
     

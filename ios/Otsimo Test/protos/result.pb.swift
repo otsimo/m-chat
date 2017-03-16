@@ -10,6 +10,82 @@ import Foundation
 import SwiftProtobuf
 
 
+public enum Otsimo_SurveyType: ProtobufEnum {
+  public typealias RawValue = Int
+  case mchat // = 0
+  case mchatrf // = 1
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .mchat
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .mchat
+    case 1: self = .mchatrf
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public init?(name: String) {
+    switch name {
+    case "mchat": self = .mchat
+    case "mchatrf": self = .mchatrf
+    default: return nil
+    }
+  }
+
+  public init?(jsonName: String) {
+    switch jsonName {
+    case "MCHAT": self = .mchat
+    case "MCHATRF": self = .mchatrf
+    default: return nil
+    }
+  }
+
+  public init?(protoName: String) {
+    switch protoName {
+    case "MCHAT": self = .mchat
+    case "MCHATRF": self = .mchatrf
+    default: return nil
+    }
+  }
+
+  public var rawValue: Int {
+    get {
+      switch self {
+      case .mchat: return 0
+      case .mchatrf: return 1
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+  }
+
+  public var json: String {
+    get {
+      switch self {
+      case .mchat: return "\"MCHAT\""
+      case .mchatrf: return "\"MCHATRF\""
+      case .UNRECOGNIZED(let i): return String(i)
+      }
+    }
+  }
+
+  public var hashValue: Int { return rawValue }
+
+  public var debugDescription: String {
+    get {
+      switch self {
+      case .mchat: return ".mchat"
+      case .mchatrf: return ".mchatrf"
+      case .UNRECOGNIZED(let v): return ".UNRECOGNIZED(\(v))"
+      }
+    }
+  }
+
+}
+
 public struct Otsimo_QuestionResult: ProtobufGeneratedMessage {
   public var swiftClassName: String {return "Otsimo_QuestionResult"}
   public var protoMessageName: String {return "QuestionResult"}
@@ -217,6 +293,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "duration": 3,
     "stepResults": 4,
     "version": 5,
+    "surveyType": 6,
   ]}
   public var protoFieldNames: [String: Int] {return [
     "info": 1,
@@ -224,6 +301,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "duration": 3,
     "stepResults": 4,
     "version": 5,
+    "surveyType": 6,
   ]}
 
   private class _StorageClass {
@@ -233,6 +311,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     var _duration: Int64 = 0
     var _stepResults: [Otsimo_StepResult] = []
     var _version: Int32 = 0
+    var _surveyType: Otsimo_SurveyType = Otsimo_SurveyType.mchat
 
     init() {}
 
@@ -244,6 +323,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       case 3: handled = try setter.decodeSingularField(fieldType: ProtobufInt64.self, value: &_duration)
       case 4: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
       case 5: handled = try setter.decodeSingularField(fieldType: ProtobufInt32.self, value: &_version)
+      case 6: handled = try setter.decodeSingularField(fieldType: Otsimo_SurveyType.self, value: &_surveyType)
       default:
         handled = false
       }
@@ -266,6 +346,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _version != 0 {
         try visitor.visitSingularField(fieldType: ProtobufInt32.self, value: _version, protoFieldNumber: 5, protoFieldName: "version", jsonFieldName: "version", swiftFieldName: "version")
       }
+      if _surveyType != Otsimo_SurveyType.mchat {
+        try visitor.visitSingularField(fieldType: Otsimo_SurveyType.self, value: _surveyType, protoFieldNumber: 6, protoFieldName: "surveyType", jsonFieldName: "surveyType", swiftFieldName: "surveyType")
+      }
     }
 
     func isEqualTo(other: _StorageClass) -> Bool {
@@ -274,6 +357,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _duration != other._duration {return false}
       if _stepResults != other._stepResults {return false}
       if _version != other._version {return false}
+      if _surveyType != other._surveyType {return false}
       return true
     }
 
@@ -284,6 +368,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       clone._duration = _duration
       clone._stepResults = _stepResults
       clone._version = _version
+      clone._surveyType = _surveyType
       return clone
     }
   }
@@ -315,13 +400,19 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     set {_uniqueStorage()._version = newValue}
   }
 
+  public var surveyType: Otsimo_SurveyType {
+    get {return _storage._surveyType}
+    set {_uniqueStorage()._surveyType = newValue}
+  }
+
   public init() {}
 
   public init(info: Otsimo_Info? = nil,
     device: Otsimo_DeviceInfo? = nil,
     duration: Int64? = nil,
     stepResults: [Otsimo_StepResult] = [],
-    version: Int32? = nil)
+    version: Int32? = nil,
+    surveyType: Otsimo_SurveyType? = nil)
   {
     let storage = _uniqueStorage()
     storage._info = info
@@ -334,6 +425,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     }
     if let v = version {
       storage._version = v
+    }
+    if let v = surveyType {
+      storage._surveyType = v
     }
   }
 

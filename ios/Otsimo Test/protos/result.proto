@@ -18,6 +18,10 @@ message StepResult{
     string id = 1;
     repeated SubStepResult subStepResults = 2;
 }
+enum SurveyType{
+    MCHAT = 0;
+    MCHATRF = 1;
+}
 
 message Result{
 	Info info = 1;
@@ -25,6 +29,8 @@ message Result{
 	int64 duration = 3;
 	repeated StepResult stepResults = 4;
     int32 version = 5;
+    SurveyType surveyType = 6;
+
 }
 
 message DeviceInfo{
