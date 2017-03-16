@@ -27,7 +27,7 @@ export class Result extends Component {
 
   renderHigh() {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
+      <View style={{ backgroundColor: 'white' }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
           <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>Yüksek Düzey</Text>
           <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
@@ -48,7 +48,6 @@ export class Result extends Component {
 
 
           <View style={{ backgroundColor: 'white', height: 1, width: 200 }}>
-
           </View>
           <View style={{ marginTop: 5, alignItems: 'center' }}>
             <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 15, fontWeight: 'bold' }}>
@@ -71,7 +70,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(220,22,56)' }}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={this._shareMessage} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     Paylaş
               </Text >
@@ -85,8 +84,8 @@ export class Result extends Component {
   }
   renderLow() {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
-        <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
+      <View style={{ height: 478 }}>
+        <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20, backgroundColor: 'white' }} >
           <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
           <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>Yoktur</Text>
         </View>
@@ -96,6 +95,7 @@ export class Result extends Component {
             alignItems: 'center',
             backgroundColor: 'rgb(96,184,71)',
             padding: 10,
+
           }}
         >
           <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>İlave bir test yapılmasına ihtiyaç yoktur</Text>
@@ -145,7 +145,7 @@ export class Result extends Component {
 
   renderMedium() {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
+      <View style={{ backgroundColor: 'white' }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
           <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>Orta Düzey</Text>
           <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
@@ -187,7 +187,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(225,121,38)' }}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={this._shareMessage} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     Paylaş
               </Text >

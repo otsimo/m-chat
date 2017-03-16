@@ -46,7 +46,7 @@ export class Question extends Component {
   executeQuestion() {
     this.props.delegate.executeAnswer(this.state.selectedOne);
     if (this.props.delegate.getQuestionType() === 'result') {
-      this.props.toResult(this.getResultType());
+      this.props.toResult(this.getResultType(), this.props.delegate.getFails());
     } else {
       this.setState({ question: this.props.delegate.getQuestionType(), selectedOne: '', showNext: false });
     }
@@ -71,7 +71,7 @@ export class Question extends Component {
     this.props.onUpdate();
     if (this.props.delegate.getQuestionType() === 'result') {
       SaveToServer();
-      this.props.toResult(this.getResultType());
+      this.props.toResult(this.getResultType(), this.props.delegate.getFails());
     } else {
       this.setState({ question: this.props.delegate.getQuestionType(), showNext: false });
     }

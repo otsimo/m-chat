@@ -48,6 +48,9 @@ class HomeScreen extends React.Component {
           onPress={() => this.loadSurvey()}
           title="Load Survey"
         />
+        <Text>
+          {this.logic.getDeviceInfo().model}
+        </Text>
       </View>
     );
   }

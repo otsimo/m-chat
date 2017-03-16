@@ -20,6 +20,15 @@ export class SurveyDone extends Component {
     }),
   };
 
+  getBgColor() {
+    if (this.props.navigation.state.params.resType === 'low') {
+      return 'rgb(96,184,71)';
+    } else if (this.props.navigation.state.params.resType === 'medium') {
+      return 'rgb(225,121,38)';
+    }
+    return 'rgb(220,22,56)';
+  }
+
   render() {
     return (
       <View style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
@@ -49,8 +58,8 @@ export class SurveyDone extends Component {
             height={478}
             width={Dimensions.get('window').width - 30}
           >
-            <View style={{ height: Dimensions.get('window').height, borderRadius: 20 }}>
-              <Result type={this.props.navigation.state.params.resType} score={this.props.score} />
+            <View style={{ height: 478, backgroundColor: this.getBgColor() }}>
+              <Result type={this.props.navigation.state.params.resType} score={this.props.navigation.state.params.score} />
             </View>
           </PopupDialog>
         </View>

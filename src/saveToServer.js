@@ -29,7 +29,7 @@ export async function SaveToServer(result) {
     duration: 3,
     version: 1,
   };
-
+/*
   try {
     const response = await fetch('https://mchatrest.otsimo.xyz/addResult', {
       method: 'POST',
@@ -42,5 +42,5 @@ export async function SaveToServer(result) {
     console.log('response', response);
   } catch (err) {
     console.log('sending failed', err);
-  }
+  }*/
 }

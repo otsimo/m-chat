@@ -1,6 +1,5 @@
 
-import { AsyncStorage } from 'react-native';
-
+import { AsyncStorage, NativeModules } from 'react-native';
 export class Logic {
 
   /**
@@ -23,6 +22,12 @@ export class Logic {
     this.showNext = false;
     this.keys = '';
     this.saveDataKey = 'TestAppSaveData';
+
+    this.devinfo = NativeModules.OtsimoDeviceInfo;
+  }
+
+  getDeviceInfo() {
+    return this.devinfo;
   }
 
   isNextShowed() {
@@ -439,7 +444,7 @@ export class Logic {
         this.passes = keys.PASSES;
         this.fails = keys.FAILS;
         console.log('stepindexafterLoad', keys.STEPINDEX);
-       
+
         this.stepId = this.steps[this.stepIndex].id;
         this.questionID = this.steps[this.stepIndex].firstQuestion;
         this.noOfQuestions = 0;
@@ -451,7 +456,6 @@ export class Logic {
         this.isSurveyDone = false;
         this.showNext = false;
         this.keys = '';
-        
       }
     } catch (error) {
       // Error retrieving data
