@@ -20,9 +20,17 @@ export class Question extends Component {
     super(props);
     this.screenWidth = Dimensions.get('window').width / 20;
     this.screenHeight = Dimensions.get('window').height;
+    
     this.state = { question: this.props.delegate.getQuestionType(), showNext: false };
+    console.log('c1', this.props.delegate.getQuestionType());
   }
 
+  componentWillMount() {
+    console.log('sıra');
+  }
+  componentDidMount() {
+    console.log('son');
+  }
   /**
    * Executes the answer which is yes or no.
    * @param {string} answer

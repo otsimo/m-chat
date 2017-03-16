@@ -41,11 +41,7 @@ export class MChat extends Component {
     modalVisible: false,
   };
 
-  static triggerModal() {
-    this.setState({
-      modalVisible: !this.state.modalVisible,
-    });
-  }
+
   changeView() {
     this.changeTitle();
     this.setState({
@@ -54,9 +50,9 @@ export class MChat extends Component {
   }
 
   componentWillMount() {
-    this.logic = new Logic([q1, q2]);
     this.subs = modalDispatcher.addListener('OPEN_MODAL', this.onModalClick.bind(this));
     BackAndroid.addEventListener('hardwareBackPress', this.onModalClick.bind(this));
+    this.changeTitle();
   }
 
   onModalClick() {
@@ -91,59 +87,6 @@ export class MChat extends Component {
   }
 
   render() {
-    if (!this.state.viewOne) {
-      return (
-        <View>
-          <Modal
-          ref="modal"
-          transparent
-          visible={this.state.modalVisible}
-          onRequestClose={() => this._setModalVisible(false)}
-          onRequestHide={this.onModalClick}
-          animationType={'fade'}
-        >
-          <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-                alignItems: 'flex-start',
-                marginTop: 2,
-              }}
-            >
-            <View
-                style={{
-                  borderRadius: 10,
-                  marginRight: -150,
-                  width: 154,
-                  height: 104,
-                  backgroundColor: '#000000',
-                  opacity: 0.05,
-                }}
-              />
-              <View
-                style={{
-                  width: 150,
-                  height: 100,
-                  backgroundColor: 'white',
-                }}
-              >
-                <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
-                <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
-
-              </View>
-              
-
-            </View>
-          </TouchableWithoutFeedback>
-        </Modal>
-          <View style={{ marginTop: 60 }}>
-            <Question onUpdate={() => this.changeTitle()} delegate={this.props.navigation.state.params.logic} />
-          </View>
-        </View>
-      );
-    }
     return (
       <View>
         <Modal
@@ -164,7 +107,7 @@ export class MChat extends Component {
                 marginTop: 2,
               }}
             >
-            <View
+              <View
                 style={{
                   borderRadius: 10,
                   marginRight: -150,
@@ -185,13 +128,13 @@ export class MChat extends Component {
                 <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
 
               </View>
-              
+
 
             </View>
           </TouchableWithoutFeedback>
         </Modal>
         <View style={{ marginTop: 60 }}>
-          <Button title="Start" onPress={() => this.changeView()}> change view </Button>
+          <Question onUpdate={() => this.changeTitle()} delegate={this.props.navigation.state.params.logic} />
         </View>
       </View>
     );

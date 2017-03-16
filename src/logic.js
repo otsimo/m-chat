@@ -438,7 +438,8 @@ export class Logic {
         this.noOfQuestions = keys.NOOFQUESTIONS;
         this.passes = keys.PASSES;
         this.fails = keys.FAILS;
-        console.log('stepindex', keys.STEPINDEX);
+        console.log('stepindexafterLoad', keys.STEPINDEX);
+       
         this.stepId = this.steps[this.stepIndex].id;
         this.questionID = this.steps[this.stepIndex].firstQuestion;
         this.noOfQuestions = 0;
@@ -450,6 +451,7 @@ export class Logic {
         this.isSurveyDone = false;
         this.showNext = false;
         this.keys = '';
+        
       }
     } catch (error) {
       // Error retrieving data

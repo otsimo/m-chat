@@ -13,7 +13,6 @@ export class Gender extends Component {
     title: 'Gender',
   };
   render() {
-    const { params } = this.props.navigation.state;
     return (
       <View
         style={{
@@ -22,9 +21,7 @@ export class Gender extends Component {
           alignItems: 'center',
         }}
       >
-        <Text>
-          {params.genderText}
-        </Text>
+        <Text> fs</Text>
         <Button
           onPress={() => resetTo(this, 'app')}
           title="Male"
@@ -37,6 +34,3 @@ export class Gender extends Component {
     );
   }
 }
-const SimpleApp = StackNavigator({
-  app: { screen: MChat },
-});
