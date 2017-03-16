@@ -14,6 +14,7 @@ import { Question } from './question.js';
 import { Logic } from './logic';
 import { modalDispatcher } from './events';
 import { ModalButton } from './modalButtons';
+import { resetTo } from './util';
 
 import q1 from '../questions/q1.json';
 import q2 from '../questions/q2.json';
@@ -41,7 +42,9 @@ export class MChat extends Component {
     modalVisible: false,
   };
 
-
+  navigateToResult(resultType) {
+    resetTo(this, 'result', { resType: resultType });
+  }
   changeView() {
     this.changeTitle();
     this.setState({
@@ -134,7 +137,7 @@ export class MChat extends Component {
           </TouchableWithoutFeedback>
         </Modal>
         <View style={{ marginTop: 60 }}>
-          <Question onUpdate={() => this.changeTitle()} delegate={this.props.navigation.state.params.logic} />
+          <Question onUpdate={() => this.changeTitle()} toResult={resultType => this.navigateToResult(resultType)} delegate={this.props.navigation.state.params.logic} />
         </View>
       </View>
     );

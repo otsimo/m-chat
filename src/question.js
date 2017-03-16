@@ -10,6 +10,7 @@ import { NextButton } from './nextButton.js';
 import { CustomizedButton } from './customizedButton.js';
 import { Result } from './result.js';
 import { SurveyDone } from './surveyDone.js';
+import { SaveToServer } from './saveToServer';
 
 export class Question extends Component {
   static propTypes = {
@@ -20,17 +21,23 @@ export class Question extends Component {
     super(props);
     this.screenWidth = Dimensions.get('window').width / 20;
     this.screenHeight = Dimensions.get('window').height;
-    
+
     this.state = { question: this.props.delegate.getQuestionType(), showNext: false };
-    console.log('c1', this.props.delegate.getQuestionType());
   }
 
-  componentWillMount() {
-    console.log('sıra');
+  getResultType() {
+    const fails = this.props.delegate.getFails();
+    let resultType = '';
+    if (fails < 3) {
+      resultType = 'low';
+    } else if (fails < 8) {
+      resultType = 'medium';
+    } else {
+      resultType = 'high';
+    }
+    return resultType;
   }
-  componentDidMount() {
-    console.log('son');
-  }
+
   /**
    * Executes the answer which is yes or no.
    * @param {string} answer
@@ -38,7 +45,11 @@ export class Question extends Component {
    */
   executeQuestion() {
     this.props.delegate.executeAnswer(this.state.selectedOne);
-    this.setState({ question: this.props.delegate.getQuestionType(), selectedOne: '', showNext: false });
+    if (this.props.delegate.getQuestionType() === 'result') {
+      this.props.toResult(this.getResultType());
+    } else {
+      this.setState({ question: this.props.delegate.getQuestionType(), selectedOne: '', showNext: false });
+    }
   }
 
   selectButton(name) {
@@ -58,7 +69,12 @@ export class Question extends Component {
   executeNextStep() {
     this.props.delegate.executeGroup();
     this.props.onUpdate();
-    this.setState({ question: this.props.delegate.getQuestionType(), showNext: false });
+    if (this.props.delegate.getQuestionType() === 'result') {
+      SaveToServer();
+      this.props.toResult(this.getResultType());
+    } else {
+      this.setState({ question: this.props.delegate.getQuestionType(), showNext: false });
+    }
   }
   renderYesNo() {
     if (this.state.question === 'group') {

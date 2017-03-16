@@ -7,9 +7,11 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { MChat } from './src/app';
-import { Gender } from './src/gender.js';
+import { Gender } from './src/gender';
 import { resetTo } from './src/util';
 import { Logic } from './src/logic';
+import { Home } from './src/home';
+import { SurveyDone } from './src/surveyDone';
 import q1 from './questions/q1.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
@@ -22,15 +24,17 @@ import q8 from './questions/q8.json';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home',
+    header: ({
+      visible: false,
+    }),
   };
   componentWillMount() {
     this.logic = new Logic([q1, q2, q3]);
   }
 
-  loadSurvey() {
-    this.logic.loadState();
-    resetTo(this, 'app', { logic: this.logic, id: '', start: false });
+  async loadSurvey() {
+    let a = await this.logic.loadState();
+    resetTo(this, 'app', { logic: this.logic, id: '', start: true });
   }
   render() {
     const { navigate } = this.props.navigation;
@@ -52,7 +56,8 @@ class HomeScreen extends React.Component {
 const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   app: { screen: MChat },
-  gender: { screen: Gender },
+  home: { screen: Home },
+  result: { screen: SurveyDone },
 });
 
 AppRegistry.registerComponent('m_chat', () => SimpleApp);

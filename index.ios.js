@@ -11,6 +11,7 @@ import { Gender } from './src/gender';
 import { resetTo } from './src/util';
 import { Logic } from './src/logic';
 import { Home } from './src/home';
+import { SurveyDone } from './src/surveyDone';
 import q1 from './questions/q1.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
@@ -23,7 +24,9 @@ import q8 from './questions/q8.json';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home',
+    header: ({
+      visible: false,
+    }),
   };
   componentWillMount() {
     this.logic = new Logic([q1, q2, q3]);
@@ -54,6 +57,7 @@ const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   app: { screen: MChat },
   home: { screen: Home },
+  result: { screen: SurveyDone },
 });
 
 AppRegistry.registerComponent('m_chat', () => SimpleApp);

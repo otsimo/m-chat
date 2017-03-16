@@ -6,9 +6,25 @@ import {
   Dimensions,
   Button,
   TouchableOpacity,
+  Share,
 } from 'react-native';
 
 export class Result extends Component {
+
+  constructor(props) {
+    super(props);
+
+
+    this.state = {
+      result: '',
+    };
+  }
+  _shareMessage() {
+    Share.share({
+      message: 'React Native | A framework for building native apps using React',
+    });
+  }
+
   renderHigh() {
     return (
       <View style={{ backgroundColor: 'white', borderRadius: 10 }}>
@@ -111,7 +127,7 @@ export class Result extends Component {
 
             <View style={{ margin: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(96,184,71)' }}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={this._shareMessage}>
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     Paylaş
               </Text >
