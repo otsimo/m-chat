@@ -105,6 +105,12 @@ extension ViewController: ORKTaskViewControllerDelegate {
                 print("t -> ", t)
                 if let results = t.results {
                     let analysedResult = anlyse.getMchatAnalysedResult(results: results)
+                    do {
+                        let resultJSON = try analysedResult.serializeJSON()
+                        print("MCHAT Result ->",resultJSON)
+                    } catch let e {
+                        Log.error(e as! String)
+                    }
                 }
             }
         case Tasks.mChatRFTaskID:

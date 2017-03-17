@@ -121,15 +121,13 @@ class Analyse {
                             let choice = getTextChociesAnswerForRelation(index: answers[0] as! Int)
                             iresult.relation = NSLocalizedString(String(describing: choice), comment: "")
                         }
-                    }
-                    if sresults.identifier == genderStepID {
+                    }else if sresults.identifier == genderStepID {
                         let r = stepResult[0] as! ORKChoiceQuestionResult
                         if let answers = r.choiceAnswers {
                             let choice = getTextChociesAnswerForGender(index: answers[0] as! Int)
                             iresult.gender = NSLocalizedString(String(describing: choice), comment: "")
                         }
-                    }
-                    if sresults.identifier == birthDayStepID {
+                    }else if sresults.identifier == birthDayStepID {
                         print(stepResult[0])
                         let r = stepResult[0] as! ORKDateQuestionResult
                         
