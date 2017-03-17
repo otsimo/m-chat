@@ -28,16 +28,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
     public func taskViewController(_ taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
 
     }
-
-
-
-
-
-
-
-
-
-
     /**
      Tells the delegate that the task has finished.
      
@@ -138,9 +128,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
         default:
             break
         }
-
     }
-    
     func taskViewDiscarded(taskViewController : ORKTaskViewController){
         if let results = taskViewController.result.results {
             if let lastStep = results.last {
@@ -164,11 +152,9 @@ extension ViewController: ORKTaskViewControllerDelegate {
                 default:
                     break
                 }
-                
             }
         }
     }
-    
     func taskViewSaved(taskViewController: ORKTaskViewController){
         if let results = taskViewController.result.results {
             if let lastStep = results.last {
@@ -199,8 +185,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
         }
 
     }
-
-
     /**
      Asks the delegate if the state of the current uncompleted task should be saved.
      
@@ -224,8 +208,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
         //self.taskViewContoller.dismiss(animated: true, completion: nil)
         return true
     }
-
-
     /**
      Asks the delegate if the cancel action should be confirmed
      
@@ -244,8 +226,4 @@ extension ViewController: ORKTaskViewControllerDelegate {
         Log.debug("taskViewControllerShouldConfirmCancel")
         return true
     }
-
-
-
-
 }
