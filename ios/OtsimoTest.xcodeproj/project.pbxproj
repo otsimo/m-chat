@@ -18,6 +18,7 @@
 		537C9D881E3F50820054AFA0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9D871E3F50820054AFA0 /* CoreData.framework */; };
 		537C9D8A1E3F50870054AFA0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9D891E3F50870054AFA0 /* SystemConfiguration.framework */; };
 		53BD22961E7336AB00C255B3 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD22951E7336AB00C255B3 /* ColorManager.swift */; };
+		53BDB7D01E7BFCC500741FD7 /* Analyse-mChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDB7CF1E7BFCC500741FD7 /* Analyse-mChat.swift */; };
 		53FFF9FE1E72B421000BEC96 /* CustomStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FB1E72B421000BEC96 /* CustomStep.swift */; };
 		53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */; };
 		53FFFA001E72B421000BEC96 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */; };
@@ -138,6 +139,7 @@
 		537C9D871E3F50820054AFA0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		537C9D891E3F50870054AFA0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		53BD22951E7336AB00C255B3 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorManager.swift; path = ../ColorManager.swift; sourceTree = "<group>"; };
+		53BDB7CF1E7BFCC500741FD7 /* Analyse-mChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analyse-mChat.swift"; sourceTree = "<group>"; };
 		53FFF9FB1E72B421000BEC96 /* CustomStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomStep.swift; path = CustomSteps/CustomStep.swift; sourceTree = "<group>"; };
 		53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomStepVC.xib; path = CustomSteps/CustomStepVC.xib; sourceTree = "<group>"; };
 		53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomViewController.swift; path = CustomSteps/CustomViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				53FFFA3B1E72B90B000BEC96 /* Analyse.swift */,
 				53FFFA3C1E72B90B000BEC96 /* Analyse+Subject.swift */,
+				53BDB7CF1E7BFCC500741FD7 /* Analyse-mChat.swift */,
 			);
 			name = AnalyseResult;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				53FFFA331E72B8F2000BEC96 /* ViewController+CollectionDataSource.swift in Sources */,
 				53FFF9FE1E72B421000BEC96 /* CustomStep.swift in Sources */,
 				53FFFA9E1E72BB0A000BEC96 /* TZStackViewDistribution.swift in Sources */,
+				53BDB7D01E7BFCC500741FD7 /* Analyse-mChat.swift in Sources */,
 				53FFFA101E72B88F000BEC96 /* InfoTask.swift in Sources */,
 				53FFFA1E1E72B89F000BEC96 /* Pollster+QuestionFunc.swift in Sources */,
 				53FFFA8F1E72BB02000BEC96 /* PopupDialogOverlayView.swift in Sources */,

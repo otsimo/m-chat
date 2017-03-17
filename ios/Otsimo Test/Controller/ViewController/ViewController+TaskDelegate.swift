@@ -90,19 +90,23 @@ extension ViewController: ORKTaskViewControllerDelegate {
         case Tasks.consentTaskID:
             analytics.event("completedConsent", data: [:])
             present(infoTaskVC, animated: true, completion: nil)
-
         case Tasks.infoTaskID:
             analytics.event("completedInfo", data: [:])
-            present(mChatVC, animated: true, completion: nil)
             if let t = taskResult {
                 iResult = anlyse.InfoResult(infoResult: t)
             }
-        case "customSurvey":
-            print("mChat Task Result:", taskResult)
+            present(mChatVC, animated: true, completion: nil)
         case Tasks.mChatTaskID:
             analytics.event("completed-mChat", data: [:])
             print("mChat Task Result:", taskResult)
             showResultScene(passNum: 20, failNum: 1)
+
+            if let t = taskResult {
+                print("t -> ", t)
+                if let results = t.results {
+                    let analysedResult = anlyse.getMchatAnalysedResult(results: results)
+                }
+            }
         case Tasks.mChatRFTaskID:
             analytics.event("completed-mChatRF", data: [:])
             if let t = taskResult {

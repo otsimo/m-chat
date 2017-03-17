@@ -90,7 +90,7 @@ class ViewController: UIViewController {
     
     lazy var mChatVC: ORKTaskViewController = {
         var newSteps = InfoTask.steps + ConsentTask.steps + MChatTask.steps
-        var newTask = ORKOrderedTask(identifier: "customSurvey", steps: newSteps)
+        var newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
         let mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
         mChatVC.delegate = self
         return mChatVC

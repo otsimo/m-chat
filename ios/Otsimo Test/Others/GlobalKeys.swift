@@ -20,3 +20,8 @@ enum CacheKeys {
     static let mChatRFLastQuestionIdKey = "lastQuestionIdOfMCHATRF"
     static let mChatKey = "restorationDataForMCHAT"
 }
+enum InfoStepIDs {
+    static let relationStepID = "relation"
+    static let genderStepID = "gender"
+    static let birthDayStepID = "birthDay"
+}
