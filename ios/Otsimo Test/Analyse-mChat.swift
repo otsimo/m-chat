@@ -19,7 +19,7 @@ extension Analyse {
         var analysedResults = Otsimo_Result()
         analysedResults.device = Otsimo_DeviceInfo(os: "ios")
         analysedResults.version = OtsimoResultVersion
-        analysedResults.surveyType = Otsimo_SurveyType.mchatrf
+        analysedResults.surveyType = Otsimo_SurveyType.mchat
 
         var info = Otsimo_Info()
         var stepResults = [Otsimo_StepResult]()
@@ -62,31 +62,18 @@ extension Analyse {
                 print("default question : result",result)
                 
                 if let r = result.results{
-                    print("A : r:",r)
                     let cResult = r[0] as! ORKBooleanQuestionResult
-                    print("B : cResult:",cResult)
                     if let answer = cResult.booleanAnswer{
-                        print("C : answer:",answer)
                         var stepResult = Otsimo_StepResult()
-                        print("D")
                         var subStepResults = [Otsimo_SubStepResult]()
-                        print("E")
                         var subStepResult = Otsimo_SubStepResult()
-                        print("F")
                         subStepResult.id = cResult.identifier
-                        print("G")
                         subStepResult.startDate = Int64(cResult.startDate.timeIntervalSince1970)
-                        print("Q")
                         subStepResult.endDate = Int64(cResult.endDate.timeIntervalSince1970)
-                        print("W")
                         var questionResults = [Otsimo_QuestionResult]()
-                        print("1")
                         var questionResult = Otsimo_QuestionResult()
-                        print("2")
                         questionResult.id = cResult.identifier
-                        print("3")
                         questionResult.answer = String(describing: answer)
-                        print("4")
                         questionResults.append(questionResult)
                         subStepResult.stepResults.append(questionResult)
                         subStepResults.append(subStepResult)

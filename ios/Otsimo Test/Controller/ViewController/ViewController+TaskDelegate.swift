@@ -98,9 +98,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
             present(mChatVC, animated: true, completion: nil)
         case Tasks.mChatTaskID:
             analytics.event("completed-mChat", data: [:])
-            print("mChat Task Result:", taskResult)
-            showResultScene(passNum: 20, failNum: 1)
-
             if let t = taskResult {
                 print("t -> ", t)
                 if let results = t.results {
@@ -108,6 +105,10 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     do {
                         let resultJSON = try analysedResult.serializeJSON()
                         print("MCHAT Result ->",resultJSON)
+                        //And Send Result to Server
+                        let server = Server()
+                        let response = server.sendResult(json: resultJSON)
+                        Log.debug(response)
                     } catch let e {
                         Log.error(e as! String)
                     }
