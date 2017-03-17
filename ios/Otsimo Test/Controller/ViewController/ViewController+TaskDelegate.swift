@@ -104,7 +104,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     let analysedResult = anlyse.getMchatAnalysedResult(results: results)
                     do {
                         let resultJSON = try analysedResult.serializeJSON()
-                        print("MCHAT Result ->",resultJSON)
+                        print("MCHAT Result ->", resultJSON)
                         //And Send Result to Server
                         let server = Server()
                         let response = server.sendResult(json: resultJSON)
@@ -169,34 +169,36 @@ extension ViewController: ORKTaskViewControllerDelegate {
         }
     }
     func taskViewSaved(taskViewController: ORKTaskViewController) {
-        if let results = taskViewController.result.results {
-            if let lastStep = results.last {
-                let discardedID = lastStep.identifier
-                let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
-                let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
-                Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
 
-                switch taskViewController.result.identifier {
-                case Tasks.infoTaskID:
-                    analytics.event("savedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                case Tasks.mChatRFTaskID:
-                    analytics.event("savedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+        switch taskViewController.result.identifier {
+        case Tasks.mChatTaskID:
+            if let results = taskViewController.result.results {
+                let savedData = taskViewController.restorationData
+                analytics.event("savedmChatSurvey",data: [:])
 
+                let userDefaults = UserDefaults.standard
+                userDefaults.setValue(savedData, forKey: CacheKeys.mChatKey)
+            }
+        case Tasks.mChatRFTaskID:
+            if let results = taskViewController.result.results {
+                if let lastStep = results.last {
+                    let discardedID = lastStep.identifier
+                    
+                    let startDate = Int64((results.first)!.startDate.timeIntervalSince1970)
+                    let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
                     let savedData = taskViewController.restorationData
+                    analytics.event("savedmChatRFSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
 
                     let userDefaults = UserDefaults.standard
-                    userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
+                    userDefaults.setValue(savedData, forKey: CacheKeys.mChatRFKey)
                     let lastQuestionID = lastStep.identifier
-                    userDefaults.set(lastQuestionID, forKey: "lastQuestionIdOfRestoration")
-                    print("*****lastQuestionID ->", lastQuestionID)
-                case Tasks.mChatTaskID: break
-                default:
-                    break
+                    userDefaults.set(lastQuestionID, forKey: CacheKeys.mChatRFLastQuestionIdKey)
                 }
 
             }
+        default:
+            break;
         }
-
     }
     /**
      Asks the delegate if the state of the current uncompleted task should be saved.
@@ -215,10 +217,6 @@ extension ViewController: ORKTaskViewControllerDelegate {
      */
     public func taskViewControllerSupportsSaveAndRestore(_ taskViewController: ORKTaskViewController) -> Bool {
         Log.debug("taskViewControllerSupportsSaveAndRestore")
-
-        //pollster.currentQuestionID = "0:0"
-        //        self.taskViewContoller.suspend()
-        //self.taskViewContoller.dismiss(animated: true, completion: nil)
         return true
     }
     /**

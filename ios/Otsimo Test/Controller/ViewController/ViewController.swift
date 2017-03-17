@@ -26,8 +26,9 @@ class ViewController: UIViewController {
     let anlyse = Analyse()
     var resultJSON = ""
     let defaultSurvey = Tasks.mChatTaskID
-
-    override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         startButton.layer.cornerRadius = 10
         startButton.layer.borderWidth = 1
     }
@@ -89,8 +90,15 @@ class ViewController: UIViewController {
     var pollster = Pollster(firstStep: "1")
     
     lazy var mChatVC: ORKTaskViewController = {
+       
+        
         var newSteps = InfoTask.steps + ConsentTask.steps + MChatTask.steps
         var newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
+        if let restorationData = UserDefaults.standard.data(forKey: CacheKeys.mChatKey) {
+            print("restorationData")
+            let mChatVC = ORKTaskViewController(task: newTask, restorationData: restorationData, delegate: self)
+            return mChatVC
+        }
         let mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
         mChatVC.delegate = self
         return mChatVC
