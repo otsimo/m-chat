@@ -14,3 +14,9 @@ enum Tasks {
     static let mChatRFTaskID = "mChatRFTaskID"
     static let mChatTaskID = "mChatTaskID"
 }
+
+enum CacheKeys {
+    static let mChatRFKey = "restorationDataForMCHATRF"
+    static let mChatRFLastQuestionIdKey = "lastQuestionIdOfMCHATRF"
+    static let mChatKey = "restorationDataForMCHAT"
+}

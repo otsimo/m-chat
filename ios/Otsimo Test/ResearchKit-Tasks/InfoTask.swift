@@ -15,7 +15,6 @@ func createTextChoices(choices: [String]) -> [ORKTextChoice] {
 
     var i = 1
     for c in choices {
-        print(i)
         let t = ORKTextChoice(text: c, value: i as NSCoding & NSCopying & NSObjectProtocol)
         textChoices.append(t)
         i += 1

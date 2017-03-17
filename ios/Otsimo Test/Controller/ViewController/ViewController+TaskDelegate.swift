@@ -64,7 +64,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
         case .saved:
             Log.debug("saved")
 
-                   }
+        }
         /*
          The `reason` passed to this method indicates why the task view
          controller finished: Did the user cancel, save, or actually complete
@@ -97,9 +97,11 @@ extension ViewController: ORKTaskViewControllerDelegate {
             if let t = taskResult {
                 iResult = anlyse.InfoResult(infoResult: t)
             }
+        case "customSurvey":
+            print("mChat Task Result:", taskResult)
         case Tasks.mChatTaskID:
             analytics.event("completed-mChat", data: [:])
-            print("mChat Task Result:",taskResult)
+            print("mChat Task Result:", taskResult)
             showResultScene(passNum: 20, failNum: 1)
         case Tasks.mChatRFTaskID:
             analytics.event("completed-mChatRF", data: [:])
@@ -129,14 +131,14 @@ extension ViewController: ORKTaskViewControllerDelegate {
             break
         }
     }
-    func taskViewDiscarded(taskViewController : ORKTaskViewController){
+    func taskViewDiscarded(taskViewController: ORKTaskViewController) {
         if let results = taskViewController.result.results {
             if let lastStep = results.last {
                 let discardedID = lastStep.identifier
                 let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
                 let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
                 Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
-                
+
                 switch taskViewController.result.identifier {
                 case Tasks.consentTaskID:
                     analytics.event("discardedConsent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
@@ -155,22 +157,22 @@ extension ViewController: ORKTaskViewControllerDelegate {
             }
         }
     }
-    func taskViewSaved(taskViewController: ORKTaskViewController){
+    func taskViewSaved(taskViewController: ORKTaskViewController) {
         if let results = taskViewController.result.results {
             if let lastStep = results.last {
                 let discardedID = lastStep.identifier
                 let startDate = Int64(lastStep.startDate.timeIntervalSince1970)
                 let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
                 Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
-                
+
                 switch taskViewController.result.identifier {
                 case Tasks.infoTaskID:
                     analytics.event("savedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                 case Tasks.mChatRFTaskID:
                     analytics.event("savedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                    
+
                     let savedData = taskViewController.restorationData
-                    
+
                     let userDefaults = UserDefaults.standard
                     userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
                     let lastQuestionID = lastStep.identifier
@@ -180,7 +182,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                 default:
                     break
                 }
-                
+
             }
         }
 

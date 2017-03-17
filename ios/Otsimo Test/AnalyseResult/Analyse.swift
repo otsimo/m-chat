@@ -24,9 +24,6 @@ class Analyse {
         analysedResults.surveyType = Otsimo_SurveyType.mchatrf
         return analysedResults
     }
-    
-    
-
     func Task(result: ORKTaskResult) -> [Otsimo_StepResult] {
         Log.debug("Analyse : AnalyseTask")        
         
@@ -147,10 +144,6 @@ class Analyse {
 
         return iresult
     }
-
-
-
-
     func getTextChociesAnswerForRelation(index: Int) -> Relation {
 
         switch index {

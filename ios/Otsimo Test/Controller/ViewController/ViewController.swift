@@ -25,79 +25,32 @@ class ViewController: UIViewController {
     var iResult = Otsimo_Info()
     let anlyse = Analyse()
     var resultJSON = ""
+    let defaultSurvey = Tasks.mChatTaskID
 
     override func viewDidAppear(_ animated: Bool) {
-        Log.debug("ViewController : viewDidAppear")
-//showShareView()
-showResultScene(passNum: 20, failNum: 1)
-        startButton.layer.cornerRadius = 5
+        startButton.layer.cornerRadius = 10
         startButton.layer.borderWidth = 1
     }
 
     @IBOutlet weak var surveyButton: UIButton!
     @IBAction func StartSurvey(_ sender: UIButton) {
-        //present(mChatRFVC, animated: true, completion: nil)
-        present(mChatVC, animated: true, completion: nil)
+        
+        switch defaultSurvey {
+        case Tasks.mChatTaskID:
+            present(mChatVC, animated: true, completion: nil)
+        case Tasks.mChatRFTaskID:
+            present(mChatRFVC, animated: true, completion: nil)
+        default:
+            Log.debug("There is not any default tasks")
+        }
+        
         
     }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        Log.debug("ViewController : viewWillAppear")
-
-    }
-    var pollster = Pollster(firstStep: "1")
-
-    
-    lazy var mChatRFVC: ORKTaskViewController = {
-
-        if let restorationData = UserDefaults.standard.data(forKey: "restorationDataForSurvey") {
-            print("restorationData")
-            if let restorationStepID = UserDefaults.standard.string(forKey: "lastQuestionIdOfRestoration") {
-                print("restorationStepID ->", restorationStepID)
-                let id = parseID(id: String(describing: restorationStepID)).0
-                var restorationPollster = Pollster(firstStep: id)
-                let taskViewController = ORKTaskViewController(task: SurveyTask(restorationPollster), restorationData: restorationData, delegate: self)
-                return taskViewController
-            }
-
-        }
-        let taskViewController = ORKTaskViewController(task: SurveyTask(self.pollster), taskRun: nil)
-        taskViewController.delegate = self
-        taskViewController.outputDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0], isDirectory: true) as URL
-        return taskViewController
-    }()
-
- 
-    
-    
-    lazy var mChatVC: ORKTaskViewController = {
-        let mChatVC = ORKTaskViewController(task: MChatTask, taskRun: nil)
-        mChatVC.delegate = self
-        return mChatVC
-    }()
-    lazy var consentTaskVC: ORKTaskViewController = {
-        let consentTaskVC = ORKTaskViewController(task: ConsentTask, taskRun: nil)
-        consentTaskVC.delegate = self
-        return consentTaskVC
-    }()
-
-    lazy var infoTaskVC: ORKTaskViewController = {
-        let infoTaskVC = ORKTaskViewController(task: InfoTask, taskRun: nil)
-        infoTaskVC.delegate = self
-        return infoTaskVC
-    }()
-
-
     override func viewDidLoad() {
-        print("*")
         super.viewDidLoad()
         Log.debug("ViewController : viewDidLoad")
 
-        surveyButton.layer.cornerRadius = 10
-        /*
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "walkthroughCell")
- */
+        
         let nib = UINib(nibName: "WalkThroughCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "walkThroughCell")
         collectionView.delegate = self
@@ -113,12 +66,66 @@ showResultScene(passNum: 20, failNum: 1)
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         print("viewWillDisappear")
+        
+        
+        switch defaultSurvey {
+        case Tasks.mChatTaskID:
+            //RestoretionFor mChat 
+            break;
+        case Tasks.mChatRFTaskID:
+            let savedData = mChatRFVC.restorationData
+            let userDefaults = UserDefaults.standard
+            userDefaults.setValue(savedData, forKey: CacheKeys.mChatRFKey)
+        default:
+            Log.debug("There is not any default tasks")
+        }
+        
 
-        let savedData = mChatVC.restorationData
-
-        let userDefaults = UserDefaults.standard
-        userDefaults.setValue(savedData, forKey: "restorationDataForSurvey")
+        
     }
+    
+    
+    
+    var pollster = Pollster(firstStep: "1")
+    
+    lazy var mChatVC: ORKTaskViewController = {
+        var newSteps = InfoTask.steps + ConsentTask.steps + MChatTask.steps
+        var newTask = ORKOrderedTask(identifier: "customSurvey", steps: newSteps)
+        let mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
+        mChatVC.delegate = self
+        return mChatVC
+    }()
+    
+    
+    lazy var mChatRFVC: ORKTaskViewController = {
+        if let restorationData = UserDefaults.standard.data(forKey: CacheKeys.mChatRFKey) {
+            print("restorationData")
+            if let restorationStepID = UserDefaults.standard.string(forKey: CacheKeys.mChatRFLastQuestionIdKey) {
+                print("restorationStepID ->", restorationStepID)
+                let id = parseID(id: String(describing: restorationStepID)).0
+                var restorationPollster = Pollster(firstStep: id)
+                let taskViewController = ORKTaskViewController(task: SurveyTask(restorationPollster), restorationData: restorationData, delegate: self)
+                return taskViewController
+            }
+            
+        }
+        let taskViewController = ORKTaskViewController(task: SurveyTask(self.pollster), taskRun: nil)
+        taskViewController.delegate = self
+        taskViewController.outputDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0], isDirectory: true) as URL
+        return taskViewController
+    }()
+    
+    lazy var consentTaskVC: ORKTaskViewController = {
+        let consentTaskVC = ORKTaskViewController(task: ConsentTask, taskRun: nil)
+        consentTaskVC.delegate = self
+        return consentTaskVC
+    }()
+    
+    lazy var infoTaskVC: ORKTaskViewController = {
+        let infoTaskVC = ORKTaskViewController(task: InfoTask, taskRun: nil)
+        infoTaskVC.delegate = self
+        return infoTaskVC
+    }()
 
 
 }

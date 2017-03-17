@@ -235,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				5394981F1E534ED6001053D4 /* mchat */,
-				53FFFA231E72B8A9000BEC96 /* GlobalKeys.swift */,
 				532A8B161E204B7000F1F6E3 /* mchat-rf */,
 				532A8B151E204B5200F1F6E3 /* Consent */,
 				538BCD211E2CF24F009F56EB /* InfoTask */,
@@ -276,6 +275,7 @@
 		53187F4A1E152DE300484994 /* Otsimo Test */ = {
 			isa = PBXGroup;
 			children = (
+				53FFFA231E72B8A9000BEC96 /* GlobalKeys.swift */,
 				53BD22951E7336AB00C255B3 /* ColorManager.swift */,
 				53FFF9F41E72ACBA000BEC96 /* CustomSteps */,
 				5326EE251E45F00D001F494B /* ThirdParty */,

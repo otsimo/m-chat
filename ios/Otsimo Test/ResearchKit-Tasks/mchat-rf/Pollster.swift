@@ -31,7 +31,6 @@ public class Pollster {
         
         if currentQuestionID == summaryStepID || currentQuestionID == lastQuestionID{
             currentQuestionID = lastQuestionID
-            print("-")
             return
         }
         
@@ -102,7 +101,6 @@ public class Pollster {
         
         if currentQuestionID == summaryStepID || currentQuestionID == lastQuestionID{
             currentQuestionID = lastQuestionID
-            print("-")
             return
         }
 

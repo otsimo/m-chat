@@ -14,12 +14,10 @@ func generateID(stepID: String, questionID: String) -> String {
 }
 
 func parseID(id: String) -> (String, String) {
-    print("!!!!",id)
     var idArray = id.components(separatedBy: ":")
     return (idArray[0], idArray[1])
 }
 func getLocalizedID(id : String) -> String{
-    print("getLocalizedID")
     let ids = parseID(id: id)
     return "q" + ids.0 + "." + ids.1
 }
@@ -27,7 +25,6 @@ func getLocalizedID(id : String) -> String{
 extension Pollster{
     
     func getQuestion(id: String) -> Otsimo_Mchat_Question {
-        Log.debug("getQuestion id = \(id)")
         let ids = parseID(id: id)
         let sNum = ids.0
         let qNUm = ids.1
@@ -46,7 +43,6 @@ extension Pollster{
     }
     
     func getStepAndQuestion(id: String) -> (Otsimo_Mchat_Step, Otsimo_Mchat_Question) {
-        Log.debug("getStepAndQuestion id = \(id)")
         let ids = parseID(id: id)
         let sNum = ids.0
         let qNum = ids.1
@@ -86,7 +82,6 @@ extension Pollster{
     func nextStep(with cstep : Otsimo_Mchat_Step){
         if currentQuestionID == "sum" || currentQuestionID == lastQuestionID{
             currentQuestionID = lastQuestionID
-            print("-")
             return
         }
         
