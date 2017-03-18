@@ -28,25 +28,50 @@ class HomeScreen extends React.Component {
       visible: false,
     }),
   };
-  componentWillMount() {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      ok: false,
+    };
     this.logic = new Logic([q1, q2, q3]);
   }
 
+  async dataOk() {
+    try {
+      const ok = await this.logic.haveDataOnDisk();
+      this.setState({ ok });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  componentDidMount() {
+    this.dataOk();
+  }
+
   async loadSurvey() {
-    let a = await this.logic.loadState();
-    resetTo(this, 'app', { logic: this.logic, id: '', start: true });
+    const ok = await this.logic.haveDataOnDisk();
+    if (ok) {
+      const a = await this.logic.loadState();
+      this.logic.startSurveyTimers();
+      resetTo(this, 'app', { logic: this.logic, id: '', start: true });
+    } else {
+      this.startSurvey();
+    }
+  }
+
+  startSurvey() {
+    this.logic.startSurveyTimers();
+    resetTo(this, 'app', { logic: this.logic });
   }
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View>
         <Button
-          onPress={() => resetTo(this, 'app', { logic: this.logic })}
-          title="Start New Survey"
-        />
-        <Button
           onPress={() => this.loadSurvey()}
-          title="Load Survey"
+          title={this.state.ok ? 'Continue' : 'Start'}
         />
       </View>
     );
@@ -56,7 +81,6 @@ class HomeScreen extends React.Component {
 const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   app: { screen: MChat },
-  home: { screen: Home },
   result: { screen: SurveyDone },
 });
 

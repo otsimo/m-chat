@@ -116,7 +116,7 @@ export class Result extends Component {
 
             <View style={{ margin: 10, marginRight: 5, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(96,184,71)' }}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => this.props.savePopUp()}>
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     Kaydet
               </Text >

@@ -1,9 +1,6 @@
-
-
-
-export async function SaveToServer(result) {
+export async function saveEmail(result) {
   try {
-    const response = await fetch('https://mchatrest.otsimo.xyz/addResult', {
+    const response = await fetch('https://mchatrest.otsimo.xyz/', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

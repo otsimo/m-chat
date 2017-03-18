@@ -1,5 +1,6 @@
 
-import { AsyncStorage, NativeModules } from 'react-native';
+import { AsyncStorage, NativeModules, Platform } from 'react-native';
+import { SaveToServer } from './saveToServer';
 export class Logic {
 
   /**
@@ -8,6 +9,7 @@ export class Logic {
    * @memberOf Logic
    */
   constructor(steps) {
+    this.surveyStartingTime;
     this.steps = steps;
     this.stepIndex = 0;
     this.stepId = steps[this.stepIndex].id;
@@ -23,7 +25,20 @@ export class Logic {
     this.keys = '';
     this.saveDataKey = 'TestAppSaveData';
 
+    // Analytics
+    this.surveyTotalTime = 0;
+    this.stepTime = 0;
+    this.subStepTime = 0;
+    this.stepResults = {};
+    this.subStepResults = [];
+    this.stepResultsAll = [];
     this.devinfo = NativeModules.OtsimoDeviceInfo;
+  }
+
+  startSurveyTimers() {
+    this.surveyStartingTime = new Date().getTime();
+    this.stepStart = new Date().getTime();
+    this.substepStart = new Date().getTime();
   }
 
   getDeviceInfo() {
@@ -90,6 +105,8 @@ export class Logic {
    * @memberOf Logic
    */
   goToNextStep() {
+    this.stepStart = new Date().getTime();
+    this.substepStart = new Date().getTime();
     if (this.stepIndex < 1) {
       this.stepIndex += 1;
       this.stepId = this.steps[this.stepIndex].id;
@@ -97,6 +114,9 @@ export class Logic {
       this.yesAnswers = 0;
       this.noAnswers = 0;
       this.answers = {};
+      this.stepEnd = new Date().getTime();
+      this.stepTime = (this.stepEnd - this.stepTimer);
+      this.subStepResults = [];
     } else {
       this.isSurveyDone = true;
     }
@@ -147,6 +167,8 @@ export class Logic {
         return 'group';
       }
     } else {
+      this.endTime = new Date().getTime();
+      this.surveyTotalTime = this.endTime - this.surveyStartingTime;
       return 'result';
     }
     return '';
@@ -346,6 +368,27 @@ export class Logic {
    */
   executeAnswer(answer) {
     let action = '';
+    this.subStepEnd = new Date().getTime();
+    const stepResult = [];
+    stepResult.push({
+      answer,
+      id: this.stepId + ':' + this.questionID,
+    });
+    const result = {
+      id: this.stepId + ':' + this.questionID,
+      startDate: this.substepStart,
+      endDate: this.subStepEnd,
+      stepResults: stepResult,
+    };
+    this.subStepResults.push(result);
+    const stepres = {
+      id: this.stepId,
+      subStepResults: this.subStepResults,
+    };
+
+    this.substepStart = new Date().getTime();
+
+
     if (answer === 'yes') {
       action = (this.currentStep.questions.filter(
         q => q.id === this.questionID)[0]).yesno.yes.result;
@@ -353,9 +396,11 @@ export class Logic {
         this.questionID = (this.currentStep.questions.filter(
           q => q.id === this.questionID)[0]).yesno.yes.nextQuestion;
       } else if (action === 'PASS') {
+        this.stepResultsAll.push(stepres);
         this.goToNextStep();
         this.passes += 1;
       } else if (action === 'FAIL') {
+        this.stepResultsAll.push(stepres);
         this.goToNextStep();
         this.fails += 1;
       }
@@ -367,9 +412,11 @@ export class Logic {
           q => q.id === this.questionID)[0]).yesno.no.nextQuestion;
         console.log('this', this.questionID);
       } else if (action === 'PASS') {
+        this.stepResultsAll.push(stepres);
         this.goToNextStep();
         this.passes += 1;
       } else if (action === 'FAIL') {
+        this.stepResultsAll.push(stepres);
         this.goToNextStep();
         this.fails += 1;
       }
@@ -386,20 +433,45 @@ export class Logic {
     // Converted to array to count number of element with length property
     const keys = Object.keys((this.currentStep.questions.filter(
       q => q.id === this.questionID)[0]).group.questions);
+    const groupAnswers = this.answers;
     const userAnswers = Object.keys(this.answers);
 
-    /* for (const i in this.answers) {
-      if (this.answers[i] === 'yes') {
-        this.yesAnswers++;
-      } else if (this.answers[i] === 'no') {
-        this.noAnswers++;
-      }
-    }*/
     if (keys.length === userAnswers.length) {
       console.log('user has selected all questions now can be control answers');
       // Control the answers by result type
       this.showNext = false;
+
+
+
+      this.subStepEnd = new Date().getTime();
+      const stepResult = [];
+
+      for (const i in groupAnswers) {
+        stepResult.push({
+          id: this.stepId + ':' + i,
+          answer: groupAnswers[i],
+        });
+      }
+
+      const result = {
+        id: this.stepId + ':' + this.questionID,
+        startDate: this.substepStart,
+        endDate: this.subStepEnd,
+        stepResults: stepResult,
+      };
+      this.subStepResults.push(result);
+
+
+      const stepres = {
+        id: this.stepId,
+        subStepResults: this.subStepResults,
+      };
+
+      this.stepResultsAll.push(stepres);
+
+      this.substepStart = new Date().getTime();
       this.executeQueries();
+
     } else {
       console.log('User not answered all questions');
     }
@@ -421,6 +493,12 @@ export class Logic {
       NOOFQUESTIONS: this.noOfQuestions,
       PASSES: this.passes,
       FAILS: this.fails,
+      SURVEYTOTALTIME: this.surveyTotalTime,
+      STEPTIME: this.stepTime,
+      SUBSTEPTIME: this.subStepTime,
+      STEPRESULTS: this.stepResults,
+      SUBSTEPRESULTS: this.subStepResults,
+      STEPRESULTSALL: this.stepResultsAll,
     };
     // Save current state into disk
     try {
@@ -430,12 +508,17 @@ export class Logic {
     }
   }
 
+  async haveDataOnDisk() {
+    const value = await AsyncStorage.getItem(this.saveDataKey);
+    return value !== null;
+  }
+
   async loadState() {
     // Load last state from disk
 
     try {
       const value = await AsyncStorage.getItem(this.saveDataKey);
-      const keys = '';
+      let keys = {};
       if (value !== null) {
         // We have data!!
         keys = JSON.parse(value);
@@ -451,14 +534,73 @@ export class Logic {
         this.answers = {};
         this.yesAnswers = 0;
         this.noAnswers = 0;
-
-
         this.isSurveyDone = false;
         this.showNext = false;
         this.keys = '';
+
+
+        this.stepResults = {};
+        this.subStepResults = [];
+        this.stepResultsAll = [];
+        // Analytics
+        this.surveyTotalTime = keys.SURVEYTOTALTIME;
+        this.stepTime = keys.STEPTIME;
+        this.subStepTime = keys.SUBSTEPTIME;
+        this.stepResults = keys.STEPRESULTS;
+        this.subStepResults = keys.SUBSTEPRESULTS;
+        this.stepResultsAll = keys.STEPRESULTSALL;
+        console.log('STORAGE DATA', this.stepResultsAll);
       }
     } catch (error) {
       // Error retrieving data
     }
+  }
+
+  async removeState() {
+    try {
+      await AsyncStorage.removeItem(this.saveDataKey);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  getDeviceInfo() {
+    if (Platform.OS === 'android') {
+      return {
+        vendorId: this.devinfo.vendorId,
+        bundleIdentifier: this.devinfo.bundleIdentifier,
+        bundleVersion: this.devinfo.bundleVersion,
+        bundleShortVersion: this.devinfo.bundleShortVersion,
+        deviceType: this.devinfo.deviceType,
+        deviceName: this.devinfo.deviceName,
+        osName: this.devinfo.osName,
+        systemVersion: this.devinfo.systemVersion,
+        languageCode: this.devinfo.languageCode,
+        countryCode: this.devinfo.countryCode,
+      };
+    }
+    return {};
+  }
+
+
+  getInfo() {
+    return {
+      birthDay: 1900,
+      gender: 'male',
+      relation: 'parent',
+    };
+  }
+
+  saveAnalytics() {
+    const Result = {
+      info: this.getInfo(),
+      device: this.getDeviceInfo(),
+      duration: this.surveyTotalTime,
+      stepResults: this.stepResultsAll,
+      surveyType: 0,
+      version: 1,
+    };
+    SaveToServer(Result);
+    console.log('RESULT', JSON.stringify(Result));
   }
 }

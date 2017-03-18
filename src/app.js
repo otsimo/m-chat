@@ -84,62 +84,69 @@ export class MChat extends Component {
     this.props.navigation.setParams({ start: true, id: this.props.navigation.state.params.logic.getStepId() });
   }
 
-  saveAndQuit() {
+  saveState() {
+    this._setModalVisible(false);
     this.props.navigation.state.params.logic.saveState();
-    BackAndroid.exitApp();
   }
 
-  render() {
-    return (
-      <View>
-        <Modal
-          ref="modal"
-          transparent
-          visible={this.state.modalVisible}
-          onRequestClose={() => this._setModalVisible(false)}
-          onRequestHide={this.onModalClick}
-          animationType={'fade'}
-        >
-          <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
+  resetSurvey() {
+    this._setModalVisible(false);
+    this.logic = new Logic([q1, q2, q3]);
+    this.logic.removeState();
+    resetTo(this, 'app', { logic: this.logic, start: true , id: this.logic.getStepId() });
+}
+
+render() {
+  return (
+    <View>
+      <Modal
+        ref="modal"
+        transparent
+        visible={this.state.modalVisible}
+        onRequestClose={() => this._setModalVisible(false)}
+        onRequestHide={this.onModalClick}
+        animationType={'fade'}
+      >
+        <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+              alignItems: 'flex-start',
+              marginTop: 2,
+            }}
+          >
             <View
               style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-                alignItems: 'flex-start',
-                marginTop: 2,
+                borderRadius: 10,
+                marginRight: -150,
+                width: 154,
+                height: 104,
+                backgroundColor: '#000000',
+                opacity: 0.05,
+              }}
+            />
+            <View
+              style={{
+                width: 150,
+                height: 100,
+                backgroundColor: 'white',
               }}
             >
-              <View
-                style={{
-                  borderRadius: 10,
-                  marginRight: -150,
-                  width: 154,
-                  height: 104,
-                  backgroundColor: '#000000',
-                  opacity: 0.05,
-                }}
-              />
-              <View
-                style={{
-                  width: 150,
-                  height: 100,
-                  backgroundColor: 'white',
-                }}
-              >
-                <ModalButton name="Save&Quit" onPress={() => this.saveAndQuit()} />
-                <ModalButton name="Quit" onPress={() => BackAndroid.exitApp()} />
-
-              </View>
-
+              <ModalButton name="Save" onPress={() => this.saveState()} />
+              <ModalButton name="Reset" onPress={() => this.resetSurvey()} />
 
             </View>
-          </TouchableWithoutFeedback>
-        </Modal>
-        <View style={{ marginTop: 60 }}>
-          <Question onUpdate={() => this.changeTitle()} toResult={(resultType, _score) => this.navigateToResult(resultType, _score)} delegate={this.props.navigation.state.params.logic} />
-        </View>
+
+
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
+      <View style={{ marginTop: 60 }}>
+        <Question onUpdate={() => this.changeTitle()} toResult={(resultType, _score) => this.navigateToResult(resultType, _score)} delegate={this.props.navigation.state.params.logic} />
       </View>
-    );
-  }
+    </View>
+  );
+}
 }
