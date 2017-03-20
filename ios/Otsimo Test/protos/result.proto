@@ -52,3 +52,8 @@ message Info{
     string gender = 2;
     string relation = 3;
 }
+
+message UserInfo{
+    string userID = 1;
+    string email = 2;
+}

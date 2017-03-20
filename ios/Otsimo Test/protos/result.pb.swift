@@ -694,3 +694,60 @@ public struct Otsimo_Info: ProtobufGeneratedMessage {
     return true
   }
 }
+
+public struct Otsimo_UserInfo: ProtobufGeneratedMessage {
+  public var swiftClassName: String {return "Otsimo_UserInfo"}
+  public var protoMessageName: String {return "UserInfo"}
+  public var protoPackageName: String {return "otsimo"}
+  public var jsonFieldNames: [String: Int] {return [
+    "userID": 1,
+    "email": 2,
+  ]}
+  public var protoFieldNames: [String: Int] {return [
+    "userID": 1,
+    "email": 2,
+  ]}
+
+  public var userId: String = ""
+
+  public var email: String = ""
+
+  public init() {}
+
+  public init(userId: String? = nil,
+    email: String? = nil)
+  {
+    if let v = userId {
+      self.userId = v
+    }
+    if let v = email {
+      self.email = v
+    }
+  }
+
+  public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
+    let handled: Bool
+    switch protoFieldNumber {
+    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &userId)
+    case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &email)
+    default:
+      handled = false
+    }
+    return handled
+  }
+
+  public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
+    if userId != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: userId, protoFieldNumber: 1, protoFieldName: "userID", jsonFieldName: "userID", swiftFieldName: "userId")
+    }
+    if email != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: email, protoFieldNumber: 2, protoFieldName: "email", jsonFieldName: "email", swiftFieldName: "email")
+    }
+  }
+
+  public func _protoc_generated_isEqualTo(other: Otsimo_UserInfo) -> Bool {
+    if userId != other.userId {return false}
+    if email != other.email {return false}
+    return true
+  }
+}
