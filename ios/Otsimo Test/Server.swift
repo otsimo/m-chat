@@ -14,7 +14,7 @@ class Server{
     private func sendServer(json : String , url : String) -> String{
         var responseFromServer = "No Result"
         
-        var request = URLRequest(url: URL(string: "https://mchatrest.otsimo.xyz/addResult")!)
+        var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.httpBody = json.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -44,7 +44,7 @@ class Server{
         return responseFromServer
     }
     func sendUserInfo(json : String) -> String{
-        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.xyz/AddUserInfo")
+        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.xyz/addUserInfo")
         return responseFromServer
     }
     
