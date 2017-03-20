@@ -11,13 +11,10 @@ import Foundation
 
 class Server{
     
-    
-    func sendResult(json : String) -> String{
-        
+    private func sendServer(json : String , url : String) -> String{
         var responseFromServer = "No Result"
         
-        //https://mchatrest.otsimo.xyz
-        var request = URLRequest(url: URL(string: "http://localhost:9002/addResult")!)
+        var request = URLRequest(url: URL(string: "https://mchatrest.otsimo.xyz/addResult")!)
         request.httpMethod = "POST"
         request.httpBody = json.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -37,8 +34,21 @@ class Server{
             print("responseString = \(responseFromServer)")
         }
         task.resume()
+        
         return responseFromServer
     }
+    
+    
+    func sendResult(json : String) -> String{
+        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.xyz/addResult")
+        return responseFromServer
+    }
+    func sendUserInfo(json : String) -> String{
+        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.xyz/AddUserInfo")
+        return responseFromServer
+    }
+    
+    
     
     
 }
