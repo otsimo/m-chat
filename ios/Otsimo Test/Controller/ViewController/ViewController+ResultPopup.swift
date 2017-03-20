@@ -70,11 +70,6 @@ extension ViewController {
         
         let popupVC = PopupDialog(viewController: saveVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
         
-        let buttonSave = DefaultButton(title: "Send Email") {
-            print("Save")
-        }
-        
-        popupVC.addButton(buttonSave)
         present(popupVC, animated: true, completion: nil)
  
     }
