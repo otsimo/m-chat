@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     var iResult = Otsimo_Info()
     let anlyse = Analyse()
     var resultJSON = ""
-    let defaultSurvey = Tasks.mChatRFTaskID
+    let defaultSurvey = Tasks.mChatTaskID
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -80,12 +80,7 @@ class ViewController: UIViewController {
         default:
             Log.debug("There is not any default tasks")
         }
-        
-
-        
     }
-    
-    
     
     var pollster = Pollster(firstStep: "1")
     

@@ -42,10 +42,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neg-8W-jX7">
-                                            <rect key="frame" x="187" y="18" width="187" height="92"/>
+                                            <rect key="frame" x="187" y="18" width="188" height="92"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="92" id="CJL-DU-HBv"/>
-                                                <constraint firstAttribute="width" constant="187" id="DrH-t0-mh6"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <state key="normal" title="NO">
@@ -59,7 +58,6 @@
                                             <rect key="frame" x="0.0" y="18" width="187" height="92"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="92" id="DsA-vM-9GH"/>
-                                                <constraint firstAttribute="width" constant="187" id="poL-0C-f6g"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <state key="normal" title="YES">
@@ -74,13 +72,17 @@
                                     <constraints>
                                         <constraint firstItem="Bvh-Ah-S9N" firstAttribute="top" secondItem="gvY-Av-oaV" secondAttribute="top" constant="18" id="3kZ-tS-N81"/>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="115" id="A7J-QI-Jmt"/>
+                                        <constraint firstItem="neg-8W-jX7" firstAttribute="leading" secondItem="Bvh-Ah-S9N" secondAttribute="trailing" id="AZg-sJ-qL7"/>
                                         <constraint firstAttribute="height" constant="115" id="Az6-Sc-evj"/>
                                         <constraint firstItem="eBF-0k-ewv" firstAttribute="centerX" secondItem="gvY-Av-oaV" secondAttribute="centerX" id="Bkx-oX-AOb"/>
                                         <constraint firstItem="neg-8W-jX7" firstAttribute="leading" secondItem="eBF-0k-ewv" secondAttribute="trailing" constant="-1" id="GDT-NG-8vh"/>
                                         <constraint firstItem="eBF-0k-ewv" firstAttribute="leading" secondItem="Bvh-Ah-S9N" secondAttribute="trailing" id="ODd-yY-PVd"/>
                                         <constraint firstItem="eBF-0k-ewv" firstAttribute="centerY" secondItem="gvY-Av-oaV" secondAttribute="centerY" id="Xw5-d3-7UB"/>
                                         <constraint firstItem="eBF-0k-ewv" firstAttribute="top" secondItem="gvY-Av-oaV" secondAttribute="top" constant="30" id="bKV-Q6-BEH"/>
+                                        <constraint firstItem="neg-8W-jX7" firstAttribute="leading" secondItem="Bvh-Ah-S9N" secondAttribute="trailing" id="d2H-l0-1tl"/>
+                                        <constraint firstItem="Bvh-Ah-S9N" firstAttribute="leading" secondItem="gvY-Av-oaV" secondAttribute="leading" id="drJ-YV-1nm"/>
                                         <constraint firstItem="neg-8W-jX7" firstAttribute="top" secondItem="gvY-Av-oaV" secondAttribute="top" constant="18" id="iAS-8s-0oG"/>
+                                        <constraint firstAttribute="trailing" secondItem="neg-8W-jX7" secondAttribute="trailing" id="np1-fw-aqL"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7M-uv-Hgn">
