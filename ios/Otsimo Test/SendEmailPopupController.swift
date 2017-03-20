@@ -10,6 +10,7 @@ import UIKit
 
 class SendEmailPopupController: UIViewController {
 
+    @IBOutlet var txt_email: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +21,26 @@ class SendEmailPopupController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func sendEmailTapped(_ sender: UIButton) {
+        let server = Server()
+        var userInfo = Otsimo_UserInfo()
+        userInfo.userId = NSUUID().uuidString
+
+        if let email = txt_email.text {
+            do {
+                userInfo.email = email
+                let json = try userInfo.serializeJSON()
+                server.sendUserInfo(json: json)
+            } catch let err {
+                print("error : ", err)
+            }
+        }
+
+
+
+
+    }
+
 
     /*
     // MARK: - Navigation

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53056C3F1E803FB200D11AFF /* SendEmailPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53056C3D1E803FB200D11AFF /* SendEmailPopupController.swift */; };
+		53056C401E803FB200D11AFF /* SendEmailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53056C3E1E803FB200D11AFF /* SendEmailPopupController.xib */; };
 		5309B1371E2F71B30096A4FC /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309B1361E2F71B30096A4FC /* Server.swift */; };
 		53187F4C1E152DE300484994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53187F4B1E152DE300484994 /* AppDelegate.swift */; };
 		532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */; };
@@ -27,7 +29,6 @@
 		53FFFA0B1E72B883000BEC96 /* HighResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFFA071E72B883000BEC96 /* HighResultPopup.xib */; };
 		53FFFA0C1E72B883000BEC96 /* LowResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFFA081E72B883000BEC96 /* LowResultPopup.xib */; };
 		53FFFA0D1E72B883000BEC96 /* MediumResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFFA091E72B883000BEC96 /* MediumResultPopup.xib */; };
-		53FFFA0E1E72B883000BEC96 /* SendEmailPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFFA0A1E72B883000BEC96 /* SendEmailPopup.xib */; };
 		53FFFA101E72B88F000BEC96 /* InfoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA0F1E72B88F000BEC96 /* InfoTask.swift */; };
 		53FFFA131E72B898000BEC96 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA111E72B898000BEC96 /* ConsentDocument.swift */; };
 		53FFFA141E72B898000BEC96 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA121E72B898000BEC96 /* ConsentTask.swift */; };
@@ -125,6 +126,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		53056C3D1E803FB200D11AFF /* SendEmailPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailPopupController.swift; sourceTree = "<group>"; };
+		53056C3E1E803FB200D11AFF /* SendEmailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendEmailPopupController.xib; sourceTree = "<group>"; };
 		5309B1361E2F71B30096A4FC /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		53187F481E152DE300484994 /* Otsimo Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otsimo Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53187F4B1E152DE300484994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,7 +151,6 @@
 		53FFFA071E72B883000BEC96 /* HighResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HighResultPopup.xib; path = Views/ResultPopupViews/HighResultPopup.xib; sourceTree = "<group>"; };
 		53FFFA081E72B883000BEC96 /* LowResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LowResultPopup.xib; path = Views/ResultPopupViews/LowResultPopup.xib; sourceTree = "<group>"; };
 		53FFFA091E72B883000BEC96 /* MediumResultPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MediumResultPopup.xib; path = Views/ResultPopupViews/MediumResultPopup.xib; sourceTree = "<group>"; };
-		53FFFA0A1E72B883000BEC96 /* SendEmailPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendEmailPopup.xib; path = Views/ResultPopupViews/SendEmailPopup.xib; sourceTree = "<group>"; };
 		53FFFA0F1E72B88F000BEC96 /* InfoTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTask.swift; path = "ResearchKit-Tasks/InfoTask.swift"; sourceTree = "<group>"; };
 		53FFFA111E72B898000BEC96 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentDocument.swift; path = "ResearchKit-Tasks/Consent/ConsentDocument.swift"; sourceTree = "<group>"; };
 		53FFFA121E72B898000BEC96 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentTask.swift; path = "ResearchKit-Tasks/Consent/ConsentTask.swift"; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				53FFFA431E72B934000BEC96 /* HighResultPopupController.swift */,
 				53FFFA441E72B934000BEC96 /* LowResultPopupController.swift */,
+				53056C3D1E803FB200D11AFF /* SendEmailPopupController.swift */,
 				53FFFA451E72B934000BEC96 /* MediumResultPopupController.swift */,
 			);
 			name = ResultPopupControllers;
@@ -432,7 +435,7 @@
 				53FFFA071E72B883000BEC96 /* HighResultPopup.xib */,
 				53FFFA081E72B883000BEC96 /* LowResultPopup.xib */,
 				53FFFA091E72B883000BEC96 /* MediumResultPopup.xib */,
-				53FFFA0A1E72B883000BEC96 /* SendEmailPopup.xib */,
+				53056C3E1E803FB200D11AFF /* SendEmailPopupController.xib */,
 			);
 			name = ResultPopupViews;
 			sourceTree = "<group>";
@@ -669,13 +672,13 @@
 			files = (
 				53FFFA041E72B868000BEC96 /* Assets.xcassets in Resources */,
 				53FFFA0D1E72B883000BEC96 /* MediumResultPopup.xib in Resources */,
-				53FFFA0E1E72B883000BEC96 /* SendEmailPopup.xib in Resources */,
 				53FFFAC31E72BE70000BEC96 /* Localizable.strings in Resources */,
 				53FFFA381E72B8F9000BEC96 /* WalkThroughCell.xib in Resources */,
 				53FFFAB31E72BD5E000BEC96 /* Main.storyboard in Resources */,
 				53FFFA0B1E72B883000BEC96 /* HighResultPopup.xib in Resources */,
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
 				53FFFADE1E72C455000BEC96 /* questions in Resources */,
+				53056C401E803FB200D11AFF /* SendEmailPopupController.xib in Resources */,
 				53FFFA0C1E72B883000BEC96 /* LowResultPopup.xib in Resources */,
 				53FFFA051E72B868000BEC96 /* LaunchScreen.storyboard in Resources */,
 				53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */,
@@ -748,6 +751,7 @@
 				53FFFA1D1E72B89F000BEC96 /* Pollster.swift in Sources */,
 				53FFFA9D1E72BB0A000BEC96 /* TZStackViewAlignment.swift in Sources */,
 				53FFFA411E72B914000BEC96 /* DeviceInfo.swift in Sources */,
+				53056C3F1E803FB200D11AFF /* SendEmailPopupController.swift in Sources */,
 				53FFFA261E72B8B3000BEC96 /* MchatSurvey.swift in Sources */,
 				53FFFA2E1E72B8E7000BEC96 /* ViewController+TaskDelegate.swift in Sources */,
 				53FFFA911E72BB02000BEC96 /* PresentationManager.swift in Sources */,

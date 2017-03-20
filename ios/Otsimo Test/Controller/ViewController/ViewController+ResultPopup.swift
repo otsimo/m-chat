@@ -63,9 +63,10 @@ extension ViewController {
     }
     
     func showSavePopup(){
+        print("showSavePopup")
         
-        /*
-        let saveVC = HighResultPopupController(nibName: "SendEmailPopup", bundle: nil)
+        
+        let saveVC = SendEmailPopupController(nibName: "SendEmailPopupController", bundle: nil)
         
         let popupVC = PopupDialog(viewController: saveVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
         
@@ -75,7 +76,7 @@ extension ViewController {
         
         popupVC.addButton(buttonSave)
         present(popupVC, animated: true, completion: nil)
- */
+ 
     }
     
     func showShareView(){
