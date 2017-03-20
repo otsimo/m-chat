@@ -24,7 +24,9 @@ class SendEmailPopupController: UIViewController {
     @IBAction func sendEmailTapped(_ sender: UIButton) {
         let server = Server()
         var userInfo = Otsimo_UserInfo()
-        userInfo.userId = NSUUID().uuidString
+        if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
+            userInfo.userId = userID
+        }
 
         if let email = txt_email.text {
             do {
@@ -35,10 +37,6 @@ class SendEmailPopupController: UIViewController {
                 print("error : ", err)
             }
         }
-
-
-
-
     }
 
 
