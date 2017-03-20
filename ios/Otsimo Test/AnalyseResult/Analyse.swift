@@ -74,7 +74,8 @@ class Analyse {
                 
                 if subStepResults == []{
                     subStepResults.append(subStepResult)
-                }else if subStepResult.id != "sum" || subStepResult.id != "afterSum" {
+                }else if subStepResult.id != "sum" && subStepResult.id != "afterSum" && subStepResult.id != "custom" {
+                    print("id :",subStepResult.id)
                     let id = parseID(id: (subStepResults.last?.id)!).0
                     let subStepResultID = parseID(id: subStepResult.id).0
                     
@@ -87,15 +88,9 @@ class Analyse {
                         stepResults.append(stepResult)
                         subStepResults = [subStepResult]
                     }
-                   
                 }
-                
-                
-                
                 subStepResults.append(subStepResult)
             }
-            
-            
         }
         
         print("stepResults ----->> \n",stepResults)
@@ -107,7 +102,6 @@ class Analyse {
 
         Log.debug("Analyse : AnalyseInfoResult")
         var iresult = Otsimo_Info()
-
         if let iResults = infoResult.results {
             print(iResults)
             

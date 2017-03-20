@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     var iResult = Otsimo_Info()
     let anlyse = Analyse()
     var resultJSON = ""
-    let defaultSurvey = Tasks.mChatTaskID
+    let defaultSurvey = Tasks.mChatRFTaskID
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
