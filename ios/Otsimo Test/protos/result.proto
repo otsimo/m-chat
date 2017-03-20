@@ -30,7 +30,7 @@ message Result{
 	repeated StepResult stepResults = 4;
     int32 version = 5;
     SurveyType surveyType = 6;
-
+    string userID = 7;
 }
 
 message DeviceInfo{

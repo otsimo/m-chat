@@ -294,6 +294,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "stepResults": 4,
     "version": 5,
     "surveyType": 6,
+    "userID": 7,
   ]}
   public var protoFieldNames: [String: Int] {return [
     "info": 1,
@@ -302,6 +303,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "stepResults": 4,
     "version": 5,
     "surveyType": 6,
+    "userID": 7,
   ]}
 
   private class _StorageClass {
@@ -312,6 +314,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     var _stepResults: [Otsimo_StepResult] = []
     var _version: Int32 = 0
     var _surveyType: Otsimo_SurveyType = Otsimo_SurveyType.mchat
+    var _userId: String = ""
 
     init() {}
 
@@ -324,6 +327,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       case 4: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
       case 5: handled = try setter.decodeSingularField(fieldType: ProtobufInt32.self, value: &_version)
       case 6: handled = try setter.decodeSingularField(fieldType: Otsimo_SurveyType.self, value: &_surveyType)
+      case 7: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_userId)
       default:
         handled = false
       }
@@ -349,6 +353,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _surveyType != Otsimo_SurveyType.mchat {
         try visitor.visitSingularField(fieldType: Otsimo_SurveyType.self, value: _surveyType, protoFieldNumber: 6, protoFieldName: "surveyType", jsonFieldName: "surveyType", swiftFieldName: "surveyType")
       }
+      if _userId != "" {
+        try visitor.visitSingularField(fieldType: ProtobufString.self, value: _userId, protoFieldNumber: 7, protoFieldName: "userID", jsonFieldName: "userID", swiftFieldName: "userId")
+      }
     }
 
     func isEqualTo(other: _StorageClass) -> Bool {
@@ -358,6 +365,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _stepResults != other._stepResults {return false}
       if _version != other._version {return false}
       if _surveyType != other._surveyType {return false}
+      if _userId != other._userId {return false}
       return true
     }
 
@@ -369,6 +377,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       clone._stepResults = _stepResults
       clone._version = _version
       clone._surveyType = _surveyType
+      clone._userId = _userId
       return clone
     }
   }
@@ -405,6 +414,11 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     set {_uniqueStorage()._surveyType = newValue}
   }
 
+  public var userId: String {
+    get {return _storage._userId}
+    set {_uniqueStorage()._userId = newValue}
+  }
+
   public init() {}
 
   public init(info: Otsimo_Info? = nil,
@@ -412,7 +426,8 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     duration: Int64? = nil,
     stepResults: [Otsimo_StepResult] = [],
     version: Int32? = nil,
-    surveyType: Otsimo_SurveyType? = nil)
+    surveyType: Otsimo_SurveyType? = nil,
+    userId: String? = nil)
   {
     let storage = _uniqueStorage()
     storage._info = info
@@ -428,6 +443,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     }
     if let v = surveyType {
       storage._surveyType = v
+    }
+    if let v = userId {
+      storage._userId = v
     }
   }
 
