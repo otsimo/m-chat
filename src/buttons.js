@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { CustomizedButton } from './customizedButton.js';
+import i18n from './i18n';
 
 export class Buttons extends Component {
   static propTypes = {
@@ -29,9 +30,9 @@ export class Buttons extends Component {
           alignItems: 'center',
         }}
       >
-        <CustomizedButton isSelected={this.state.selectedOne === 'yes'} buttonName="Yes" onClick={() => this.selectButton('yes')} />
+        <CustomizedButton isSelected={this.state.selectedOne === 'yes'} buttonName={i18n.t('yes')} onClick={() => this.selectButton('yes')} />
         <Text> | </Text>
-        <CustomizedButton isSelected={this.state.selectedOne === 'no'} buttonName="No" onClick={() => this.selectButton('no')} />
+        <CustomizedButton isSelected={this.state.selectedOne === 'no'} buttonName={i18n.t('no')} onClick={() => this.selectButton('no')} />
       </View>
     );
   }

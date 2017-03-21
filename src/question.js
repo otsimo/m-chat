@@ -11,6 +11,7 @@ import { CustomizedButton } from './customizedButton.js';
 import { Result } from './result.js';
 import { SurveyDone } from './surveyDone.js';
 import { SaveToServer } from './saveToServer';
+import i18n from './i18n';
 
 export class Question extends Component {
   static propTypes = {
@@ -129,9 +130,9 @@ export class Question extends Component {
               marginBottom: 8,
             }}
           >
-            <CustomizedButton isSelected={this.state.selectedOne === 'yes'} buttonName="Yes" onClick={() => this.selectButton('yes')} />
+            <CustomizedButton isSelected={this.state.selectedOne === 'yes'} buttonName={i18n.t('yes')} onClick={() => this.selectButton('yes')} />
             <Text> | </Text>
-            <CustomizedButton isSelected={this.state.selectedOne === 'no'} buttonName="No" onClick={() => this.selectButton('no')} />
+            <CustomizedButton isSelected={this.state.selectedOne === 'no'} buttonName={i18n.t('no')} onClick={() => this.selectButton('no')} />
           </View>
         </View>
         <NextButton enabled={this.state.showNext} onClick={() => this.executeQuestion()} />

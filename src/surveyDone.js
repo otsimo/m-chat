@@ -13,6 +13,7 @@ import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Result } from './result.js';
 import { saveEmail } from './saveEmail';
+import i18n from './i18n';
 
 export class SurveyDone extends Component {
 
@@ -52,7 +53,7 @@ export class SurveyDone extends Component {
           <View style={{ marginTop: 90, borderRadius: 60, backgroundColor: 'rgb(4,185,250)' }}>
             <Icon name="done" size={120} color="white" />
           </View>
-          <Text style={{ marginTop: 10, fontSize: 50, textAlign: 'center' }}>Testi Tamamladın</Text>
+          <Text style={{ marginTop: 10, fontSize: 50, textAlign: 'center' }}>{i18n.t('testok')}</Text>
 
           <TouchableOpacity
             style={{ backgroundColor: 'white', marginTop: 70 }}
@@ -62,7 +63,7 @@ export class SurveyDone extends Component {
           >
             <View style={{ marginTop: 50, padding: 12, borderRadius: 10, backgroundColor: 'rgb(4,185,250)' }}>
 
-              <Text style={{ fontSize: 26, color: 'white', marginHorizontal: 25 }}>Sonucu Gör</Text>
+              <Text style={{ fontSize: 26, color: 'white', marginHorizontal: 25 }}>{i18n.t('showResult')}</Text>
 
             </View>
           </TouchableOpacity>

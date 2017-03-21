@@ -1,0 +1,14 @@
+{
+  "start": "Başla",
+  "continue": "Devam et",
+  "stepOf": "Adım {{total}} de {{current}}",
+  "yes": "Evet",
+  "no": "Hayır",
+  "next": "İleri",
+  "save": "Kaydet",
+  "reset": "Sıfırla",
+  "showResult": "Sonucu göster",
+  "share": "Paylaş",
+  "email": "Email adresin",
+  "testok": "Testi Tamamladın"
+}

@@ -1,0 +1,14 @@
+{
+  "start": "Start",
+  "continue": "Continue",
+  "stepOf": "Step {{current}} of {{total}}",
+  "yes": "Yes",
+  "no": "No",
+  "next": "Next",
+  "save": "Save",
+  "reset": "Reset",
+  "showResult": "Show result",
+  "share": "Share",
+  "email": "Your Email address",
+  "testok": "You have completed"
+}

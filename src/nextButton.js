@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import i18n from './i18n';
 
 export class NextButton extends Component {
   static propTypes = {
@@ -20,7 +21,7 @@ export class NextButton extends Component {
             backgroundColor: this.props.enabled ? '#00a9fa' : '#e7e7e7',
           }}
         >
-          <Text style={{ color: 'white' }}>NEXT</Text>
+          <Text style={{ color: 'white' }}>{i18n.t('next')}</Text>
         </View>
       </TouchableOpacity>
     );

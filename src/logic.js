@@ -1,8 +1,9 @@
 
 import { AsyncStorage, NativeModules, Platform } from 'react-native';
 import { SaveToServer } from './saveToServer';
-export class Logic {
 
+
+export class Logic {
   /**
    * Creates an instance of Logic.
    * @param {Step[]} steps

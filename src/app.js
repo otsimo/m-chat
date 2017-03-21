@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
   View,
-  Button,
   TouchableOpacity,
   Modal,
-  Text,
   TouchableWithoutFeedback,
   BackAndroid,
+  NativeModules,
+  Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -15,16 +15,23 @@ import { Logic } from './logic';
 import { modalDispatcher } from './events';
 import { ModalButton } from './modalButtons';
 import { resetTo } from './util';
+import i18n from './i18n';
 
 import q1 from '../questions/q1.json';
 import q2 from '../questions/q2.json';
 import q3 from '../questions/q3.json';
 import q4 from '../questions/q4.json';
 
+if (Platform.OS !== 'ios') {
+  i18n.locale = NativeModules.OtsimoDeviceInfo.deviceLocale;
+}
+
+//i18n.t('stepOf', { current: 0, total: 20 });
+
 export class MChat extends Component {
 
   static navigationOptions = {
-    title: (navigation, childRouter) => navigation.state.params.start ? 'Step ' + navigation.state.params.id + ' of 20' : '',
+    title: (navigation, childRouter) => navigation.state.params.start ? (i18n.t('stepOf', { current: navigation.state.params.id, total: 20 })) : '',
 
     header: ({ state, setParams }) => ({
       // Render a button on the right side of the header
@@ -93,60 +100,59 @@ export class MChat extends Component {
     this._setModalVisible(false);
     this.logic = new Logic([q1, q2, q3]);
     this.logic.removeState();
-    resetTo(this, 'app', { logic: this.logic, start: true , id: this.logic.getStepId() });
-}
+    resetTo(this, 'app', { logic: this.logic, start: true, id: this.logic.getStepId() });
+  }
 
-render() {
-  return (
-    <View>
-      <Modal
-        ref="modal"
-        transparent
-        visible={this.state.modalVisible}
-        onRequestClose={() => this._setModalVisible(false)}
-        onRequestHide={this.onModalClick}
-        animationType={'fade'}
-      >
-        <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'flex-end',
-              alignItems: 'flex-start',
-              marginTop: 2,
-            }}
-          >
+  render() {
+    return (
+      <View>
+        <Modal
+          ref="modal"
+          transparent
+          visible={this.state.modalVisible}
+          onRequestClose={() => this._setModalVisible(false)}
+          onRequestHide={this.onModalClick}
+          animationType={'fade'}
+        >
+          <TouchableWithoutFeedback onPress={() => this._setModalVisible(false)}>
             <View
               style={{
-                borderRadius: 10,
-                marginRight: -150,
-                width: 154,
-                height: 104,
-                backgroundColor: '#000000',
-                opacity: 0.05,
-              }}
-            />
-            <View
-              style={{
-                width: 150,
-                height: 100,
-                backgroundColor: 'white',
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-start',
+                marginTop: 2,
               }}
             >
-              <ModalButton name="Save" onPress={() => this.saveState()} />
-              <ModalButton name="Reset" onPress={() => this.resetSurvey()} />
+              <View
+                style={{
+                  borderRadius: 10,
+                  marginRight: -150,
+                  width: 154,
+                  height: 104,
+                  backgroundColor: '#000000',
+                  opacity: 0.05,
+                }}
+              />
+              <View
+                style={{
+                  width: 150,
+                  height: 100,
+                  backgroundColor: 'white',
+                }}
+              >
+                <ModalButton name={i18n.t('save')} onPress={() => this.saveState()} />
+                <ModalButton name={i18n.t('reset')} onPress={() => this.resetSurvey()} />
 
+              </View>
             </View>
-
-
-          </View>
-        </TouchableWithoutFeedback>
-      </Modal>
-      <View style={{ marginTop: 60 }}>
-        <Question onUpdate={() => this.changeTitle()} toResult={(resultType, _score) => this.navigateToResult(resultType, _score)} delegate={this.props.navigation.state.params.logic} />
+          </TouchableWithoutFeedback>
+        </Modal>
+        <View style={{ marginTop: 60 }}>
+         
+          <Question onUpdate={() => this.changeTitle()} toResult={(resultType, _score) => this.navigateToResult(resultType, _score)} delegate={this.props.navigation.state.params.logic} />
+        </View>
       </View>
-    </View>
-  );
-}
+    );
+  }
 }

@@ -12,6 +12,12 @@ import { resetTo } from './src/util';
 import { Logic } from './src/logic';
 import { Home } from './src/home';
 import { SurveyDone } from './src/surveyDone';
+import { ConsentWelcome } from './src/consentWelcome';
+import { ConsentDataGather } from './src/consentDataGather';
+import { ConsentPrivacy } from './src/consentPrivacy';
+import { ConsentDataUse } from './src/consentDataUse';
+import { ConsentStudySurvey } from './src/consentStudySurvey';
+
 import q1 from './questions/q1.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
@@ -55,7 +61,7 @@ class HomeScreen extends React.Component {
     if (ok) {
       const a = await this.logic.loadState();
       this.logic.startSurveyTimers();
-      resetTo(this, 'app', { logic: this.logic, id: '', start: true });
+      resetTo(this, 'ConsentWelcome', { logic: this.logic, id: '', start: true });
     } else {
       this.startSurvey();
     }
@@ -63,7 +69,7 @@ class HomeScreen extends React.Component {
 
   startSurvey() {
     this.logic.startSurveyTimers();
-    resetTo(this, 'app', { logic: this.logic });
+    resetTo(this, 'ConsentWelcome', { logic: this.logic });
   }
   render() {
     const { navigate } = this.props.navigation;
@@ -82,6 +88,11 @@ const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   app: { screen: MChat },
   result: { screen: SurveyDone },
+  ConsentWelcome: { screen: ConsentWelcome },
+  ConsentDataGather: { screen: ConsentDataGather },
+  ConsentPrivacy: { screen: ConsentPrivacy },
+  ConsentDataUse: { screen: ConsentDataUse },
+  ConsentStudySurvey: { screen: ConsentStudySurvey },
 });
 
 AppRegistry.registerComponent('m_chat', () => SimpleApp);

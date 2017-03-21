@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Share,
 } from 'react-native';
+import i18n from './i18n';
 
 export class Result extends Component {
 
@@ -61,8 +62,8 @@ export class Result extends Component {
               <View style={{ backgroundColor: 'rgb(220,22,56)' }}>
                 <TouchableOpacity >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
-                    Kaydet
-              </Text >
+                    {i18n.t('save')}
+                  </Text >
                 </TouchableOpacity>
 
               </View>
@@ -72,8 +73,8 @@ export class Result extends Component {
               <View style={{ backgroundColor: 'rgb(220,22,56)' }}>
                 <TouchableOpacity onPress={this._shareMessage} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
-                    Paylaş
-              </Text >
+                    {i18n.t('share')}
+                  </Text >
                 </TouchableOpacity>
               </View>
             </View>
@@ -115,11 +116,11 @@ export class Result extends Component {
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
 
             <View style={{ margin: 10, marginRight: 5, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
-              <View style={{ backgroundColor: 'rgb(96,184,71)' }}>
+              <View style={{ backgroundColor: 'rgb(96,184,71)', paddingHorizontal: 30 }}>
                 <TouchableOpacity onPress={() => this.props.savePopUp()}>
-                  <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
-                    Kaydet
-              </Text >
+                  <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginVertical: 10 }}>
+                    {i18n.t('save')}
+                  </Text >
                 </TouchableOpacity>
 
               </View>
@@ -129,8 +130,8 @@ export class Result extends Component {
               <View style={{ backgroundColor: 'rgb(96,184,71)' }}>
                 <TouchableOpacity onPress={this._shareMessage}>
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
-                    Paylaş
-              </Text >
+                    {i18n.t('share')}
+                  </Text >
                 </TouchableOpacity>
 
               </View>
@@ -178,8 +179,8 @@ export class Result extends Component {
               <View style={{ backgroundColor: 'rgb(225,121,38)' }}>
                 <TouchableOpacity >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
-                    Kaydet
-              </Text >
+                    {i18n.t('save')}
+                  </Text >
                 </TouchableOpacity>
 
               </View>
@@ -189,8 +190,8 @@ export class Result extends Component {
               <View style={{ backgroundColor: 'rgb(225,121,38)' }}>
                 <TouchableOpacity onPress={this._shareMessage} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
-                    Paylaş
-              </Text >
+                    {i18n.t('share')}
+                  </Text >
                 </TouchableOpacity>
 
               </View>
