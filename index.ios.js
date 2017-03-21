@@ -17,7 +17,11 @@ import { ConsentDataGather } from './src/consentDataGather';
 import { ConsentPrivacy } from './src/consentPrivacy';
 import { ConsentDataUse } from './src/consentDataUse';
 import { ConsentStudySurvey } from './src/consentStudySurvey';
-
+import { ConsentPotentialBen } from './src/consentPotentialBen';
+import { ConsentPotentialRisk } from './src/consentPotentialRisk';
+import { ConsentMedical } from './src/consentMedical';
+import { ConsentFollowUp } from './src/consentFollowUp';
+ 
 import q1 from './questions/q1.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
@@ -93,6 +97,10 @@ const SimpleApp = StackNavigator({
   ConsentPrivacy: { screen: ConsentPrivacy },
   ConsentDataUse: { screen: ConsentDataUse },
   ConsentStudySurvey: { screen: ConsentStudySurvey },
+  ConsentPotentialBen: { screen: ConsentPotentialBen },
+  ConsentPotentialRisk: { screen: ConsentPotentialRisk },
+  ConsentMedical: { screen: ConsentMedical },
+  ConsentFollowUp: { screen: ConsentFollowUp },
 });
 
 AppRegistry.registerComponent('m_chat', () => SimpleApp);

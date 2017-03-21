@@ -4,9 +4,9 @@ import i18n from './i18n';
 import { ConsentPrefab } from './consentPrefab';
 
 export class ConsentWelcome extends Component {
-  static navigationOptions = {
+   static navigationOptions = {
     header: ({
-      visible: false,
+      visible: true,
     }),
   };
 

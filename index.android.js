@@ -12,7 +12,16 @@ import { resetTo } from './src/util';
 import { Logic } from './src/logic';
 import { Home } from './src/home';
 import { SurveyDone } from './src/surveyDone';
-import i18n from './src/i18n';
+import { ConsentWelcome } from './src/consentWelcome';
+import { ConsentDataGather } from './src/consentDataGather';
+import { ConsentPrivacy } from './src/consentPrivacy';
+import { ConsentDataUse } from './src/consentDataUse';
+import { ConsentStudySurvey } from './src/consentStudySurvey';
+import { ConsentPotentialBen } from './src/consentPotentialBen';
+import { ConsentPotentialRisk } from './src/consentPotentialRisk';
+import { ConsentMedical } from './src/consentMedical';
+import { ConsentFollowUp } from './src/consentFollowUp';
+ 
 import q1 from './questions/q1.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
@@ -56,7 +65,7 @@ class HomeScreen extends React.Component {
     if (ok) {
       const a = await this.logic.loadState();
       this.logic.startSurveyTimers();
-      resetTo(this, 'app', { logic: this.logic, id: '', start: true });
+      resetTo(this, 'ConsentWelcome', { logic: this.logic, id: '', start: true });
     } else {
       this.startSurvey();
     }
@@ -64,7 +73,7 @@ class HomeScreen extends React.Component {
 
   startSurvey() {
     this.logic.startSurveyTimers();
-    resetTo(this, 'app', { logic: this.logic });
+    resetTo(this, 'ConsentWelcome', { logic: this.logic });
   }
   render() {
     const { navigate } = this.props.navigation;
@@ -72,7 +81,7 @@ class HomeScreen extends React.Component {
       <View>
         <Button
           onPress={() => this.loadSurvey()}
-          title={this.state.ok ? i18n.t('continue') : i18n.t('start')}
+          title={this.state.ok ? 'Continue' : 'Start'}
         />
       </View>
     );
@@ -83,6 +92,15 @@ const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   app: { screen: MChat },
   result: { screen: SurveyDone },
+  ConsentWelcome: { screen: ConsentWelcome },
+  ConsentDataGather: { screen: ConsentDataGather },
+  ConsentPrivacy: { screen: ConsentPrivacy },
+  ConsentDataUse: { screen: ConsentDataUse },
+  ConsentStudySurvey: { screen: ConsentStudySurvey },
+  ConsentPotentialBen: { screen: ConsentPotentialBen },
+  ConsentPotentialRisk: { screen: ConsentPotentialRisk },
+  ConsentMedical: { screen: ConsentMedical },
+  ConsentFollowUp: { screen: ConsentFollowUp },
 });
 
 AppRegistry.registerComponent('m_chat', () => SimpleApp);

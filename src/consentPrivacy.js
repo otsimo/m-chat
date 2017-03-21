@@ -4,9 +4,9 @@ import i18n from './i18n';
 import { ConsentPrefab } from './consentPrefab';
 
 export class ConsentPrivacy extends Component {
-  static navigationOptions = {
+   static navigationOptions = {
     header: ({
-      visible: false,
+      visible: true,
     }),
   };
 
@@ -18,7 +18,7 @@ onNextPressed() {
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} textHeader="Privacy" text=""/>
+        <ConsentPrefab onPress={() => this.onNextPressed()} image={require("../pngs/privacykopya.png")} textHeader="Privacy" text=""/>
       </View>
     );
   }

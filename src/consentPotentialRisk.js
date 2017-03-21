@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import i18n from './i18n';
 import { ConsentPrefab } from './consentPrefab';
 
-export class ConsentStudySurvey extends Component {
+export class ConsentPotentialRisk extends Component {
    static navigationOptions = {
     header: ({
       visible: true,
@@ -12,13 +12,13 @@ export class ConsentStudySurvey extends Component {
 
 onNextPressed() {
   const { navigate } = this.props.navigation;
-  navigate('ConsentPotentialBen');
+  navigate('ConsentMedical');
 }
 
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} image={require("../pngs/study_surveykopya.png")} textHeader="Study Survey" text=""/>
+        <ConsentPrefab onPress={() => this.onNextPressed()} image={require("../pngs/potential_riskkopya.png")} textHeader="Potential Risks" text=""/>
       </View>
     );
   }
