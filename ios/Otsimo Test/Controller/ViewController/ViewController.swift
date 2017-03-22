@@ -38,8 +38,7 @@ class ViewController: UIViewController {
         
         switch defaultSurvey {
         case Tasks.mChatTaskID:
-            showSavePopup()
-            // present(mChatVC, animated: true, completion: nil)
+            present(mChatVC, animated: true, completion: nil)
         case Tasks.mChatRFTaskID:
             present(mChatRFVC, animated: true, completion: nil)
         default:

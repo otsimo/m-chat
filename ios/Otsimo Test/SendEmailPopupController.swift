@@ -25,7 +25,7 @@ class SendEmailPopupController: UIViewController {
         let server = Server()
         var userInfo = Otsimo_UserInfo()
         if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
-            userInfo.userId = userID
+            userInfo.resultId = userID
         }
 
         if let email = txt_email.text {

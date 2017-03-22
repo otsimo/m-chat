@@ -89,9 +89,9 @@ extension Analyse {
 
         analysedResults.info = info
         analysedResults.stepResults = stepResults
-        analysedResults.userId = NSUUID().uuidString
+        analysedResults.resultId = NSUUID().uuidString
         let userDefaults = UserDefaults.standard
-        userDefaults.set(analysedResults.userId, forKey: CacheKeys.userIDKey)
+        userDefaults.set(analysedResults.resultId, forKey: CacheKeys.userIDKey)
         return analysedResults
     }
 
