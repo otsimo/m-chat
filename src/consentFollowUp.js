@@ -12,7 +12,7 @@ export class ConsentFollowUp extends Component {
 
 onNextPressed() {
   const { navigate } = this.props.navigation;
-  //navigate('');
+  navigate('EligibilityRelation');
 }
 
   render() {

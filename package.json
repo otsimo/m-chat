@@ -9,6 +9,7 @@
     "devtools": "react-devtools"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "react": "~15.4.0",
     "react-devtools": "^2.0.12",
     "react-native": "0.41.2",

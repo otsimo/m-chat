@@ -61,7 +61,7 @@ export class EligibilityGender extends Component {
           <GenderButton selectionChanged={gen => this.getGender(gen)} />
         </View>
 
-        <View style={{ flex: 0.5, flexDirection: 'column', alignItems: 'center' }}>
+        <View style={{ flex: 1.5, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
           <TouchableOpacity onPress={() => this.pass()} >
             <Text style={{ color: 'black', fontSize: 15 }}>
               {i18n.t('pass')}

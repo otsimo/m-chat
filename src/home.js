@@ -10,9 +10,39 @@ import {
   ScrollView,
   Dimensions,
   WebView,
+  AppRegistry,
 } from 'react-native';
+import i18n from './i18n';
+import { StackNavigator } from 'react-navigation';
+import { MChat } from './app';
+import { SurveyDone } from './surveyDone';
+import { ConsentWelcome } from './consentWelcome';
+import { ConsentDataGather } from './consentDataGather';
+import { ConsentPrivacy } from './consentPrivacy';
+import { ConsentDataUse } from './consentDataUse';
+import { ConsentStudySurvey } from './consentStudySurvey';
+import { ConsentPotentialBen } from './consentPotentialBen';
+import { ConsentPotentialRisk } from './consentPotentialRisk';
+import { ConsentMedical } from './consentMedical';
+import { ConsentFollowUp } from './consentFollowUp';
+import { EligibilityRelation } from './eligibilityRelation';
+import { EligibilityGender } from './eligibilityGender';
+import { EligibilityBday } from './eligibilityBday';
+
 
 export class Home extends Component {
+
+  static navigationOptions = {
+    header: ({
+      visible: false,
+    }),
+  };
+
+  startApp() {
+    //_scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); 
+    const { navigate } = this.props.navigation;
+    navigate('ConsentWelcome');
+  }
   render() {
     let _scrollView: ScrollView;
     return (
@@ -48,15 +78,34 @@ export class Home extends Component {
           </ScrollView>
 
         </View>
-        <View style={{ flex: 1, backgroundColor: 'rgb(91,57,177)', flexDirection: 'column', alignItems: 'center' }}>
+        <View style={{ flex: 1, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
           <TouchableOpacity
             style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 30, padding: 5 }}
-            onPress={() => { _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); }}
+            onPress={() => this.startApp()}
           >
-            <Text style={{ padding: 5, textAlign: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> Join Study</Text>
+            <Text style={{ padding: 5, textAlign: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
   }
 }
+
+export const SimpleApp = StackNavigator({
+  home: { screen: Home },
+  result: { screen: SurveyDone },
+  app: { screen: MChat },
+  ConsentWelcome: { screen: ConsentWelcome },
+  ConsentDataGather: { screen: ConsentDataGather },
+  ConsentPrivacy: { screen: ConsentPrivacy },
+  ConsentDataUse: { screen: ConsentDataUse },
+  ConsentStudySurvey: { screen: ConsentStudySurvey },
+  ConsentPotentialBen: { screen: ConsentPotentialBen },
+  ConsentPotentialRisk: { screen: ConsentPotentialRisk },
+  ConsentMedical: { screen: ConsentMedical },
+  ConsentFollowUp: { screen: ConsentFollowUp },
+  EligibilityRelation: { screen: EligibilityRelation },
+  EligibilityGender: { screen: EligibilityGender },
+  EligibilityBday: { screen: EligibilityBday },
+});
+

@@ -584,11 +584,21 @@ export class Logic {
   }
 
 
-  getInfo() {
+
+  async getInfo() {
+    const bDay = await AsyncStorage.getItem('birthDay');
+    const keysBday = JSON.parse(bDay);
+
+    const gender = await AsyncStorage.getItem('gender');
+    const keysGender = JSON.parse(gender);
+
+    const relation = await AsyncStorage.getItem('relation');
+    const keysRelation = JSON.parse(relation);
+
     return {
-      birthDay: 1900,
-      gender: 'male',
-      relation: 'parent',
+      birthDay: keysBday.Bday,
+      gender: keysGender.gender,
+      relation: keysRelation.relation,
     };
   }
 

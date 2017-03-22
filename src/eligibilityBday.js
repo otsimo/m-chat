@@ -3,6 +3,17 @@ import { View, Text, TouchableOpacity, AsyncStorage, DatePickerAndroid } from 'r
 import i18n from './i18n';
 import { ConsentPrefab } from './consentPrefab';
 import { RelationButton } from './relationButton';
+import { resetTo } from './util';
+import { Logic } from './logic';
+
+import q1 from '../questions/q1.json';
+import q2 from '../questions/q2.json';
+import q3 from '../questions/q3.json';
+import q4 from '../questions/q4.json';
+import q5 from '../questions/q5.json';
+import q6 from '../questions/q6.json';
+import q7 from '../questions/q7.json';
+import q8 from '../questions/q8.json';
 
 export class EligibilityBday extends Component {
   static navigationOptions = {
@@ -10,38 +21,88 @@ export class EligibilityBday extends Component {
       visible: true,
     }),
   };
+
   constructor(props) {
     super(props);
-    this.birthDay = false;
+    this.birthDay = true;
     this.date = new Date();
+    this.logic = new Logic([q1, q2, q3]);
   }
+
+
+  async dataOk() {
+    try {
+      const ok = await this.logic.haveDataOnDisk();
+      this.setState({ ok });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  componentDidMount() {
+    this.dataOk();
+  }
+
+  async loadSurvey() {
+    const ok = await this.logic.haveDataOnDisk();
+    if (ok) {
+      const a = await this.logic.loadState();
+      this.logic.startSurveyTimers();
+      resetTo(this, 'app', { logic: this.logic, id: '', start: true });
+    } else {
+      this.startSurvey();
+    }
+  }
+
+  startSurvey() {
+    this.logic.startSurveyTimers();
+    resetTo(this, 'app', { logic: this.logic });
+  }
+
 
   state = {
     showNext: false,
     showDate: '',
+    ok: false,
   }
 
-  getBday(bDay) {
-    this.birthDay = bDay;
-    if (this.state.showNext === false) {
-      this.setState({ showNext: true });
+
+  isEligible() {
+    const now = new Date();
+    const sub = new Date(this.date.getTime() - now.getTime());
+    if (sub < 41472000000) {
+      return false;
+    } else if (sub > 77760000000) {
+      return false;
+    } else {
+      return true;
     }
   }
 
   async saveBday() {
-    const saveData = {
-      Bday: this.date.getTime(),
-    };
-    await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
-    // console.warn('rel', await AsyncStorage.getItem('relation'));
+
     if (this.birthDay !== false) {
-      const { navigate } = this.props.navigation;
-      navigate('EligibilityGender');
+      if (this.isEligible()) {
+        console.log('ok');
+        const saveData = {
+          Bday: this.date.getTime(),
+        };
+        await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
+        // console.warn('rel', await AsyncStorage.getItem('relation'));
+
+        
+        this.loadSurvey();
+      } else {
+        const { navigate } = this.props.navigation;
+        navigate('EligibilityNotFit');
+      }
     }
+
   }
 
   async showPicker() {
     this.setState({ showNext: true });
+
     try {
       const {action, year, month, day} = await DatePickerAndroid.open({
         date: new Date(),
@@ -49,6 +110,7 @@ export class EligibilityBday extends Component {
       if (action !== DatePickerAndroid.dismissedAction) {
         // Selected year, month (0-11), day
         this.date = new Date(year, month, day);
+        this.birthDay = this.date;
         this.setState({ showDate: '' });
       }
     } catch ({code, message}) {
@@ -62,8 +124,7 @@ export class EligibilityBday extends Component {
     await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
     // console.warn('rel', await AsyncStorage.getItem('relation'));
 
-    const { navigate } = this.props.navigation;
-    navigate('EligibilityGender');
+    this.loadSurvey();
 
   }
 
@@ -76,7 +137,7 @@ export class EligibilityBday extends Component {
             </Text>
         </View>
 
-        <View style={{ flex: 6, flexDirection: 'row', justifyContent: 'center', padding: 20 }}>
+        <View style={{ flex: 6, flexDirection: 'row', justifyContent: 'center' }}>
           <TouchableOpacity onPress={() => this.showPicker()}>
             <View style={{ flexDirection: 'row', justifyContent: 'center' }} >
 
@@ -99,7 +160,7 @@ export class EligibilityBday extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={{ flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', justifyContent: 'flex-start' }}>
           <TouchableOpacity onPress={() => this.pass()} >
             <Text style={{ color: 'black', fontSize: 15 }}>
               {i18n.t('pass')}

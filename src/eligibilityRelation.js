@@ -31,7 +31,7 @@ export class EligibilityRelation extends Component {
     };
     await AsyncStorage.setItem('relation', JSON.stringify(saveData));
     // console.warn('rel', await AsyncStorage.getItem('relation'));
-    if (this.relation !== '') {
+    if (this.relation !== false) {
       const { navigate } = this.props.navigation;
       navigate('EligibilityGender');
     }
@@ -62,7 +62,7 @@ export class EligibilityRelation extends Component {
           <RelationButton selectionChanged={rel => this.getRelation(rel)} />
         </View>
 
-        <View style={{ flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',padding: 10 }}>
+        <View style={{ flex: 1.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', justifyContent: 'flex-start' }}>
           <TouchableOpacity onPress={() => this.pass()} >
             <Text style={{ color: 'black', fontSize: 15 }}>
               {i18n.t('pass')}
