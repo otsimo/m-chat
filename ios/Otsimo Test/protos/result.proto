@@ -11,7 +11,7 @@ message SubStepResult{
     string id = 1;
     int64 startDate = 2;
     int64 endDate = 3;
-	repeated QuestionResult stepResults = 4;
+    repeated QuestionResult stepResults = 4;
 }
 
 message StepResult{
@@ -24,13 +24,13 @@ enum SurveyType{
 }
 
 message Result{
-	Info info = 1;
-	DeviceInfo device = 2;
-	int64 duration = 3;
-	repeated StepResult stepResults = 4;
+    Info info = 1;
+    DeviceInfo device = 2;
+    int64 duration = 3;
+    repeated StepResult stepResults = 4;
     int32 version = 5;
     SurveyType surveyType = 6;
-    string userID = 7;
+    string resultId = 7;
 }
 
 message DeviceInfo{
@@ -54,6 +54,6 @@ message Info{
 }
 
 message UserInfo{
-    string userID = 1;
+    string resultId = 1;
     string email = 2;
 }

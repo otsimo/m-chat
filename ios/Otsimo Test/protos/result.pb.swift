@@ -294,7 +294,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "stepResults": 4,
     "version": 5,
     "surveyType": 6,
-    "userID": 7,
+    "resultId": 7,
   ]}
   public var protoFieldNames: [String: Int] {return [
     "info": 1,
@@ -303,7 +303,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     "stepResults": 4,
     "version": 5,
     "surveyType": 6,
-    "userID": 7,
+    "resultId": 7,
   ]}
 
   private class _StorageClass {
@@ -314,7 +314,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     var _stepResults: [Otsimo_StepResult] = []
     var _version: Int32 = 0
     var _surveyType: Otsimo_SurveyType = Otsimo_SurveyType.mchat
-    var _userId: String = ""
+    var _resultId: String = ""
 
     init() {}
 
@@ -327,7 +327,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       case 4: handled = try setter.decodeRepeatedMessageField(fieldType: Otsimo_StepResult.self, value: &_stepResults)
       case 5: handled = try setter.decodeSingularField(fieldType: ProtobufInt32.self, value: &_version)
       case 6: handled = try setter.decodeSingularField(fieldType: Otsimo_SurveyType.self, value: &_surveyType)
-      case 7: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_userId)
+      case 7: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &_resultId)
       default:
         handled = false
       }
@@ -353,8 +353,8 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _surveyType != Otsimo_SurveyType.mchat {
         try visitor.visitSingularField(fieldType: Otsimo_SurveyType.self, value: _surveyType, protoFieldNumber: 6, protoFieldName: "surveyType", jsonFieldName: "surveyType", swiftFieldName: "surveyType")
       }
-      if _userId != "" {
-        try visitor.visitSingularField(fieldType: ProtobufString.self, value: _userId, protoFieldNumber: 7, protoFieldName: "userID", jsonFieldName: "userID", swiftFieldName: "userId")
+      if _resultId != "" {
+        try visitor.visitSingularField(fieldType: ProtobufString.self, value: _resultId, protoFieldNumber: 7, protoFieldName: "resultId", jsonFieldName: "resultId", swiftFieldName: "resultId")
       }
     }
 
@@ -365,7 +365,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       if _stepResults != other._stepResults {return false}
       if _version != other._version {return false}
       if _surveyType != other._surveyType {return false}
-      if _userId != other._userId {return false}
+      if _resultId != other._resultId {return false}
       return true
     }
 
@@ -377,7 +377,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
       clone._stepResults = _stepResults
       clone._version = _version
       clone._surveyType = _surveyType
-      clone._userId = _userId
+      clone._resultId = _resultId
       return clone
     }
   }
@@ -414,9 +414,9 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     set {_uniqueStorage()._surveyType = newValue}
   }
 
-  public var userId: String {
-    get {return _storage._userId}
-    set {_uniqueStorage()._userId = newValue}
+  public var resultId: String {
+    get {return _storage._resultId}
+    set {_uniqueStorage()._resultId = newValue}
   }
 
   public init() {}
@@ -427,7 +427,7 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     stepResults: [Otsimo_StepResult] = [],
     version: Int32? = nil,
     surveyType: Otsimo_SurveyType? = nil,
-    userId: String? = nil)
+    resultId: String? = nil)
   {
     let storage = _uniqueStorage()
     storage._info = info
@@ -444,8 +444,8 @@ public struct Otsimo_Result: ProtobufGeneratedMessage {
     if let v = surveyType {
       storage._surveyType = v
     }
-    if let v = userId {
-      storage._userId = v
+    if let v = resultId {
+      storage._resultId = v
     }
   }
 
@@ -718,25 +718,25 @@ public struct Otsimo_UserInfo: ProtobufGeneratedMessage {
   public var protoMessageName: String {return "UserInfo"}
   public var protoPackageName: String {return "otsimo"}
   public var jsonFieldNames: [String: Int] {return [
-    "userID": 1,
+    "resultId": 1,
     "email": 2,
   ]}
   public var protoFieldNames: [String: Int] {return [
-    "userID": 1,
+    "resultId": 1,
     "email": 2,
   ]}
 
-  public var userId: String = ""
+  public var resultId: String = ""
 
   public var email: String = ""
 
   public init() {}
 
-  public init(userId: String? = nil,
+  public init(resultId: String? = nil,
     email: String? = nil)
   {
-    if let v = userId {
-      self.userId = v
+    if let v = resultId {
+      self.resultId = v
     }
     if let v = email {
       self.email = v
@@ -746,7 +746,7 @@ public struct Otsimo_UserInfo: ProtobufGeneratedMessage {
   public mutating func _protoc_generated_decodeField(setter: inout ProtobufFieldDecoder, protoFieldNumber: Int) throws -> Bool {
     let handled: Bool
     switch protoFieldNumber {
-    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &userId)
+    case 1: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &resultId)
     case 2: handled = try setter.decodeSingularField(fieldType: ProtobufString.self, value: &email)
     default:
       handled = false
@@ -755,8 +755,8 @@ public struct Otsimo_UserInfo: ProtobufGeneratedMessage {
   }
 
   public func _protoc_generated_traverse(visitor: inout ProtobufVisitor) throws {
-    if userId != "" {
-      try visitor.visitSingularField(fieldType: ProtobufString.self, value: userId, protoFieldNumber: 1, protoFieldName: "userID", jsonFieldName: "userID", swiftFieldName: "userId")
+    if resultId != "" {
+      try visitor.visitSingularField(fieldType: ProtobufString.self, value: resultId, protoFieldNumber: 1, protoFieldName: "resultId", jsonFieldName: "resultId", swiftFieldName: "resultId")
     }
     if email != "" {
       try visitor.visitSingularField(fieldType: ProtobufString.self, value: email, protoFieldNumber: 2, protoFieldName: "email", jsonFieldName: "email", swiftFieldName: "email")
@@ -764,7 +764,7 @@ public struct Otsimo_UserInfo: ProtobufGeneratedMessage {
   }
 
   public func _protoc_generated_isEqualTo(other: Otsimo_UserInfo) -> Bool {
-    if userId != other.userId {return false}
+    if resultId != other.resultId {return false}
     if email != other.email {return false}
     return true
   }
