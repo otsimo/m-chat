@@ -50,6 +50,8 @@ export class MChat extends Component {
   };
 
   navigateToResult(resultType, _score) {
+    this.logic = new Logic([q1, q2, q3]);
+    this.logic.removeState();
     resetTo(this, 'result', { resType: resultType, score: _score });
   }
   changeView() {

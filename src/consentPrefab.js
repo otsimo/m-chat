@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Dimensions, Modal, TouchableWithoutFeedback, WebView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Dimensions, Modal, TouchableWithoutFeedback, WebView, TouchableNativeFeedback } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { NextButton } from './nextButton';
 import i18n from './i18n';
 
@@ -40,13 +41,15 @@ export class ConsentPrefab extends Component {
           <View
             style={{
               flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'flex-end',
-              alignItems: 'flex-start',
-              marginTop: 2,
+              flexDirection: 'column',
             }}
           >
-            <WebView source={{ uri: this.props.learnURL }} style={{ marginTop: -40 }} />
+            <View style={{ height: 55 }}>
+              <TouchableNativeFeedback onPress={() => this._setModalVisible(false)}>
+                <Icon name="close" size={25} color="black" />
+              </TouchableNativeFeedback>
+            </View>
+            <WebView source={{ uri: this.props.learnURL }} style={{ marginTop: 0 }} />
 
           </View>
 

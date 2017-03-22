@@ -565,19 +565,22 @@ export class Logic {
     }
   }
 
+
+  
+
   getDeviceInfo() {
     if (Platform.OS === 'android') {
       return {
-        vendorId: this.devinfo.vendorId,
-        bundleIdentifier: this.devinfo.bundleIdentifier,
-        bundleVersion: this.devinfo.bundleVersion,
-        bundleShortVersion: this.devinfo.bundleShortVersion,
-        deviceType: this.devinfo.deviceType,
+        vendorId: this.devinfo.uniqueId,
+        bundleIdentifier: this.devinfo.bundleId,
+        bundleVersion: this.devinfo.buildVersion,
+        bundleShortVersion: this.devinfo.appVersion,
+        deviceType: this.devinfo.brand,
         deviceName: this.devinfo.deviceName,
-        osName: this.devinfo.osName,
+        osName: 'android',
         systemVersion: this.devinfo.systemVersion,
-        languageCode: this.devinfo.languageCode,
-        countryCode: this.devinfo.countryCode,
+        languageCode: this.devinfo.deviceCountry,
+        countryCode: this.devinfo.deviceCountry,
       };
     }
     return {};
@@ -586,32 +589,41 @@ export class Logic {
 
 
   async getInfo() {
-    const bDay = await AsyncStorage.getItem('birthDay');
-    const keysBday = JSON.parse(bDay);
+    try {
+      const bDay = await AsyncStorage.getItem('birthDay');
+      const keysBday = JSON.parse(bDay);
 
-    const gender = await AsyncStorage.getItem('gender');
-    const keysGender = JSON.parse(gender);
+      const gender = await AsyncStorage.getItem('gender');
+      const keysGender = JSON.parse(gender);
 
-    const relation = await AsyncStorage.getItem('relation');
-    const keysRelation = JSON.parse(relation);
+      const relation = await AsyncStorage.getItem('relation');
+      const keysRelation = JSON.parse(relation);
 
-    return {
-      birthDay: keysBday.Bday,
-      gender: keysGender.gender,
-      relation: keysRelation.relation,
-    };
+      return {
+        birthDay: keysBday.Bday,
+        gender: keysGender.gender,
+        relation: keysRelation.relation,
+      };
+    } catch (err) {
+      console.log('failed get data from AsyncStorage', err);
+    }
   }
 
-  saveAnalytics() {
-    const Result = {
-      info: this.getInfo(),
-      device: this.getDeviceInfo(),
-      duration: this.surveyTotalTime,
-      stepResults: this.stepResultsAll,
-      surveyType: 0,
-      version: 1,
-    };
-    SaveToServer(Result);
-    console.log('RESULT', JSON.stringify(Result));
+  async saveAnalytics() {
+    try {
+      const info = await this.getInfo();
+      const Result = {
+        info: info,
+        device: this.getDeviceInfo(),
+        duration: this.surveyTotalTime,
+        stepResults: this.stepResultsAll,
+        surveyType: 0,
+        version: 1,
+      };
+      console.warn('RESULT', JSON.stringify(Result));
+      const res = await SaveToServer(Result);
+    } catch (err) {
+      console.log('failed to sernd server result', err)
+    }
   }
 }

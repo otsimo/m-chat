@@ -12,7 +12,9 @@ export async function SaveToServer(result) {
       body: JSON.stringify(result),
     });
     console.log('response', response);
+    return true;
   } catch (err) {
     console.log('sending failed', err);
+    return false;
   }
 }

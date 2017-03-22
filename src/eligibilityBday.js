@@ -5,6 +5,7 @@ import { ConsentPrefab } from './consentPrefab';
 import { RelationButton } from './relationButton';
 import { resetTo } from './util';
 import { Logic } from './logic';
+let moment = require('moment');
 
 import q1 from '../questions/q1.json';
 import q2 from '../questions/q2.json';
@@ -28,7 +29,6 @@ export class EligibilityBday extends Component {
     this.date = new Date();
     this.logic = new Logic([q1, q2, q3]);
   }
-
 
   async dataOk() {
     try {
@@ -68,19 +68,15 @@ export class EligibilityBday extends Component {
 
 
   isEligible() {
-    const now = new Date();
-    const sub = new Date(this.date.getTime() - now.getTime());
-    if (sub < 41472000000) {
-      return false;
-    } else if (sub > 77760000000) {
-      return false;
-    } else {
-      return true;
-    }
+    const now = moment.duration(new Date().getTime(), 'ms');
+    const bDay = moment.duration(this.date.getTime(), 'ms');
+
+
+    const monts = now.subtract(bDay).months();
+    console.warn('monts', monts);
   }
 
   async saveBday() {
-
     if (this.birthDay !== false) {
       if (this.isEligible()) {
         console.log('ok');
@@ -90,21 +86,20 @@ export class EligibilityBday extends Component {
         await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
         // console.warn('rel', await AsyncStorage.getItem('relation'));
 
-        
+
         this.loadSurvey();
       } else {
         const { navigate } = this.props.navigation;
         navigate('EligibilityNotFit');
       }
     }
-
   }
 
   async showPicker() {
     this.setState({ showNext: true });
 
     try {
-      const {action, year, month, day} = await DatePickerAndroid.open({
+      const { action, year, month, day } = await DatePickerAndroid.open({
         date: new Date(),
       });
       if (action !== DatePickerAndroid.dismissedAction) {
@@ -113,7 +108,7 @@ export class EligibilityBday extends Component {
         this.birthDay = this.date;
         this.setState({ showDate: '' });
       }
-    } catch ({code, message}) {
+    } catch ({ code, message }) {
       console.warn('Cannot open date picker', message);
     }
   }
@@ -125,7 +120,6 @@ export class EligibilityBday extends Component {
     // console.warn('rel', await AsyncStorage.getItem('relation'));
 
     this.loadSurvey();
-
   }
 
   render() {
@@ -145,13 +139,13 @@ export class EligibilityBday extends Component {
                 {this.date.getDate()}
               </Text>
               <Text style={{ fontSize: 36 }}>
-                {"/"}
+                {'/'}
               </Text>
               <Text style={{ fontSize: 36 }}>
                 {this.date.getMonth() + 1}
               </Text>
               <Text style={{ fontSize: 36 }}>
-                {"/"}
+                {'/'}
               </Text>
               <Text style={{ fontSize: 36 }}>
                 {this.date.getFullYear()}
