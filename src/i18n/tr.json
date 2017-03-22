@@ -10,5 +10,8 @@
   "showResult": "Sonucu göster",
   "share": "Paylaş",
   "email": "Email adresin",
-  "testok": "Testi Tamamladın"
+  "testok": "Testi Tamamladın",
+  "pass": "Atla",
+  "male": "Erkek",
+  "female": "Kadın"
 }

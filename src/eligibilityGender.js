@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native';
 import i18n from './i18n';
 import { ConsentPrefab } from './consentPrefab';
-import { RelationButton } from './relationButton';
+import { GenderButton } from './genderButton';
 
-export class EligibilityRelation extends Component {
+export class EligibilityGender extends Component {
   static navigationOptions = {
     header: ({
       visible: true,
@@ -12,41 +12,40 @@ export class EligibilityRelation extends Component {
   };
   constructor(props) {
     super(props);
-    this.relation = false;
+    this.gender = false;
   }
 
   state = {
     showNext: false,
   }
-  getRelation(rel) {
-    this.relation = rel;
+  getGender(gen) {
+    this.gender = gen;
     if (this.state.showNext === false) {
       this.setState({ showNext: true });
     }
   }
 
-  async saveRel() {
+  async saveGen() {
     const saveData = {
-      relation: this.relation,
+      gender: this.gender,
     };
-    await AsyncStorage.setItem('relation', JSON.stringify(saveData));
+    await AsyncStorage.setItem('gender', JSON.stringify(saveData));
     // console.warn('rel', await AsyncStorage.getItem('relation'));
-    if (this.relation !== '') {
+    if (this.gender !== false) {
       const { navigate } = this.props.navigation;
-      navigate('EligibilityGender');
+      navigate('EligibilityBday');
     }
   }
 
   async pass() {
     const saveData = {
-      relation: '',
+      gender: '',
     };
-    await AsyncStorage.setItem('relation', JSON.stringify(saveData));
+    await AsyncStorage.setItem('gender', JSON.stringify(saveData));
     // console.warn('rel', await AsyncStorage.getItem('relation'));
 
     const { navigate } = this.props.navigation;
-    navigate('EligibilityGender');
-
+    navigate('EligibilityBday');
   }
 
   render() {
@@ -54,15 +53,15 @@ export class EligibilityRelation extends Component {
       <View style={{ flex: 0.8, flexDirection: 'column', justifyContent: 'center', backgroundColor: 'white' }}>
         <View style={{ flex: 3, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
           <Text style={{ color: 'black', fontSize: 36 }}>
-            Your Relation ?
+            Gender ?
             </Text>
         </View>
 
         <View style={{ flex: 6, flexDirection: 'column' }}>
-          <RelationButton selectionChanged={rel => this.getRelation(rel)} />
+          <GenderButton selectionChanged={gen => this.getGender(gen)} />
         </View>
 
-        <View style={{ flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',padding: 10 }}>
+        <View style={{ flex: 0.5, flexDirection: 'column', alignItems: 'center' }}>
           <TouchableOpacity onPress={() => this.pass()} >
             <Text style={{ color: 'black', fontSize: 15 }}>
               {i18n.t('pass')}
@@ -70,7 +69,7 @@ export class EligibilityRelation extends Component {
           </TouchableOpacity>
         </View>
         <View style={{ flex: 1, flexDirection: 'column' }}>
-          <TouchableOpacity onPress={() => this.saveRel()} style={{ flex: 1, backgroundColor: this.state.showNext ? '#00a9fa' : '#e7e7e7', justifyContent: 'center' }}>
+          <TouchableOpacity onPress={() => this.saveGen()} style={{ flex: 1, backgroundColor: this.state.showNext ? '#00a9fa' : '#e7e7e7', justifyContent: 'center' }}>
             <View>
               <Text style={{ color: 'white', fontSize: 26, textAlign: 'center' }}>
                 {i18n.t('next')}

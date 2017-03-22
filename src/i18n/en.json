@@ -10,5 +10,8 @@
   "showResult": "Show result",
   "share": "Share",
   "email": "Your Email address",
-  "testok": "You have completed"
+  "testok": "You have completed",
+  "pass": "Pass",
+  "male": "Male",
+  "female": "Female"
 }

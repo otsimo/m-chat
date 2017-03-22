@@ -21,7 +21,10 @@ import { ConsentPotentialBen } from './src/consentPotentialBen';
 import { ConsentPotentialRisk } from './src/consentPotentialRisk';
 import { ConsentMedical } from './src/consentMedical';
 import { ConsentFollowUp } from './src/consentFollowUp';
- 
+import { EligibilityRelation } from './src/eligibilityRelation';
+import { EligibilityGender } from './src/eligibilityGender';
+import { EligibilityBday } from './src/eligibilityBday';
+
 import q1 from './questions/q1.json';
 import q2 from './questions/q2.json';
 import q3 from './questions/q3.json';
@@ -65,7 +68,7 @@ class HomeScreen extends React.Component {
     if (ok) {
       const a = await this.logic.loadState();
       this.logic.startSurveyTimers();
-      resetTo(this, 'ConsentWelcome', { logic: this.logic, id: '', start: true });
+      resetTo(this, 'EligibilityRelation', { logic: this.logic, id: '', start: true });
     } else {
       this.startSurvey();
     }
@@ -73,7 +76,7 @@ class HomeScreen extends React.Component {
 
   startSurvey() {
     this.logic.startSurveyTimers();
-    resetTo(this, 'ConsentWelcome', { logic: this.logic });
+    resetTo(this, 'EligibilityRelation', { logic: this.logic });
   }
   render() {
     const { navigate } = this.props.navigation;
@@ -101,6 +104,9 @@ const SimpleApp = StackNavigator({
   ConsentPotentialRisk: { screen: ConsentPotentialRisk },
   ConsentMedical: { screen: ConsentMedical },
   ConsentFollowUp: { screen: ConsentFollowUp },
+  EligibilityRelation: { screen: EligibilityRelation },
+  EligibilityGender: { screen: EligibilityGender },
+  EligibilityBday: { screen: EligibilityBday },
 });
 
 AppRegistry.registerComponent('m_chat', () => SimpleApp);
