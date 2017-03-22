@@ -1,0 +1,64 @@
+{
+  "welcome": {
+    "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+
+
+  "dataGather": {
+     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    
+  },
+
+  "privacy": {
+   "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+
+
+  "dataUse": {
+    "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+
+
+  "studySurvey": {
+    "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+  },
+
+
+  "potentialBenefits": {
+     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+  },
+
+
+  "potentialRisks": {
+     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+
+
+  "notMedicalCare": {
+     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+
+
+  "followUp": {
+     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+  }
+  
+}

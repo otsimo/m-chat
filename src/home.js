@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import {
   View,
-  Button,
   TouchableOpacity,
-  Modal,
   Text,
-  TouchableWithoutFeedback,
-  BackAndroid,
   ScrollView,
   Dimensions,
   WebView,
-  AppRegistry,
 } from 'react-native';
+
 import i18n from './i18n';
 import { StackNavigator } from 'react-navigation';
 import { MChat } from './app';
@@ -39,7 +35,7 @@ export class Home extends Component {
   };
 
   startApp() {
-    //_scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); 
+    // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); 
     const { navigate } = this.props.navigation;
     navigate('ConsentWelcome');
   }
@@ -55,7 +51,7 @@ export class Home extends Component {
           >
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
 
-
+              
               <WebView />
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Dimensions, Modal, TouchableWithoutFeedback, WebView } from 'react-native';
 import { NextButton } from './nextButton';
 import i18n from './i18n';
 
@@ -11,10 +11,47 @@ export class ConsentPrefab extends Component {
     this.textHeader = this.props.textHeader;
     this.text = this.props.text;
   }
+  state = {
+    modalVisible: false,
+  }
+
+  _setModalVisible(cmd) {
+    this.setState({
+      modalVisible: cmd,
+    });
+  }
+
+  openModal() {
+    this.setState({
+      modalVisible: true,
+    });
+  }
 
   render() {
     return (
+
       <View style={{ flex: 1, flexDirection: 'column', backgroundColor: 'white' }}>
+        <Modal
+          ref="modal"
+          visible={this.state.modalVisible}
+          onRequestClose={() => this._setModalVisible(false)}
+          animationType={'fade'}
+        >
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+              alignItems: 'flex-start',
+              marginTop: 2,
+            }}
+          >
+            <WebView source={{ uri: this.props.learnURL }} style={{ marginTop: -40 }} />
+
+          </View>
+
+        </Modal>
+
         <View style={{ flex: 3, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <Image resizeMode="contain" style={{ marginTop: 5, height: Dimensions.get('window').height * 2 / 10, width: Dimensions.get('window').width }} source={this.props.image} />
         </View>
@@ -31,6 +68,14 @@ export class ConsentPrefab extends Component {
             <Text style={{ fontSize: 18, textAlign: 'center', color: 'black', marginHorizontal: 10 }}>
               {this.props.text}
             </Text>
+          </View>
+
+          <View style={{ marginVertical: 10 }}>
+            <TouchableOpacity onPress={() => this.openModal()}>
+              <Text style={{ fontSize: 14, textAlign: 'center', color: '#9c48ed', marginHorizontal: 10 }}>
+                {i18n.t('learn')}
+              </Text>
+            </TouchableOpacity>
           </View>
 
         </View>

@@ -145,13 +145,13 @@ export class EligibilityBday extends Component {
                 {this.date.getDate()}
               </Text>
               <Text style={{ fontSize: 36 }}>
-                {"-"}
+                {"/"}
               </Text>
               <Text style={{ fontSize: 36 }}>
                 {this.date.getMonth() + 1}
               </Text>
               <Text style={{ fontSize: 36 }}>
-                {"-"}
+                {"/"}
               </Text>
               <Text style={{ fontSize: 36 }}>
                 {this.date.getFullYear()}
