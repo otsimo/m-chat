@@ -37,6 +37,10 @@
 	<string>microphone usage</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Motion Usage</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

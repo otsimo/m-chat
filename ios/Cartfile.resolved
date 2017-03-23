@@ -1,1 +1,2 @@
+github "OneSignal/OneSignal-iOS-SDK" "2.4.3"
 github "apple/swift-protobuf" "0.9.24"

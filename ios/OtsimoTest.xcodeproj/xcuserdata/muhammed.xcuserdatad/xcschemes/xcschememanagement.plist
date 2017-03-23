@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>OneSignalNotificationServiceExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Otsimo Test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>53187F471E152DE300484994</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53C7AEF41E84055E0081B5A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
