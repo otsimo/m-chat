@@ -45,7 +45,6 @@ class ViewController: UIViewController {
             Log.debug("There is not any default tasks")
         }
         
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,10 +82,9 @@ class ViewController: UIViewController {
     
     var pollster = Pollster(firstStep: "1")
     
+    
     lazy var mChatVC: ORKTaskViewController = {
-       
-        
-        var newSteps = InfoTask.steps + ConsentTask.steps + MChatTask.steps
+        var newSteps = ConsentTask.steps + InfoTask.steps + MChatTask.steps
         var newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
         if let restorationData = UserDefaults.standard.data(forKey: CacheKeys.mChatKey) {
             print("restorationData")

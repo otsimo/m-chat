@@ -21,29 +21,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1x" translatesAutoresizingMaskIntoConstraints="NO" id="kVg-BI-CWD">
-                                <rect key="frame" x="16" y="74" width="343" height="324"/>
+                                <rect key="frame" x="94" y="272" width="186" height="123"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="Inm-bM-ZRK"/>
-                                    <constraint firstAttribute="height" constant="324" id="uT3-nI-dMw"/>
+                                    <constraint firstAttribute="width" constant="186" id="Zx2-u0-P72"/>
+                                    <constraint firstAttribute="height" constant="123" id="fnB-nf-r12"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Otsimo Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsX-2C-6gZ">
-                                <rect key="frame" x="99" y="406" width="176" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="Ehu-HX-DHo"/>
-                                    <constraint firstAttribute="height" constant="75" id="o1e-iz-Cx1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HsX-2C-6gZ" firstAttribute="top" secondItem="kVg-BI-CWD" secondAttribute="bottom" constant="8" id="9yT-pH-FAB"/>
-                            <constraint firstItem="kVg-BI-CWD" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="54" id="KOl-X0-3Bm"/>
-                            <constraint firstItem="kVg-BI-CWD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eCN-iN-Hzb"/>
-                            <constraint firstItem="HsX-2C-6gZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lQv-XP-u7c"/>
+                            <constraint firstItem="kVg-BI-CWD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MjJ-q8-19g"/>
+                            <constraint firstItem="kVg-BI-CWD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TXI-LA-gRJ"/>
                         </constraints>
                     </view>
                 </viewController>

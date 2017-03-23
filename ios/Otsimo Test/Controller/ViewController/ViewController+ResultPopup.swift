@@ -9,14 +9,15 @@
 import Foundation
 
 extension ViewController {
-    func showResultScene(passNum: Int, failNum: Int) {
+    func showResultScene(total: Int) {
 
 
         // Create second button
         let buttonSave = DefaultButton(title: "Save") {
             print("You ok'd the default dialog")
+            self.dismiss(animated: true, completion: nil)
+            self.showSavePopup()
         }
-        buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
         buttonSave.titleColor = UIColor.white
 
         let buttonShare = DefaultButton(title: "Share") {
@@ -24,14 +25,14 @@ extension ViewController {
             self.showShareView()
         }
 
-        buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
         buttonShare.titleColor = UIColor.white
 
-        if (failNum >= 0 && failNum <= 2) {
+        if (total >= 0 && total <= 2) {
             print("LOW RİSK")
+            buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
 
             let resultVC = HighResultPopupController(nibName: "LowResultPopup", bundle: nil)
-            resultVC.point = passNum
+            resultVC.point = total
             let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
 
@@ -39,19 +40,22 @@ extension ViewController {
             popupVC.addButtons([buttonSave, buttonShare])
             present(popupVC, animated: true, completion: nil)
 
-        } else if (failNum >= 3 && failNum <= 7) {
+        } else if (total >= 3 && total <= 6) {
             print("MEDIUM RİSK")
+            buttonSave.backgroundColor = UIColor(red:0.88, green:0.40, blue:0.10, alpha:1.0)
+
             let resultVC = HighResultPopupController(nibName: "MediumResultPopup", bundle: nil)
-            resultVC.point = passNum
+            resultVC.point = total
             let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
             // Add buttons to dialog
             popupVC.addButtons([buttonSave, buttonShare])
             present(popupVC, animated: true, completion: nil)
-        } else if (failNum >= 8 && failNum <= 20) {
+        } else if (total >= 7 && total <= 20) {
             print("HIGH RİSK")
+            buttonSave.backgroundColor = UIColor(red:0.85, green:0.09, blue:0.15, alpha:1.0)
             let resultVC = HighResultPopupController(nibName: "HighResultPopup", bundle: nil)
-            resultVC.point = passNum
+            resultVC.point = total
             let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
             // Add buttons to dialog

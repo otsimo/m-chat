@@ -53,12 +53,10 @@ extension ViewController: ORKTaskViewControllerDelegate {
         case .completed:
             Log.debug("task completed")
             taskViewCompleted(taskViewController: taskViewController)
-
         case .failed:
             Log.debug("failed")
         case .discarded:
             Log.debug("discarded")
-
             taskViewDiscarded(taskViewController: taskViewController)
 
         case .saved:
@@ -102,6 +100,8 @@ extension ViewController: ORKTaskViewControllerDelegate {
                 print("t -> ", t)
                 if let results = t.results {
                     let analysedResult = anlyse.getMchatAnalysedResult(results: results)
+                    let point = anlyse.passFailHandlerForMCHAT(otsimoResults: analysedResult)
+                    print("POINT : ",point)
                     do {
                         let resultJSON = try analysedResult.serializeJSON()
                         print("MCHAT Result ->", resultJSON)
@@ -112,6 +112,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     } catch let e {
                         Log.error(e as! String)
                     }
+                    showResultScene(total: point)
                 }
             }
         case Tasks.mChatRFTaskID:
@@ -135,7 +136,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     Log.error(e as! String)
                 }
 
-                showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
+                // showResultScene(passNum: pollster.passNum, failNum: pollster.failNum)
 
             }
         default:
@@ -143,6 +144,9 @@ extension ViewController: ORKTaskViewControllerDelegate {
         }
     }
     func taskViewDiscarded(taskViewController: ORKTaskViewController) {
+        
+
+        
         if let results = taskViewController.result.results {
             if let lastStep = results.last {
                 let discardedID = lastStep.identifier
@@ -151,12 +155,17 @@ extension ViewController: ORKTaskViewControllerDelegate {
                 Log.debug("analytics id = \(discardedID) , startDate = \(startDate), endDate = }(endDate)")
 
                 switch taskViewController.result.identifier {
+                case Tasks.mChatTaskID:
+                    let newSteps = ConsentTask.steps + InfoTask.steps + MChatTask.steps
+                    let newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
+                    self.mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
+                    mChatVC.delegate = self
                 case Tasks.consentTaskID:
                     analytics.event("discardedConsent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                     present(infoTaskVC, animated: true, completion: nil)
                 case Tasks.infoTaskID:
                     analytics.event("discardedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
-                    present(mChatVC, animated: true, completion: nil)
+                    present(mChatRFVC, animated: true, completion: nil)
                     if let t = taskResult {
                         iResult = anlyse.InfoResult(infoResult: t)
                     }

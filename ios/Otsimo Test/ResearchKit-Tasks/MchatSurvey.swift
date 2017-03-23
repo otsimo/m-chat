@@ -14,7 +14,7 @@ public var MChatTask: ORKOrderedTask {
     
     var mChatsteps = [ORKStep]()
     
-    for i in 1...3{
+    for i in 1...20{
         let id = "q" + String(i)
         let key = id + ".1"
         let title = NSLocalizedString(key, comment: "")

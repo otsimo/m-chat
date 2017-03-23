@@ -26,7 +26,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="252" height="97"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="97" id="oIP-Dp-7oV"/>
+                                <constraint firstAttribute="width" constant="252" id="WHV-Ed-ANF"/>
+                                <constraint firstAttribute="height" constant="97" id="jGU-xz-YO0"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                             <color key="textColor" red="0.85490196080000003" green="0.094117647060000004" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,7 +36,8 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çocuk mutlaka bir çocuk psikiyatrisine yönlendirilmelidir" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuW-GC-gRc">
                             <rect key="frame" x="8" y="99" width="236" height="76"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="76" id="Pgx-Qf-BxF"/>
+                                <constraint firstAttribute="height" constant="76" id="jrN-nP-YJf"/>
+                                <constraint firstAttribute="width" constant="236" id="qOi-k1-Or9"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,8 +46,8 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-CHAT Testinden Alınan Puan:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLK-CT-VX7">
                             <rect key="frame" x="-8.5" y="181" width="269" height="63"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="63" id="UBz-P8-Ln7"/>
-                                <constraint firstAttribute="width" constant="269" id="rUY-r3-9wm"/>
+                                <constraint firstAttribute="height" constant="63" id="9au-j4-puS"/>
+                                <constraint firstAttribute="width" constant="269" id="FAX-Ee-XCg"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,8 +57,8 @@
                             <rect key="frame" x="58" y="250" width="136" height="1"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="136" id="3n2-7X-pWw"/>
-                                <constraint firstAttribute="height" constant="1" id="4xj-nt-Ykz"/>
+                                <constraint firstAttribute="width" constant="136" id="BA6-7s-efo"/>
+                                <constraint firstAttribute="height" constant="1" id="sjl-3B-YNw"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -65,7 +67,8 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-hr-0JU">
                             <rect key="frame" x="8" y="250" width="236" height="158"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="158" id="Nc2-Fz-NE8"/>
+                                <constraint firstAttribute="height" constant="158" id="bhs-xw-ifr"/>
+                                <constraint firstAttribute="width" constant="236" id="vXb-kb-5EO"/>
                             </constraints>
                             <string key="text">M-CHAT tanı koymaya yönelik bir araç
 değildir. Bir çocuğun MCHAT’te başarısız
@@ -77,30 +80,29 @@ gelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir.</string>
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="NuW-GC-gRc" firstAttribute="top" secondItem="bQg-Td-074" secondAttribute="bottom" constant="2" id="15J-Ul-VSi"/>
-                        <constraint firstItem="NuW-GC-gRc" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="7yW-b2-208"/>
-                        <constraint firstItem="G0d-hr-0JU" firstAttribute="leading" secondItem="4mi-1x-r7M" secondAttribute="leading" constant="8" id="807-ud-3B1"/>
-                        <constraint firstItem="eGG-Ib-9yI" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="BTL-tB-ZxE"/>
-                        <constraint firstAttribute="width" constant="252" id="Koq-xf-PYS"/>
-                        <constraint firstItem="bQg-Td-074" firstAttribute="leading" secondItem="4mi-1x-r7M" secondAttribute="leading" id="Vah-lI-ZvV"/>
-                        <constraint firstItem="bQg-Td-074" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" id="Vgm-pK-mr7"/>
-                        <constraint firstAttribute="trailing" secondItem="bQg-Td-074" secondAttribute="trailing" id="YFp-sP-PVU"/>
-                        <constraint firstItem="NuW-GC-gRc" firstAttribute="leading" secondItem="4mi-1x-r7M" secondAttribute="leading" constant="8" id="Ykf-Df-c3i"/>
-                        <constraint firstItem="FLK-CT-VX7" firstAttribute="top" secondItem="NuW-GC-gRc" secondAttribute="bottom" constant="6" id="Z09-zG-lrB"/>
-                        <constraint firstItem="G0d-hr-0JU" firstAttribute="top" secondItem="FLK-CT-VX7" secondAttribute="bottom" constant="6" id="eTc-10-tFz"/>
-                        <constraint firstItem="FLK-CT-VX7" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="ez6-bk-CXT"/>
-                        <constraint firstAttribute="trailing" secondItem="NuW-GC-gRc" secondAttribute="trailing" constant="8" id="fU2-XG-I9r"/>
-                        <constraint firstAttribute="height" constant="417" id="fs0-bD-WNC"/>
-                        <constraint firstItem="bQg-Td-074" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="iy0-v0-bdU"/>
-                        <constraint firstItem="eGG-Ib-9yI" firstAttribute="top" secondItem="FLK-CT-VX7" secondAttribute="bottom" constant="6" id="nKe-0H-MRk"/>
-                        <constraint firstAttribute="trailing" secondItem="G0d-hr-0JU" secondAttribute="trailing" constant="8" id="xms-0e-SEB"/>
+                        <constraint firstItem="eGG-Ib-9yI" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="CC3-fl-Dhx"/>
+                        <constraint firstItem="NuW-GC-gRc" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="D6E-lw-HRF"/>
+                        <constraint firstItem="FLK-CT-VX7" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="ERa-D9-KOp"/>
+                        <constraint firstItem="bQg-Td-074" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" id="MGp-nb-aBz"/>
+                        <constraint firstItem="G0d-hr-0JU" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="250" id="Q1D-le-1zC"/>
+                        <constraint firstAttribute="height" constant="417" id="QyV-m9-1Q5"/>
+                        <constraint firstItem="eGG-Ib-9yI" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="250" id="Xgo-Qp-Vwt"/>
+                        <constraint firstAttribute="trailing" secondItem="bQg-Td-074" secondAttribute="trailing" id="Zw4-62-rhs"/>
+                        <constraint firstItem="FLK-CT-VX7" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="181" id="bJC-5C-fRC"/>
+                        <constraint firstItem="bQg-Td-074" firstAttribute="leading" secondItem="4mi-1x-r7M" secondAttribute="leading" id="glS-Qc-gAa"/>
+                        <constraint firstItem="bQg-Td-074" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="hSc-YU-e36"/>
+                        <constraint firstAttribute="width" constant="252" id="jLK-de-1mD"/>
+                        <constraint firstItem="G0d-hr-0JU" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="mtO-qJ-xkT"/>
+                        <constraint firstItem="NuW-GC-gRc" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="99" id="y0o-2N-xh7"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.85490196080000003" green="0.094117647060000004" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4mi-1x-r7M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Syj-zx-byi"/>
-                <constraint firstItem="4mi-1x-r7M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YRk-kJ-CDv"/>
+                <constraint firstAttribute="trailing" secondItem="4mi-1x-r7M" secondAttribute="trailing" id="Oai-et-qrh"/>
+                <constraint firstAttribute="bottom" secondItem="4mi-1x-r7M" secondAttribute="bottom" id="RLb-Pe-P99"/>
+                <constraint firstItem="4mi-1x-r7M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f7I-WQ-4oe"/>
+                <constraint firstItem="4mi-1x-r7M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uDE-8c-NHW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="241.5" y="379"/>
