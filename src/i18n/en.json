@@ -25,6 +25,9 @@
   "healthcare": "Health care provider",
   "other": "Other",
   "emailsaved": "Saved",
+  "relation": "Your Relation ?",
+  "gender": "Gender ?",
+  "birthday": "Birthday",
   
   "welcome": {
     "header": "Welcome", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy

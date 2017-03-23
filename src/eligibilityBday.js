@@ -72,7 +72,7 @@ export class EligibilityBday extends Component {
 
   startSurvey() {
     this.logic.startSurveyTimers();
-    resetTo(this, 'app', { logic: this.logic, id:'' });
+    resetTo(this, 'app', { logic: this.logic, id: '' });
   }
 
 
@@ -146,8 +146,8 @@ export class EligibilityBday extends Component {
       <View style={{ flex: 0.8, flexDirection: 'column', justifyContent: 'center', backgroundColor: 'white' }}>
         <View style={{ flex: 3, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
           <Text style={{ color: 'black', fontSize: 36 }}>
-            Birthday
-            </Text>
+            {i18n.t('birthday')}
+          </Text>
         </View>
 
         <View style={{ flex: 6, flexDirection: 'row', justifyContent: 'center' }}>
@@ -174,11 +174,7 @@ export class EligibilityBday extends Component {
         </View>
 
         <View style={{ flex: 1.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', justifyContent: 'flex-start' }}>
-          <TouchableOpacity onPress={() => this.pass()} >
-            <Text style={{ color: 'black', fontSize: 15 }}>
-              {i18n.t('pass')}
-            </Text>
-          </TouchableOpacity>
+
         </View>
         <View style={{ flex: 1, flexDirection: 'column' }}>
           <TouchableOpacity onPress={() => this.saveBday()} style={{ flex: 1, backgroundColor: this.state.showNext ? '#00a9fa' : '#e7e7e7', justifyContent: 'center' }}>

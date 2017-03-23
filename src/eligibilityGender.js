@@ -53,8 +53,8 @@ export class EligibilityGender extends Component {
       <View style={{ flex: 0.8, flexDirection: 'column', justifyContent: 'center', backgroundColor: 'white' }}>
         <View style={{ flex: 3, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
           <Text style={{ color: 'black', fontSize: 36 }}>
-            Gender ?
-            </Text>
+            {i18n.t('gender')}
+          </Text>
         </View>
 
         <View style={{ flex: 6, flexDirection: 'column' }}>
