@@ -60,7 +60,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, marginRight: 5, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(220,22,56)' }}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => this.props.savePopUp()} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('save')}
                   </Text >
@@ -177,7 +177,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, marginRight: 5, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(225,121,38)' }}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => this.props.savePopUp()} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('save')}
                   </Text >

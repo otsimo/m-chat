@@ -27,8 +27,9 @@ export class SurveyDone extends Component {
     super(props);
     this.email = '';
   }
+
   getText(text) {
-    this.email += text;
+    this.email = text.text;
   }
 
   getBgColor() {
@@ -81,24 +82,24 @@ export class SurveyDone extends Component {
           <PopupDialog
             ref={(popupDialogSave) => { this.popupDialogSave = popupDialogSave; }}
             dialogAnimation={new SlideAnimation({ slideFrom: 'bottom' })}
-            height={148}
+            height={150}
             width={Dimensions.get('window').width - 30}
           >
             <View >
               <View style={{ marginTop: 10, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                 <Text style={{ fontSize: 18, color: 'rgb(4,165,250)' }}>
-                  Email Adresin
+                  {i18n.t('email')}
                 </Text>
                 <TextInput
                   placeholder="example@example.com"
                   style={{ height: 40, marginTop: 10, width: Dimensions.get('window').width - 50 }}
                   onChangeText={(text) => this.getText({ text })}
                 />
-                <TouchableOpacity style={{marginVertical: 10 }} onPress={() => saveEmail(this.email)}>
-                  <View style={{ backgroundColor: 'rgb(4,165,250)', borderRadius: 10, padding: 10 }}>
+                <TouchableOpacity style={{ marginVertical: 10 }} onPress={() => saveEmail(this.email)}>
+                  <View style={{ backgroundColor: 'rgb(4,165,250)', padding: 10 }}>
                     <Text style={{ color: 'white', marginHorizontal: 30 }}>
-                      Kaydet
-                      </Text>
+                      {i18n.t('save')}
+                    </Text>
                   </View>
                 </TouchableOpacity>
               </View>

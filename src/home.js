@@ -24,6 +24,7 @@ import { ConsentFollowUp } from './consentFollowUp';
 import { EligibilityRelation } from './eligibilityRelation';
 import { EligibilityGender } from './eligibilityGender';
 import { EligibilityBday } from './eligibilityBday';
+import { Swipe } from './swipe';
 
 
 export class Home extends Component {
@@ -33,11 +34,24 @@ export class Home extends Component {
       visible: false,
     }),
   };
+  constructor(props) {
+    super(props);
+    this.state = { page: 0 };
+  }
 
   startApp() {
     // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); 
     const { navigate } = this.props.navigation;
     navigate('ConsentWelcome');
+  }
+
+
+  handleScroll(event) {
+
+    this.setState({ page: Math.floor(event.nativeEvent.contentOffset.x / Dimensions.get('window').width) });
+
+
+    //console.warn('page', event.nativeEvent.contentOffset.x);
   }
   render() {
     let _scrollView: ScrollView;
@@ -46,12 +60,13 @@ export class Home extends Component {
         <View style={{ flex: 4 }}>
           <ScrollView
             horizontal
+            onScroll={(event) => this.handleScroll(event)}
             pagingEnabled
             ref={(scrollView) => { _scrollView = scrollView; }}
           >
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
 
-              
+
               <WebView />
 
 
@@ -71,10 +86,28 @@ export class Home extends Component {
 
             </View>
 
+            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
+
+
+              <WebView />
+
+
+            </View>
+
+            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
+
+
+              <WebView />
+
+
+            </View>
+
           </ScrollView>
 
         </View>
         <View style={{ flex: 1, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
+          <Swipe page={this.state.page} />
+
           <TouchableOpacity
             style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 30, padding: 5 }}
             onPress={() => this.startApp()}

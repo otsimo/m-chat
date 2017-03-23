@@ -44,7 +44,7 @@ export class ConsentPrefab extends Component {
               flexDirection: 'column',
             }}
           >
-            <View style={{ height: 55 }}>
+            <View style={{ height: 45, marginLeft: 15,marginTop: 10 }}>
               <TouchableNativeFeedback onPress={() => this._setModalVisible(false)}>
                 <Icon name="close" size={25} color="black" />
               </TouchableNativeFeedback>

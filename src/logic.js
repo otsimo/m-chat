@@ -1,7 +1,7 @@
 
 import { AsyncStorage, NativeModules, Platform } from 'react-native';
 import { SaveToServer } from './saveToServer';
-
+const uuidV4 = require('uuid/v4');
 
 export class Logic {
   /**
@@ -566,7 +566,6 @@ export class Logic {
   }
 
 
-  
 
   getDeviceInfo() {
     if (Platform.OS === 'android') {
@@ -609,8 +608,20 @@ export class Logic {
     }
   }
 
+  async getUUID() {
+    const uuid = await AsyncStorage.getItem('uuid');
+    return uuid;
+  }
+
+  async generateUUID() {
+
+    await AsyncStorage.setItem('uuid', uuidV4());
+  }
+
   async saveAnalytics() {
     try {
+      const uuidgenerated = await this.generateUUID();
+      const uuid = await this.getUUID();
       const info = await this.getInfo();
       const Result = {
         info: info,
@@ -619,6 +630,7 @@ export class Logic {
         stepResults: this.stepResultsAll,
         surveyType: 0,
         version: 1,
+        resultId: uuid,
       };
       console.warn('RESULT', JSON.stringify(Result));
       const res = await SaveToServer(Result);

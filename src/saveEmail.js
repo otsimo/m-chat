@@ -1,6 +1,21 @@
-export async function saveEmail(result) {
+import { AsyncStorage } from 'react-native';
+
+export async function saveEmail(email) {
+  let result = {};
   try {
-    const response = await fetch('https://mchatrest.otsimo.xyz/', {
+    const uuid = await AsyncStorage.getItem('uuid');
+    result = {
+      'resultId': uuid,
+      'email': email,
+    };
+    console.log('outgoing data is', result);
+  } catch (err) {
+    console.log('get uuid error', err);
+  }
+
+
+  try {
+    const response = await fetch('https://mchatrest.otsimo.xyz/addUserInfo ', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
