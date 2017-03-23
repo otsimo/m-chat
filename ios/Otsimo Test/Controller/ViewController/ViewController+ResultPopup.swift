@@ -94,5 +94,12 @@ extension ViewController {
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
     }
+    
+    func showNotEligiblePopup(){
+        let notEligibleVC = NotEligiblePopupController(nibName: "NotEligiblePopupController", bundle: nil)
+        let popupVC = PopupDialog(viewController: notEligibleVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
+        
+        present(popupVC, animated: true, completion: nil)
+    }
 
 }

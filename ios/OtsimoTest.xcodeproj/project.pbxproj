@@ -22,6 +22,8 @@
 		53BD22961E7336AB00C255B3 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD22951E7336AB00C255B3 /* ColorManager.swift */; };
 		53BDB7D01E7BFCC500741FD7 /* Analyse-mChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDB7CF1E7BFCC500741FD7 /* Analyse-mChat.swift */; };
 		53C7AEE91E83DD8A0081B5A4 /* Analyse+PassFailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C7AEE81E83DD8A0081B5A4 /* Analyse+PassFailHandler.swift */; };
+		53C7AEEF1E8400DD0081B5A4 /* NotEligiblePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C7AEED1E8400DD0081B5A4 /* NotEligiblePopupController.swift */; };
+		53C7AEF01E8400DD0081B5A4 /* NotEligiblePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AEEE1E8400DD0081B5A4 /* NotEligiblePopupController.xib */; };
 		53FFF9FE1E72B421000BEC96 /* CustomStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FB1E72B421000BEC96 /* CustomStep.swift */; };
 		53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */; };
 		53FFFA001E72B421000BEC96 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */; };
@@ -145,6 +147,9 @@
 		53BD22951E7336AB00C255B3 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorManager.swift; path = ../ColorManager.swift; sourceTree = "<group>"; };
 		53BDB7CF1E7BFCC500741FD7 /* Analyse-mChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analyse-mChat.swift"; sourceTree = "<group>"; };
 		53C7AEE81E83DD8A0081B5A4 /* Analyse+PassFailHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analyse+PassFailHandler.swift"; sourceTree = "<group>"; };
+		53C7AEEC1E83FE0D0081B5A4 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		53C7AEED1E8400DD0081B5A4 /* NotEligiblePopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEligiblePopupController.swift; sourceTree = "<group>"; };
+		53C7AEEE1E8400DD0081B5A4 /* NotEligiblePopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotEligiblePopupController.xib; sourceTree = "<group>"; };
 		53FFF9FB1E72B421000BEC96 /* CustomStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomStep.swift; path = CustomSteps/CustomStep.swift; sourceTree = "<group>"; };
 		53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomStepVC.xib; path = CustomSteps/CustomStepVC.xib; sourceTree = "<group>"; };
 		53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomViewController.swift; path = CustomSteps/CustomViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +422,7 @@
 				53FFFA291E72B8E7000BEC96 /* ViewController.swift */,
 				53FFFA2A1E72B8E7000BEC96 /* ViewController+ResultPopup.swift */,
 				53FFFA2B1E72B8E7000BEC96 /* ViewController+TaskDelegate.swift */,
+				53C7AEEC1E83FE0D0081B5A4 /* MyPlayground.playground */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 		53B2BD661E3B8077001EC7E1 /* ResultPopupControllers */ = {
 			isa = PBXGroup;
 			children = (
+				53C7AEED1E8400DD0081B5A4 /* NotEligiblePopupController.swift */,
 				53FFFA431E72B934000BEC96 /* HighResultPopupController.swift */,
 				53FFFA441E72B934000BEC96 /* LowResultPopupController.swift */,
 				53056C3D1E803FB200D11AFF /* SendEmailPopupController.swift */,
@@ -439,6 +446,7 @@
 				53FFFA081E72B883000BEC96 /* LowResultPopup.xib */,
 				53FFFA091E72B883000BEC96 /* MediumResultPopup.xib */,
 				53056C3E1E803FB200D11AFF /* SendEmailPopupController.xib */,
+				53C7AEEE1E8400DD0081B5A4 /* NotEligiblePopupController.xib */,
 			);
 			name = ResultPopupViews;
 			sourceTree = "<group>";
@@ -676,6 +684,7 @@
 				53FFFA041E72B868000BEC96 /* Assets.xcassets in Resources */,
 				53FFFA0D1E72B883000BEC96 /* MediumResultPopup.xib in Resources */,
 				53FFFAC31E72BE70000BEC96 /* Localizable.strings in Resources */,
+				53C7AEF01E8400DD0081B5A4 /* NotEligiblePopupController.xib in Resources */,
 				53FFFA381E72B8F9000BEC96 /* WalkThroughCell.xib in Resources */,
 				53FFFAB31E72BD5E000BEC96 /* Main.storyboard in Resources */,
 				53FFFA0B1E72B883000BEC96 /* HighResultPopup.xib in Resources */,
@@ -741,6 +750,7 @@
 				53FFFA9B1E72BB0A000BEC96 /* TZSpacerView.swift in Sources */,
 				53FFFA891E72BB02000BEC96 /* PopupDialog+Keyboard.swift in Sources */,
 				53FFFA3A1E72B903000BEC96 /* SurveyAnalytics.swift in Sources */,
+				53C7AEEF1E8400DD0081B5A4 /* NotEligiblePopupController.swift in Sources */,
 				53FFFA9C1E72BB0A000BEC96 /* TZStackView.swift in Sources */,
 				53FFFA201E72B89F000BEC96 /* ReadJSONs.swift in Sources */,
 				53FFFA421E72B914000BEC96 /* Log.swift in Sources */,

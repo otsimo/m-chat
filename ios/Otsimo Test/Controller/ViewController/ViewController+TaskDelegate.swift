@@ -225,9 +225,43 @@ extension ViewController: ORKTaskViewControllerDelegate {
      @return `YES` if save and restore should be supported; otherwise, `NO`.
      */
     public func taskViewControllerSupportsSaveAndRestore(_ taskViewController: ORKTaskViewController) -> Bool {
-        Log.debug("taskViewControllerSupportsSaveAndRestore")
+        print("taskViewControllerSupportsSaveAndRestore result :")
+        if let currentVC = taskViewController.currentStepViewController{
+            if let res = currentVC.result{
+                print("cuurentVC.result : ",currentVC.result)
+                if res.identifier == "birthDay"{
+                    print("res : ",res)
+                    if let reses = res.results{
+                        let dateResult = reses[0] as! ORKDateQuestionResult
+                        if let dateAnwer = dateResult.dateAnswer{
+                            let now = Date.init()
+                            let month30 = 77760000
+                            let month16 = 15552000
+                            let month30From1970 = Int(now.timeIntervalSince1970) - month30
+                            let month16From1970 = Int(now.timeIntervalSince1970) - month16
+                            let answer = Int(dateAnwer.timeIntervalSince1970)
+                            if (answer >= month30From1970 && answer <= month16From1970){
+                                print("++")
+                            }else{
+                                 print("--")
+                                taskViewController.dismiss(animated: true, completion: nil)
+                                showNotEligiblePopup()
+                                taskViewDiscarded(taskViewController: taskViewController)
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        
         return true
     }
+    
+    
+    
+    
+    
     /**
      Asks the delegate if the cancel action should be confirmed
      

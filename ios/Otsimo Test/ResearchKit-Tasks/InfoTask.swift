@@ -71,6 +71,7 @@ public var InfoTask: ORKOrderedTask {
         
         let birthDayStep = ORKQuestionStep(identifier: birthDayStepID, title: birthDayStepText, answer: ORKAnswerFormat.dateAnswerFormat())
 
+        birthDayStep.isOptional = false
         return birthDayStep
     }
     infosteps.append(birthDayStep())
