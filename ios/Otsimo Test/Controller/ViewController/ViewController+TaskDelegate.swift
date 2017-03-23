@@ -86,10 +86,10 @@ extension ViewController: ORKTaskViewControllerDelegate {
 
         switch taskViewController.result.identifier {
         case Tasks.consentTaskID:
-            analytics.event("completedConsent", data: [:])
+            analytics.event("completed-Consent", data: [:])
             present(infoTaskVC, animated: true, completion: nil)
         case Tasks.infoTaskID:
-            analytics.event("completedInfo", data: [:])
+            analytics.event("completed-Info", data: [:])
             if let t = taskResult {
                 iResult = anlyse.InfoResult(infoResult: t)
             }
@@ -156,21 +156,22 @@ extension ViewController: ORKTaskViewControllerDelegate {
 
                 switch taskViewController.result.identifier {
                 case Tasks.mChatTaskID:
+                    analytics.event("saved-mChat",data: [:])
                     let newSteps = ConsentTask.steps + InfoTask.steps + MChatTask.steps
                     let newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
                     self.mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
                     mChatVC.delegate = self
                 case Tasks.consentTaskID:
-                    analytics.event("discardedConsent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    analytics.event("discarded-Consent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                     present(infoTaskVC, animated: true, completion: nil)
                 case Tasks.infoTaskID:
-                    analytics.event("discardedInfo", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    analytics.event("discarded-Info", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                     present(mChatRFVC, animated: true, completion: nil)
                     if let t = taskResult {
                         iResult = anlyse.InfoResult(infoResult: t)
                     }
                 case Tasks.mChatRFTaskID:
-                    analytics.event("discardedSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    analytics.event("discarded-mChatRF", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                 default:
                     break
                 }
@@ -183,7 +184,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
         case Tasks.mChatTaskID:
             if let results = taskViewController.result.results {
                 let savedData = taskViewController.restorationData
-                analytics.event("savedmChatSurvey",data: [:])
+                analytics.event("saved-mChatSurvey",data: [:])
 
                 let userDefaults = UserDefaults.standard
                 userDefaults.setValue(savedData, forKey: CacheKeys.mChatKey)
@@ -196,7 +197,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     let startDate = Int64((results.first)!.startDate.timeIntervalSince1970)
                     let endDate = Int64(lastStep.endDate.timeIntervalSince1970)
                     let savedData = taskViewController.restorationData
-                    analytics.event("savedmChatRFSurvey", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
+                    analytics.event("saved-mChatRF", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
 
                     let userDefaults = UserDefaults.standard
                     userDefaults.setValue(savedData, forKey: CacheKeys.mChatRFKey)

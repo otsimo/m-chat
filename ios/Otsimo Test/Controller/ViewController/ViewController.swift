@@ -38,8 +38,10 @@ class ViewController: UIViewController {
         
         switch defaultSurvey {
         case Tasks.mChatTaskID:
+            analytics.event("start-mChat", data: [:])
             present(mChatVC, animated: true, completion: nil)
         case Tasks.mChatRFTaskID:
+            analytics.event("start-mChatRF", data: [:])
             present(mChatRFVC, animated: true, completion: nil)
         default:
             Log.debug("There is not any default tasks")

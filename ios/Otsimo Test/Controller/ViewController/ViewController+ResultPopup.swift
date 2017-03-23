@@ -14,13 +14,14 @@ extension ViewController {
 
         // Create second button
         let buttonSave = DefaultButton(title: "Save") {
-            print("You ok'd the default dialog")
+            analytics.event("press-Save-Button-ResultPopup", data: [:])
             self.dismiss(animated: true, completion: nil)
             self.showSavePopup()
         }
         buttonSave.titleColor = UIColor.white
 
         let buttonShare = DefaultButton(title: "Share") {
+            analytics.event("press-Share-Button-ResultPopup", data: [:])
             print("share")
             self.showShareView()
         }
@@ -28,7 +29,6 @@ extension ViewController {
         buttonShare.titleColor = UIColor.white
 
         if (total >= 0 && total <= 2) {
-            print("LOW RİSK")
             buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
 
             let resultVC = HighResultPopupController(nibName: "LowResultPopup", bundle: nil)
@@ -41,7 +41,6 @@ extension ViewController {
             present(popupVC, animated: true, completion: nil)
 
         } else if (total >= 3 && total <= 6) {
-            print("MEDIUM RİSK")
             buttonSave.backgroundColor = UIColor(red:0.88, green:0.40, blue:0.10, alpha:1.0)
 
             let resultVC = HighResultPopupController(nibName: "MediumResultPopup", bundle: nil)
@@ -52,7 +51,6 @@ extension ViewController {
             popupVC.addButtons([buttonSave, buttonShare])
             present(popupVC, animated: true, completion: nil)
         } else if (total >= 7 && total <= 20) {
-            print("HIGH RİSK")
             buttonSave.backgroundColor = UIColor(red:0.85, green:0.09, blue:0.15, alpha:1.0)
             let resultVC = HighResultPopupController(nibName: "HighResultPopup", bundle: nil)
             resultVC.point = total
@@ -67,8 +65,6 @@ extension ViewController {
     }
     
     func showSavePopup(){
-        print("showSavePopup")
-        
         
         let saveVC = SendEmailPopupController(nibName: "SendEmailPopupController", bundle: nil)
         
@@ -79,8 +75,6 @@ extension ViewController {
     }
     
     func showShareView(){
-        // text to share
-        print("resulttttt->",resultJSON)
         let text = resultJSON
         
         // set up activity view controller

@@ -22,6 +22,8 @@ class SendEmailPopupController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func sendEmailTapped(_ sender: UIButton) {
+        analytics.event("send-Email-Tapped",data: [:])
+
         let server = Server()
         var userInfo = Otsimo_UserInfo()
         if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
