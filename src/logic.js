@@ -108,7 +108,7 @@ export class Logic {
   goToNextStep() {
     this.stepStart = new Date().getTime();
     this.substepStart = new Date().getTime();
-    if (this.stepIndex < 22) {
+    if (this.stepIndex < 1) {
       this.stepIndex += 1;
       this.stepId = this.steps[this.stepIndex].id;
       this.questionID = this.steps[this.stepIndex].firstQuestion;

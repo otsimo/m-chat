@@ -22,7 +22,7 @@ export class Result extends Component {
   }
   _shareMessage() {
     Share.share({
-      message: 'React Native | A framework for building native apps using React',
+      message: i18n.t('sharetext'),
     });
   }
 
@@ -30,8 +30,8 @@ export class Result extends Component {
     return (
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
-          <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>Yüksek Düzey</Text>
-          <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
+          <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>{i18n.t('highlevel')}</Text>
+          <Text style={{ color: 'rgb(211,0,76)', fontSize: 40, fontWeight: 'bold' }}>{i18n.t('autismdoubt')}</Text>
         </View>
         <View
           style={{
@@ -41,10 +41,10 @@ export class Result extends Component {
             padding: 10,
           }}
         >
-          <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>Çocuk mutlaka bir çocuk psikiyatristine yönlendirilmelidir</Text>
+          <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}> {i18n.t('highrisktext1')} </Text>
           <View style={{ marginTop: 8, alignItems: 'center' }}>
-            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>M-Chat Testinden</Text>
-            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>Alınan Puan: {this.props.score}</Text>
+            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>M-Chat Test</Text>
+            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>{i18n.t('score') + this.props.score}</Text>
           </View>
 
 
@@ -52,8 +52,8 @@ export class Result extends Component {
           </View>
           <View style={{ marginTop: 5, alignItems: 'center' }}>
             <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 15, fontWeight: 'bold' }}>
-              M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.
-                </Text>
+              {i18n.t('highrisktext2')}
+            </Text>
           </View>
 
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -71,7 +71,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(220,22,56)' }}>
-                <TouchableOpacity onPress={this._shareMessage} >
+                <TouchableOpacity onPress={() => this._shareMessage()} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('share')}
                   </Text >
@@ -87,8 +87,8 @@ export class Result extends Component {
     return (
       <View style={{ height: 478 }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20, backgroundColor: 'white' }} >
-          <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
-          <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>Yoktur</Text>
+          <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}> {i18n.t('autismdoubt')}</Text>
+          <Text style={{ color: 'rgb(87,157,67)', fontSize: 40, fontWeight: 'bold' }}>{i18n.t('none')}</Text>
         </View>
         <View
           style={{
@@ -99,17 +99,17 @@ export class Result extends Component {
 
           }}
         >
-          <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>İlave bir test yapılmasına ihtiyaç yoktur</Text>
+          <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>{i18n.t('lowleveltext1')}</Text>
           <View style={{ marginTop: 15, alignItems: 'center' }}>
-            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>M-Chat Testinden</Text>
-            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>Alınan Puan: {this.props.score}</Text>
+            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>M-Chat Test</Text>
+            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>{i18n.t('score') + this.props.score}</Text>
           </View>
 
           <View style={{ backgroundColor: 'white', height: 1, width: 200 }}>
           </View>
           <View style={{ marginTop: 20, alignItems: 'center' }}>
             <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 15, fontWeight: 'bold' }}>
-              Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.
+             {i18n.t('lowleveltext2')}
                 </Text>
           </View>
 
@@ -128,7 +128,7 @@ export class Result extends Component {
 
             <View style={{ margin: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(96,184,71)' }}>
-                <TouchableOpacity onPress={this._shareMessage}>
+                <TouchableOpacity onPress={() => this._shareMessage() }>
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('share')}
                   </Text >
@@ -148,8 +148,8 @@ export class Result extends Component {
     return (
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20 }} >
-          <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>Orta Düzey</Text>
-          <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>Otizm Şüphesi</Text>
+          <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>{i18n.t('mediumlevel')}</Text>
+          <Text style={{ color: 'rgb(203,94,47)', fontSize: 40, fontWeight: 'bold' }}>{i18n.t('autismdoubt')}</Text>
         </View>
         <View
           style={{
@@ -159,10 +159,10 @@ export class Result extends Component {
             padding: 10,
           }}
         >
-          <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>Çocuk bir çocuk psikiyatristine yönlendirilmelidir</Text>
+          <Text style={{ color: 'rgb(255,255,255)', fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>{i18n.t('mediumleveltext1')}</Text>
           <View style={{ marginTop: 8, alignItems: 'center' }}>
-            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>M-Chat Testinden</Text>
-            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>Alınan Puan: {this.props.score}</Text>
+            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>M-Chat Test</Text>
+            <Text style={{ color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold' }}>{i18n.t('score') + this.props.score}</Text>
           </View>
 
           <View style={{ backgroundColor: 'white', height: 1, width: 200 }}>
@@ -170,7 +170,7 @@ export class Result extends Component {
           </View>
           <View style={{ marginTop: 5, alignItems: 'center' }}>
             <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 15, fontWeight: 'bold' }}>
-              M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.
+             {i18n.t('mediumleveltext2')}
                 </Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -188,7 +188,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(225,121,38)' }}>
-                <TouchableOpacity onPress={this._shareMessage} >
+                <TouchableOpacity onPress={() => this._shareMessage()} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('share')}
                   </Text >

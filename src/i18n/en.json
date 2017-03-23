@@ -99,6 +99,20 @@
   "stepQuestion20": "Have you ever wondered if your child is deaf?",
   "stepQuestion21": "Does your child understand what people say?",
   "stepQuestion22": "Does your child sometimes stare at nothing or wander with no purpose?",
-  "stepQuestion23": "Does your child look at your face to check your reaction when faced with something unfamiliar?"
+  "stepQuestion23": "Does your child look at your face to check your reaction when faced with something unfamiliar?",
+
+  "score": "Score: ",
+  "highlevel": "High Level",
+  "mediumlevel": "Medium Level",
+  "none": "Not found",
+  "autismdoubt": "Autism Doubt",
+  "highrisktext1": "Çocuk mutlaka bir çocuk psikiyatristine yönlendirilmelidir",
+  "highrisktext2": " M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
+  "lowleveltext1":"İlave bir test yapılmasına ihtiyaç yoktur",
+  "lowleveltext2":" Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.",
+  "mediumleveltext2": "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
+  "mediumleveltext1": "Çocuk bir çocuk psikiyatristine yönlendirilmelidir",
+
+  "sharetext": ""
 
 }

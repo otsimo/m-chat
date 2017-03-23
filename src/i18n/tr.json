@@ -28,8 +28,7 @@
   "relation": "Yakınlık Derecesi ?",
   "gender": "Cinsiyet ?",
   "birthday": "Doğum Tarihi",
-
-   "welcome": {
+  "welcome": {
     "header": "Hoş Geldiniz", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Testin öncesindeki bu basit kısım, araştırma çalışmalarının kapsamını ve iznini açıklayacaktır. Öğrendikten sonra katılmak isteyip istemediğinizi seçebilirsiniz.", // Ana yazı 
     "learnMore": "" // Learn more a basınca gidilecek URL WebView için
@@ -74,8 +73,7 @@
     "text": "Size çalışma hakkında ulaşmak isteyebiliriz. Takip işlemini istediğiniz zaman iptal edebilirsiniz.", // Ana yazı 
     "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
   },
-  
-"stepQuestion1": "Çocuğunuzun sallanılmaktan yada dizinizde hoplatılmaktan veya benzeri oyunlardan hoşlanır mı?",
+  "stepQuestion1": "Çocuğunuzun sallanılmaktan yada dizinizde hoplatılmaktan veya benzeri oyunlardan hoşlanır mı?",
   "stepQuestion2": "Çocuğunuz başka çocuklarla ilgilenir mi?",
   "stepQuestion3": "Çocuğunuz eşyalara (örneğin koltuk,kütüphane vb.) ve benzeri şeylere tırmanmayı sever mi?",
   "stepQuestion4": "Çocuğunuz ce-e(yüzünüzü ellerinizle kapatıp açarken ce-e demek) ve saklambaç oyunlarından hoşlanır mı? ",
@@ -97,13 +95,18 @@
   "stepQuestion20": "Hiç çocuğunuzun iyi işitmediğinden endişe duydunuz mu?",
   "stepQuestion21": "Çocuğunuz çevresindeki insanların neler söylediğini/konuştuğunu anlar mı?",
   "stepQuestion22": "Çocuğunuz bazen boşluğa bakıyormuş gibi dalıp gider mi?",
-  "stepQuestion23": "Çocuğunuz bilmediği bir durumla karşılaştığı zaman sizin davranışınızı anlamak amacıyla yüzünüze bakar mı?"
+  "stepQuestion23": "Çocuğunuz bilmediği bir durumla karşılaştığı zaman sizin davranışınızı anlamak amacıyla yüzünüze bakar mı?",
 
-
-
-
-
-
-
-
+  "score": "Skor: ",
+  "highlevel": "Yüksek Seviye",
+  "mediumlevel": "Orta Seviye",
+  "none": "Yoktur",
+  "autismdoubt": "Otizm Şüphesi",
+  "highrisktext1": "Çocuk mutlaka bir çocuk psikiyatristine yönlendirilmelidir",
+  "highrisktext2": " M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
+  "lowleveltext1":"İlave bir test yapılmasına ihtiyaç yoktur",
+  "lowleveltext2":" Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.",
+  "mediumleveltext2": "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
+  "mediumleveltext1": "Çocuk bir çocuk psikiyatristine yönlendirilmelidir",
+  "sharetext": ""
 }
