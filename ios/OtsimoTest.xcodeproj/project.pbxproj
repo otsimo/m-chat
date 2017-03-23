@@ -30,6 +30,12 @@
 		53C7AF041E84085B0081B5A4 /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C7AF021E8408560081B5A4 /* OneSignal.framework */; };
 		53C7AF051E84085B0081B5A4 /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53C7AF021E8408560081B5A4 /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53C7AF061E8408680081B5A4 /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C7AF021E8408560081B5A4 /* OneSignal.framework */; };
+		53C7AF241E8438AD0081B5A4 /* AboutStudy_intro.html in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF1F1E8438AD0081B5A4 /* AboutStudy_intro.html */; };
+		53C7AF251E8438AD0081B5A4 /* howstudyworks_intro.html in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF201E8438AD0081B5A4 /* howstudyworks_intro.html */; };
+		53C7AF261E8438AD0081B5A4 /* Intro_section_PD.css in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF211E8438AD0081B5A4 /* Intro_section_PD.css */; };
+		53C7AF271E8438AD0081B5A4 /* main_intro.html in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF221E8438AD0081B5A4 /* main_intro.html */; };
+		53C7AF281E8438AD0081B5A4 /* whoisrunning_intro.html in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF231E8438AD0081B5A4 /* whoisrunning_intro.html */; };
+		53C7AF2A1E8438B60081B5A4 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF291E8438B60081B5A4 /* welcome.png */; };
 		53FFF9FE1E72B421000BEC96 /* CustomStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FB1E72B421000BEC96 /* CustomStep.swift */; };
 		53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */; };
 		53FFFA001E72B421000BEC96 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */; };
@@ -180,6 +186,12 @@
 		53C7AEF91E84055E0081B5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53C7AF011E8406870081B5A4 /* Otsimo Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Otsimo Test.entitlements"; sourceTree = "<group>"; };
 		53C7AF021E8408560081B5A4 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = Carthage/Build/iOS/OneSignal.framework; sourceTree = "<group>"; };
+		53C7AF1F1E8438AD0081B5A4 /* AboutStudy_intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = AboutStudy_intro.html; path = HTMLContent/AboutStudy_intro.html; sourceTree = SOURCE_ROOT; };
+		53C7AF201E8438AD0081B5A4 /* howstudyworks_intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = howstudyworks_intro.html; path = HTMLContent/howstudyworks_intro.html; sourceTree = SOURCE_ROOT; };
+		53C7AF211E8438AD0081B5A4 /* Intro_section_PD.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = Intro_section_PD.css; path = HTMLContent/Intro_section_PD.css; sourceTree = SOURCE_ROOT; };
+		53C7AF221E8438AD0081B5A4 /* main_intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main_intro.html; path = HTMLContent/main_intro.html; sourceTree = SOURCE_ROOT; };
+		53C7AF231E8438AD0081B5A4 /* whoisrunning_intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = whoisrunning_intro.html; path = HTMLContent/whoisrunning_intro.html; sourceTree = SOURCE_ROOT; };
+		53C7AF291E8438B60081B5A4 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = welcome.png; path = HTMLContent/img/welcome.png; sourceTree = SOURCE_ROOT; };
 		53FFF9FB1E72B421000BEC96 /* CustomStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomStep.swift; path = CustomSteps/CustomStep.swift; sourceTree = "<group>"; };
 		53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomStepVC.xib; path = CustomSteps/CustomStepVC.xib; sourceTree = "<group>"; };
 		53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomViewController.swift; path = CustomSteps/CustomViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +410,12 @@
 		534A3B801E40BCAF005FA5F3 /* HTMLContent */ = {
 			isa = PBXGroup;
 			children = (
+				53C7AF1F1E8438AD0081B5A4 /* AboutStudy_intro.html */,
+				53C7AF201E8438AD0081B5A4 /* howstudyworks_intro.html */,
+				53C7AF211E8438AD0081B5A4 /* Intro_section_PD.css */,
+				53C7AF221E8438AD0081B5A4 /* main_intro.html */,
+				53C7AF231E8438AD0081B5A4 /* whoisrunning_intro.html */,
+				53C7AF0D1E8437570081B5A4 /* img */,
 				534A3B811E40BD14005FA5F3 /* 1.html */,
 				534A3B821E40BD14005FA5F3 /* 2.html */,
 			);
@@ -513,6 +531,14 @@
 				53C7AEF91E84055E0081B5A4 /* Info.plist */,
 			);
 			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		53C7AF0D1E8437570081B5A4 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				53C7AF291E8438B60081B5A4 /* welcome.png */,
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 		53DE97481E44AEED00B78298 /* PopupDialog */ = {
@@ -767,17 +793,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C7AF261E8438AD0081B5A4 /* Intro_section_PD.css in Resources */,
 				53FFFA041E72B868000BEC96 /* Assets.xcassets in Resources */,
 				53FFFA0D1E72B883000BEC96 /* MediumResultPopup.xib in Resources */,
 				53FFFAC31E72BE70000BEC96 /* Localizable.strings in Resources */,
+				53C7AF2A1E8438B60081B5A4 /* welcome.png in Resources */,
 				53C7AEF01E8400DD0081B5A4 /* NotEligiblePopupController.xib in Resources */,
 				53FFFA381E72B8F9000BEC96 /* WalkThroughCell.xib in Resources */,
 				53FFFAB31E72BD5E000BEC96 /* Main.storyboard in Resources */,
 				53FFFA0B1E72B883000BEC96 /* HighResultPopup.xib in Resources */,
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
 				53FFFADE1E72C455000BEC96 /* questions in Resources */,
+				53C7AF241E8438AD0081B5A4 /* AboutStudy_intro.html in Resources */,
 				53056C401E803FB200D11AFF /* SendEmailPopupController.xib in Resources */,
+				53C7AF251E8438AD0081B5A4 /* howstudyworks_intro.html in Resources */,
+				53C7AF271E8438AD0081B5A4 /* main_intro.html in Resources */,
 				53FFFA0C1E72B883000BEC96 /* LowResultPopup.xib in Resources */,
+				53C7AF281E8438AD0081B5A4 /* whoisrunning_intro.html in Resources */,
 				53FFFA051E72B868000BEC96 /* LaunchScreen.storyboard in Resources */,
 				53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */,
 				534A3B841E40BD14005FA5F3 /* 2.html in Resources */,
@@ -1202,6 +1234,7 @@
 				53C7AEFF1E84055E0081B5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FFFAFB1E72C4E4000BEC96 /* Build configuration list for PBXNativeTarget "mchatreact" */ = {
 			isa = XCConfigurationList;

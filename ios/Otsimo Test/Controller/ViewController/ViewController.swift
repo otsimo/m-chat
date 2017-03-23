@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var startButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     var taskResultFinishedCompletionHandler: ((ORKResult) -> Void)?
-    let htmlContents = ["1", "2"]
+    let htmlContents = ["main_intro", "AboutStudy_intro","whoisrunning_intro","howstudyworks_intro"]
 
     @IBOutlet weak var collectionView: UICollectionView!
     var isRun = 10
