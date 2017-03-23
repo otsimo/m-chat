@@ -20,7 +20,7 @@ export class Question extends Component {
 
   constructor(props) {
     super(props);
-    this.screenWidth = Dimensions.get('window').width / 20;
+    this.screenWidth = Dimensions.get('window').width / 23;
     this.screenHeight = Dimensions.get('window').height;
 
     this.state = { question: this.props.delegate.getQuestionType(), showNext: false };
@@ -31,7 +31,7 @@ export class Question extends Component {
     let resultType = '';
     if (fails < 3) {
       resultType = 'low';
-    } else if (fails < 8) {
+    } else if (fails < 7) {
       resultType = 'medium';
     } else {
       resultType = 'high';
@@ -46,6 +46,7 @@ export class Question extends Component {
    */
   executeQuestion() {
     this.props.delegate.executeAnswer(this.state.selectedOne);
+     this.props.onUpdate();
     if (this.props.delegate.getQuestionType() === 'result') {
        this.props.delegate.saveAnalytics();
       this.props.toResult(this.getResultType(), this.props.delegate.getFails());
@@ -118,7 +119,7 @@ export class Question extends Component {
               //fontFamily: 'sans-serif',
             }}
           >
-            {this.props.delegate.currentQuestion}
+            {i18n.t('stepQuestion' + this.props.delegate.getStepId())}
           </Text>
           <View
             style={{
@@ -229,8 +230,11 @@ export class Question extends Component {
           ),
           )
           }
-          <View style={{ marginTop: -8 }}>
+          <View style={{ marginTop: 10 }}>
             <NextButton enabled={this.state.showNext} onClick={() => this.executeNextStep()} />
+          </View>
+          <View style={{ height: 60 }}>
+            
           </View>
         </ScrollView>
       </View>

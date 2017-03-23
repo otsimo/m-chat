@@ -31,7 +31,7 @@ if (Platform.OS !== 'ios') {
 export class MChat extends Component {
 
   static navigationOptions = {
-    title: (navigation, childRouter) => navigation.state.params.start ? (i18n.t('stepOf', { current: navigation.state.params.id, total: 20 })) : '',
+    title: (navigation, childRouter) => navigation.state.params.start ? (i18n.t('stepOf', { current: navigation.state.params.id, total: 23 })) : '',
 
     header: ({ state, setParams }) => ({
       // Render a button on the right side of the header

@@ -7,14 +7,30 @@ import { resetTo } from './util';
 import { Logic } from './logic';
 let moment = require('moment');
 
-import q1 from '../questions/q1.json';
-import q2 from '../questions/q2.json';
-import q3 from '../questions/q3.json';
-import q4 from '../questions/q4.json';
-import q5 from '../questions/q5.json';
-import q6 from '../questions/q6.json';
-import q7 from '../questions/q7.json';
-import q8 from '../questions/q8.json';
+import q1 from '../questionsSimple/q1.json';
+import q2 from '../questionsSimple/q2.json';
+import q3 from '../questionsSimple/q3.json';
+import q4 from '../questionsSimple/q4.json';
+import q5 from '../questionsSimple/q5.json';
+import q6 from '../questionsSimple/q6.json';
+import q7 from '../questionsSimple/q7.json';
+import q8 from '../questionsSimple/q8.json';
+import q9 from '../questionsSimple/q9.json';
+import q10 from '../questionsSimple/q10.json';
+import q11 from '../questionsSimple/q11.json';
+import q12 from '../questionsSimple/q12.json';
+import q13 from '../questionsSimple/q13.json';
+import q14 from '../questionsSimple/q14.json';
+import q15 from '../questionsSimple/q15.json';
+import q16 from '../questionsSimple/q16.json';
+import q17 from '../questionsSimple/q17.json';
+import q18 from '../questionsSimple/q18.json';
+import q19 from '../questionsSimple/q19.json';
+import q20 from '../questionsSimple/q20.json';
+import q21 from '../questionsSimple/q21.json';
+import q22 from '../questionsSimple/q22.json';
+import q23 from '../questionsSimple/q23.json';
+
 
 export class EligibilityBday extends Component {
   static navigationOptions = {
@@ -27,7 +43,7 @@ export class EligibilityBday extends Component {
     super(props);
     this.birthDay = true;
     this.date = new Date();
-    this.logic = new Logic([q1, q2, q3]);
+    this.logic = new Logic([q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23]);
   }
 
   async dataOk() {
@@ -56,7 +72,7 @@ export class EligibilityBday extends Component {
 
   startSurvey() {
     this.logic.startSurveyTimers();
-    resetTo(this, 'app', { logic: this.logic });
+    resetTo(this, 'app', { logic: this.logic, id:'' });
   }
 
 
@@ -68,29 +84,32 @@ export class EligibilityBday extends Component {
 
 
   isEligible() {
-    const now = moment.duration(new Date().getTime(), 'ms');
-    const bDay = moment.duration(this.date.getTime(), 'ms');
-
-
-    const monts = now.subtract(bDay).months();
-    console.warn('monts', monts);
+    const startTime = moment(new Date());
+    const endTime = moment(this.date);
+    const monts = startTime.diff(endTime, 'months');
+    if (monts > 30) {
+      return false;
+    } else if (monts < 16) {
+      return false;
+    }
+    return true;
   }
 
   async saveBday() {
     if (this.birthDay !== false) {
       if (this.isEligible()) {
-        console.log('ok');
         const saveData = {
           Bday: this.date.getTime(),
         };
-        await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
-        // console.warn('rel', await AsyncStorage.getItem('relation'));
-
-
+        try {
+          await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
+        } catch (err) {
+          console.log('unable to save birthDay', err);
+        }
         this.loadSurvey();
       } else {
         const { navigate } = this.props.navigation;
-        navigate('EligibilityNotFit');
+        resetTo(this, 'EligibilityNotFit');
       }
     }
   }
@@ -135,19 +154,19 @@ export class EligibilityBday extends Component {
           <TouchableOpacity onPress={() => this.showPicker()}>
             <View style={{ flexDirection: 'row', justifyContent: 'center' }} >
 
-              <Text style={{ fontSize: 36 }}>
+              <Text style={{ fontSize: 36, color: 'black' }}>
                 {this.date.getDate()}
               </Text>
-              <Text style={{ fontSize: 36 }}>
+              <Text style={{ fontSize: 36, color: 'black' }}>
                 {'/'}
               </Text>
-              <Text style={{ fontSize: 36 }}>
+              <Text style={{ fontSize: 36, color: 'black' }}>
                 {this.date.getMonth() + 1}
               </Text>
-              <Text style={{ fontSize: 36 }}>
+              <Text style={{ fontSize: 36, color: 'black' }}>
                 {'/'}
               </Text>
-              <Text style={{ fontSize: 36 }}>
+              <Text style={{ fontSize: 36, color: 'black' }}>
                 {this.date.getFullYear()}
               </Text>
             </View>

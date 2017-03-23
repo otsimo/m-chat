@@ -17,7 +17,7 @@ export class ConsentPotentialBen extends Component {
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} image={require("../pngs/potential_benefitskopya.png")} textHeader="Potential Benefits" text="" />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent6LearnMore.html')} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
       </View>
     );
   }

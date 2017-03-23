@@ -28,9 +28,6 @@ export class Swipe extends Component {
         <View style={{ backgroundColor: this.props.page === 3 ? 'rgb(165,90,239)' : 'white', width: 10, height: 10, margin: 3, borderRadius: 60 }}>
         </View>
 
-        <View style={{ backgroundColor: this.props.page === 4 ? 'rgb(165,90,239)' : 'white', width: 10, height: 10, margin: 3, borderRadius: 60 }}>
-        </View>
-
 
       </View>
     );

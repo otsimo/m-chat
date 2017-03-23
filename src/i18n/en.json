@@ -15,5 +15,87 @@
   "male": "Male",
   "female": "Female",
   "join": "Join Study",
-  "learn": "Learn more"
+  "learn": "Learn more",
+  "home": "Home",
+  "noteligible": "You are not eligible",
+  "parent": "Parent",
+  "grandparent": "Grand Parent",
+  "guardion": "Guardion",
+  "educator": "Educator",
+  "healthcare": "Health care provider",
+  "other": "Other",
+  "emailsaved": "Saved",
+  
+  "welcome": {
+    "header": "Welcome", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "This simple walkthrough will explain the consent of research study. After you learn about the test, you can choose if you would like to participate.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+  "dataGather": {
+    "header": "Data Gathering", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "We will collect anonymous data from this screening test & study.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+  "privacy": {
+    "header": "Privacy", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "We will protect your privacy to the best of our ability. The coded data will be encrypted and stored on a secure cloud server (hipaa compliant) to prevent improper access. ", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+  "dataUse": {
+    "header": "Data Use", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "Your coded data will be used for research and may be shared with other researchers worldwide.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+  "studySurvey": {
+    "header": "Study Survey", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "We will also ask you to answer brief surveys to understand some aspects and gather data.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+  },
+  "potentialBenefits": {
+    "header": "Potential Benefits", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "You will be able to assess risk for ASD. The M-CHAT is validated for screening toddlers between 16 and 30 months of age, to assess risk for autism spectrum disorders (ASD)", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+  },
+  "potentialRisks": {
+    "header": "Potential Risks", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+  "notMedicalCare": {
+    "header": "NOT Medical Care", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "This test only for assess risk for autism spectrum disorders (ASD). There is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD. Please advise your doctor for real medical answers.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+  },
+  "followUp": {
+    "header": "Follow Up", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+    "text": "We might want to reach you. You can opt out the follow up anytime.", // Ana yazı 
+    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+  },
+
+
+
+  "stepQuestion1": "Does your child enjoy being swung, bounced on your knee, etc.?",
+  "stepQuestion2": "Does your child take an interest in other children?",
+  "stepQuestion3": "Does your child like climbing on things, such as up stairs?",
+  "stepQuestion4": "Does your child enjoy playing peek-a-boo/hide-and-seek?",
+  "stepQuestion5": "Does your child ever pretend, for example, to talk on the phone or take care of a doll or pretend other things?",
+  "stepQuestion6": "Does your child ever use his/her index finger to point, to ask for something?",
+  "stepQuestion7": "Does your child ever use his/her index finger to point, to indicate interest in something?",
+  "stepQuestion8": "Can your child play properly with small toys (e.g. cars or blocks) without just mouthing, fiddling, or dropping them?",
+  "stepQuestion9": "Does your child ever bring objects over to you (parent) to show you something?",
+  "stepQuestion10": "Does your child look you in the eye for more than a second or two?",
+  "stepQuestion11": "Does your child ever seem oversensitive to noise? (e.g., plugging ears)",
+  "stepQuestion12": "Does your child smile in response to your face or your smile?",
+  "stepQuestion13": "Does your child imitate you? (e.g., you make a face-will your child imitate it?)",
+  "stepQuestion14": "Does your child respond to his/her name when you call?",
+  "stepQuestion15": "If you point at a toy across the room, does your child look at it?",
+  "stepQuestion16": "Does your child walk?",
+  "stepQuestion17": "Does your child look at things you are looking at?",
+  "stepQuestion18": "Does your child make unusual finger movements near his/her face?",
+  "stepQuestion19": "Does your child try to attract your attention to his/her own activity?",
+  "stepQuestion20": "Have you ever wondered if your child is deaf?",
+  "stepQuestion21": "Does your child understand what people say?",
+  "stepQuestion22": "Does your child sometimes stare at nothing or wander with no purpose?",
+  "stepQuestion23": "Does your child look at your face to check your reaction when faced with something unfamiliar?"
+
 }

@@ -44,12 +44,12 @@ export class ConsentPrefab extends Component {
               flexDirection: 'column',
             }}
           >
-            <View style={{ height: 45, marginLeft: 15,marginTop: 10 }}>
+            <View style={{ height: 45, marginLeft: 15, marginTop: 10 }}>
               <TouchableNativeFeedback onPress={() => this._setModalVisible(false)}>
                 <Icon name="close" size={25} color="black" />
               </TouchableNativeFeedback>
             </View>
-            <WebView source={{ uri: this.props.learnURL }} style={{ marginTop: 0 }} />
+            <WebView source={this.props.learnURL} style={{ marginTop: 0 }} />
 
           </View>
 
@@ -61,14 +61,14 @@ export class ConsentPrefab extends Component {
 
         <View style={{ flex: 6, flexDirection: 'column', backgroundColor: 'white', alignItems: 'center' }}>
 
-          <View style={{ margin: 30 }}>
+          <View style={{ margin: 15 }}>
             <Text style={{ fontSize: 30, textAlign: 'center', color: 'black' }}>
               {this.props.textHeader}
             </Text>
           </View>
 
           <View>
-            <Text style={{ fontSize: 18, textAlign: 'center', color: 'black', marginHorizontal: 10 }}>
+            <Text style={{ fontSize: 16, textAlign: 'center', color: 'black', marginHorizontal: 10 }}>
               {this.props.text}
             </Text>
           </View>

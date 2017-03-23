@@ -18,7 +18,7 @@ onNextPressed() {
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} image={require("../pngs/potential_riskkopya.png")} textHeader="Potential Risks" text=""/>
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent7LearnMore.html')} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
       </View>
     );
   }

@@ -1,64 +1,64 @@
 {
-  "welcome": {
-    "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
-  },
+    "welcome": {
+        "header": "Welcome", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "This simple walkthrough will explain the consent of research study. After you learn about the test, you can choose if you would like to participate.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    },
 
 
-  "dataGather": {
-     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
-    
-  },
+    "dataGather": {
+        "header": "Data Gathering", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "We will collect anonymous data from this screening test & study.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için
 
-  "privacy": {
-   "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
-  },
+    },
 
-
-  "dataUse": {
-    "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
-  },
+    "privacy": {
+        "header": "Privacy", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "We will protect your privacy to the best of our ability. The coded data will be encrypted and stored on a secure cloud server (hipaa compliant) to prevent improper access. ", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    },
 
 
-  "studySurvey": {
-    "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
-  },
+    "dataUse": {
+        "header": "Data Use", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "Your coded data will be used for research and may be shared with other researchers worldwide.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    },
 
 
-  "potentialBenefits": {
-     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
-  },
+    "studySurvey": {
+        "header": "Study Survey", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "We will also ask you to answer brief surveys to understand some aspects and gather data.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    },
 
 
-  "potentialRisks": {
-     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
-  },
+    "potentialBenefits": {
+        "header": "Potential Benefits", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "You will be able to assess risk for ASD. The M-CHAT is validated for screening toddlers between 16 and 30 months of age, to assess risk for autism spectrum disorders (ASD)", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    },
 
 
-  "notMedicalCare": {
-     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
-  },
+    "potentialRisks": {
+        "header": "Potential Risks", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    },
 
 
-  "followUp": {
-     "header": "", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
-    "text": "", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
-  }
-  
+    "notMedicalCare": {
+        "header": "NOT Medical Care", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "This test only for assess risk for autism spectrum disorders (ASD). There is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD. Please advise your doctor for real medical answers.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    },
+
+
+    "followUp": {
+        "header": "Follow Up", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
+        "text": "We might want to reach you. You can opt out the follow up anytime.", // Ana yazı 
+        "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    }
+
 }

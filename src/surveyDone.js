@@ -7,6 +7,7 @@ import {
   Button,
   TouchableOpacity,
   TextInput,
+  ToastAndroid,
 } from 'react-native';
 
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
@@ -43,6 +44,11 @@ export class SurveyDone extends Component {
 
   showSavePopUp() {
     this.popupDialogSave.show();
+  }
+
+  saveUserEmail() {
+    saveEmail(this.email);
+    ToastAndroid.show(i18n.t('emailsaved'), ToastAndroid.SHORT);
   }
 
   render() {
@@ -95,7 +101,7 @@ export class SurveyDone extends Component {
                   style={{ height: 40, marginTop: 10, width: Dimensions.get('window').width - 50 }}
                   onChangeText={(text) => this.getText({ text })}
                 />
-                <TouchableOpacity style={{ marginVertical: 10 }} onPress={() => saveEmail(this.email)}>
+                <TouchableOpacity style={{ marginVertical: 10 }} onPress={() => this.saveUserEmail()}>
                   <View style={{ backgroundColor: 'rgb(4,165,250)', padding: 10 }}>
                     <Text style={{ color: 'white', marginHorizontal: 30 }}>
                       {i18n.t('save')}

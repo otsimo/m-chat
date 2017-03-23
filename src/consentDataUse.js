@@ -10,15 +10,15 @@ export class ConsentDataUse extends Component {
     }),
   };
 
-onNextPressed() {
-  const { navigate } = this.props.navigation;
-  navigate('ConsentStudySurvey');
-}
+  onNextPressed() {
+    const { navigate } = this.props.navigation;
+    navigate('ConsentStudySurvey');
+  }
 
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} image={require("../pngs/data_usekopya.png")} textHeader="Data Using" text=""/>
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent4LearnMore.html')} image={require("../pngs/data_usekopya.png")} textHeader={i18n.t('dataUse.header')} text={i18n.t('dataUse.text')} />
       </View>
     );
   }

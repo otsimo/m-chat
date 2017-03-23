@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { CustomizedButton } from './customizedButton.js';
+import { RelationCustomizedButton } from './relationCustomizedButton';
 import i18n from './i18n';
+
 
 export class RelationButton extends Component {
   static propTypes = {
@@ -27,10 +28,12 @@ export class RelationButton extends Component {
           alignItems: 'center',
         }}
       >
-        <CustomizedButton isSelected={this.state.selectedOne === 'yes'} buttonName={i18n.t('yes')} onClick={() => this.selectButton('yes')} />
-        <CustomizedButton isSelected={this.state.selectedOne === 'ye'} buttonName={i18n.t('yes')} onClick={() => this.selectButton('ye')} />
-        <CustomizedButton isSelected={this.state.selectedOne === 'n'} buttonName={i18n.t('yes')} onClick={() => this.selectButton('n')} />
-        <CustomizedButton isSelected={this.state.selectedOne === 'no'} buttonName={i18n.t('no')} onClick={() => this.selectButton('no')} />
+        <RelationCustomizedButton isSelected={this.state.selectedOne === 'parent'} buttonName={i18n.t('parent')} onClick={() => this.selectButton('parent')} />
+        <RelationCustomizedButton isSelected={this.state.selectedOne === 'grandparent'} buttonName={i18n.t('grandparent')} onClick={() => this.selectButton('grandparent')} />
+        <RelationCustomizedButton isSelected={this.state.selectedOne === 'guardion'} buttonName={i18n.t('guardion')} onClick={() => this.selectButton('guardion')} />
+        <RelationCustomizedButton isSelected={this.state.selectedOne === 'educator'} buttonName={i18n.t('educator')} onClick={() => this.selectButton('educator')} />
+        <RelationCustomizedButton isSelected={this.state.selectedOne === 'healthcare'} buttonName={i18n.t('healthcare')} onClick={() => this.selectButton('healthcare')} />
+        <RelationCustomizedButton isSelected={this.state.selectedOne === 'other'} buttonName={i18n.t('other')} onClick={() => this.selectButton('other')} />
       </View>
     );
   }
