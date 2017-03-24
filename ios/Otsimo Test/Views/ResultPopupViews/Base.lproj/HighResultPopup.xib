@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HighResultPopupController" customModule="Otsimo_Test" customModuleProvider="target">
             <connections>
-                <outlet property="lbl_result" destination="FLK-CT-VX7" id="w5p-Vu-UgZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,16 +42,6 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-CHAT Testinden Alınan Puan:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLK-CT-VX7">
-                            <rect key="frame" x="-8.5" y="181" width="269" height="63"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="63" id="9au-j4-puS"/>
-                                <constraint firstAttribute="width" constant="269" id="FAX-Ee-XCg"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGG-Ib-9yI">
                             <rect key="frame" x="58" y="250" width="136" height="1"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,21 +67,44 @@ gelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir.</string>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puan :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-LE-rxy">
+                            <rect key="frame" x="52" y="179" width="88" height="63"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="88" id="43e-fL-zM4"/>
+                                <constraint firstAttribute="height" constant="63" id="Thg-eI-596"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEU-Kq-K5J">
+                            <rect key="frame" x="148" y="179" width="46" height="63"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="63" id="3Lx-5m-qV9"/>
+                                <constraint firstAttribute="width" constant="46" id="yH9-8n-RGE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="oEU-Kq-K5J" firstAttribute="top" secondItem="NuW-GC-gRc" secondAttribute="bottom" constant="4" id="3Lw-wk-6O2"/>
+                        <constraint firstAttribute="trailing" secondItem="oEU-Kq-K5J" secondAttribute="trailing" constant="58" id="5he-fi-vMD"/>
                         <constraint firstItem="eGG-Ib-9yI" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="CC3-fl-Dhx"/>
                         <constraint firstItem="NuW-GC-gRc" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="D6E-lw-HRF"/>
-                        <constraint firstItem="FLK-CT-VX7" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="ERa-D9-KOp"/>
+                        <constraint firstItem="f5v-LE-rxy" firstAttribute="top" secondItem="NuW-GC-gRc" secondAttribute="bottom" constant="4" id="DpD-mi-TUu"/>
                         <constraint firstItem="bQg-Td-074" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" id="MGp-nb-aBz"/>
                         <constraint firstItem="G0d-hr-0JU" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="250" id="Q1D-le-1zC"/>
                         <constraint firstAttribute="height" constant="417" id="QyV-m9-1Q5"/>
                         <constraint firstItem="eGG-Ib-9yI" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="250" id="Xgo-Qp-Vwt"/>
                         <constraint firstAttribute="trailing" secondItem="bQg-Td-074" secondAttribute="trailing" id="Zw4-62-rhs"/>
-                        <constraint firstItem="FLK-CT-VX7" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="181" id="bJC-5C-fRC"/>
                         <constraint firstItem="bQg-Td-074" firstAttribute="leading" secondItem="4mi-1x-r7M" secondAttribute="leading" id="glS-Qc-gAa"/>
                         <constraint firstItem="bQg-Td-074" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="hSc-YU-e36"/>
                         <constraint firstAttribute="width" constant="252" id="jLK-de-1mD"/>
                         <constraint firstItem="G0d-hr-0JU" firstAttribute="centerX" secondItem="4mi-1x-r7M" secondAttribute="centerX" id="mtO-qJ-xkT"/>
+                        <constraint firstItem="oEU-Kq-K5J" firstAttribute="leading" secondItem="f5v-LE-rxy" secondAttribute="trailing" constant="8" id="rGT-tv-jmo"/>
+                        <constraint firstItem="f5v-LE-rxy" firstAttribute="leading" secondItem="4mi-1x-r7M" secondAttribute="leading" constant="52" id="vGQ-g0-5RJ"/>
                         <constraint firstItem="NuW-GC-gRc" firstAttribute="top" secondItem="4mi-1x-r7M" secondAttribute="top" constant="99" id="y0o-2N-xh7"/>
                     </constraints>
                 </view>
@@ -105,7 +117,7 @@ gelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir.</string>
                 <constraint firstItem="4mi-1x-r7M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uDE-8c-NHW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="241.5" y="379"/>
+            <point key="canvasLocation" x="241" y="378.5"/>
         </view>
     </objects>
 </document>

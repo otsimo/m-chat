@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MediumResultPopupController" customModule="Otsimo_Test" customModuleProvider="target">
             <connections>
-                <outlet property="lbl_result" destination="3VZ-jI-1jG" id="tbw-3W-EMx"/>
+                <outlet property="lbl_result" destination="W3l-cp-4nt" id="3cb-2E-hCl"/>
                 <outlet property="view" destination="A7y-QX-mS7" id="Bfj-gn-g4k"/>
             </connections>
         </placeholder>
@@ -43,16 +43,6 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-CHAT Testinden Alınan Puan:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VZ-jI-1jG">
-                            <rect key="frame" x="-8.5" y="181" width="269" height="63"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="63" id="4ae-ut-4gO"/>
-                                <constraint firstAttribute="width" constant="269" id="aHC-ad-fCx"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2G-k5-TEn">
                             <rect key="frame" x="58" y="250" width="136" height="1"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,18 +65,41 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puan :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wl7-wx-qBd">
+                            <rect key="frame" x="34" y="179" width="88" height="63"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="88" id="dWw-aI-QBP"/>
+                                <constraint firstAttribute="height" constant="63" id="gdM-HX-TbN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3l-cp-4nt">
+                            <rect key="frame" x="130" y="179" width="46" height="63"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="4aF-22-Tvu"/>
+                                <constraint firstAttribute="height" constant="63" id="Dls-RW-HdM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="W3l-cp-4nt" firstAttribute="leading" secondItem="Wl7-wx-qBd" secondAttribute="trailing" constant="8" id="4kE-Jw-xDA"/>
                         <constraint firstItem="Uzn-c0-HgZ" firstAttribute="top" secondItem="0rw-Tx-Mj3" secondAttribute="top" id="8iw-RM-vzU"/>
                         <constraint firstAttribute="height" constant="417" id="9aB-3a-qvE"/>
+                        <constraint firstAttribute="trailing" secondItem="W3l-cp-4nt" secondAttribute="trailing" constant="76" id="DVv-6z-LWN"/>
                         <constraint firstItem="Uzn-c0-HgZ" firstAttribute="centerX" secondItem="0rw-Tx-Mj3" secondAttribute="centerX" id="IOi-z6-UzP"/>
                         <constraint firstItem="Uzn-c0-HgZ" firstAttribute="leading" secondItem="0rw-Tx-Mj3" secondAttribute="leading" id="ISP-2n-UNz"/>
                         <constraint firstItem="Gw1-oR-BnF" firstAttribute="centerX" secondItem="0rw-Tx-Mj3" secondAttribute="centerX" id="LWA-gg-Ckv"/>
+                        <constraint firstItem="Wl7-wx-qBd" firstAttribute="leading" secondItem="0rw-Tx-Mj3" secondAttribute="leading" constant="34" id="Nmi-xN-UCy"/>
                         <constraint firstItem="Gw1-oR-BnF" firstAttribute="top" secondItem="0rw-Tx-Mj3" secondAttribute="top" constant="99" id="S8M-6b-gqf"/>
+                        <constraint firstItem="Wl7-wx-qBd" firstAttribute="top" secondItem="Gw1-oR-BnF" secondAttribute="bottom" constant="4" id="TqD-5l-Vpf"/>
                         <constraint firstAttribute="width" constant="252" id="VwX-oQ-9Yo"/>
+                        <constraint firstItem="W3l-cp-4nt" firstAttribute="top" secondItem="Gw1-oR-BnF" secondAttribute="bottom" constant="4" id="ZTF-7t-bZU"/>
                         <constraint firstItem="Z2G-k5-TEn" firstAttribute="centerX" secondItem="0rw-Tx-Mj3" secondAttribute="centerX" id="dzi-4g-DQW"/>
-                        <constraint firstItem="3VZ-jI-1jG" firstAttribute="top" secondItem="0rw-Tx-Mj3" secondAttribute="top" constant="181" id="ghJ-HA-wat"/>
-                        <constraint firstItem="3VZ-jI-1jG" firstAttribute="centerX" secondItem="0rw-Tx-Mj3" secondAttribute="centerX" id="ktK-5t-C74"/>
                         <constraint firstAttribute="trailing" secondItem="Uzn-c0-HgZ" secondAttribute="trailing" id="l1h-kx-OtL"/>
                         <constraint firstItem="Z2G-k5-TEn" firstAttribute="top" secondItem="0rw-Tx-Mj3" secondAttribute="top" constant="250" id="vjL-ib-Ogh"/>
                         <constraint firstItem="h6a-CN-KoL" firstAttribute="top" secondItem="0rw-Tx-Mj3" secondAttribute="top" constant="250" id="wg0-uH-1Uh"/>
@@ -102,7 +115,7 @@
                 <constraint firstItem="0rw-Tx-Mj3" firstAttribute="leading" secondItem="A7y-QX-mS7" secondAttribute="leading" id="uNi-Yj-hGY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="263" y="402"/>
+            <point key="canvasLocation" x="263" y="401.5"/>
         </view>
     </objects>
 </document>

@@ -17,7 +17,7 @@ class HighResultPopupController: UIViewController {
     @IBOutlet weak var lbl_result: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbl_result.text = "M-CHAT Testinden Alınan Puan: " + String(point)
+        lbl_result.text = String(point)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

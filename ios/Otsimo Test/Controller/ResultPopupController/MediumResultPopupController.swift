@@ -15,7 +15,7 @@ class MediumResultPopupController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        lbl_result.text = "M-CHAT Testinden Alınan Puan: " + String(point)
+        lbl_result.text = String(point)
     }
 
     override func didReceiveMemoryWarning() {

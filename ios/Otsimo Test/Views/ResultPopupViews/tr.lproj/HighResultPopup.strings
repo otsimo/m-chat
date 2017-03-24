@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "M-CHAT Testinden Alınan Puan:"; ObjectID = "FLK-CT-VX7"; */
-"FLK-CT-VX7.text" = "M-CHAT Testinden Alınan Puan:";
+"FLK-CT-VX7.text" = "Puan :";
 
 /* Class = "UILabel"; text = "M-CHAT tanı koymaya yönelik bir araç\ndeğildir. Bir çocuğun MCHAT’te başarısız\nolması o çocuğun otizm spektrum bozuklugu tanısı aldığı anlamına\ngelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir."; ObjectID = "G0d-hr-0JU"; */
 "G0d-hr-0JU.text" = "M-CHAT tanı koymaya yönelik bir araç\ndeğildir. Bir çocuğun MCHAT’te başarısız\nolması o çocuğun otizm spektrum bozuklugu tanısı aldığı anlamına\ngelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir.";

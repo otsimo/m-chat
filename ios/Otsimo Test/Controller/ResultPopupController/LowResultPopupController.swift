@@ -15,7 +15,7 @@ class LowResultPopupController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lbl_result.text = "M-CHAT Testinden Alınan Puan: " + String(point)
+        lbl_result.text = String(point)
         // Do any additional setup after loading the view.
     }
 

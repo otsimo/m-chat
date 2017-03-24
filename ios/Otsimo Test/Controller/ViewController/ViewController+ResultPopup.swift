@@ -30,8 +30,9 @@ extension ViewController {
 
         if (total >= 0 && total <= 2) {
             buttonSave.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
+            buttonShare.backgroundColor = UIColor(red: 0.30, green: 0.65, blue: 0.24, alpha: 1.0)
 
-            let resultVC = HighResultPopupController(nibName: "LowResultPopup", bundle: nil)
+            let resultVC = LowResultPopupController(nibName: "LowResultPopup", bundle: nil)
             resultVC.point = total
             let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
@@ -42,8 +43,9 @@ extension ViewController {
 
         } else if (total >= 3 && total <= 6) {
             buttonSave.backgroundColor = UIColor(red:0.88, green:0.40, blue:0.10, alpha:1.0)
-
-            let resultVC = HighResultPopupController(nibName: "MediumResultPopup", bundle: nil)
+            buttonShare.backgroundColor = UIColor(red:0.88, green:0.40, blue:0.10, alpha:1.0)
+            
+            let resultVC = MediumResultPopupController(nibName: "MediumResultPopup", bundle: nil)
             resultVC.point = total
             let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
 
@@ -52,6 +54,8 @@ extension ViewController {
             present(popupVC, animated: true, completion: nil)
         } else if (total >= 7 && total <= 20) {
             buttonSave.backgroundColor = UIColor(red:0.85, green:0.09, blue:0.15, alpha:1.0)
+            buttonShare.backgroundColor = UIColor(red:0.85, green:0.09, blue:0.15, alpha:1.0)
+            
             let resultVC = HighResultPopupController(nibName: "HighResultPopup", bundle: nil)
             resultVC.point = total
             let popupVC = PopupDialog(viewController: resultVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)

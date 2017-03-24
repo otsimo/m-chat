@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "M-CHAT Testinden Alınan Puan:"; ObjectID = "AB4-nW-7a8"; */
-"AB4-nW-7a8.text" = "M-CHAT Testinden Alınan Puan:";
+"AB4-nW-7a8.text" = "Puan :";
 
 /* Class = "UILabel"; text = "İlave bir test yapılmasına\nBu test ile\nihtiyaç yoktur"; ObjectID = "loQ-f7-Wri"; */
 "loQ-f7-Wri.text" = "No additional testing or evaluation is needed.";
