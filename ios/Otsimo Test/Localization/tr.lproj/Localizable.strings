@@ -78,3 +78,5 @@ InfoTask.genderStepText = "Çocuğun Cinsiyeti?";
 
 InfoTask.birthDayStepText = "Çocuğun Doğum Tarihi?";
 
+summaryStep.title = "Testi Başarıyla Sonuçlandırdınız";
+

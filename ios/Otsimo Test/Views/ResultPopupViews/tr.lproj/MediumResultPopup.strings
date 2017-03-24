@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "M-CHAT Testinden Alınan Puan:"; ObjectID = "3VZ-jI-1jG"; */
+"3VZ-jI-1jG.text" = "M-CHAT Testinden Alınan Puan:";
+
+/* Class = "UILabel"; text = "Çocuk bir çocuk psikiyatrisine yönlendirilmelidir"; ObjectID = "Gw1-oR-BnF"; */
+"Gw1-oR-BnF.text" = "Çocuk bir çocuk psikiyatrisine yönlendirilmelidir";
+
+/* Class = "UILabel"; text = "Orta Düzey                Otizm Şüphesi"; ObjectID = "Uzn-c0-HgZ"; */
+"Uzn-c0-HgZ.text" = "Orta Düzey                Otizm Şüphesi";
+
+/* Class = "UILabel"; text = "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun MCHAT’te başarısız olması o çocuğun otizm spektrum bozuklugu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir."; ObjectID = "h6a-CN-KoL"; */
+"h6a-CN-KoL.text" = "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun MCHAT’te başarısız olması o çocuğun otizm spektrum bozuklugu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece ‘şüphe’ bildirmektedir.";

@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "M-CHAT Testinden Alınan Puan:"; ObjectID = "AB4-nW-7a8"; */
+"AB4-nW-7a8.text" = "M-CHAT Testinden Alınan Puan:";
+
+/* Class = "UILabel"; text = "İlave bir test yapılmasına\nBu test ile\nihtiyaç yoktur"; ObjectID = "loQ-f7-Wri"; */
+"loQ-f7-Wri.text" = "İlave bir test yapılmasına\nBu test ile\nihtiyaç yoktur";
+
+/* Class = "UILabel"; text = "Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin daha fazla bilgi için tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir."; ObjectID = "lqf-vA-n45"; */
+"lqf-vA-n45.text" = "Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin daha fazla bilgi için tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.";
+
+/* Class = "UILabel"; text = "Düşük Düzey           Otizm Şüphesi"; ObjectID = "nKO-ld-VAk"; */
+"nKO-ld-VAk.text" = "Düşük Düzey           Otizm Şüphesi";

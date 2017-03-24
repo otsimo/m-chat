@@ -1,0 +1,6 @@
+
+/* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "WoT-wM-6WI"; */
+"WoT-wM-6WI.placeholder" = "e-mail";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "eTY-df-MNr"; */
+"eTY-df-MNr.normalTitle" = "Gönder";
