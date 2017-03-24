@@ -10,7 +10,7 @@ a:active {
 
 body {
     font-family: "Helvetica Neue", 'HelveticaNeue', 'HelveticaNeue';
-    font-size: 16pt;
+    font-size: 13pt;
     color: #000000;
     line-height: normal;
     font-weight: normal;
@@ -70,7 +70,7 @@ boldie {
 ul,
 ol {
     font-family: "Helvetica Neue", 'HelveticaNeue', 'HelveticaNeue';
-    font-size: 16pt;
+    font-size: 13pt;
     color: #000000;
     list-style-type: round;
     list-style-position: outside;

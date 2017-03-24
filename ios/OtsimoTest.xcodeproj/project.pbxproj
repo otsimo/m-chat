@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EE99D511E857ACA008957EF /* AboutStudy_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D4D1E857ACA008957EF /* AboutStudy_intro_tr.html */; };
+		1EE99D521E857ACA008957EF /* howstudyworks_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D4E1E857ACA008957EF /* howstudyworks_intro_tr.html */; };
+		1EE99D531E857ACA008957EF /* main_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D4F1E857ACA008957EF /* main_intro_tr.html */; };
+		1EE99D541E857ACA008957EF /* whoisrunning_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D501E857ACA008957EF /* whoisrunning_intro_tr.html */; };
+		1EE99D561E857B24008957EF /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D551E857B24008957EF /* welcome.png */; };
 		53056C3F1E803FB200D11AFF /* SendEmailPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53056C3D1E803FB200D11AFF /* SendEmailPopupController.swift */; };
 		53056C401E803FB200D11AFF /* SendEmailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53056C3E1E803FB200D11AFF /* SendEmailPopupController.xib */; };
 		5309B1371E2F71B30096A4FC /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309B1361E2F71B30096A4FC /* Server.swift */; };
@@ -160,6 +165,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1EE99D421E85778E008957EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1EE99D441E857792008957EF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		1EE99D4D1E857ACA008957EF /* AboutStudy_intro_tr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = AboutStudy_intro_tr.html; path = HTMLContent/AboutStudy_intro_tr.html; sourceTree = SOURCE_ROOT; };
+		1EE99D4E1E857ACA008957EF /* howstudyworks_intro_tr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = howstudyworks_intro_tr.html; path = HTMLContent/howstudyworks_intro_tr.html; sourceTree = SOURCE_ROOT; };
+		1EE99D4F1E857ACA008957EF /* main_intro_tr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main_intro_tr.html; path = HTMLContent/main_intro_tr.html; sourceTree = SOURCE_ROOT; };
+		1EE99D501E857ACA008957EF /* whoisrunning_intro_tr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = whoisrunning_intro_tr.html; path = HTMLContent/whoisrunning_intro_tr.html; sourceTree = SOURCE_ROOT; };
+		1EE99D551E857B24008957EF /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = welcome.png; path = HTMLContent/welcome.png; sourceTree = SOURCE_ROOT; };
 		53056C3D1E803FB200D11AFF /* SendEmailPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailPopupController.swift; sourceTree = "<group>"; };
 		53056C3E1E803FB200D11AFF /* SendEmailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendEmailPopupController.xib; sourceTree = "<group>"; };
 		5309B1361E2F71B30096A4FC /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -410,7 +422,12 @@
 		534A3B801E40BCAF005FA5F3 /* HTMLContent */ = {
 			isa = PBXGroup;
 			children = (
+				1EE99D4D1E857ACA008957EF /* AboutStudy_intro_tr.html */,
+				1EE99D4E1E857ACA008957EF /* howstudyworks_intro_tr.html */,
+				1EE99D4F1E857ACA008957EF /* main_intro_tr.html */,
+				1EE99D501E857ACA008957EF /* whoisrunning_intro_tr.html */,
 				53C7AF1F1E8438AD0081B5A4 /* AboutStudy_intro.html */,
+				1EE99D551E857B24008957EF /* welcome.png */,
 				53C7AF201E8438AD0081B5A4 /* howstudyworks_intro.html */,
 				53C7AF211E8438AD0081B5A4 /* Intro_section_PD.css */,
 				53C7AF221E8438AD0081B5A4 /* main_intro.html */,
@@ -796,15 +813,20 @@
 				53C7AF261E8438AD0081B5A4 /* Intro_section_PD.css in Resources */,
 				53FFFA041E72B868000BEC96 /* Assets.xcassets in Resources */,
 				53FFFA0D1E72B883000BEC96 /* MediumResultPopup.xib in Resources */,
+				1EE99D521E857ACA008957EF /* howstudyworks_intro_tr.html in Resources */,
 				53FFFAC31E72BE70000BEC96 /* Localizable.strings in Resources */,
+				1EE99D531E857ACA008957EF /* main_intro_tr.html in Resources */,
 				53C7AF2A1E8438B60081B5A4 /* welcome.png in Resources */,
 				53C7AEF01E8400DD0081B5A4 /* NotEligiblePopupController.xib in Resources */,
+				1EE99D541E857ACA008957EF /* whoisrunning_intro_tr.html in Resources */,
 				53FFFA381E72B8F9000BEC96 /* WalkThroughCell.xib in Resources */,
 				53FFFAB31E72BD5E000BEC96 /* Main.storyboard in Resources */,
 				53FFFA0B1E72B883000BEC96 /* HighResultPopup.xib in Resources */,
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
+				1EE99D511E857ACA008957EF /* AboutStudy_intro_tr.html in Resources */,
 				53FFFADE1E72C455000BEC96 /* questions in Resources */,
 				53C7AF241E8438AD0081B5A4 /* AboutStudy_intro.html in Resources */,
+				1EE99D561E857B24008957EF /* welcome.png in Resources */,
 				53056C401E803FB200D11AFF /* SendEmailPopupController.xib in Resources */,
 				53C7AF251E8438AD0081B5A4 /* howstudyworks_intro.html in Resources */,
 				53C7AF271E8438AD0081B5A4 /* main_intro.html in Resources */,
@@ -954,6 +976,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				53FFFAB41E72BD5E000BEC96 /* Base */,
+				1EE99D421E85778E008957EF /* en */,
+				1EE99D441E857792008957EF /* tr */,
 			);
 			name = Main.storyboard;
 			path = Views;

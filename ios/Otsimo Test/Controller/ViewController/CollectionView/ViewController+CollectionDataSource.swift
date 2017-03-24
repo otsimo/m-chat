@@ -20,7 +20,9 @@ extension ViewController: UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "walkThroughCell", for: indexPath) as! WalkThroughCell
         let url = htmlContents[indexPath.row]
-        let testHTML = Bundle.main.path(forResource: url, ofType: "html")
+        
+        let realURL = NSLocalizedString(url, comment: "")
+        let testHTML = Bundle.main.path(forResource: realURL, ofType: "html")
         
         do {
             

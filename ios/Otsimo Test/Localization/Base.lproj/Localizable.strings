@@ -8,6 +8,7 @@
 buttonYes = "Evet";
 buttonNo = "Hayır";
 
+/*
 q1.1 = "If you point at something across the room, does ___ look at it?";
 q1.2 = "Please give me an example of how he/she will respond if you point at something";
 q1.3 = "If you point at something, what does your child typically do?";
@@ -166,3 +167,55 @@ q9.6 = "A flower he/she has picked?";
 q9.7 = "A bug he/she has found in the grass?";
 q9.8 = "A few blocks he/she has put together?";
 q9.9 = "Is this sometimes just to show you, not to get help?";
+*/
+
+a1.title = "Potential Benefits";
+a2.title = "Potential Risks";
+a3.title = "NOT Medical Care";
+a4.title = "Follow Up";
+a1.sum = "You will be able to assess risk for ASD. The M-CHAT is validated for screening toddlers between 16 and 30 months of age, to assess risk for autism spectrum disorders (ASD).";
+a2.sum = "The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD.";
+a3.sum = "This test only for assess risk for autism spectrum disorders (ASD). There is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD. Please advise your doctor for real medical answers.";
+a4.sum = "We might want to reach you. You can opt out the follow up anytime.";
+a1.content = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>The benefits of this test are primarily assess risk for autism spectrum disorders (ASD).<br /><br /> The M-CHAT is validated for screening toddlers between 16 and 30 months of age, to assess risk for autism spectrum disorders (ASD). The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. We will return the test result learned from analysis of the your data. On the other hand, we cannot, and thus we do not, guarantee or promise that you will personally receive any direct benefits from this test. However, you will be able to get some insights and export your data at will to share with your medical doctor and anyone you choose.</p></body>';
+a2.content = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>This is not a medical treatment study. The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD.<br/><br/>We take great care to protect your privacy. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.<br/><br/> Participating in this study as parent or relative may generate a wide range of emotions. It could affect your mood.<br/><br/> Participation in this study may involve risks that are not known at this time. You will be told of any new information that might change your decision to be in this study.</p></body>';
+a3.content = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>The M-CHAT is validated for screening toddlers between 16 and 30 months of age, to assess risk for autism spectrum disorders (ASD). The M-CHAT can be administered and scored as part of a well-child check-up, and also can be used by specialists or other professionals to assess risk for ASD. The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD. To address this, M-CHAT have developed a structured follow-up interview for use in conjunction with the M-CHAT; it is available at the two websites listed above. Users should be aware that even with the follow-up questions, a significant number of the children who fail the M-CHAT will not be diagnosed with an ASD; however, these children are at risk for other developmental disorders or delays, and therefore, evaluation is warranted for any child who fails the screening.<br/><br/>The M-CHAT can be scored in less than two minutes. Scoring instructions can be downloaded from http://www.mchatscreen.com or www.firstsigns.org. We also have developed a scoring template, which is available on these websites; when printed on an overhead transparency and laid over the completed M-CHAT, it facilitates scoring. Please note that minor differences in printers may cause your scoring template not to line up exactly with the printed M-CHAT. Children who fail 3 or more items total or 2 or more critical items (particularly if these scores remain elevated after the M-CHAT Follow-up Interview) should be referred for diagnostic evaluation by a specialist trained to evaluate ASD in very young children. In addition, children for whom there are physician, parent, or other professional’s concerns about ASD should be referred for evaluation, given that it is unlikely for any screening instrument to have 100% sensitivity.</p></body>';
+a4.content = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>We may reach out to you. We might want to alert you to follow-up tests, surveys, or another noficiations. We might want to tell you about other research opportunities. You can still participate in the test even if you opt out of these follow up notifications.<br/><br/> There are two ways to opt out of follow up notifications. You can adjust the "permissions" setting by links from email or settings. Or you can contact us by email at info@otsimo.com.</p></body>';
+
+"Consent.overview.sum"="This simple walkthrough will explain the consent of research study. After you learn about the test, you can choose if you would like to participate.";
+"Consent.dataGathering.sum"="We will collect anonymous data from this screening test & study.";
+"Consent.privacy.sum"="We will protect your privacy to the best of our ability. The coded data will be encrypted and stored on a secure cloud server (hipaa compliant) to prevent improper access.";
+"Consent.dataUse.sum"="Your coded data will be used for research and may be shared with other researchers worldwide.";
+"Consent.studySurvey.sum"="We will also ask you to answer brief surveys to understand some aspects and gather data.";
+
+"Consent.overview.html" = "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' /><body><p> Our aim is democratizing the autism screening.<br /><br /> We collebarate with Dr. Yankı Yazgan(researcher) to make accessible autism screening to everyone. Autism affects one in every 68 children and one in every 42 boys. Cost a family around $60.000 every year. We at Otsimo are proposing a new approach to screen autism via using mobile apps.<br/><br/> Does My Child Have Autism? is a unique iPhone application that uses M-CHAT™. Our goal is to lower the age of diagnosis of autism.<br /><br /> We want to work with you to gather meaningful data. We at Otsimo are proposing a new approach to screening ASD using mobile apps. The insights gained from this study may help develop ideas on how to manage these differences in symptoms.<br/><br/> If you are over 18 years old, we invite you to join the screening. You do not need to know any child diagnosed with autism or have concerns about it to join this screening.</p><p>Your participation in this study is voluntary. You may decide not to participate or you may leave the study at any time. If you withdraw from the study, we will stop collecting new data. The coded study data that you have already provided, and that have already been distributed, will not be able to be destroyed or deleted.</p><p>To withdraw from this study please contact us by email <a href='mailto:info@otsimo.com'>info@otsimo.com</a> or tap on the 'Cancel' link in the test page of the application or close the app.</p></body>";
+"Consent.dataGathering.html" = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>Before completing the consent and begining the screening, we will assess your understanding and eligibility to provide consent. It is important that you understand what the test is about and what is involved. You should not join the research study until all of your eligibility questions are answered. Feel free to contact us with any questions.</p></body>';
+"Consent.privacy.html" = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>We take great care to protect your information, however there is a slight risk of loss of privacy. This is a low risk because we separate your personal information (information that can directly identify you, such as your name or phone number) from the research study data to respect your privacy.</p><p>However, even with removal of this information, in the event of unauthorized access, it is sometimes possible to re-identify an individual. This risk, while low, should be considered before enrolling.</p></body>';
+"Consent.dataUse.html" = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>By analyzing the data from your test, we will provide:</p><ul><li>M-CHAT score of your child.</li><li>Conclusion document that has the risk for ASD.</li></ul></body>';
+"Consent.studySurvey.html" = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>We will ask you to answer questions about the child, mental and physical history of the child, and current status. You may choose to leave the test anytime.</p></body>';
+
+q1.1 = "If you point at something across the room, does ___ look at it?";
+q2.1 = "If you point at something across the room, does ___ look at it?";
+q3.1 = "If you point at something across the room, does ___ look at it?";
+q4.1 = "If you point at something across the room, does ___ look at it?";
+q5.1 = "If you point at something across the room, does ___ look at it?";
+q6.1 = "If you point at something across the room, does ___ look at it?";
+q7.1 = "If you point at something across the room, does ___ look at it?";
+q8.1 = "If you point at something across the room, does ___ look at it?";
+q9.1 = "If you point at something across the room, does ___ look at it?";
+q10.1 = "If you point at something across the room, does ___ look at it?";
+q11.1 = "If you point at something across the room, does ___ look at it?";
+q12.1 = "If you point at something across the room, does ___ look at it?";
+q13.1 = "If you point at something across the room, does ___ look at it?";
+q14.1 = "If you point at something across the room, does ___ look at it?";
+q15.1 = "If you point at something across the room, does ___ look at it?";
+q16.1 = "If you point at something across the room, does ___ look at it?";
+q17.1 = "If you point at something across the room, does ___ look at it?";
+q18.1 = "If you point at something across the room, does ___ look at it?";
+q19.1 = "If you point at something across the room, does ___ look at it?";
+q20.1 = "If you point at something across the room, does ___ look at it?";
+q21.1 = "If you point at something across the room, does ___ look at it?";
+q22.1 = "If you point at something across the room, does ___ look at it?";
+q23.1 = "If you point at something across the room, does ___ look at it?";
+
+

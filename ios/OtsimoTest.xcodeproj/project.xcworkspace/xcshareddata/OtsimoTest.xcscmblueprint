@@ -9,8 +9,8 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9303AAAD-FCC4-4E4C-81D4-CFF39EEE6DEA",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "80E5FBFFCD8479764A1F42BF647E48E324764BF0" : "OtsimoTest\/",
-    "9CF6181E3789E3853840089C16D4B9FDDB9B31E2" : "OtsimoTest\/ios\/Otsimo%20Test\/third_party\/ResearchKit\/"
+    "80E5FBFFCD8479764A1F42BF647E48E324764BF0" : "m-chat\/",
+    "9CF6181E3789E3853840089C16D4B9FDDB9B31E2" : "m-chat\/ios\/Otsimo%20Test\/third_party\/ResearchKit\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "OtsimoTest",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
