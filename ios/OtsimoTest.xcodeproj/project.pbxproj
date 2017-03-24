@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EE7E09E1E858A8200BF0AE1 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */; };
 		1EE99D511E857ACA008957EF /* AboutStudy_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D4D1E857ACA008957EF /* AboutStudy_intro_tr.html */; };
 		1EE99D521E857ACA008957EF /* howstudyworks_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D4E1E857ACA008957EF /* howstudyworks_intro_tr.html */; };
 		1EE99D531E857ACA008957EF /* main_intro_tr.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EE99D4F1E857ACA008957EF /* main_intro_tr.html */; };
@@ -42,7 +43,6 @@
 		53C7AF281E8438AD0081B5A4 /* whoisrunning_intro.html in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF231E8438AD0081B5A4 /* whoisrunning_intro.html */; };
 		53C7AF2A1E8438B60081B5A4 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 53C7AF291E8438B60081B5A4 /* welcome.png */; };
 		53FFF9FE1E72B421000BEC96 /* CustomStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FB1E72B421000BEC96 /* CustomStep.swift */; };
-		53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */; };
 		53FFFA001E72B421000BEC96 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */; };
 		53FFFA041E72B868000BEC96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FFFA011E72B868000BEC96 /* Assets.xcassets */; };
 		53FFFA051E72B868000BEC96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FFFA021E72B868000BEC96 /* LaunchScreen.storyboard */; };
@@ -165,6 +165,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1EE7E09F1E858A8200BF0AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomStepVC.xib; sourceTree = "<group>"; };
+		1EE7E0A41E858A8900BF0AE1 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/CustomStepVC.strings; sourceTree = "<group>"; };
+		1EE7E0A61E858A8D00BF0AE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CustomStepVC.strings; sourceTree = "<group>"; };
 		1EE99D421E85778E008957EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1EE99D441E857792008957EF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		1EE99D4D1E857ACA008957EF /* AboutStudy_intro_tr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = AboutStudy_intro_tr.html; path = HTMLContent/AboutStudy_intro_tr.html; sourceTree = SOURCE_ROOT; };
@@ -205,7 +208,6 @@
 		53C7AF231E8438AD0081B5A4 /* whoisrunning_intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = whoisrunning_intro.html; path = HTMLContent/whoisrunning_intro.html; sourceTree = SOURCE_ROOT; };
 		53C7AF291E8438B60081B5A4 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = welcome.png; path = HTMLContent/img/welcome.png; sourceTree = SOURCE_ROOT; };
 		53FFF9FB1E72B421000BEC96 /* CustomStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomStep.swift; path = CustomSteps/CustomStep.swift; sourceTree = "<group>"; };
-		53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomStepVC.xib; path = CustomSteps/CustomStepVC.xib; sourceTree = "<group>"; };
 		53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomViewController.swift; path = CustomSteps/CustomViewController.swift; sourceTree = "<group>"; };
 		53FFFA011E72B868000BEC96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Views/Assets.xcassets; sourceTree = "<group>"; };
 		53FFFA021E72B868000BEC96 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -608,7 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				53FFF9FB1E72B421000BEC96 /* CustomStep.swift */,
-				53FFF9FC1E72B421000BEC96 /* CustomStepVC.xib */,
+				1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */,
 				53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */,
 			);
 			name = CustomSteps;
@@ -833,7 +835,7 @@
 				53FFFA0C1E72B883000BEC96 /* LowResultPopup.xib in Resources */,
 				53C7AF281E8438AD0081B5A4 /* whoisrunning_intro.html in Resources */,
 				53FFFA051E72B868000BEC96 /* LaunchScreen.storyboard in Resources */,
-				53FFF9FF1E72B421000BEC96 /* CustomStepVC.xib in Resources */,
+				1EE7E09E1E858A8200BF0AE1 /* CustomStepVC.xib in Resources */,
 				534A3B841E40BD14005FA5F3 /* 2.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -972,6 +974,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EE7E09F1E858A8200BF0AE1 /* Base */,
+				1EE7E0A41E858A8900BF0AE1 /* tr */,
+				1EE7E0A61E858A8D00BF0AE1 /* en */,
+			);
+			name = CustomStepVC.xib;
+			path = CustomSteps;
+			sourceTree = "<group>";
+		};
 		53FFFAB51E72BD5E000BEC96 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -194,28 +194,43 @@ a4.content = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
 "Consent.dataUse.html" = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>By analyzing the data from your test, we will provide:</p><ul><li>M-CHAT score of your child.</li><li>Conclusion document that has the risk for ASD.</li></ul></body>';
 "Consent.studySurvey.html" = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><body><p>We will ask you to answer questions about the child, mental and physical history of the child, and current status. You may choose to leave the test anytime.</p></body>';
 
-q1.1 = "If you point at something across the room, does ___ look at it?";
-q2.1 = "If you point at something across the room, does ___ look at it?";
-q3.1 = "If you point at something across the room, does ___ look at it?";
-q4.1 = "If you point at something across the room, does ___ look at it?";
-q5.1 = "If you point at something across the room, does ___ look at it?";
-q6.1 = "If you point at something across the room, does ___ look at it?";
-q7.1 = "If you point at something across the room, does ___ look at it?";
-q8.1 = "If you point at something across the room, does ___ look at it?";
-q9.1 = "If you point at something across the room, does ___ look at it?";
-q10.1 = "If you point at something across the room, does ___ look at it?";
-q11.1 = "If you point at something across the room, does ___ look at it?";
-q12.1 = "If you point at something across the room, does ___ look at it?";
-q13.1 = "If you point at something across the room, does ___ look at it?";
-q14.1 = "If you point at something across the room, does ___ look at it?";
-q15.1 = "If you point at something across the room, does ___ look at it?";
-q16.1 = "If you point at something across the room, does ___ look at it?";
-q17.1 = "If you point at something across the room, does ___ look at it?";
-q18.1 = "If you point at something across the room, does ___ look at it?";
-q19.1 = "If you point at something across the room, does ___ look at it?";
-q20.1 = "If you point at something across the room, does ___ look at it?";
-q21.1 = "If you point at something across the room, does ___ look at it?";
-q22.1 = "If you point at something across the room, does ___ look at it?";
-q23.1 = "If you point at something across the room, does ___ look at it?";
+q1.1 = "Does your child enjoy being swung, bounced on your knee, etc.?";
+q2.1 = "Does your child take an interest in other children?";
+q3.1 = "Does your child like climbing on things, such as up stairs?";
+q4.1 = "Does your child enjoy playing peek-a-boo/hide-and-seek?";
+q5.1 = "Does your child ever pretend, for example, to talk on the phone or take care of a doll or pretend other things?";
+q6.1 = "Does your child ever use his/her index finger to point, to ask for something?";
+q7.1 = "Does your child ever use his/her index finger to point, to indicate interest in something?";
+q8.1 = "Can your child play properly with small toys (e.g. cars or blocks) without just mouthing, fiddling, or dropping them?";
+q9.1 = "Does your child ever bring objects over to you (parent) to show you something?";
+q10.1 = "Does your child look you in the eye for more than a second or two?";
+q11.1 = "Does your child ever seem oversensitive to noise? (e.g., plugging ears)";
+q12.1 = "Does your child smile in response to your face or your smile?";
+q13.1 = "Does your child imitate you? (e.g., you make a face-will your child imitate it?)";
+q14.1 = "Does your child respond to his/her name when you call?";
+q15.1 = "If you point at a toy across the room, does your child look at it?";
+q16.1 = "Does your child walk?";
+q17.1 = "Does your child look at things you are looking at?";
+q18.1 = "Does your child make unusual finger movements near his/her face?";
+q19.1 = "Does your child try to attract your attention to his/her own activity?";
+q20.1 = "Have you ever wondered if your child is deaf?";
+q21.1 = "Does your child understand what people say?";
+q22.1 = "Does your child sometimes stare at nothing or wander with no purpose?";
+q23.1 = "Does your child look at your face to check your reaction when faced with something unfamiliar?";
 
 
+InfoTask.relations.Parent = "Parent";
+InfoTask.relations.GrandParent = "Grandparent";
+InfoTask.relations.Guardion = "Guardian";
+InfoTask.relations.Educator = "Educator";
+InfoTask.relations.HealtCareProvider = "Healthcare Provider";
+InfoTask.relations.other = "Other";
+InfoTask.relationStepText = "Your Relation?";
+
+
+InfoTask.gender.Male = "Boy";
+InfoTask.gender.Female = "Girl";
+InfoTask.genderStepText = "Gender of the Child?";
+
+
+InfoTask.birthDayStepText = "Child's Date of Birth?";

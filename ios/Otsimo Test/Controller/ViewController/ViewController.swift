@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         startButton.layer.cornerRadius = 10
-        startButton.layer.borderWidth = 1
+        startButton.layer.borderWidth = 0
     }
 
     @IBOutlet weak var surveyButton: UIButton!

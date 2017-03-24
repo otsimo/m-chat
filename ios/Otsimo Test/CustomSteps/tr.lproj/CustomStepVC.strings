@@ -1,0 +1,11 @@
+
+/* Class = "UILabel"; text = "If you point at something across the room, does ___ look at it?across the room, does ___ look "; ObjectID = "299-U9-zrd"; */
+
+/* Class = "UIButton"; normalTitle = "YES"; ObjectID = "Bvh-Ah-S9N"; */
+"Bvh-Ah-S9N.normalTitle" = "EVET";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "On1-rw-Z7P"; */
+"On1-rw-Z7P.normalTitle" = "İleri";
+
+/* Class = "UIButton"; normalTitle = "NO"; ObjectID = "neg-8W-jX7"; */
+"neg-8W-jX7.normalTitle" = "HAYIR";

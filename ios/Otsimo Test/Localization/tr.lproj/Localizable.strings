@@ -38,27 +38,43 @@ a4.content = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
 "whoisrunning_intro"="whoisrunning_intro_tr";
 "howstudyworks_intro"="howstudyworks_intro_tr";
 
-q1.1 = "If you point at something across the room, does ___ look at it?";
-q2.1 = "If you point at something across the room, does ___ look at it?";
-q3.1 = "If you point at something across the room, does ___ look at it?";
-q4.1 = "If you point at something across the room, does ___ look at it?";
-q5.1 = "If you point at something across the room, does ___ look at it?";
-q6.1 = "If you point at something across the room, does ___ look at it?";
-q7.1 = "If you point at something across the room, does ___ look at it?";
-q8.1 = "If you point at something across the room, does ___ look at it?";
-q9.1 = "If you point at something across the room, does ___ look at it?";
-q10.1 = "If you point at something across the room, does ___ look at it?";
-q11.1 = "If you point at something across the room, does ___ look at it?";
-q12.1 = "If you point at something across the room, does ___ look at it?";
-q13.1 = "If you point at something across the room, does ___ look at it?";
-q14.1 = "If you point at something across the room, does ___ look at it?";
-q15.1 = "If you point at something across the room, does ___ look at it?";
-q16.1 = "If you point at something across the room, does ___ look at it?";
-q17.1 = "If you point at something across the room, does ___ look at it?";
-q18.1 = "If you point at something across the room, does ___ look at it?";
-q19.1 = "If you point at something across the room, does ___ look at it?";
-q20.1 = "If you point at something across the room, does ___ look at it?";
-q21.1 = "If you point at something across the room, does ___ look at it?";
-q22.1 = "If you point at something across the room, does ___ look at it?";
-q23.1 = "If you point at something across the room, does ___ look at it?";
+q1.1= "Çocuğunuzun sallanılmaktan yada dizinizde hoplatılmaktan veya benzeri oyunlardan hoşlanır mı?";
+q2.1= "Çocuğunuz başka çocuklarla ilgilenir mi?";
+q3.1= "Çocuğunuz eşyalara (örneğin koltuk,kütüphane vb.) ve benzeri şeylere tırmanmayı sever mi?";
+q4.1= "Çocuğunuz ce-e(yüzünüzü ellerinizle kapatıp açarken ce-e demek) ve saklambaç oyunlarından hoşlanır mı? ";
+q5.1= "Çocuğunuz hiç hayali oyun oynar mı? (örneğin, telefonu alıp karışısında biri varmış gibi konuşur mu veya oyuncak bebeğinin altını temizliyormuş gibi yapar mı?)";
+q6.1= "Çocuğunuz ne olduğunu merak ettiği bir şeyi (sormak amacıyla) işaret parmağıyla gösterir mi?";
+q7.1= "Çocuğunuz bir şeyin ilgisini çektiğini belirtmek için işaret parmağıyla gösterir mi?";
+q8.1= "Çocuğunuz küçük oyuncakları (araba,lego gibi) ağzına almadan, fırlatıp atmadan veya elinde sallamadan (amacına uygun) oynar mı?";
+q9.1= "Çocuğunuz bazı şeyleri (eşyalar,oyuncaklar gibi) göstermek için size getirir mi?";
+q10.1= "Çocuğunuzla bir-iki saniyeden daha uzun süreli göz teması (gözünüzün içine bakması) kurabiliyor musunuz?";
+q11.1= "Çocuğunuzun bazı seslerden aşırı derecede rahatsız olduğunu gözlemlediniz mi?";
+q12.1= "Çocuğunuza baktığınızda yada güldüğünüzde o da size güler mi?";
+q13.1= "Çocuğunuz sizi taklit eder mi?";
+q14.1= "Çocuğunuza ismiyle çağırdığınızda size yanıt verir mi?";
+q15.1= "Çocuğunuza aynı odada bulunan bir eşyayı (örneğin, oyuncağı) işaret ettiğinizde, gösterdiğiniz eşyaya bakar mı?";
+q16.1= "Çocuğunuz yürüyor mu?";
+q17.1= "Sizin baktığınız şeylere çocuğunuz da bakar mı?";
+q18.1= "Çocuğunuz yüzünün önünde parmakları ile anlaşılmaz hareketler yaparak ellerini seyreder mi?";
+q19.1= "Çocuğunuz bir şeyler yapmaya çalışırken sizin dikkatinizi çekmek için çaba gösterir mi?";
+q20.1= "Hiç çocuğunuzun iyi işitmediğinden endişe duydunuz mu?";
+q21.1= "Çocuğunuz çevresindeki insanların neler söylediğini/konuştuğunu anlar mı?";
+q22.1= "Çocuğunuz bazen boşluğa bakıyormuş gibi dalıp gider mi?";
+q23.1= "Çocuğunuz bilmediği bir durumla karşılaştığı zaman sizin davranışınızı anlamak amacıyla yüzünüze bakar mı?";
+
+InfoTask.relations.Parent = "Ailesi";
+InfoTask.relations.GrandParent = "Ninesi/Dedesi";
+InfoTask.relations.Guardion = "Bakıcısı";
+InfoTask.relations.Educator = "Öğretmeni";
+InfoTask.relations.HealtCareProvider = "Sağlık Personeli";
+InfoTask.relations.other = "Diğer";
+InfoTask.relationStepText = "Çocuğun nesi oluyorsunuz?";
+
+
+InfoTask.gender.Male = "Erkek";
+InfoTask.gender.Female = "Kız";
+InfoTask.genderStepText = "Çocuğun Cinsiyeti?";
+
+
+InfoTask.birthDayStepText = "Çocuğun Doğum Tarihi?";
 
