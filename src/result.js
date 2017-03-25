@@ -71,7 +71,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(220,22,56)' }}>
-                <TouchableOpacity onPress={() => this._shareMessage('High')} >
+                <TouchableOpacity onPress={() => this._shareMessage(i18n.t('high'))} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('share')}
                   </Text >
@@ -128,7 +128,7 @@ export class Result extends Component {
 
             <View style={{ margin: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(96,184,71)' }}>
-                <TouchableOpacity onPress={() => this._shareMessage('Low')}>
+                <TouchableOpacity onPress={() => this._shareMessage(i18n.t('low'))}>
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('share')}
                   </Text >
@@ -188,7 +188,7 @@ export class Result extends Component {
 
             <View style={{ marginTop: 10, alignItems: 'center', backgroundColor: 'white', padding: 2 }} >
               <View style={{ backgroundColor: 'rgb(225,121,38)' }}>
-                <TouchableOpacity onPress={() => this._shareMessage('Medium')} >
+                <TouchableOpacity onPress={() => this._shareMessage(i18n.t('medium'))} >
                   <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontSize: 20, fontWeight: 'bold', marginHorizontal: 30, marginVertical: 10 }}>
                     {i18n.t('share')}
                   </Text >

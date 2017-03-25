@@ -117,5 +117,8 @@
   "mediumleveltext2": "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
   "mediumleveltext1": "Çocuk bir çocuk psikiyatristine yönlendirilmelidir",
   "sharetext": "{{level}} seviye otizm şüphesi, otizm testinden alınan puan {{score}}, Çocuğum Otizmli Mi? Uygulaması aracılığıyla ",
+  "low": "Düşük",
+  "medium": "Orta",
+  "high": "Yüksek",
   "sharelink": ""
 }

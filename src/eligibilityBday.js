@@ -96,20 +96,22 @@ export class EligibilityBday extends Component {
   }
 
   async saveBday() {
-    if (this.birthDay !== false) {
-      if (this.isEligible()) {
-        const saveData = {
-          Bday: this.date.getTime(),
-        };
-        try {
-          await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
-        } catch (err) {
-          console.log('unable to save birthDay', err);
+    if (this.state.showNext) {
+      if (this.birthDay !== false) {
+        if (this.isEligible()) {
+          const saveData = {
+            Bday: this.date.getTime(),
+          };
+          try {
+            await AsyncStorage.setItem('birthDay', JSON.stringify(saveData));
+          } catch (err) {
+            console.log('unable to save birthDay', err);
+          }
+          this.loadSurvey();
+        } else {
+          const { navigate } = this.props.navigation;
+          resetTo(this, 'EligibilityNotFit');
         }
-        this.loadSurvey();
-      } else {
-        const { navigate } = this.props.navigation;
-        resetTo(this, 'EligibilityNotFit');
       }
     }
   }

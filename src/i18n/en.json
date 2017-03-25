@@ -112,5 +112,8 @@
   "mediumleveltext2": "M-CHAT is not a diagnostic tool. Failure of a child in M-CHAT does not mean that the child has a diagnosis of autism spectrum disorder. This result only reports 'suspicion'.",
   "mediumleveltext1": "The child should be directed to a child psychiatrist",
   "sharetext": "{{level}} level autism doubt, score from autism test is {{score}}, with Does My Child Have Autism? Application on ",
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High",
   "sharelink": ""
 }
