@@ -38,6 +38,7 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { page: 0 };
+    this.lang = i18n.t('yes');
   }
 
   startApp() {
@@ -51,7 +52,8 @@ export class Home extends Component {
     this.setState({ page: Math.floor(event.nativeEvent.contentOffset.x / Dimensions.get('window').width) });
     //console.warn('page', event.nativeEvent.contentOffset.x);
   }
-  render() {
+
+  renderTR() {
     return (
       <View style={{ flex: 1 }}>
         <View style={{ flex: 4 }}>
@@ -64,21 +66,21 @@ export class Home extends Component {
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage1.html')} />
+              <WebView source={require('../webviews/homepage1TR.html')} />
 
 
             </View>
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'red', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage2.html')} />
+              <WebView source={require('../webviews/homepage2TR.html')} />
 
 
             </View>
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage3.html')} />
+              <WebView source={require('../webviews/homepage3TR.html')} />
 
 
             </View>
@@ -86,7 +88,7 @@ export class Home extends Component {
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage4.html')} />
+              <WebView source={require('../webviews/homepage4TR.html')} />
 
 
             </View>
@@ -107,6 +109,71 @@ export class Home extends Component {
         </View>
       </View>
     );
+
+  }
+  renderEN() {
+    return (
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 4 }}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            onScroll={(event) => this.handleScroll(event)}
+            pagingEnabled
+          >
+            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
+
+
+              <WebView source={require('../webviews/homepage1EN.html')} />
+
+
+            </View>
+            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'red', flex: 1 }}>
+
+
+              <WebView source={require('../webviews/homepage2EN.html')} />
+
+
+            </View>
+            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
+
+
+              <WebView source={require('../webviews/homepage3EN.html')} />
+
+
+            </View>
+
+            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
+
+
+              <WebView source={require('../webviews/homepage4EN.html')} />
+
+
+            </View>
+
+          </ScrollView>
+
+        </View>
+        <View style={{ flex: 1, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
+          <View style={{ marginTop: 5 }}>
+            <Swipe page={this.state.page} />
+          </View>
+          <TouchableOpacity
+            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5 }}
+            onPress={() => this.startApp()}
+          >
+            <Text style={{ padding: 5, textAlign: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+  render() {
+    if (this.lang === 'Yes') {
+      return this.renderEN();
+    } else {
+      return this.renderTR();
+    }
   }
 }
 

@@ -31,48 +31,56 @@
   "welcome": {
     "header": "Hoş Geldiniz", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Testin öncesindeki bu basit kısım, araştırma çalışmalarının kapsamını ve iznini açıklayacaktır. Öğrendikten sonra katılmak isteyip istemediğinizi seçebilirsiniz.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent1LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için
   },
   "dataGather": {
     "header": "Veri Toplama", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Biz bu tarama testi ve çalışma sırasında anonim veri tutumu yapmaktayız.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent2LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için
   },
   "privacy": {
     "header": "Gizlilik", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Gizliliğinizi, elimizden gelen en iyi şekilde koruyacağız. Kodlanmış veriler, izinsiz erişimden kaçınmak için şifrelenir ve güvenli bir bulut sunucusunda depolanır.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent3LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için
   },
   "dataUse": {
     "header": "Veri Kullanımı", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Kodlanmış verileriniz araştırma için kullanılacak ve dünya üzerindeki diğer araştırmacılarla paylaşılabilecektir.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent4LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için
   },
   "studySurvey": {
     "header": "Araştırma Anketi", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Ayrıca, bazı soruları cevaplamak ve veri toplamak için kısa süreli ankete cevap vermenizi isteyeceğiz.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    "learnMore": "../webviews/consent5LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için 
   },
   "potentialBenefits": {
     "header": "Potansiyel Faydalar", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Bu testle ASD riskini değerlendirebileceksiniz. M-CHAT, otistik spektrum bozuklukları (ASD) riskini değerlendirmek için, 16 ile 30 ay arasında küçük bebeklerin taranması için özel olarak tasarlanmıştır.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    "learnMore": "../webviews/consent6LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için 
   },
   "potentialRisks": {
     "header": "Potansiyel Riskler", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "TM-CHAT'in birincil amacı, duyarlılığı en üst düzeye çıkarmaktır; bu, mümkün olduğunca çok OSB olgusu tespit etmek anlamına gelir. Bu nedenle, yanlış pozitif oranı yüksektir; bu, risk altındaki tüm çocuklara OSB tanısı konmayacağı anlamına gelir.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent7LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için
   },
   "notMedicalCare": {
     "header": "Tıbbi Değerlendirme DEĞİLDİR", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Bu uygulamanın amacı Otizm Spektrum Bozukluğu hakkında farkındalık yaratmak, çocuğunuzun gelişiminde gözleyebileceğiniz sorunların ne ölçüde risk oluşturduğunu belirmenize yardım etmek, ve hekiminize/sağlık personeline çocuğunuzu yönlendirirken otizm riski hakkında yol gösterici olmaktır.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent8LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için
   },
   "followUp": {
     "header": "Ulaşılabilirlik", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Size çalışma hakkında ulaşmak isteyebiliriz. Takip işlemini istediğiniz zaman iptal edebilirsiniz.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    "learnMore": "../webviews/consent9LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için 
   },
+
+
+  "homepage1": "../webviews/homepage1TR.html",
+  "homepage2": "../webviews/homepage2TR.html",
+  "homepage3": "../webviews/homepage3TR.html",
+  "homepage4": "../webviews/homepage4TR.html",
+
+
   "stepQuestion1": "Çocuğunuzun sallanılmaktan yada dizinizde hoplatılmaktan veya benzeri oyunlardan hoşlanır mı?",
   "stepQuestion2": "Çocuğunuz başka çocuklarla ilgilenir mi?",
   "stepQuestion3": "Çocuğunuz eşyalara (örneğin koltuk,kütüphane vb.) ve benzeri şeylere tırmanmayı sever mi?",

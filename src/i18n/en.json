@@ -28,54 +28,55 @@
   "relation": "Your Relation ?",
   "gender": "Gender ?",
   "birthday": "Birthday",
-  
   "welcome": {
     "header": "Welcome", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "This simple walkthrough will explain the consent of research study. After you learn about the test, you can choose if you would like to participate.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent1LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için
   },
   "dataGather": {
     "header": "Data Gathering", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "We will collect anonymous data from this screening test & study.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent2LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için
   },
   "privacy": {
     "header": "Privacy", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "We will protect your privacy to the best of our ability. The coded data will be encrypted and stored on a secure cloud server (hipaa compliant) to prevent improper access. ", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent3LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için
   },
   "dataUse": {
     "header": "Data Use", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "Your coded data will be used for research and may be shared with other researchers worldwide.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent4LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için
   },
   "studySurvey": {
     "header": "Study Survey", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "We will also ask you to answer brief surveys to understand some aspects and gather data.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    "learnMore": "../webviews/consent5LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için 
   },
   "potentialBenefits": {
     "header": "Potential Benefits", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "You will be able to assess risk for ASD. The M-CHAT is validated for screening toddlers between 16 and 30 months of age, to assess risk for autism spectrum disorders (ASD)", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    "learnMore": "../webviews/consent6LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için 
   },
   "potentialRisks": {
     "header": "Potential Risks", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "The primary goal of the M-CHAT was to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent7LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için
   },
   "notMedicalCare": {
     "header": "NOT Medical Care", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "This test only for assess risk for autism spectrum disorders (ASD). There is a high false positive rate, meaning that not all children who score at risk for ASD will be diagnosed with ASD. Please advise your doctor for real medical answers.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için
+    "learnMore": "../webviews/consent8LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için
   },
   "followUp": {
     "header": "Follow Up", // Yazının başlığı mesela Data Gather mı Data Gathering yada Privacy
     "text": "We might want to reach you. You can opt out the follow up anytime.", // Ana yazı 
-    "learnMore": "" // Learn more a basınca gidilecek URL WebView için 
+    "learnMore": "../webviews/consent9LearnMoreEN.html" // Learn more a basınca gidilecek URL WebView için 
   },
-
-
+  "homepage1": "../webviews/homepage1EN.html",
+  "homepage2": "../webviews/homepage2EN.html",
+  "homepage3": "../webviews/homepage3EN.html",
+  "homepage4": "../webviews/homepage4EN.html",
 
   "stepQuestion1": "Does your child enjoy being swung, bounced on your knee, etc.?",
   "stepQuestion2": "Does your child take an interest in other children?",
@@ -100,19 +101,16 @@
   "stepQuestion21": "Does your child understand what people say?",
   "stepQuestion22": "Does your child sometimes stare at nothing or wander with no purpose?",
   "stepQuestion23": "Does your child look at your face to check your reaction when faced with something unfamiliar?",
-
   "score": "Score: ",
   "highlevel": "High Level",
   "mediumlevel": "Medium Level",
   "none": "Not found",
   "autismdoubt": "Autism Doubt",
-  "highrisktext1": "Çocuk mutlaka bir çocuk psikiyatristine yönlendirilmelidir",
-  "highrisktext2": " M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
-  "lowleveltext1":"İlave bir test yapılmasına ihtiyaç yoktur",
-  "lowleveltext2":" Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.",
-  "mediumleveltext2": "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
-  "mediumleveltext1": "Çocuk bir çocuk psikiyatristine yönlendirilmelidir",
-
+  "highrisktext1": "The child must be directed to a child psychiatrist",
+  "highrisktext2": " M-CHAT is not a diagnostic tool. Failure of a child in M-CHAT does not mean that the child has a diagnosis of autism spectrum disorder. This result only reports 'suspicion'.",
+  "lowleveltext1": "No additional testing is required",
+  "lowleveltext2": " However, if M-CHAT has been administered to the child before 24 months, the development of the child should be followed up and tested at 24 months and the results should be evaluated from scratch.",
+  "mediumleveltext2": "M-CHAT is not a diagnostic tool. Failure of a child in M-CHAT does not mean that the child has a diagnosis of autism spectrum disorder. This result only reports 'suspicion'.",
+  "mediumleveltext1": "The child should be directed to a child psychiatrist",
   "sharetext": ""
-
 }

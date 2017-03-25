@@ -15,11 +15,27 @@ export class ConsentFollowUp extends Component {
     navigate('EligibilityRelation');
   }
 
-  render() {
+  renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent9LearnMore.html')} image={require("../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent9LearnMoreTR.html')} image={require("../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
       </View>
     );
+  }
+
+  renderEN() {
+
+    return (
+      <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent9LearnMoreEN.html')} image={require("../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
+      </View>
+    );
+  }
+  render() {
+    if (i18n.t('yes') === 'Yes') {
+      return this.renderEN();
+    } else {
+      return this.renderTR();
+    }
   }
 }

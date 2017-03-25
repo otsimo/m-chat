@@ -15,11 +15,25 @@ export class ConsentWelcome extends Component {
     navigate('ConsentDataGather');
   }
 
-  render() {
+  renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent1LearnMore.html')} textHeader={i18n.t('welcome.header')} text={i18n.t('welcome.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent1LearnMoreTR.html')} textHeader={i18n.t('welcome.header')} text={i18n.t('welcome.text')} />
       </View>
     );
+  }
+  renderEN() {
+    return (
+      <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent1LearnMoreEN.html')} textHeader={i18n.t('welcome.header')} text={i18n.t('welcome.text')} />
+      </View>
+    );
+  }
+  render() {
+    if (i18n.t('yes') === 'Yes') {
+      return this.renderEN();
+    } else{
+      return this.renderTR();
+    }
   }
 }
