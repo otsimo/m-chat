@@ -19,7 +19,7 @@ export class ConsentPotentialRisk extends Component {
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent7LearnMoreTR.html')} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent7LearnMoreTR.html'} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
       </View>
     );
   }
@@ -27,7 +27,7 @@ export class ConsentPotentialRisk extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent7LearnMoreEN.html')} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent7LearnMoreEN.html'} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
       </View>
     );
   }

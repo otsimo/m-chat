@@ -17,7 +17,7 @@ export class ConsentPotentialBen extends Component {
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent6LearnMoreTR.html')} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent6LearnMoreTR.html'} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
       </View>
     );
   }
@@ -25,7 +25,7 @@ export class ConsentPotentialBen extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent6LearnMoreEN.html')} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent6LearnMoreEN.html'} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
       </View>
     );
   }

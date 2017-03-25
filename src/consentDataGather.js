@@ -18,7 +18,7 @@ export class ConsentDataGather extends Component {
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab learnURL={require('../webviews/consent2LearnMoreTR.html')} image={require("../pngs/data_gatherkopya.png")} onPress={() => this.onNextPressed()} textHeader={i18n.t('dataGather.header')} text={i18n.t('dataGather.text')} />
+        <ConsentPrefab learnURL={'file:///android_asset/webviews/consent2LearnMoreTR.html'} image={require("../pngs/data_gatherkopya.png")} onPress={() => this.onNextPressed()} textHeader={i18n.t('dataGather.header')} text={i18n.t('dataGather.text')} />
       </View>
     );
   }
@@ -26,7 +26,7 @@ export class ConsentDataGather extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab learnURL={require('../webviews/consent2LearnMoreEN.html')} image={require("../pngs/data_gatherkopya.png")} onPress={() => this.onNextPressed()} textHeader={i18n.t('dataGather.header')} text={i18n.t('dataGather.text')} />
+        <ConsentPrefab learnURL={'file:///android_asset/webviews/consent2LearnMoreEN.html'} image={require("../pngs/data_gatherkopya.png")} onPress={() => this.onNextPressed()} textHeader={i18n.t('dataGather.header')} text={i18n.t('dataGather.text')} />
       </View>
     );
   }

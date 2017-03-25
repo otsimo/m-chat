@@ -66,21 +66,21 @@ export class Home extends Component {
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage1TR.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage1TR.html' }} />
 
 
             </View>
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'red', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage2TR.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage2TR.html' }} />
 
 
             </View>
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage3TR.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage3TR.html' }} />
 
 
             </View>
@@ -88,7 +88,7 @@ export class Home extends Component {
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage4TR.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage4TR.html' }} />
 
 
             </View>
@@ -124,21 +124,21 @@ export class Home extends Component {
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage1EN.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage1EN.html' }} />
 
 
             </View>
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'red', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage2EN.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage2EN.html' }} />
 
 
             </View>
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage3EN.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage3EN.html' }} />
 
 
             </View>
@@ -146,7 +146,7 @@ export class Home extends Component {
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
 
 
-              <WebView source={require('../webviews/homepage4EN.html')} />
+              <WebView source={{ uri: 'file:///android_asset/webviews/homepage4EN.html' }} />
 
 
             </View>

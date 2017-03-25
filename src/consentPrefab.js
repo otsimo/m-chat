@@ -49,7 +49,7 @@ export class ConsentPrefab extends Component {
                 <Icon name="close" size={25} color="black" />
               </TouchableNativeFeedback>
             </View>
-            <WebView source={this.props.learnURL} style={{ marginTop: 0 }} />
+            <WebView source={{ uri: this.props.learnURL }} style={{ marginTop: 0 }} />
 
           </View>
 

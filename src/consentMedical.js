@@ -18,7 +18,7 @@ export class ConsentMedical extends Component {
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent8LearnMoreTR.html')} image={require("../pngs/not_medicalkopya.png")} textHeader={i18n.t('notMedicalCare.header')} text={i18n.t('notMedicalCare.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent8LearnMoreTR.html'} image={require("../pngs/not_medicalkopya.png")} textHeader={i18n.t('notMedicalCare.header')} text={i18n.t('notMedicalCare.text')} />
       </View>
     );
   }
@@ -26,7 +26,7 @@ export class ConsentMedical extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent8LearnMoreEN.html')} image={require("../pngs/not_medicalkopya.png")} textHeader={i18n.t('notMedicalCare.header')} text={i18n.t('notMedicalCare.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent8LearnMoreEN.html'} image={require("../pngs/not_medicalkopya.png")} textHeader={i18n.t('notMedicalCare.header')} text={i18n.t('notMedicalCare.text')} />
       </View>
     );
   }

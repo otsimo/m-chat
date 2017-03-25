@@ -18,7 +18,7 @@ export class ConsentStudySurvey extends Component {
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent5LearnMoreTR.html')} image={require("../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent5LearnMoreTR.html'} image={require("../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
       </View>
     );
   }
@@ -26,7 +26,7 @@ export class ConsentStudySurvey extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={require('../webviews/consent5LearnMoreEN.html')} image={require("../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent5LearnMoreEN.html'} image={require("../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
       </View>
     );
   }
