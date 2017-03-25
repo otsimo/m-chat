@@ -77,7 +77,6 @@
   "homepage2": "../webviews/homepage2EN.html",
   "homepage3": "../webviews/homepage3EN.html",
   "homepage4": "../webviews/homepage4EN.html",
-
   "stepQuestion1": "Does your child enjoy being swung, bounced on your knee, etc.?",
   "stepQuestion2": "Does your child take an interest in other children?",
   "stepQuestion3": "Does your child like climbing on things, such as up stairs?",
@@ -112,5 +111,6 @@
   "lowleveltext2": " However, if M-CHAT has been administered to the child before 24 months, the development of the child should be followed up and tested at 24 months and the results should be evaluated from scratch.",
   "mediumleveltext2": "M-CHAT is not a diagnostic tool. Failure of a child in M-CHAT does not mean that the child has a diagnosis of autism spectrum disorder. This result only reports 'suspicion'.",
   "mediumleveltext1": "The child should be directed to a child psychiatrist",
-  "sharetext": ""
+  "sharetext": "{{level}} level autism doubt, score from autism test is {{score}}, with Does My Child Have Autism? Application on ",
+  "sharelink": ""
 }
