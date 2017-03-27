@@ -40,7 +40,9 @@ class SendEmailPopupController: UIViewController {
                 print("error : ", err)
             }
         }
-        
+        self.dismiss(animated: true, completion: nil)
+        self.parent?.dismiss(animated: true, completion: nil)
+        self.parent?.parent?.dismiss(animated: true, completion: nil)
         print("after parent dismiss")
     }
 

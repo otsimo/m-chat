@@ -80,7 +80,13 @@ extension SumStepVC {
     }
 
     func showSavePopup() {
-
+        
+        let saveVC = SendEmailPopupController(nibName: "SendEmailPopupController", bundle: nil)
+        let popupVC = PopupDialog(viewController: saveVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
+        
+        present(popupVC, animated: true, completion: nil)
+        
+        /*
         let alert = UIAlertController(title: "Email Gönder", message: "", preferredStyle:
                                           UIAlertControllerStyle.alert)
 
@@ -112,6 +118,7 @@ extension SumStepVC {
         }))
 
         self.present(alert, animated: true, completion: nil)
+ */
 
     }
 
