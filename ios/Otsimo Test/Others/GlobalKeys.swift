@@ -26,3 +26,10 @@ enum InfoStepIDs {
     static let genderStepID = "gender"
     static let birthDayStepID = "birthDay"
 }
+
+enum OtizmLevel {
+    case none
+    case low
+    case medium
+    case high
+}

@@ -98,6 +98,9 @@ extension ViewController: ORKTaskViewControllerDelegate {
             analytics.event("completed-mChat", data: [:])
             if let t = taskResult {
                 print("t -> ", t)
+                
+              
+                
                 if let results = t.results {
                     let analysedResult = anlyse.getMchatAnalysedResult(results: results)
                     let point = anlyse.passFailHandlerForMCHAT(otsimoResults: analysedResult)
@@ -112,7 +115,10 @@ extension ViewController: ORKTaskViewControllerDelegate {
                     } catch let e {
                         Log.error(e as! String)
                     }
-                    showResultScene(total: point)
+                    let sumStepVC = SumStepVC(nibName: "SumStepVC", bundle: nil)
+                    sumStepVC.total = point
+                    present(sumStepVC, animated: true, completion: nil)
+                    // showResultScene(total: point)
                 }
             }
         case Tasks.mChatRFTaskID:
@@ -157,10 +163,7 @@ extension ViewController: ORKTaskViewControllerDelegate {
                 switch taskViewController.result.identifier {
                 case Tasks.mChatTaskID:
                     analytics.event("saved-mChat",data: [:])
-                    let newSteps = ConsentTask.steps + InfoTask.steps + MChatTask.steps
-                    let newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
-                    self.mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
-                    mChatVC.delegate = self
+                    resetMCHAT()
                 case Tasks.consentTaskID:
                     analytics.event("discarded-Consent", data: ["id": discardedID, "startDate": startDate, "endDate": endDate])
                     present(infoTaskVC, animated: true, completion: nil)

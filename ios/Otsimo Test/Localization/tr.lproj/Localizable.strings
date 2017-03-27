@@ -8,6 +8,12 @@
 buttonYes = "Evet";
 buttonNo = "Hayır";
 
+lowLevel = "Düşük Düzey";
+mediumLevel = "Orta Düzey";
+highLevel = "Yüksek Düzey";
+alinanPuan = ", Otizm testinden alınan puan";
+withapp = "Çocuğum Otizmli Mi? Uygulaması aracılığıyla appstore.com/deneme";
+
 a1.title = "Olası Yararlar";
 a2.title = "Olası Riskler";
 a3.title = "Tıbbi Danışmanlık İçermez!";

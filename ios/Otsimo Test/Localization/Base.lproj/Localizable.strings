@@ -8,6 +8,13 @@
 buttonYes = "Evet";
 buttonNo = "Hayır";
 
+
+lowLevel = "Düşük Düzey";
+mediumLevel = "Orta Düzey";
+highLevel = "Yüksek Düzey";
+alinanPuan = ", Otizm testinden alınan puan";
+withapp = "Çocuğum Otizmli Mi? Uygulaması aracılığıyla appstore.com/deneme";
+
 /*
 q1.1 = "If you point at something across the room, does ___ look at it?";
 q1.2 = "Please give me an example of how he/she will respond if you point at something";

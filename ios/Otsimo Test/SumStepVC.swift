@@ -10,15 +10,32 @@ import UIKit
 
 class SumStepVC: UIViewController {
 
+    @IBOutlet var icon: UIImageView!
+    var total = 0
+    var level = OtizmLevel.none
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    override func loadView() {
+        super.loadView()
+        icon.layer.cornerRadius = 50
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func showResult(_ sender: UIButton) {
+         showResultScene(total: self.total)
+    }
+    @IBAction func done(_ sender: UIButton) {
+        
+        let userDefault = UserDefaults.standard
+        userDefault.removeObject(forKey: CacheKeys.mChatKey)
+        self.dismiss(animated: true, completion: nil)
     }
     
 

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LowResultPopupController" customModule="Otsimo_Test" customModuleProvider="target">
             <connections>
+                <outlet property="lbl_result" destination="PKT-s3-HY6" id="mwr-M8-efX"/>
                 <outlet property="view" destination="Npw-ij-DWz" id="z20-Oj-xMo"/>
             </connections>
         </placeholder>

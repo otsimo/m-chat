@@ -14,7 +14,7 @@ public var MChatTask: ORKOrderedTask {
     
     var mChatsteps = [ORKStep]()
     
-    for i in 1...20{
+    for i in 1...2{
         let id = "q" + String(i)
         let key = id + ".1"
         let title = NSLocalizedString(key, comment: "")
@@ -27,7 +27,7 @@ public var MChatTask: ORKOrderedTask {
     let summaryStep = ORKCompletionStep(identifier: "sum-mChat")
     summaryStep.title = NSLocalizedString("summaryStep.title", comment: "")
     summaryStep.text = NSLocalizedString("We appreciate your time.", comment: "")
-    mChatsteps.append(summaryStep)
+    // mChatsteps.append(summaryStep)
     
     return ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: mChatsteps)
 }

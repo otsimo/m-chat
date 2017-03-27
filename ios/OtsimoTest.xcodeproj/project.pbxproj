@@ -24,6 +24,9 @@
 		532A8B021E1D7ED600F1F6E3 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532A8B001E1D7EC700F1F6E3 /* SwiftProtobuf.framework */; };
 		534A3B831E40BD14005FA5F3 /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B811E40BD14005FA5F3 /* 1.html */; };
 		534A3B841E40BD14005FA5F3 /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B821E40BD14005FA5F3 /* 2.html */; };
+		536EAAFA1E893A1F002D49F2 /* SumStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAAF81E893A1F002D49F2 /* SumStepVC.swift */; };
+		536EAAFB1E893A1F002D49F2 /* SumStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536EAAF91E893A1F002D49F2 /* SumStepVC.xib */; };
+		536EAAFF1E8943C9002D49F2 /* ViewController+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAAFE1E8943C9002D49F2 /* ViewController+Popup.swift */; };
 		537C9D7F1E3F49310054AFA0 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D7D1E3F49310054AFA0 /* Analytics.swift */; };
 		537C9D801E3F49310054AFA0 /* GA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D7E1E3F49310054AFA0 /* GA.swift */; };
 		537C9D861E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9D851E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a */; };
@@ -62,7 +65,7 @@
 		53FFFA241E72B8A9000BEC96 /* GlobalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA231E72B8A9000BEC96 /* GlobalKeys.swift */; };
 		53FFFA261E72B8B3000BEC96 /* MchatSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA251E72B8B3000BEC96 /* MchatSurvey.swift */; };
 		53FFFA2C1E72B8E7000BEC96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA291E72B8E7000BEC96 /* ViewController.swift */; };
-		53FFFA2D1E72B8E7000BEC96 /* ViewController+ResultPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA2A1E72B8E7000BEC96 /* ViewController+ResultPopup.swift */; };
+		53FFFA2D1E72B8E7000BEC96 /* SumStepVC+ResultPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA2A1E72B8E7000BEC96 /* SumStepVC+ResultPopup.swift */; };
 		53FFFA2E1E72B8E7000BEC96 /* ViewController+TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA2B1E72B8E7000BEC96 /* ViewController+TaskDelegate.swift */; };
 		53FFFA321E72B8F2000BEC96 /* ViewControll+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA2F1E72B8F2000BEC96 /* ViewControll+ScrollViewDelegate.swift */; };
 		53FFFA331E72B8F2000BEC96 /* ViewController+CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFFA301E72B8F2000BEC96 /* ViewController+CollectionDataSource.swift */; };
@@ -199,6 +202,9 @@
 		534A3B811E40BD14005FA5F3 /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 1.html; path = HTMLContent/1.html; sourceTree = SOURCE_ROOT; };
 		534A3B821E40BD14005FA5F3 /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = HTMLContent/2.html; sourceTree = SOURCE_ROOT; };
 		534D5BEA1E35E400001AB543 /* Otsimo Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Otsimo Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		536EAAF81E893A1F002D49F2 /* SumStepVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumStepVC.swift; sourceTree = "<group>"; };
+		536EAAF91E893A1F002D49F2 /* SumStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SumStepVC.xib; sourceTree = "<group>"; };
+		536EAAFE1E8943C9002D49F2 /* ViewController+Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Popup.swift"; sourceTree = "<group>"; };
 		537C9D7D1E3F49310054AFA0 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Analytics.swift; path = Analytics/Analytics.swift; sourceTree = "<group>"; };
 		537C9D7E1E3F49310054AFA0 /* GA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GA.swift; path = Analytics/GA.swift; sourceTree = "<group>"; };
 		537C9D851E3F4FC40054AFA0 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = third_party/GoogleAnalyticsServicesiOS_3.16/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
@@ -237,7 +243,7 @@
 		53FFFA231E72B8A9000BEC96 /* GlobalKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalKeys.swift; path = Others/GlobalKeys.swift; sourceTree = "<group>"; };
 		53FFFA251E72B8B3000BEC96 /* MchatSurvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MchatSurvey.swift; path = "ResearchKit-Tasks/MchatSurvey.swift"; sourceTree = "<group>"; };
 		53FFFA291E72B8E7000BEC96 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controller/ViewController/ViewController.swift; sourceTree = "<group>"; };
-		53FFFA2A1E72B8E7000BEC96 /* ViewController+ResultPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewController+ResultPopup.swift"; path = "Controller/ViewController/ViewController+ResultPopup.swift"; sourceTree = "<group>"; };
+		53FFFA2A1E72B8E7000BEC96 /* SumStepVC+ResultPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SumStepVC+ResultPopup.swift"; path = "Controller/ViewController/SumStepVC+ResultPopup.swift"; sourceTree = "<group>"; };
 		53FFFA2B1E72B8E7000BEC96 /* ViewController+TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewController+TaskDelegate.swift"; path = "Controller/ViewController/ViewController+TaskDelegate.swift"; sourceTree = "<group>"; };
 		53FFFA2F1E72B8F2000BEC96 /* ViewControll+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewControll+ScrollViewDelegate.swift"; path = "Controller/ViewController/CollectionView/ViewControll+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		53FFFA301E72B8F2000BEC96 /* ViewController+CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewController+CollectionDataSource.swift"; path = "Controller/ViewController/CollectionView/ViewController+CollectionDataSource.swift"; sourceTree = "<group>"; };
@@ -461,6 +467,25 @@
 			name = WalkThroughCell;
 			sourceTree = "<group>";
 		};
+		536EAB001E8945B6002D49F2 /* SumStepVC */ = {
+			isa = PBXGroup;
+			children = (
+				53FFFA2A1E72B8E7000BEC96 /* SumStepVC+ResultPopup.swift */,
+				536EAAF81E893A1F002D49F2 /* SumStepVC.swift */,
+				536EAAF91E893A1F002D49F2 /* SumStepVC.xib */,
+			);
+			name = SumStepVC;
+			sourceTree = "<group>";
+		};
+		536EAB011E8945C7002D49F2 /* CustomStepVC */ = {
+			isa = PBXGroup;
+			children = (
+				53FFF9FB1E72B421000BEC96 /* CustomStep.swift */,
+				1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */,
+			);
+			name = CustomStepVC;
+			sourceTree = "<group>";
+		};
 		537C9D7A1E3F484D0054AFA0 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,7 +536,7 @@
 			children = (
 				534A3B7E1E40BB40005FA5F3 /* CollectionView */,
 				53FFFA291E72B8E7000BEC96 /* ViewController.swift */,
-				53FFFA2A1E72B8E7000BEC96 /* ViewController+ResultPopup.swift */,
+				536EAAFE1E8943C9002D49F2 /* ViewController+Popup.swift */,
 				53FFFA2B1E72B8E7000BEC96 /* ViewController+TaskDelegate.swift */,
 				53C7AEEC1E83FE0D0081B5A4 /* MyPlayground.playground */,
 			);
@@ -619,9 +644,9 @@
 		53FFF9F41E72ACBA000BEC96 /* CustomSteps */ = {
 			isa = PBXGroup;
 			children = (
-				53FFF9FB1E72B421000BEC96 /* CustomStep.swift */,
-				1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */,
+				536EAB011E8945C7002D49F2 /* CustomStepVC */,
 				53FFF9FD1E72B421000BEC96 /* CustomViewController.swift */,
+				536EAB001E8945B6002D49F2 /* SumStepVC */,
 			);
 			name = CustomSteps;
 			sourceTree = "<group>";
@@ -832,6 +857,7 @@
 				1EE7E0C31E8594C800BF0AE1 /* NotEligiblePopupController.xib in Resources */,
 				1EE99D541E857ACA008957EF /* whoisrunning_intro_tr.html in Resources */,
 				53FFFA381E72B8F9000BEC96 /* WalkThroughCell.xib in Resources */,
+				536EAAFB1E893A1F002D49F2 /* SumStepVC.xib in Resources */,
 				53FFFAB31E72BD5E000BEC96 /* Main.storyboard in Resources */,
 				1EE7E0AE1E8594A300BF0AE1 /* HighResultPopup.xib in Resources */,
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
@@ -903,6 +929,7 @@
 				53BDB7D01E7BFCC500741FD7 /* Analyse-mChat.swift in Sources */,
 				53FFFA101E72B88F000BEC96 /* InfoTask.swift in Sources */,
 				53FFFA1E1E72B89F000BEC96 /* Pollster+QuestionFunc.swift in Sources */,
+				536EAAFA1E893A1F002D49F2 /* SumStepVC.swift in Sources */,
 				53FFFA8F1E72BB02000BEC96 /* PopupDialogOverlayView.swift in Sources */,
 				53FFFA1C1E72B89F000BEC96 /* GroupAnswer.swift in Sources */,
 				53FFFA3E1E72B90B000BEC96 /* Analyse+Subject.swift in Sources */,
@@ -934,7 +961,7 @@
 				53FFFA341E72B8F2000BEC96 /* ViewController+CollectionDelegateFlowLayout.swift in Sources */,
 				53FFFA8E1E72BB02000BEC96 /* PopupDialogDefaultViewController.swift in Sources */,
 				53FFFB2F1E72CA12000BEC96 /* result.pb.swift in Sources */,
-				53FFFA2D1E72B8E7000BEC96 /* ViewController+ResultPopup.swift in Sources */,
+				53FFFA2D1E72B8E7000BEC96 /* SumStepVC+ResultPopup.swift in Sources */,
 				53C7AEE91E83DD8A0081B5A4 /* Analyse+PassFailHandler.swift in Sources */,
 				53FFFA141E72B898000BEC96 /* ConsentTask.swift in Sources */,
 				53FFFA931E72BB02000BEC96 /* TransitionAnimator.swift in Sources */,
@@ -945,6 +972,7 @@
 				53FFFA2C1E72B8E7000BEC96 /* ViewController.swift in Sources */,
 				53FFFA001E72B421000BEC96 /* CustomViewController.swift in Sources */,
 				53FFFA321E72B8F2000BEC96 /* ViewControll+ScrollViewDelegate.swift in Sources */,
+				536EAAFF1E8943C9002D49F2 /* ViewController+Popup.swift in Sources */,
 				53FFFA951E72BB02000BEC96 /* UIView+Animations.swift in Sources */,
 				53FFFA881E72BB02000BEC96 /* PopupDialog.swift in Sources */,
 				53FFFA8D1E72BB02000BEC96 /* PopupDialogDefaultView.swift in Sources */,

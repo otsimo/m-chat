@@ -23,12 +23,21 @@ class ViewController: UIViewController {
     var isRun = 10
     var taskResult: ORKTaskResult?
     var iResult = Otsimo_Info()
+    
     let anlyse = Analyse()
     var resultJSON = ""
     let defaultSurvey = Tasks.mChatTaskID
-    
+    var first = 0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print("viewWillAppear")
+
+        if UserDefaults.standard.data(forKey: CacheKeys.mChatKey) == nil && first != 0 {
+            print("reset MCHAT")
+            resetMCHAT()
+        }
+        first = 1
+        
         startButton.layer.cornerRadius = 10
         startButton.layer.borderWidth = 0
     }
@@ -72,7 +81,9 @@ class ViewController: UIViewController {
         switch defaultSurvey {
         case Tasks.mChatTaskID:
             //RestoretionFor mChat 
-            break;
+            let savedData = mChatVC.restorationData
+            let userDefaults = UserDefaults.standard
+            userDefaults.setValue(savedData, forKey: CacheKeys.mChatKey)
         case Tasks.mChatRFTaskID:
             let savedData = mChatRFVC.restorationData
             let userDefaults = UserDefaults.standard
@@ -128,6 +139,13 @@ class ViewController: UIViewController {
         infoTaskVC.delegate = self
         return infoTaskVC
     }()
+    
+    func resetMCHAT(){
+        let newSteps = ConsentTask.steps + InfoTask.steps + MChatTask.steps
+        let newTask = ORKOrderedTask(identifier: Tasks.mChatTaskID, steps: newSteps)
+        self.mChatVC = ORKTaskViewController(task: newTask, taskRun: nil)
+        mChatVC.delegate = self
+    }
 
 
 }
