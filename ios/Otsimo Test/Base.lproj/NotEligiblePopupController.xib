@@ -21,13 +21,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNB-wU-Vmw">
                     <rect key="frame" x="0.0" y="0.0" width="284" height="128"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not eligible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZF-JC-Bfc">
-                            <rect key="frame" x="16" y="26" width="252" height="77"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not eligible" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZF-JC-Bfc">
+                            <rect key="frame" x="16.5" y="26" width="252" height="77"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="252" id="tO5-LL-8aS"/>
                                 <constraint firstAttribute="height" constant="77" id="uKT-a9-yPd"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
