@@ -20,7 +20,7 @@ extension Analyse{
         for stepResult in results{
             let result = stepResult.subStepResults[0].stepResults[0]
             qNum += 1
-            if (qNum == 4 || qNum == 11 || qNum == 18 || qNum == 20 || qNum == 22){
+            if (qNum == 11 || qNum == 18 || qNum == 20 || qNum == 22){
                 if (result.answer == "1"){
                     total += 1
                 }
