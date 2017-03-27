@@ -21,30 +21,7 @@ class SendEmailPopupController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func sendEmailTapped(_ sender: UIButton) {
-        analytics.event("send-Email-Tapped",data: [:])
-        self.dismiss(animated: true, completion: nil)
-         print("after dismiss")
-        let server = Server()
-        var userInfo = Otsimo_UserInfo()
-        if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
-            userInfo.resultId = userID
-        }
 
-        if let email = txt_email.text {
-            do {
-                userInfo.email = email
-                let json = try userInfo.serializeJSON()
-                server.sendUserInfo(json: json)
-            } catch let err {
-                print("error : ", err)
-            }
-        }
-        self.dismiss(animated: true, completion: nil)
-        self.parent?.dismiss(animated: true, completion: nil)
-        self.parent?.parent?.dismiss(animated: true, completion: nil)
-        print("after parent dismiss")
-    }
 
 
     /*

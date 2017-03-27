@@ -81,9 +81,31 @@ extension SumStepVC {
 
     func showSavePopup() {
         
+     
         let saveVC = SendEmailPopupController(nibName: "SendEmailPopupController", bundle: nil)
         let popupVC = PopupDialog(viewController: saveVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
         
+        let buttonSend = DefaultButton(title: "Send") {
+            let server = Server()
+            var userInfo = Otsimo_UserInfo()
+            if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
+                userInfo.resultId = userID
+            }
+            
+            if let email = saveVC.txt_email.text {
+                do {
+                    userInfo.email = email
+                    let json = try userInfo.serializeJSON()
+                    server.sendUserInfo(json: json)
+                } catch let err {
+                    print("error : ", err)
+                }
+            }
+            
+        }
+        
+       
+        popupVC.addButton(buttonSend)
         present(popupVC, animated: true, completion: nil)
         
         /*
