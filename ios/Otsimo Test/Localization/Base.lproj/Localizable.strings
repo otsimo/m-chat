@@ -5,15 +5,14 @@
   Created by demirci on 30/12/2016.
   Copyright © 2016 mdemirci. All rights reserved.
 */
-buttonYes = "Evet";
-buttonNo = "Hayır";
+buttonYes = "Yes";
+buttonNo = "No";
 
-
-lowLevel = "Düşük Düzey";
-mediumLevel = "Orta Düzey";
-highLevel = "Yüksek Düzey";
-alinanPuan = ", Otizm testinden alınan puan";
-withapp = "Çocuğum Otizmli Mi? Uygulaması aracılığıyla appstore.com/deneme";
+lowLevel = "No Autism Risk";
+mediumLevel = "Medium Level Autism Risk";
+highLevel = "High Level Autism Risk";
+alinanPuan = ", M-CHAT™ Autism Test Score: ";
+withapp = " via Does My Child Autism? App, appstore.com/deneme";
 
 
 

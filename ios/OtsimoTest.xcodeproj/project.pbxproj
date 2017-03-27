@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0A0C811E897805000E1AE2 /* SumStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E0A0C831E897805000E1AE2 /* SumStepVC.xib */; };
 		1EE7E09E1E858A8200BF0AE1 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */; };
 		1EE7E0A71E85949400BF0AE1 /* LowResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0A91E85949400BF0AE1 /* LowResultPopup.xib */; };
 		1EE7E0AE1E8594A300BF0AE1 /* HighResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0B01E8594A300BF0AE1 /* HighResultPopup.xib */; };
@@ -25,7 +26,6 @@
 		534A3B831E40BD14005FA5F3 /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B811E40BD14005FA5F3 /* 1.html */; };
 		534A3B841E40BD14005FA5F3 /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = 534A3B821E40BD14005FA5F3 /* 2.html */; };
 		536EAAFA1E893A1F002D49F2 /* SumStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAAF81E893A1F002D49F2 /* SumStepVC.swift */; };
-		536EAAFB1E893A1F002D49F2 /* SumStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536EAAF91E893A1F002D49F2 /* SumStepVC.xib */; };
 		536EAAFF1E8943C9002D49F2 /* ViewController+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAAFE1E8943C9002D49F2 /* ViewController+Popup.swift */; };
 		537C9D7F1E3F49310054AFA0 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D7D1E3F49310054AFA0 /* Analytics.swift */; };
 		537C9D801E3F49310054AFA0 /* GA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C9D7E1E3F49310054AFA0 /* GA.swift */; };
@@ -168,6 +168,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E0A0C821E897805000E1AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SumStepVC.xib; sourceTree = "<group>"; };
+		1E0A0C871E897808000E1AE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SumStepVC.strings; sourceTree = "<group>"; };
+		1E0A0C891E89780A000E1AE2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/SumStepVC.strings; sourceTree = "<group>"; };
 		1EE7E09F1E858A8200BF0AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomStepVC.xib; sourceTree = "<group>"; };
 		1EE7E0A41E858A8900BF0AE1 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/CustomStepVC.strings; sourceTree = "<group>"; };
 		1EE7E0A61E858A8D00BF0AE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CustomStepVC.strings; sourceTree = "<group>"; };
@@ -203,7 +206,6 @@
 		534A3B821E40BD14005FA5F3 /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = HTMLContent/2.html; sourceTree = SOURCE_ROOT; };
 		534D5BEA1E35E400001AB543 /* Otsimo Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Otsimo Test-Bridging-Header.h"; sourceTree = "<group>"; };
 		536EAAF81E893A1F002D49F2 /* SumStepVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumStepVC.swift; sourceTree = "<group>"; };
-		536EAAF91E893A1F002D49F2 /* SumStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SumStepVC.xib; sourceTree = "<group>"; };
 		536EAAFE1E8943C9002D49F2 /* ViewController+Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Popup.swift"; sourceTree = "<group>"; };
 		537C9D7D1E3F49310054AFA0 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Analytics.swift; path = Analytics/Analytics.swift; sourceTree = "<group>"; };
 		537C9D7E1E3F49310054AFA0 /* GA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GA.swift; path = Analytics/GA.swift; sourceTree = "<group>"; };
@@ -472,7 +474,7 @@
 			children = (
 				53FFFA2A1E72B8E7000BEC96 /* SumStepVC+ResultPopup.swift */,
 				536EAAF81E893A1F002D49F2 /* SumStepVC.swift */,
-				536EAAF91E893A1F002D49F2 /* SumStepVC.xib */,
+				1E0A0C831E897805000E1AE2 /* SumStepVC.xib */,
 			);
 			name = SumStepVC;
 			sourceTree = "<group>";
@@ -857,7 +859,7 @@
 				1EE7E0C31E8594C800BF0AE1 /* NotEligiblePopupController.xib in Resources */,
 				1EE99D541E857ACA008957EF /* whoisrunning_intro_tr.html in Resources */,
 				53FFFA381E72B8F9000BEC96 /* WalkThroughCell.xib in Resources */,
-				536EAAFB1E893A1F002D49F2 /* SumStepVC.xib in Resources */,
+				1E0A0C811E897805000E1AE2 /* SumStepVC.xib in Resources */,
 				53FFFAB31E72BD5E000BEC96 /* Main.storyboard in Resources */,
 				1EE7E0AE1E8594A300BF0AE1 /* HighResultPopup.xib in Resources */,
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
@@ -1012,6 +1014,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1E0A0C831E897805000E1AE2 /* SumStepVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E0A0C821E897805000E1AE2 /* Base */,
+				1E0A0C871E897808000E1AE2 /* en */,
+				1E0A0C891E89780A000E1AE2 /* tr */,
+			);
+			name = SumStepVC.xib;
+			sourceTree = "<group>";
+		};
 		1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

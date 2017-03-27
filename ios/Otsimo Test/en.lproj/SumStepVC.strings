@@ -1,0 +1,13 @@
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "5Yq-W4-F46"; */
+"5Yq-W4-F46.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "Sonucumu Göster"; ObjectID = "Ffe-Sx-yAg"; */
+"Ffe-Sx-yAg.normalTitle" = "Show My Result";
+
+/* Class = "UILabel"; text = "summaryStep.title"; ObjectID = "QzP-cp-wOD"; */
+"QzP-cp-wOD.text" = "Successfully Completed";
+
+/* Class = "UILabel"; text = "We appreciate your time"; ObjectID = "XfO-7F-n8S"; */
+"XfO-7F-n8S.text" = "M-CHAT™ score is calculated.";
+

@@ -13,16 +13,16 @@ extension SumStepVC {
 
 
         // Create second button
-        let buttonSave = DefaultButton(title: "Save") {
+        let buttonSave = DefaultButton(
+        title: NSLocalizedString("Save", comment: "")) {
             analytics.event("press-Save-Button-ResultPopup", data: [:])
             self.showSavePopup()
             // self.dismiss(animated: true, completion: nil)
         }
         buttonSave.titleColor = UIColor.white
 
-        let buttonShare = DefaultButton(title: "Share") {
+        let buttonShare = DefaultButton(title: NSLocalizedString("Share", comment: "")) {
             analytics.event("press-Share-Button-ResultPopup", data: [:])
-            print("share")
             self.showShareView(total)
         }
 
@@ -157,9 +157,6 @@ extension SumStepVC {
 
     func showShareView(_ point: Int) {
         // set up activity view controller
-
-
-
 
 
         let textToShare = [ getShareText(point)]

@@ -1,0 +1,14 @@
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "5Yq-W4-F46"; */
+"5Yq-W4-F46.normalTitle" = "Bitti";
+
+/* Class = "UIButton"; normalTitle = "Sonucumu Göster"; ObjectID = "Ffe-Sx-yAg"; */
+"Ffe-Sx-yAg.normalTitle" = "Sonucumu Göster";
+
+/* Class = "UILabel"; text = "summaryStep.title"; ObjectID = "QzP-cp-wOD"; */
+"QzP-cp-wOD.text" = "Testi Başarıyla Sonuçlandırdınız";
+
+/* Class = "UILabel"; text = "We appreciate your time"; ObjectID = "XfO-7F-n8S"; */
+"XfO-7F-n8S.text" = "Sonucunuzu hesapladık.";
+
+
