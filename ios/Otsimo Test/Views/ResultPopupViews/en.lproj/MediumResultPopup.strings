@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "M-CHAT Testinden Alınan Puan:"; ObjectID = "3VZ-jI-1jG"; */
-"3VZ-jI-1jG.text" = "Puan :";
+"3VZ-jI-1jG.text" = "Mchat test score : ";
 
 /* Class = "UILabel"; text = "Çocuk bir çocuk psikiyatrisine yönlendirilmelidir"; ObjectID = "Gw1-oR-BnF"; */
 "Gw1-oR-BnF.text" = "The child should be directed to a child psychiatrist.";

@@ -23,7 +23,8 @@ class SendEmailPopupController: UIViewController {
     }
     @IBAction func sendEmailTapped(_ sender: UIButton) {
         analytics.event("send-Email-Tapped",data: [:])
-
+        self.dismiss(animated: true, completion: nil)
+         print("after dismiss")
         let server = Server()
         var userInfo = Otsimo_UserInfo()
         if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
@@ -39,6 +40,8 @@ class SendEmailPopupController: UIViewController {
                 print("error : ", err)
             }
         }
+        
+        print("after parent dismiss")
     }
 
 

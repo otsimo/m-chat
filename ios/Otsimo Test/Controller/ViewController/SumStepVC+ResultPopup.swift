@@ -15,8 +15,8 @@ extension SumStepVC {
         // Create second button
         let buttonSave = DefaultButton(title: "Save") {
             analytics.event("press-Save-Button-ResultPopup", data: [:])
-            self.dismiss(animated: true, completion: nil)
             self.showSavePopup()
+            // self.dismiss(animated: true, completion: nil)
         }
         buttonSave.titleColor = UIColor.white
 
@@ -81,13 +81,50 @@ extension SumStepVC {
 
     func showSavePopup() {
 
-        let saveVC = SendEmailPopupController(nibName: "SendEmailPopupController", bundle: nil)
+        let alert = UIAlertController(title: "Email Gönder", message: "", preferredStyle:
+                                          UIAlertControllerStyle.alert)
 
-        let popupVC = PopupDialog(viewController: saveVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, gestureDismissal: true, completion: nil)
+        alert.addTextField(configurationHandler: textFieldHandler)
 
-        present(popupVC, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Send", style: UIAlertActionStyle.default, handler: { (a)in
+            print("Button Tapped",alert.textFields?[0].text)
+            
+            analytics.event("send-Email-Tapped",data: [:])
+            if let txtFields = alert.textFields{
+                if let email = txtFields[0].text{
+                    let server = Server()
+                    var userInfo = Otsimo_UserInfo()
+                    if let userID = UserDefaults.standard.string(forKey: CacheKeys.userIDKey){
+                        userInfo.resultId = userID
+                        do {
+                            userInfo.email = email
+                            let json = try userInfo.serializeJSON()
+                            server.sendUserInfo(json: json)
+                        } catch let err {
+                            print("error : ", err)
+                        }
+                    }
+                }
+            }
+            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+
+        self.present(alert, animated: true, completion: nil)
 
     }
+
+    func textFieldHandler(textField: UITextField!)
+    {
+        if let txtField = textField{
+            textField.placeholder = "email"
+        }
+    }
+
+
+
+
 
     func showShareView(_ point: Int) {
         // set up activity view controller
@@ -101,7 +138,7 @@ extension SumStepVC {
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
 
         // exclude some activity types from the list (optional)
-        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook, UIActivityType.message]
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook, UIActivityType.message, UIActivityType.postToTwitter]
 
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
@@ -120,10 +157,10 @@ extension SumStepVC {
         default:
             break
         }
-        text += NSLocalizedString("alinanPuan", comment: "")
+        text += " " + NSLocalizedString("alinanPuan", comment: "")
         text += " " + String(point)
         text += NSLocalizedString("withapp", comment: "")
-        print("sharing Text : ",text)
+        print("sharing Text : ", text)
         return text
     }
 

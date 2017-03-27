@@ -13,6 +13,8 @@ class SumStepVC: UIViewController {
     @IBOutlet var icon: UIImageView!
     var total = 0
     var level = OtizmLevel.none
+    var myEmail:UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,10 @@ class SumStepVC: UIViewController {
         userDefault.removeObject(forKey: CacheKeys.mChatKey)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //AlertView
+
+    
     
 
     /*
