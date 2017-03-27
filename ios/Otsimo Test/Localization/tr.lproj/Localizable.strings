@@ -80,3 +80,5 @@ InfoTask.birthDayStepText = "Çocuğun Doğum Tarihi?";
 
 summaryStep.title = "Testi Başarıyla Sonuçlandırdınız";
 
+summaryStep.text = "Sonucunuzu hesapladık.";
+
