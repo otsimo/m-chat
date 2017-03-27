@@ -236,3 +236,4 @@ InfoTask.genderStepText = "Gender of the Child?";
 InfoTask.birthDayStepText = "Child's Date of Birth?";
 
 summaryStep.title = "Successfully Completed";
+summaryStep.text = "M-CHAT™ score is calculated.";
