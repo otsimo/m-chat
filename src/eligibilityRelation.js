@@ -34,7 +34,7 @@ export class EligibilityRelation extends Component {
     // console.warn('rel', await AsyncStorage.getItem('relation'));
     if (this.relation !== false) {
       analytics.screen('Relation (eligibility)');
-      analytics.event('Next clicked');
+      analytics.event('Next clicked on EligibilityRelation');
       const { navigate } = this.props.navigation;
       navigate('EligibilityGender');
     }

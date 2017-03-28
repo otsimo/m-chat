@@ -48,7 +48,7 @@ export class EligibilityGender extends Component {
     // console.warn('rel', await AsyncStorage.getItem('relation'));
 
     analytics.screen('Gender (eligibility)');
-    analytics.event('Pass clicked');
+    analytics.event('Pass clicked on EligibilityGender');
     const { navigate } = this.props.navigation;
     navigate('EligibilityBday');
   }

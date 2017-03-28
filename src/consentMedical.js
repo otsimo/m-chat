@@ -13,7 +13,7 @@ export class ConsentMedical extends Component {
 
   onNextPressed() {
     analytics.screen('Not Medical(consent)');
-    analytics.event('Next clicked');
+    analytics.event('Next clicked on ConsentMedical');
     const { navigate } = this.props.navigation;
     navigate('ConsentFollowUp');
   }

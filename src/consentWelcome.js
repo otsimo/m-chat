@@ -13,7 +13,7 @@ export class ConsentWelcome extends Component {
 
   onNextPressed() {
     analytics.screen('Welcome (consent)');
-    analytics.event('Next clicked');
+    analytics.event('Next clicked on ConsentWelcome');
     const { navigate } = this.props.navigation;
     navigate('ConsentDataGather');
   }

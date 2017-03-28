@@ -13,7 +13,7 @@ export class ConsentStudySurvey extends Component {
 
   onNextPressed() {
     analytics.screen('Study Survey (consent)');
-    analytics.event('Next clicked');
+    analytics.event('Next clicked on ConsentStudySurvey');
     const { navigate } = this.props.navigation;
     navigate('ConsentPotentialBen');
   }

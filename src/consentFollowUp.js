@@ -13,7 +13,7 @@ export class ConsentFollowUp extends Component {
 
   onNextPressed() {
     analytics.screen('Follow Up(consent)');
-    analytics.event('Next clicked');
+    analytics.event('Next clicked on ConsentFollowUp');
     const { navigate } = this.props.navigation;
     navigate('EligibilityRelation');
   }

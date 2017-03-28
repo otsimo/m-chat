@@ -13,7 +13,7 @@ export class ConsentDataGather extends Component {
 
   onNextPressed() {
     analytics.screen('Data gather(consent)');
-    analytics.event('Next clicked');
+    analytics.event('Next clicked on ConsentDataGather');
     const { navigate } = this.props.navigation;
     navigate('ConsentPrivacy');
   }

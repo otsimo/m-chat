@@ -109,7 +109,7 @@ export class EligibilityBday extends Component {
             console.log('unable to save birthDay', err);
           }
           analytics.screen('Birthday (eligibility)');
-          analytics.event('Next clicked');
+          analytics.event('Next clicked on EligibilityBday');
           this.loadSurvey();
         } else {
           analytics.screen('Not Elgible (eligibility)');

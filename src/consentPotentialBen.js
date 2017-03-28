@@ -12,7 +12,7 @@ export class ConsentPotentialBen extends Component {
   };
   onNextPressed() {
     analytics.screen('Potential Benefits(consent)');
-    analytics.event('Next clicked');
+    analytics.event('Next clicked on ConsentPotentialBen');
     const { navigate } = this.props.navigation;
     navigate('ConsentPotentialRisk');
   }
