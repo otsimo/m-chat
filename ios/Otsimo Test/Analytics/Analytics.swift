@@ -22,8 +22,7 @@ class AnalyticsWrapper: AnalyticsProtocol {
     let services: [AnalyticsProtocol]
 
     init() {
-        services = [
-                    GoogleAnalytics()]
+        services = [ GoogleAnalytics()]
     }
 
     func start(_ env: String) {

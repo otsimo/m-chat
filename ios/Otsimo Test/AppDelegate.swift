@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         Log.setLevel(LogLevel(rawValue: 1)!)
-        analytics.start("dev")
+        analytics.start("production")
         analytics.setUserInfo()
         return true
     }

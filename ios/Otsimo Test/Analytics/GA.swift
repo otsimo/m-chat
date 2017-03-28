@@ -15,10 +15,6 @@ class GoogleAnalytics: AnalyticsProtocol {
         gai?.trackUncaughtExceptions = true
         tracker = GAI.sharedInstance().tracker(withTrackingId: GAKey)
         gai?.defaultTracker = tracker
-        if env != "production" {
-            gai?.dryRun = true
-            gai?.logger.logLevel = .verbose
-        }
     }
     
     func setUserInfo() {
