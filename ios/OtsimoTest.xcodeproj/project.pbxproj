@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E0A0C811E897805000E1AE2 /* SumStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E0A0C831E897805000E1AE2 /* SumStepVC.xib */; };
+		1E0A0C951E89F03D000E1AE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E0A0C971E89F03D000E1AE2 /* InfoPlist.strings */; };
 		1EE7E09E1E858A8200BF0AE1 /* CustomStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */; };
 		1EE7E0A71E85949400BF0AE1 /* LowResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0A91E85949400BF0AE1 /* LowResultPopup.xib */; };
 		1EE7E0AE1E8594A300BF0AE1 /* HighResultPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE7E0B01E8594A300BF0AE1 /* HighResultPopup.xib */; };
@@ -171,6 +172,8 @@
 		1E0A0C821E897805000E1AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SumStepVC.xib; sourceTree = "<group>"; };
 		1E0A0C871E897808000E1AE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SumStepVC.strings; sourceTree = "<group>"; };
 		1E0A0C891E89780A000E1AE2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/SumStepVC.strings; sourceTree = "<group>"; };
+		1E0A0C991E89F042000E1AE2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1E0A0C9A1E89F067000E1AE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1EE7E09F1E858A8200BF0AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomStepVC.xib; sourceTree = "<group>"; };
 		1EE7E0A41E858A8900BF0AE1 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/CustomStepVC.strings; sourceTree = "<group>"; };
 		1EE7E0A61E858A8D00BF0AE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CustomStepVC.strings; sourceTree = "<group>"; };
@@ -393,6 +396,7 @@
 				538BCD281E2D178B009F56EB /* protos */,
 				5309B1391E30C4160096A4FC /* ResearchKit Tasks */,
 				53B2BD681E3B80A8001EC7E1 /* View */,
+				1E0A0C971E89F03D000E1AE2 /* InfoPlist.strings */,
 			);
 			path = "Otsimo Test";
 			sourceTree = "<group>";
@@ -865,6 +869,7 @@
 				534A3B831E40BD14005FA5F3 /* 1.html in Resources */,
 				1EE99D511E857ACA008957EF /* AboutStudy_intro_tr.html in Resources */,
 				53FFFADE1E72C455000BEC96 /* questions in Resources */,
+				1E0A0C951E89F03D000E1AE2 /* InfoPlist.strings in Resources */,
 				53C7AF241E8438AD0081B5A4 /* AboutStudy_intro.html in Resources */,
 				1EE99D561E857B24008957EF /* welcome.png in Resources */,
 				1EE7E0BC1E8594BF00BF0AE1 /* SendEmailPopupController.xib in Resources */,
@@ -1022,6 +1027,15 @@
 				1E0A0C891E89780A000E1AE2 /* tr */,
 			);
 			name = SumStepVC.xib;
+			sourceTree = "<group>";
+		};
+		1E0A0C971E89F03D000E1AE2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E0A0C991E89F042000E1AE2 /* tr */,
+				1E0A0C9A1E89F067000E1AE2 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		1EE7E0A01E858A8200BF0AE1 /* CustomStepVC.xib */ = {
@@ -1216,6 +1230,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Otsimo Test/Otsimo Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Otsimo Bilisim Anonim Sirketi (LUBGWANK4N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Otsimo Bilisim Anonim Sirketi (LUBGWANK4N)";
 				DEVELOPMENT_TEAM = LUBGWANK4N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1254,6 +1270,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Otsimo Test/Otsimo Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Otsimo Bilisim Anonim Sirketi (LUBGWANK4N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Otsimo Bilisim Anonim Sirketi (LUBGWANK4N)";
 				DEVELOPMENT_TEAM = LUBGWANK4N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
