@@ -40,11 +40,11 @@ class Server{
     
     
     func sendResult(json : String) -> String{
-        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.xyz/addResult")
+        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.com/addResult")
         return responseFromServer
     }
     func sendUserInfo(json : String) -> String{
-        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.xyz/addUserInfo")
+        let responseFromServer = sendServer(json: json, url: "https://mchatrest.otsimo.com/addUserInfo")
         return responseFromServer
     }
     
