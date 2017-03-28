@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import i18n from './i18n';
+import * as analytics from './analytics';
 import { ConsentPrefab } from './consentPrefab';
 
 export class ConsentMedical extends Component {
@@ -11,6 +12,8 @@ export class ConsentMedical extends Component {
   };
 
   onNextPressed() {
+    analytics.screen('Not Medical(consent)');
+    analytics.event('Next clicked');
     const { navigate } = this.props.navigation;
     navigate('ConsentFollowUp');
   }

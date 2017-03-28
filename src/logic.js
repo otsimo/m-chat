@@ -614,13 +614,20 @@ export class Logic {
   }
 
   async generateUUID() {
-
     await AsyncStorage.setItem('uuid', uuidV4());
+  }
+
+  async setUUID() {
+    try {
+      const uuidgenerated = await this.generateUUID();
+    } catch (err) {
+      console.log('failed to store uuid', err);
+    }
   }
 
   async saveAnalytics() {
     try {
-      const uuidgenerated = await this.generateUUID();
+
       const uuid = await this.getUUID();
       const info = await this.getInfo();
       const Result = {

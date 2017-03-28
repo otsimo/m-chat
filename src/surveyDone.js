@@ -15,6 +15,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Result } from './result.js';
 import { saveEmail } from './saveEmail';
 import i18n from './i18n';
+import * as analytics from './analytics';
 
 export class SurveyDone extends Component {
 
@@ -27,9 +28,12 @@ export class SurveyDone extends Component {
   constructor(props) {
     super(props);
     this.email = '';
+    this.state = { disableSave: false };
+    analytics.screen('Survey Finished');
   }
 
   getText(text) {
+    this.state.disableSave = false;
     this.email = text.text;
   }
 
@@ -47,8 +51,17 @@ export class SurveyDone extends Component {
   }
 
   saveUserEmail() {
-    saveEmail(this.email);
-    ToastAndroid.show(i18n.t('emailsaved'), ToastAndroid.SHORT);
+    analytics.event('Save mail clicked');
+    if (this.email === '') {
+      return;
+    }
+    if (!this.state.disableSave) {
+      this.state.disableSave = true;
+      saveEmail(this.email);
+      ToastAndroid.show(i18n.t('emailsaved'), ToastAndroid.SHORT);
+    } else {
+      ToastAndroid.show(i18n.t('alreadysave'), ToastAndroid.SHORT);
+    }
   }
 
   render() {
@@ -65,6 +78,7 @@ export class SurveyDone extends Component {
           <TouchableOpacity
             style={{ backgroundColor: 'white', marginTop: 70 }}
             onPress={() => {
+              analytics.event('Show results clicked');
               this.popupDialog.show();
             }}
           >

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import i18n from './i18n';
+import * as analytics from './analytics';
 import { ConsentPrefab } from './consentPrefab';
 
 export class ConsentWelcome extends Component {
@@ -11,6 +12,8 @@ export class ConsentWelcome extends Component {
   };
 
   onNextPressed() {
+    analytics.screen('Welcome (consent)');
+    analytics.event('Next clicked');
     const { navigate } = this.props.navigation;
     navigate('ConsentDataGather');
   }
@@ -32,7 +35,7 @@ export class ConsentWelcome extends Component {
   render() {
     if (i18n.t('yes') === 'Yes') {
       return this.renderEN();
-    } else{
+    } else {
       return this.renderTR();
     }
   }

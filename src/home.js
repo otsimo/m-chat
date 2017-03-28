@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import i18n from './i18n';
+import * as analytics from './analytics';
 import { MChat } from './app';
 import { SurveyDone } from './surveyDone';
 import { ConsentWelcome } from './consentWelcome';
@@ -25,7 +26,9 @@ import { EligibilityGender } from './eligibilityGender';
 import { EligibilityBday } from './eligibilityBday';
 import { EligibilityNotFit } from './eligibilityNotFit';
 import { Swipe } from './swipe';
+import { Logic } from './logic';
 
+import q1 from '../questionsSimple/q1.json';
 
 
 export class Home extends Component {
@@ -37,11 +40,28 @@ export class Home extends Component {
   };
   constructor(props) {
     super(props);
+    this.tempLogic = new Logic([q1]);
+
+    this.uuid = '';
+    analytics.start('production');
     this.state = { page: 0 };
     this.lang = i18n.t('yes');
   }
+  async startApp() {
 
-  startApp() {
+
+    try {
+      const setid = await this.tempLogic.setUUID();
+      const uuid = await this.tempLogic.getUUID();
+      const app = {
+        profileId: uuid,
+      };
+      analytics.setUserInfo(app);
+      analytics.screen('Home');
+      analytics.event('Start survey button clicked');
+    } catch (err) {
+      console.error('cannot get uuid');
+    }
     // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); 
     const { navigate } = this.props.navigation;
     navigate('ConsentWelcome');
@@ -50,7 +70,7 @@ export class Home extends Component {
 
   handleScroll(event) {
     this.setState({ page: Math.floor(event.nativeEvent.contentOffset.x / Dimensions.get('window').width) });
-    //console.warn('page', event.nativeEvent.contentOffset.x);
+    // console.warn('page', event.nativeEvent.contentOffset.x);
   }
 
   renderTR() {

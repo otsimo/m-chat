@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, AsyncStorage, DatePickerAndroid } from 'react-native';
 import i18n from './i18n';
+import * as analytics from './analytics';
 import { ConsentPrefab } from './consentPrefab';
 import { RelationButton } from './relationButton';
 import { resetTo } from './util';
@@ -107,8 +108,11 @@ export class EligibilityBday extends Component {
           } catch (err) {
             console.log('unable to save birthDay', err);
           }
+          analytics.screen('Birthday (eligibility)');
+          analytics.event('Next clicked');
           this.loadSurvey();
         } else {
+          analytics.screen('Not Elgible (eligibility)');
           const { navigate } = this.props.navigation;
           resetTo(this, 'EligibilityNotFit');
         }

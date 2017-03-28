@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import i18n from './i18n';
+import * as analytics from './analytics';
 import { ConsentPrefab } from './consentPrefab';
 
 export class ConsentPrivacy extends Component {
@@ -11,6 +12,8 @@ export class ConsentPrivacy extends Component {
   };
 
   onNextPressed() {
+    analytics.screen('Privacy (consent)');
+    analytics.event('Next clicked');
     const { navigate } = this.props.navigation;
     navigate('ConsentDataUse');
   }

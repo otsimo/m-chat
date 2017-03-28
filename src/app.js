@@ -16,6 +16,7 @@ import { modalDispatcher } from './events';
 import { ModalButton } from './modalButtons';
 import { resetTo } from './util';
 import i18n from './i18n';
+import * as analytics from './analytics';
 
 import q1 from '../questionsSimple/q1.json';
 import q2 from '../questionsSimple/q2.json';
@@ -45,7 +46,6 @@ if (Platform.OS !== 'ios') {
   i18n.locale = NativeModules.OtsimoDeviceInfo.deviceLocale;
 }
 
-//i18n.t('stepOf', { current: 0, total: 20 });
 
 export class MChat extends Component {
 
@@ -62,6 +62,7 @@ export class MChat extends Component {
       ),
     }),
   };
+
 
   state = {
     viewOne: true,

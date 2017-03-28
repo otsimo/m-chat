@@ -12,6 +12,7 @@ import { Result } from './result.js';
 import { SurveyDone } from './surveyDone.js';
 import { SaveToServer } from './saveToServer';
 import i18n from './i18n';
+import * as analytics from './analytics';
 
 export class Question extends Component {
   static propTypes = {
@@ -22,7 +23,7 @@ export class Question extends Component {
     super(props);
     this.screenWidth = Dimensions.get('window').width / 23;
     this.screenHeight = Dimensions.get('window').height;
-
+    analytics.screen('Questions');
     this.state = { question: this.props.delegate.getQuestionType(), showNext: false };
   }
 
@@ -45,10 +46,11 @@ export class Question extends Component {
    * @memberOf Question
    */
   executeQuestion() {
+    analytics.event('Next clicked');
     this.props.delegate.executeAnswer(this.state.selectedOne);
-     this.props.onUpdate();
+    this.props.onUpdate();
     if (this.props.delegate.getQuestionType() === 'result') {
-       this.props.delegate.saveAnalytics();
+      this.props.delegate.saveAnalytics();
       this.props.toResult(this.getResultType(), this.props.delegate.getFails());
     } else {
       this.setState({ question: this.props.delegate.getQuestionType(), selectedOne: '', showNext: false });
@@ -234,7 +236,7 @@ export class Question extends Component {
             <NextButton enabled={this.state.showNext} onClick={() => this.executeNextStep()} />
           </View>
           <View style={{ height: 60 }}>
-            
+
           </View>
         </ScrollView>
       </View>

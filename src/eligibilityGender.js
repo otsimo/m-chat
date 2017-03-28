@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native';
 import i18n from './i18n';
+import * as analytics from './analytics';
 import { ConsentPrefab } from './consentPrefab';
 import { GenderButton } from './genderButton';
 
@@ -32,6 +33,8 @@ export class EligibilityGender extends Component {
     await AsyncStorage.setItem('gender', JSON.stringify(saveData));
     // console.warn('rel', await AsyncStorage.getItem('relation'));
     if (this.gender !== false) {
+      analytics.screen('Gender (eligibility)');
+      analytics.event('Next clicked');
       const { navigate } = this.props.navigation;
       navigate('EligibilityBday');
     }
@@ -44,6 +47,8 @@ export class EligibilityGender extends Component {
     await AsyncStorage.setItem('gender', JSON.stringify(saveData));
     // console.warn('rel', await AsyncStorage.getItem('relation'));
 
+    analytics.screen('Gender (eligibility)');
+    analytics.event('Pass clicked');
     const { navigate } = this.props.navigation;
     navigate('EligibilityBday');
   }

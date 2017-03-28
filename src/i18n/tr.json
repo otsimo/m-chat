@@ -6,6 +6,7 @@
   "no": "Hayır",
   "next": "İleri",
   "save": "Kaydet",
+  "alreadysave": "Zaten kaydedildi",
   "reset": "Sıfırla",
   "showResult": "Sonucu göster",
   "share": "Paylaş",
@@ -73,14 +74,10 @@
     "text": "Size çalışma hakkında ulaşmak isteyebiliriz. Takip işlemini istediğiniz zaman iptal edebilirsiniz.", // Ana yazı 
     "learnMore": "../webviews/consent9LearnMoreTR.html" // Learn more a basınca gidilecek URL WebView için 
   },
-
-
   "homepage1": "../webviews/homepage1TR.html",
   "homepage2": "../webviews/homepage2TR.html",
   "homepage3": "../webviews/homepage3TR.html",
   "homepage4": "../webviews/homepage4TR.html",
-
-
   "stepQuestion1": "Çocuğunuzun sallanılmaktan yada dizinizde hoplatılmaktan veya benzeri oyunlardan hoşlanır mı?",
   "stepQuestion2": "Çocuğunuz başka çocuklarla ilgilenir mi?",
   "stepQuestion3": "Çocuğunuz eşyalara (örneğin koltuk,kütüphane vb.) ve benzeri şeylere tırmanmayı sever mi?",
@@ -104,7 +101,6 @@
   "stepQuestion21": "Çocuğunuz çevresindeki insanların neler söylediğini/konuştuğunu anlar mı?",
   "stepQuestion22": "Çocuğunuz bazen boşluğa bakıyormuş gibi dalıp gider mi?",
   "stepQuestion23": "Çocuğunuz bilmediği bir durumla karşılaştığı zaman sizin davranışınızı anlamak amacıyla yüzünüze bakar mı?",
-
   "score": "Skor: ",
   "highlevel": "Yüksek Seviye",
   "mediumlevel": "Orta Seviye",
@@ -112,8 +108,8 @@
   "autismdoubt": "Otizm Şüphesi",
   "highrisktext1": "Çocuk mutlaka bir çocuk psikiyatristine yönlendirilmelidir",
   "highrisktext2": " M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
-  "lowleveltext1":"İlave bir test yapılmasına ihtiyaç yoktur",
-  "lowleveltext2":" Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.",
+  "lowleveltext1": "İlave bir test yapılmasına ihtiyaç yoktur",
+  "lowleveltext2": " Ancak M-CHAT çocuğa 24 aylıktan önce uygulanmış ise çocuğun gelişiminin takip edilip 24 aylıkken bu testin tekrardan uygulanması ve sonuçların tekrardan değerlendirilmesi gereklidir.",
   "mediumleveltext2": "M-CHAT tanı koymaya yönelik bir araç değildir. Bir çocuğun M-CHAT'te başarısız olması o çocuğun otizm spektrum bozukluğu tanısı aldığı anlamına gelmemektedir. Bu sonuç sadece 'şüphe' bildirmektedir.",
   "mediumleveltext1": "Çocuk bir çocuk psikiyatristine yönlendirilmelidir",
   "sharetext": "{{level}} seviye otizm şüphesi, otizm testinden alınan puan {{score}}, Çocuğum Otizmli Mi? Uygulaması aracılığıyla ",
