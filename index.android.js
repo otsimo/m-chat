@@ -4,7 +4,7 @@ import {
 
 import { SimpleApp } from './src/home';
 
-AppRegistry.registerComponent('m_chat', () => SimpleApp);
+AppRegistry.registerComponent('mchattest', () => SimpleApp);
 
 /*
 import { MChat } from './src/app';
