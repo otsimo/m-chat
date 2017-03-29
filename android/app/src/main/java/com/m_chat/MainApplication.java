@@ -1,4 +1,4 @@
-package com.mchattest;
+package com.otsimo.mchat;
 
 import android.app.Application;
 import android.util.Log;

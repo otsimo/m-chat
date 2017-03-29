@@ -41,7 +41,7 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="mchattest" />
+              <option name="name" value="otsimo.mchat" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
@@ -52,7 +52,7 @@
                 <option name="path" value="$PROJECT_DIR$/app" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="mchattest" />
+                <option name="name" value="otsimo.mchat" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -86,7 +86,7 @@
                 <option name="name" value="mergeDebugProguardFiles" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'mchattest'." />
+                <option name="description" value="Displays the sub-projects of root project 'otsimo.mchat'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -139,7 +139,7 @@
                 <option name="name" value="assembleDebugUnitTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'mchattest'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'otsimo.mchat'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -153,7 +153,7 @@
                 <option name="name" value="dexDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'mchattest' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'otsimo.mchat' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -193,12 +193,12 @@
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare mchattest:react-native-google-analytics-bridge:unspecified" />
+                <option name="description" value="Prepare otsimo.mchat:react-native-google-analytics-bridge:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareMchattestReactNativeGoogleAnalyticsBridgeUnspecifiedLibrary" />
+                <option name="name" value="prepareotsimo.mchatReactNativeGoogleAnalyticsBridgeUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'mchattest'." />
+                <option name="description" value="Displays all dependencies declared in root project 'otsimo.mchat'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -264,7 +264,7 @@
                 <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'mchattest'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'otsimo.mchat'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -322,9 +322,9 @@
                 <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalyticsImpl1021Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare mchattest:react-native-vector-icons:unspecified" />
+                <option name="description" value="Prepare otsimo.mchat:react-native-vector-icons:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareMchattestReactNativeVectorIconsUnspecifiedLibrary" />
+                <option name="name" value="prepareotsimo.mchatReactNativeVectorIconsUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Release build." />
@@ -387,7 +387,7 @@
                 <option name="name" value="uninstallDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'mchattest'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'otsimo.mchat'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -810,7 +810,7 @@
                 <option name="name" value="generateReleaseResValues" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'mchattest'." />
+                <option name="description" value="Displays the properties of root project 'otsimo.mchat'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -905,9 +905,9 @@
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare mchattest:react-native-google-analytics-bridge:unspecified" />
+                <option name="description" value="Prepare otsimo.mchat:react-native-google-analytics-bridge:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareMchattestReactNativeGoogleAnalyticsBridgeUnspecifiedLibrary" />
+                <option name="name" value="prepareotsimo.mchatReactNativeGoogleAnalyticsBridgeUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays all dependencies declared in project ':app'." />
@@ -1021,9 +1021,9 @@
                 <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalyticsImpl1021Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare mchattest:react-native-vector-icons:unspecified" />
+                <option name="description" value="Prepare otsimo.mchat:react-native-vector-icons:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareMchattestReactNativeVectorIconsUnspecifiedLibrary" />
+                <option name="name" value="prepareotsimo.mchatReactNativeVectorIconsUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Release build." />
@@ -3481,7 +3481,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1261" height="735" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

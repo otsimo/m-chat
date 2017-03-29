@@ -1,4 +1,4 @@
-package com.mchattest;
+package com.otsimo.mchat;
 /**
  * Created by Sercan Değirmenci on 30/01/2017.
  * Copyright 2016 Otsimo
