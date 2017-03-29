@@ -129,8 +129,8 @@ android {
          release {
             signingConfig signingConfigs.release
             zipAlignEnabled true
-            debuggable true
-            jniDebuggable true
+            // debuggable true
+            // jniDebuggable true
         }
         debug {
         }
