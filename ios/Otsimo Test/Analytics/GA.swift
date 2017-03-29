@@ -22,7 +22,7 @@ class GoogleAnalytics: AnalyticsProtocol {
     }
     
     func setUserInfo() {
-        tracker.set(kGAIAppName,value:"mchattest")
+        tracker.set(kGAIAppName,value:"otsimo.mchat")
         let bundleShortVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         tracker.set(kGAIAppVersion, value: bundleShortVersion)
     }
