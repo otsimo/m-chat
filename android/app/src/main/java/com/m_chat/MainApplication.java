@@ -1,4 +1,4 @@
-package com.m_chat;
+package com.mchat;
 
 import android.app.Application;
 import android.util.Log;

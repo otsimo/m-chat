@@ -1,4 +1,4 @@
-package com.m_chat;
+package com.mchat;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "m_chat";
+        return "mchat";
     }
 }

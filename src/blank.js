@@ -99,10 +99,10 @@ const SimpleApp = StackNavigator({
   gender: { screen: Gender },
 });
 
-AppRegistry.registerComponent('m_chat', () => SimpleApp);
+AppRegistry.registerComponent('mchat', () => SimpleApp);
 
 /*
 import { MChat } from './src/app';
 
-AppRegistry.registerComponent('m_chat', () => MChat);
+AppRegistry.registerComponent('mchat', () => MChat);
 */

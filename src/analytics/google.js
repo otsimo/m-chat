@@ -9,7 +9,7 @@ export class GoogleAnalytics extends BaseAnalytics {
    */
   start(env) {
     if (env === 'production') {
-      this.tracker = new GoogleAnalyticsTracker('');
+      this.tracker = new GoogleAnalyticsTracker('UA-66421320-5');
     } else {
       this.tracker = null;
     }
