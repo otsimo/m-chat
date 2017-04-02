@@ -49,7 +49,7 @@ q1.1= "Çocuğunuzun sallanılmaktan ya da dizinizde hoplatılmaktan veya benzer
 q2.1= "Çocuğunuz başka çocuklarla ilgilenir mi?";
 q3.1= "Çocuğunuz eşyalara (örneğin koltuk,kütüphane vb.) ve benzeri şeylere tırmanmayı sever mi?";
 q4.1= "Çocuğunuz ce-e(yüzünüzü ellerinizle kapatıp açarken ce-e demek) ve saklambaç oyunlarından hoşlanır mı? ";
-q5.1= "Çocuğunuz hiç hayali oyun oynar mı? (örneğin, telefonu alıp karışısında biri varmış gibi konuşur mu veya oyuncak bebeğinin altını temizliyormuş gibi yapar mı?)";
+q5.1= "Çocuğunuz hiç hayali oyun oynar mı? (örneğin, telefonu alıp karşısında biri varmış gibi konuşur mu veya oyuncak bebeğinin altını temizler gibi yapar mı?)";
 q6.1= "Çocuğunuz ne olduğunu merak ettiği bir şeyi (sormak amacıyla) işaret parmağıyla gösterir mi?";
 q7.1= "Çocuğunuz bir şeyin ilgisini çektiğini belirtmek için işaret parmağıyla gösterir mi?";
 q8.1= "Çocuğunuz küçük oyuncakları (araba,lego gibi) ağzına almadan, fırlatıp atmadan veya elinde sallamadan (amacına uygun) oynar mı?";
@@ -90,4 +90,4 @@ summaryStep.title = "Testi Başarıyla Sonuçlandırdınız";
 summaryStep.text = "Sonucunuzu hesapladık.";
 
 "Save" = "Kaydet";
-"Share" = "Paylaş";
+"Share" = "Gönder";
