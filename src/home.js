@@ -48,8 +48,6 @@ export class Home extends Component {
     this.lang = i18n.t('yes');
   }
   async startApp() {
-
-
     try {
       const setid = await this.tempLogic.setUUID();
       const uuid = await this.tempLogic.getUUID();
@@ -62,7 +60,7 @@ export class Home extends Component {
     } catch (err) {
       console.error('cannot get uuid');
     }
-    // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true }); 
+    // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true });
     const { navigate } = this.props.navigation;
     navigate('ConsentWelcome');
   }
@@ -80,7 +78,7 @@ export class Home extends Component {
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            onScroll={(event) => this.handleScroll(event)}
+            onScroll={event => this.handleScroll(event)}
             pagingEnabled
           >
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
@@ -121,15 +119,14 @@ export class Home extends Component {
             <Swipe page={this.state.page} />
           </View>
           <TouchableOpacity
-            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5 }}
+            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
             onPress={() => this.startApp()}
           >
-            <Text style={{ padding: 5, textAlign: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
+            <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
-
   }
   renderEN() {
     return (
@@ -138,7 +135,7 @@ export class Home extends Component {
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            onScroll={(event) => this.handleScroll(event)}
+            onScroll={event => this.handleScroll(event)}
             pagingEnabled
           >
             <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
@@ -179,10 +176,10 @@ export class Home extends Component {
             <Swipe page={this.state.page} />
           </View>
           <TouchableOpacity
-            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5 }}
+            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
             onPress={() => this.startApp()}
           >
-            <Text style={{ padding: 5, textAlign: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
+            <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -191,9 +188,8 @@ export class Home extends Component {
   render() {
     if (this.lang === 'Yes') {
       return this.renderEN();
-    } else {
-      return this.renderTR();
     }
+    return this.renderTR();
   }
 }
 
