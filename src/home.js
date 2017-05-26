@@ -3,11 +3,12 @@ import {
   View,
   TouchableOpacity,
   Text,
-  ScrollView,
   Dimensions,
   WebView,
+  StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import Swiper from 'react-native-swiper';
 import i18n from './i18n';
 import * as analytics from './analytics';
 import { MChat } from './app';
@@ -44,7 +45,7 @@ export class Home extends Component {
 
     this.uuid = '';
     analytics.start('production');
-    this.state = { page: 0 };
+    this.state = { index: 0 };
     this.lang = i18n.t('yes');
   }
   async startApp() {
@@ -65,133 +66,82 @@ export class Home extends Component {
     navigate('ConsentWelcome');
   }
 
-
-  handleScroll(event) {
-    this.setState({ page: Math.floor(event.nativeEvent.contentOffset.x / Dimensions.get('window').width) });
-    // console.warn('page', event.nativeEvent.contentOffset.x);
+  get urlsForEN() {
+    const urlsForEN = [
+      'file:///android_asset/webviews/homepage1EN.html',
+      'file:///android_asset/webviews/homepage2EN.html',
+      'file:///android_asset/webviews/homepage3EN.html',
+      'file:///android_asset/webviews/homepage3EN.html',
+      'file:///android_asset/webviews/homepage4EN.html',
+    ];
+    return urlsForEN;
   }
 
-  renderTR() {
-    return (
-      <View style={{ flex: 1 }}>
-        <View style={{ flex: 4 }}>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            onScroll={event => this.handleScroll(event)}
-            pagingEnabled
-          >
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
 
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage1TR.html' }} />
-
-
-            </View>
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'red', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage2TR.html' }} />
-
-
-            </View>
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage3TR.html' }} />
-
-
-            </View>
-
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage4TR.html' }} />
-
-
-            </View>
-
-          </ScrollView>
-
-        </View>
-        <View style={{ flex: 1, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
-          <View style={{ marginTop: 5 }}>
-            <Swipe page={this.state.page} />
-          </View>
-          <TouchableOpacity
-            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
-            onPress={() => this.startApp()}
-          >
-            <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-  renderEN() {
-    return (
-      <View style={{ flex: 1 }}>
-        <View style={{ flex: 4 }}>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            onScroll={event => this.handleScroll(event)}
-            pagingEnabled
-          >
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'white', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage1EN.html' }} />
-
-
-            </View>
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'red', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage2EN.html' }} />
-
-
-            </View>
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage3EN.html' }} />
-
-
-            </View>
-
-            <View style={{ width: Dimensions.get('window').width, backgroundColor: 'blue', flex: 1 }}>
-
-
-              <WebView source={{ uri: 'file:///android_asset/webviews/homepage4EN.html' }} />
-
-
-            </View>
-
-          </ScrollView>
-
-        </View>
-        <View style={{ flex: 1, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
-          <View style={{ marginTop: 5 }}>
-            <Swipe page={this.state.page} />
-          </View>
-          <TouchableOpacity
-            style={{ width: 150, height: 40, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
-            onPress={() => this.startApp()}
-          >
-            <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-  render() {
+  renderSwiper() {
+    let urls = ['file:///android_asset/webviews/homepage1TR.html',
+      'file:///android_asset/webviews/homepage2TR.html',
+      'file:///android_asset/webviews/homepage3TR.html',
+      'file:///android_asset/webviews/homepage4TR.html',
+    ];
     if (this.lang === 'Yes') {
-      return this.renderEN();
+      urls = this.urlsForEN;
     }
-    return this.renderTR();
+    const pages = [];
+    urls.map((url) => {
+      pages.push(<View key={url} style={styles.slide1}>
+        <WebView style={styles.WebView} source={{ uri: url }} />
+      </View>);
+    });
+    return (
+      <Swiper
+        onMomentumScrollEnd={(e, state) => this.setState({ page: state.index })}
+        animated
+        loop={false}
+        style={styles.wrapper}
+      >
+        {pages}
+      </Swiper >
+    );
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1, backgroundColor: 'red' }} >
+        <View style={{ flex: 1, backgroundColor: 'red' }} >
+          {this.renderSwiper()}
+        </View>
+        <View style={{ height: 150, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
+          <View style={{ marginTop: 5 }}>
+            <Swipe page={this.state.page} />
+          </View>
+          <TouchableOpacity
+            style={{ width: 150, height: 50, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
+            onPress={() => this.startApp()}
+          >
+            <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
+          </TouchableOpacity>
+        </View>
+      </View >
+    );
   }
 }
+const width = Dimensions.get('window').width;
+
+const styles = StyleSheet.create({
+  wrapper: {
+  },
+  slide1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+  },
+  WebView: {
+    width,
+    flex: 1,
+  },
+});
 
 export const SimpleApp = StackNavigator({
   home: { screen: Home },
