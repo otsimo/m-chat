@@ -45,7 +45,7 @@ export class Home extends Component {
 
     this.uuid = '';
     analytics.start('production');
-    this.state = { index: 0 };
+    this.state = { index: 1 };
     this.lang = i18n.t('yes');
   }
   async startApp() {
