@@ -1,7 +1,7 @@
 {
   "start": "Başla",
   "continue": "Devam et",
-  "stepOf": "Adım {{total}} de {{current}}",
+  "stepOf": "Adım {{current}} de {{total}}",
   "yes": "Evet",
   "no": "Hayır",
   "next": "İleri",
