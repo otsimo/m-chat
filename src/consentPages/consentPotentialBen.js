@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
+import { View } from 'react-native';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
 import { ConsentPrefab } from './consentPrefab';
+import * as utils from '../util';
 
 export class ConsentPotentialBen extends Component {
   static navigationOptions = {
@@ -13,14 +14,13 @@ export class ConsentPotentialBen extends Component {
   onNextPressed() {
     analytics.screen('Potential Benefits(consent)');
     analytics.event('Next clicked on ConsentPotentialBen');
-    const { navigate } = this.props.navigation;
-    navigate('ConsentPotentialRisk');
+    utils.navigateTo(this, 'ConsentPotentialRisk');
   }
 
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent6LearnMoreTR.html'} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent6LearnMoreTR.html'} image={require("../../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
       </View>
     );
   }
@@ -28,7 +28,7 @@ export class ConsentPotentialBen extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent6LearnMoreEN.html'} image={require("../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent6LearnMoreEN.html'} image={require("../../pngs/potential_benefitskopya.png")} textHeader={i18n.t('potentialBenefits.header')} text={i18n.t('potentialBenefits.text')} />
       </View>
     );
   }

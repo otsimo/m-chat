@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native';
-import i18n from './i18n';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { ConsentPrefab } from './consentPrefab';
-import { GenderButton } from './genderButton';
-import { resetTo } from './util';
+import i18n from '../i18n';
+import { resetTo } from '../util';
 
 
 export class EligibilityNotFit extends Component {

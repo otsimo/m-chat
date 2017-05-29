@@ -13,22 +13,21 @@ import i18n from './i18n';
 import * as analytics from './analytics';
 import { MChat } from './app';
 import { SurveyDone } from './surveyDone';
-import { ConsentWelcome } from './consentWelcome';
-import { ConsentDataGather } from './consentDataGather';
-import { ConsentPrivacy } from './consentPrivacy';
-import { ConsentDataUse } from './consentDataUse';
-import { ConsentStudySurvey } from './consentStudySurvey';
-import { ConsentPotentialBen } from './consentPotentialBen';
-import { ConsentPotentialRisk } from './consentPotentialRisk';
-import { ConsentMedical } from './consentMedical';
-import { ConsentFollowUp } from './consentFollowUp';
-import { EligibilityRelation } from './eligibilityRelation';
-import { EligibilityGender } from './eligibilityGender';
-import { EligibilityBday } from './eligibilityBday';
-import { EligibilityNotFit } from './eligibilityNotFit';
+import {
+  ConsentWelcome,
+  ConsentDataGather,
+  ConsentPrivacy,
+  ConsentDataUse,
+  ConsentStudySurvey,
+  ConsentPotentialBen,
+  ConsentPotentialRisk,
+  ConsentMedical,
+  ConsentFollowUp,
+} from './consentPages';
+import { EligibilityRelation, EligibilityGender, EligibilityBday, EligibilityNotFit } from './eligibilityPages';
 import { Swipe } from './swipe';
 import { Logic } from './logic';
-
+import * as utils from './util';
 import q1 from '../questionsSimple/q1.json';
 
 
@@ -62,8 +61,8 @@ export class Home extends Component {
       console.error('cannot get uuid');
     }
     // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true });
-    const { navigate } = this.props.navigation;
-    navigate('ConsentWelcome');
+    utils.navigateTo(this, 'ConsentWelcome');
+
   }
 
   get urlsForEN() {
@@ -106,17 +105,18 @@ export class Home extends Component {
   }
 
   render() {
+    const h = Dimensions.get('screen').height;
     return (
       <View style={{ flex: 1, backgroundColor: 'red' }} >
         <View style={{ flex: 1, backgroundColor: 'red' }} >
           {this.renderSwiper()}
         </View>
-        <View style={{ height: 150, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
+        <View style={{ height: h / 6.8, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
           <View style={{ marginTop: 5 }}>
             <Swipe page={this.state.page} />
           </View>
           <TouchableOpacity
-            style={{ width: 150, height: 50, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
+            style={{ width: 150, height: h / 20.5, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
             onPress={() => this.startApp()}
           >
             <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>

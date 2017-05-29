@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
+import { View } from 'react-native';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
 import { ConsentPrefab } from './consentPrefab';
+import * as utils from '../util';
 
 export class ConsentDataUse extends Component {
   static navigationOptions = {
@@ -14,14 +15,13 @@ export class ConsentDataUse extends Component {
   onNextPressed() {
     analytics.screen('Data use(consent)');
     analytics.event('Next clicked on ConsentDataUse');
-    const { navigate } = this.props.navigation;
-    navigate('ConsentStudySurvey');
+    utils.navigateTo(this, 'ConsentStudySurvey');
   }
 
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent4LearnMoreTR.html'} image={require("../pngs/data_usekopya.png")} textHeader={i18n.t('dataUse.header')} text={i18n.t('dataUse.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent4LearnMoreTR.html'} image={require("../../pngs/data_usekopya.png")} textHeader={i18n.t('dataUse.header')} text={i18n.t('dataUse.text')} />
       </View>
     );
   }
@@ -29,7 +29,7 @@ export class ConsentDataUse extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent4LearnMoreEN.html'} image={require("../pngs/data_usekopya.png")} textHeader={i18n.t('dataUse.header')} text={i18n.t('dataUse.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent4LearnMoreEN.html'} image={require("../../pngs/data_usekopya.png")} textHeader={i18n.t('dataUse.header')} text={i18n.t('dataUse.text')} />
       </View>
     );
   }

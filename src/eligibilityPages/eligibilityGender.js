@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
-import { ConsentPrefab } from './consentPrefab';
-import { GenderButton } from './genderButton';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
+import { GenderButton } from '../genderButton';
+import * as utils from '../util';
 
 export class EligibilityGender extends Component {
   static navigationOptions = {
@@ -35,8 +35,7 @@ export class EligibilityGender extends Component {
     if (this.gender !== false) {
       analytics.screen('Gender (eligibility)');
       analytics.event('Next clicked');
-      const { navigate } = this.props.navigation;
-      navigate('EligibilityBday');
+      utils.navigateTo(this,'EligibilityBday');
     }
   }
 
@@ -49,8 +48,7 @@ export class EligibilityGender extends Component {
 
     analytics.screen('Gender (eligibility)');
     analytics.event('Pass clicked on EligibilityGender');
-    const { navigate } = this.props.navigation;
-    navigate('EligibilityBday');
+    utils.navigateTo(this,'EligibilityBday');
   }
 
   render() {

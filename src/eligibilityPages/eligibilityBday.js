@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, AsyncStorage, DatePickerAndroid } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
-import { ConsentPrefab } from './consentPrefab';
-import { RelationButton } from './relationButton';
-import { resetTo } from './util';
-import { Logic } from './logic';
-let moment = require('moment');
+import i18n from '../i18n';
+import * as analytics from '../analytics';
+import { Logic } from '../logic';
+import { resetTo } from '../util';
 
-import q1 from '../questionsSimple/q1.json';
-import q2 from '../questionsSimple/q2.json';
-import q3 from '../questionsSimple/q3.json';
-import q4 from '../questionsSimple/q4.json';
-import q5 from '../questionsSimple/q5.json';
-import q6 from '../questionsSimple/q6.json';
-import q7 from '../questionsSimple/q7.json';
-import q8 from '../questionsSimple/q8.json';
-import q9 from '../questionsSimple/q9.json';
-import q10 from '../questionsSimple/q10.json';
-import q11 from '../questionsSimple/q11.json';
-import q12 from '../questionsSimple/q12.json';
-import q13 from '../questionsSimple/q13.json';
-import q14 from '../questionsSimple/q14.json';
-import q15 from '../questionsSimple/q15.json';
-import q16 from '../questionsSimple/q16.json';
-import q17 from '../questionsSimple/q17.json';
-import q18 from '../questionsSimple/q18.json';
-import q19 from '../questionsSimple/q19.json';
-import q20 from '../questionsSimple/q20.json';
-import q21 from '../questionsSimple/q21.json';
-import q22 from '../questionsSimple/q22.json';
-import q23 from '../questionsSimple/q23.json';
+const moment = require('moment');
+
+import q1 from '../../questionsSimple/q1.json';
+import q2 from '../../questionsSimple/q2.json';
+import q3 from '../../questionsSimple/q3.json';
+import q4 from '../../questionsSimple/q4.json';
+import q5 from '../../questionsSimple/q5.json';
+import q6 from '../../questionsSimple/q6.json';
+import q7 from '../../questionsSimple/q7.json';
+import q8 from '../../questionsSimple/q8.json';
+import q9 from '../../questionsSimple/q9.json';
+import q10 from '../../questionsSimple/q10.json';
+import q11 from '../../questionsSimple/q11.json';
+import q12 from '../../questionsSimple/q12.json';
+import q13 from '../../questionsSimple/q13.json';
+import q14 from '../../questionsSimple/q14.json';
+import q15 from '../../questionsSimple/q15.json';
+import q16 from '../../questionsSimple/q16.json';
+import q17 from '../../questionsSimple/q17.json';
+import q18 from '../../questionsSimple/q18.json';
+import q19 from '../../questionsSimple/q19.json';
+import q20 from '../../questionsSimple/q20.json';
+import q21 from '../../questionsSimple/q21.json';
+import q22 from '../../questionsSimple/q22.json';
+import q23 from '../../questionsSimple/q23.json';
 
 
 export class EligibilityBday extends Component {
@@ -113,7 +112,6 @@ export class EligibilityBday extends Component {
           this.loadSurvey();
         } else {
           analytics.screen('Not Elgible (eligibility)');
-          const { navigate } = this.props.navigation;
           resetTo(this, 'EligibilityNotFit');
         }
       }
@@ -179,9 +177,7 @@ export class EligibilityBday extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={{ flex: 1.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', justifyContent: 'flex-start' }}>
-
-        </View>
+        <View style={{ flex: 1.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', justifyContent: 'flex-start' }} />
         <View style={{ flex: 1, flexDirection: 'column' }}>
           <TouchableOpacity onPress={() => this.saveBday()} style={{ flex: 1, backgroundColor: this.state.showNext ? '#00a9fa' : '#e7e7e7', justifyContent: 'center' }}>
             <View>

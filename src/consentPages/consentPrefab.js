@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Dimensions, Modal, TouchableWithoutFeedback, WebView, TouchableNativeFeedback } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Dimensions, Modal, WebView, TouchableNativeFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { NextButton } from './nextButton';
-import i18n from './i18n';
+import i18n from '../i18n';
 
 
 export class ConsentPrefab extends Component {

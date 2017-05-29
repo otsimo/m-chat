@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
-import { ConsentPrefab } from './consentPrefab';
-import { RelationButton } from './relationButton';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
+import { RelationButton } from '../relationButton';
+import * as utils from '../util';
 
 export class EligibilityRelation extends Component {
   static navigationOptions = {
@@ -35,8 +35,7 @@ export class EligibilityRelation extends Component {
     if (this.relation !== false) {
       analytics.screen('Relation (eligibility)');
       analytics.event('Next clicked on EligibilityRelation');
-      const { navigate } = this.props.navigation;
-      navigate('EligibilityGender');
+      utils.navigateTo(this, 'EligibilityGender');
     }
   }
 
@@ -49,9 +48,7 @@ export class EligibilityRelation extends Component {
 
     analytics.screen('Relation (eligibility)');
     analytics.event('Pass clicked');
-    const { navigate } = this.props.navigation;
-    navigate('EligibilityGender');
-
+    utils.navigateTo(this, 'EligibilityGender');
   }
 
   render() {

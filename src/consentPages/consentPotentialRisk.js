@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
+import { View } from 'react-native';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
 import { ConsentPrefab } from './consentPrefab';
+import * as utils from '../util';
 
 export class ConsentPotentialRisk extends Component {
   static navigationOptions = {
@@ -14,15 +15,15 @@ export class ConsentPotentialRisk extends Component {
   onNextPressed() {
     analytics.screen('Potential Risks(consent)');
     analytics.event('Next clicked on ConsentPotentialRisk');
-    const { navigate } = this.props.navigation;
-    navigate('ConsentMedical');
+    utils.navigateTo(this, 'ConsentMedical');
+
   }
 
 
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent7LearnMoreTR.html'} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent7LearnMoreTR.html'} image={require("../../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
       </View>
     );
   }
@@ -30,7 +31,7 @@ export class ConsentPotentialRisk extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent7LearnMoreEN.html'} image={require("../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent7LearnMoreEN.html'} image={require("../../pngs/potential_riskkopya.png")} textHeader={i18n.t('potentialRisks.header')} text={i18n.t('potentialRisks.text')} />
       </View>
     );
   }

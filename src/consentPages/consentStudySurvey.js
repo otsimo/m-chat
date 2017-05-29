@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
+import { View } from 'react-native';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
 import { ConsentPrefab } from './consentPrefab';
+import * as utils from '../util';
 
 export class ConsentStudySurvey extends Component {
   static navigationOptions = {
@@ -14,14 +15,14 @@ export class ConsentStudySurvey extends Component {
   onNextPressed() {
     analytics.screen('Study Survey (consent)');
     analytics.event('Next clicked on ConsentStudySurvey');
-    const { navigate } = this.props.navigation;
-    navigate('ConsentPotentialBen');
+    utils.navigateTo(this, 'ConsentPotentialBen');
+
   }
 
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent5LearnMoreTR.html'} image={require("../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent5LearnMoreTR.html'} image={require("../../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
       </View>
     );
   }
@@ -29,7 +30,7 @@ export class ConsentStudySurvey extends Component {
   renderEN() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent5LearnMoreEN.html'} image={require("../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent5LearnMoreEN.html'} image={require("../../pngs/study_surveykopya.png")} textHeader={i18n.t('studySurvey.header')} text={i18n.t('studySurvey.text')} />
       </View>
     );
   }

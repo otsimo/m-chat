@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import i18n from './i18n';
-import * as analytics from './analytics';
+import { View } from 'react-native';
+import i18n from '../i18n';
+import * as analytics from '../analytics';
 import { ConsentPrefab } from './consentPrefab';
+import * as utils from '../util';
 
 export class ConsentFollowUp extends Component {
   static navigationOptions = {
@@ -14,14 +15,13 @@ export class ConsentFollowUp extends Component {
   onNextPressed() {
     analytics.screen('Follow Up(consent)');
     analytics.event('Next clicked on ConsentFollowUp');
-    const { navigate } = this.props.navigation;
-    navigate('EligibilityRelation');
+    utils.navigateTo(this, 'EligibilityRelation');
   }
 
   renderTR() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent9LearnMoreTR.html'} image={require("../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent9LearnMoreTR.html'} image={require("../../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
       </View>
     );
   }
@@ -30,7 +30,7 @@ export class ConsentFollowUp extends Component {
 
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent9LearnMoreEN.html'} image={require("../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
+        <ConsentPrefab onPress={() => this.onNextPressed()} learnURL={'file:///android_asset/webviews/consent9LearnMoreEN.html'} image={require("../../pngs/follow_upkopya.png")} textHeader={i18n.t('followUp.header')} text={i18n.t('followUp.text')} />
       </View>
     );
   }
