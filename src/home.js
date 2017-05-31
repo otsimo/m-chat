@@ -6,6 +6,7 @@ import {
   Dimensions,
   WebView,
   StyleSheet,
+  Button,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Swiper from 'react-native-swiper';
@@ -44,12 +45,12 @@ export class Home extends Component {
 
     this.uuid = '';
     analytics.start('production');
-    this.state = { index: 1 };
+    this.state = { index: 0 };
     this.lang = i18n.t('yes');
   }
   async startApp() {
     try {
-      const setid = await this.tempLogic.setUUID();
+      await this.tempLogic.setUUID();
       const uuid = await this.tempLogic.getUUID();
       const app = {
         profileId: uuid,
@@ -62,20 +63,7 @@ export class Home extends Component {
     }
     // _scrollView.scrollTo({ x: Dimensions.get('window').width, animated: true });
     utils.navigateTo(this, 'ConsentWelcome');
-
   }
-
-  get urlsForEN() {
-    const urlsForEN = [
-      'file:///android_asset/webviews/homepage1EN.html',
-      'file:///android_asset/webviews/homepage2EN.html',
-      'file:///android_asset/webviews/homepage3EN.html',
-      'file:///android_asset/webviews/homepage3EN.html',
-      'file:///android_asset/webviews/homepage4EN.html',
-    ];
-    return urlsForEN;
-  }
-
 
   renderSwiper() {
     let urls = ['file:///android_asset/webviews/homepage1TR.html',
@@ -84,7 +72,13 @@ export class Home extends Component {
       'file:///android_asset/webviews/homepage4TR.html',
     ];
     if (this.lang === 'Yes') {
-      urls = this.urlsForEN;
+      urls = [
+        'file:///android_asset/webviews/homepage1EN.html',
+        'file:///android_asset/webviews/homepage2EN.html',
+        'file:///android_asset/webviews/homepage3EN.html',
+        'file:///android_asset/webviews/homepage3EN.html',
+        'file:///android_asset/webviews/homepage4EN.html',
+      ];
     }
     const pages = [];
     urls.map((url) => {
@@ -94,7 +88,7 @@ export class Home extends Component {
     });
     return (
       <Swiper
-        onMomentumScrollEnd={(e, state) => this.setState({ page: state.index })}
+        onMomentumScrollEnd={(e, state) => this.setState({ index: state.index })}
         animated
         loop={false}
         style={styles.wrapper}
@@ -113,10 +107,10 @@ export class Home extends Component {
         </View>
         <View style={{ height: h / 6.8, backgroundColor: '#00a9fa', flexDirection: 'column', alignItems: 'center' }}>
           <View style={{ marginTop: 5 }}>
-            <Swipe page={this.state.page} />
+            <Swipe page={this.state.index} />
           </View>
           <TouchableOpacity
-            style={{ width: 150, height: h / 20.5, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
+            style={{ width: 150, height: h / 18.5, backgroundColor: 'white', borderRadius: 5, marginTop: 20, padding: 5, justifyContent: 'center', alignItems: 'center' }}
             onPress={() => this.startApp()}
           >
             <Text style={{ padding: 5, textAlign: 'center', textAlignVertical: 'center', fontSize: 16, color: 'rgb(165,90,239)' }}> {i18n.t('join')}</Text>
@@ -144,11 +138,58 @@ const styles = StyleSheet.create({
 });
 
 export const SimpleApp = StackNavigator({
-  home: { screen: Home },
+  home: {
+    screen: Home,
+    header: (<Text>ss </Text>),
+    navigationOptions: {
+      title: 'DEDEDED',
+      headerTitle: 'sad',
+
+    },
+  },
   result: { screen: SurveyDone },
   app: { screen: MChat },
-  ConsentWelcome: { screen: ConsentWelcome },
-  ConsentDataGather: { screen: ConsentDataGather },
+  ConsentWelcome: {
+    header: (<Text>ss </Text>),
+    screen: ConsentWelcome,
+    navigationOptions: {
+      title: 'DEDEDED',
+    },
+
+  },
+  ConsentDataGather: {
+    screen: ConsentDataGather,
+    header: (<Text>ss </Text>),
+    navigationOptions: () => ({
+      title: 'deneme',
+    }),
+  },
+
+},
+  {
+    initialRouteName: 'home',
+    headerMode: 'screen',
+    headerComponent: (<Text>ss </Text>),
+
+  });
+
+
+/**
+ *   result: { screen: SurveyDone },
+  app: { screen: MChat },
+  ConsentWelcome: {
+    screen: ConsentWelcome,
+    navigationOptions: {
+      title: 'DEDEDED',
+    },
+
+  },
+  ConsentDataGather: {
+    screen: ConsentDataGather,
+    navigationOptions: () => ({
+      title: 'deneme',
+    }),
+  },
   ConsentPrivacy: { screen: ConsentPrivacy },
   ConsentDataUse: { screen: ConsentDataUse },
   ConsentStudySurvey: { screen: ConsentStudySurvey },
@@ -160,5 +201,4 @@ export const SimpleApp = StackNavigator({
   EligibilityGender: { screen: EligibilityGender },
   EligibilityBday: { screen: EligibilityBday },
   EligibilityNotFit: { screen: EligibilityNotFit },
-});
-
+ */
